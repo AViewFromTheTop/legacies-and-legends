@@ -1,0 +1,42 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "legacies_and_legends:disc_fragment_far_lands"
+    },
+    "1": {
+      "item": "legacies_and_legends:disc_fragment_far_lands"
+    },
+    "2": {
+      "item": "legacies_and_legends:disc_fragment_far_lands"
+    },
+    "3": {
+      "item": "legacies_and_legends:disc_fragment_far_lands"
+    },
+    "4": {
+      "item": "legacies_and_legends:disc_fragment_far_lands"
+    },
+    "5": {
+      "item": "legacies_and_legends:disc_fragment_far_lands"
+    },
+    "6": {
+      "item": "legacies_and_legends:disc_fragment_far_lands"
+    },
+    "7": {
+      "item": "legacies_and_legends:disc_fragment_far_lands"
+    },
+    "8": {
+      "item": "legacies_and_legends:disc_fragment_far_lands"
+    }
+  },
+  "result": {
+    "id": "legacies_and_legends:music_disc_far_lands",
+    "count": 1
+  }
+}

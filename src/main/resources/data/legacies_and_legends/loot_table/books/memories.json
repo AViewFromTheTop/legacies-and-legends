@@ -1,0 +1,30 @@
+{
+    "type": "minecraft:chest",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:written_book",
+            "functions": [
+                {
+                    "function": "minecraft:set_components",
+                    "components": {
+                      "minecraft:written_book_content": {
+                        "title": "Memories",
+                        "author": "Minecraft",
+                        "pages": [
+                          "{\"text\":\"Tales are told of a great Library, hidden in the long-lost strongholds of the world. These libraries contained powerful books of words so strong they imbue unimaginable power into those that wield them. It is said that these Libraries were filled with the knowledge of times\"}",
+                          "{\"text\":\"long since past, but now, these once-mighty strongholds and their libraries have since vanished into the depths of the past, with these few remaining remnants all that remains of the old world.\"}"
+                        ]
+                      }
+                    }
+                  }
+            ]
+          }
+        ]
+      }
+    ],
+  "random_sequence": "legacies_and_legends:books/memories"
+  }

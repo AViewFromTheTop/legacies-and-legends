@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "legacies_and_legends:dungeon_chestplate",
+    "legacies_and_legends:fortress_chestplate",
+    "legacies_and_legends:ward_chestplate"
+  ]
+}

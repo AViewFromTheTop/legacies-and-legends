@@ -1,0 +1,167 @@
+{
+    "legacy:sounds/music/caves/echoes": {
+        "album": "Legacies",
+        "author": "AFRH Music",
+        "title": "Echoes"
+    },
+    "legacy:sounds/music/caves/excuse": {
+        "album": "Legacies",
+        "author": "C418",
+        "title": "Excuses"
+    },
+    "legacy:sounds/music/creative/miscible": {
+        "album": "Legacies",
+        "author": "Sigma_",
+        "title": "Miscible"
+    },
+    "legacy:sounds/music/creative/stolen_grid": {
+        "album": "Legacies",
+        "author": "Sigma_",
+        "title": "Stolen Grid"
+    },
+    "legacy:sounds/music/end/minecraft_end_remix": {
+        "album": "Legacies",
+        "author": "bhuv_",
+        "title": "End Remix"
+    },
+    "legacy:sounds/music/end/only_the_beginning": {
+        "album": "Legacies",
+        "author": "Firel",
+        "title": "Only the Beginning"
+    },
+    "legacy:sounds/music/end/sweden_end_remix": {
+        "album": "Legacies",
+        "author": "Technotech",
+        "title": "Sweden End Remix"
+    },
+    "legacy:sounds/music/end/vacuum_decay": {
+        "album": "Legacies",
+        "author": "Sigma_",
+        "title": "Vacuum Decay"
+    },
+    "legacy:sounds/music/menu/beginning": {
+        "album": "Legacies",
+        "author": "C418",
+        "title": "Beginning"
+    },
+    "legacy:sounds/music/menu/moog_city": {
+        "album": "Legacies",
+        "author": "C418",
+        "title": "Moog City"
+    },
+    "legacy:sounds/music/nether/bubbles": {
+        "album": "Legacies",
+        "author": "Sigma_",
+        "title": "Bubbles"
+    },
+    "legacy:sounds/music/nether/jellyfish": {
+        "album": "Legacies",
+        "author": "Freja Nelson",
+        "title": "Jellyfish"
+    },
+    "legacy:sounds/music/nether/prophet": {
+        "album": "Legacies",
+        "author": "Firch",
+        "title": "Prophet"
+    },
+    "legacy:sounds/music/other/placeholder_silence": {
+        "album": "Legacies",
+        "author": "Silent",
+        "title": "####"
+    },
+    "legacy:sounds/music/other/threshold_end_portal": {
+        "album": "Legacies",
+        "author": "Sigma_",
+        "title": "Threshold"
+    },
+    "legacy:sounds/music/overworld/814": {
+        "album": "Legacies",
+        "author": "qwaston",
+        "title": "814"
+    },
+    "legacy:sounds/music/overworld/albeit": {
+        "album": "Legacies",
+        "author": "bouncytorch",
+        "title": "Albeit"
+    },
+    "legacy:sounds/music/overworld/alpha": {
+        "album": "Legacies",
+        "author": "Oh Eight",
+        "title": "Alpha"
+    },
+    "legacy:sounds/music/overworld/burning_konkrete": {
+        "album": "Legacies",
+        "author": "bouncytorch",
+        "title": "Burning Konkrete"
+    },
+    "legacy:sounds/music/overworld/castles": {
+        "album": "Legacies",
+        "author": "Sigma_",
+        "title": "Castles"
+    },
+    "legacy:sounds/music/overworld/cliff_hanger": {
+        "album": "Legacies",
+        "author": "bouncytorch",
+        "title": "Cliff Hanger"
+    },
+    "legacy:sounds/music/overworld/fall": {
+        "album": "Legacies",
+        "author": "solunary",
+        "title": "Fall"
+    },
+    "legacy:sounds/music/overworld/kall": {
+        "album": "Legacies",
+        "author": "Naps the Block Music",
+        "title": "Kall"
+    },
+    "legacy:sounds/music/overworld/kyoto": {
+        "album": "Legacies",
+        "author": "C418",
+        "title": "Kyoto"
+    },
+    "legacy:sounds/music/overworld/mosaic": {
+        "album": "Legacies",
+        "author": "Sigma_",
+        "title": "Mosaic"
+    },
+    "legacy:sounds/music/overworld/ravine": {
+        "album": "Legacies",
+        "author": "Oh Eight",
+        "title": "Ravine"
+    },
+    "legacy:sounds/music/overworld/sunrise_on_the_mesa_2": {
+        "album": "Legacies",
+        "author": "Oh Eight",
+        "title": "Sunrise on the Mesa 2"
+    },
+    "legacy:sounds/music/overworld/tundra": {
+        "album": "Legacies",
+        "author": "Talon Trueblood",
+        "title": "Tundra"
+    },
+    "legacies_and_legends:sounds/far_lands_music_disc": {
+        "album": "Legacies",
+        "author": "Steelman",
+        "title": "Far Lands"
+    },
+    "legacies_and_legends:sounds/shulker_music_disc": {
+        "album": "Legacies",
+        "author": "T_en_M",
+        "title": "Shulker"
+    },
+    "legacies_and_legends:sounds/svall_music_disc": {
+        "album": "Legacies",
+        "author": "Svall",
+        "title": "Sigma_"
+    },
+    "legacies_and_legends:sounds/taswell_music_disc": {
+        "album": "Legacies",
+        "author": "Taswell",
+        "title": "bouncytorch"
+    },
+    "legacies_and_legends:sounds/tundra_music_disc": {
+        "album": "Legacies",
+        "author": "Tundra (Music Disc)",
+        "title": "T_en_M"
+    }
+}

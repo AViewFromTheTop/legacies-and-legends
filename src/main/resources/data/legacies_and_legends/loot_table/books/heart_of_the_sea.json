@@ -1,0 +1,32 @@
+{
+    "type": "minecraft:chest",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:written_book",
+            "functions": [
+                {
+                    "function": "minecraft:set_components",
+                    "components": {
+                      "minecraft:written_book_content": {
+                        "title": "Heart of the Sea",
+                        "author": "Minecraft",
+                        "pages": [
+                          "{\"text\":\"You search the barrel, looking for the treasures within. There was a decent haul, but no great treasure that would seemingly justify all the effort made to hide this treasure. Instead, you find a strange book, with instructions on the creation of some mysterious, \"}",
+                          "{\"text\":\"foreign machine. What instructions could be considered so valuable?\n\nThe blueprint is clear to follow, seemingly made of something similar to that of the underwater monuments. Three 3 dimensional rings, spanning 5 blocks each, all positioned at\"}",
+                          "{\"text\":\"a right angle to each other, so as to form 8 equal squares in the spaces left.\n\nIn the middle, a mysterious conduit, floating in place, supposedly powering this contraption.\"}",
+                          "{\"text\":\"That is what was hidden. A conduit. Or at least part of one.\n\nHere, in its place, are simply instructions.\"}"
+                        ]
+                      }
+                    }
+                  }
+            ]
+          }
+        ]
+      }
+    ],
+  "random_sequence": "legacies_and_legends:books/heart_of_the_sea"
+  }

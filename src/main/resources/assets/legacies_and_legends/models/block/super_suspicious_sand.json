@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "legacies_and_legends:block/sand",
+    "up": "legacies_and_legends:block/sand",
+    "north": "legacies_and_legends:block/sand",
+    "east": "legacies_and_legends:block/sand",
+    "south": "legacies_and_legends:block/sand",
+    "west": "legacies_and_legends:block/sand",
+    "particle": "legacies_and_legends:block/sand"
+  },
+  "render_type": "solid"
+}

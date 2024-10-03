@@ -1,0 +1,52 @@
+{
+  "music_disc.svall": {
+    "category": "record",
+    "subtitle": "subtitles.music_disc_svall",
+    "sounds": [
+      {
+        "name": "legacies_and_legends:svall_music_disc",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc.taswell": {
+    "category": "record",
+    "subtitle": "subtitles.music_disc_taswell",
+    "sounds": [
+      {
+        "name": "legacies_and_legends:taswell_music_disc",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc.tundra": {
+    "category": "record",
+    "subtitle": "subtitles.music_disc_tundra",
+    "sounds": [
+      {
+        "name": "legacies_and_legends:tundra_music_disc",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc.shulker": {
+    "category": "record",
+    "subtitle": "subtitles.music_disc_shulker",
+    "sounds": [
+      {
+        "name": "legacies_and_legends:shulker_music_disc",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc.far_lands": {
+    "category": "record",
+    "subtitle": "subtitles.music_disc_far_lands",
+    "sounds": [
+      {
+        "name": "legacies_and_legends:far_lands_music_disc",
+        "stream": true
+      }
+    ]
+  }
+}

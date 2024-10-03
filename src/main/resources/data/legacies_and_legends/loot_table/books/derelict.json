@@ -1,0 +1,30 @@
+{
+    "type": "minecraft:chest",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:written_book",
+            "functions": [
+                {
+                    "function": "minecraft:set_components",
+                    "components": {
+                      "minecraft:written_book_content": {
+                        "title": "Derelict",
+                        "author": "Minecraft",
+                        "pages": [
+                          "{\"text\":\"The ruined Outposts of the forgotten world were constructed to guard these ancient lands, serving as eyes and defences far beyond the reach of their central cities. These outposts now lie in ruin, abandoned as their defenders were heralded back to their\"}",
+                          "{\"text\":\"ancient settlements after receiving an urgent call.\"}"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+  "random_sequence": "legacies_and_legends:books/derelict"
+  }
