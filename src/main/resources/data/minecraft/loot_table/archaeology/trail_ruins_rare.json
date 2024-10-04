@@ -53,8 +53,8 @@
           "name": "minecraft:music_disc_relic"
         },
         {
-          "type": "minecraft:loot_table",
-          "value": "legacies_and_legends:knives/ancient_knife"
+          "type": "minecraft:item",
+          "value": "legacies_and_legends:ancient_knife"
         }
       ],
       "rolls": 1.0

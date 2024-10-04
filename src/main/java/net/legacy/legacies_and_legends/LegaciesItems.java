@@ -25,7 +25,8 @@ public final class LegaciesItems {
     public static final Item MUSIC_DISC_TUNDRA = new Item(new Item.Properties().stacksTo(1).rarity(Rarity.RARE).jukeboxPlayable(LegaciesJukeboxSongs.TUNDRA));
     public static final Item MUSIC_DISC_FAR_LANDS = new Item(new Item.Properties().stacksTo(1).rarity(Rarity.RARE).jukeboxPlayable(LegaciesJukeboxSongs.FAR_LANDS));
 
-    public static final Item HOOK = new LegaciesHook(LegaciesTiers.HOOK, (new Item.Properties()).attributes(LegaciesHook.createAttributes(LegaciesTiers.HOOK, 4, -3.2F)).stacksTo(1).durability(750));
+    public static final Item HOOK = new LegaciesWeapon(LegaciesTiers.HOOK, (new Item.Properties()).attributes(LegaciesWeapon.createAttributes(LegaciesTiers.HOOK, 4, -3.2F)).stacksTo(1).durability(750));
+    public static final Item ANCIENT_KNIFE = new LegaciesWeapon(LegaciesTiers.ANCIENT, (new Item.Properties()).attributes(LegaciesWeapon.createAttributes(LegaciesTiers.ANCIENT, 2, -2F)).stacksTo(1).durability(3048));
 
     public static final Item ENCHANTED_BEETROOT = new Item(new Item.Properties().rarity(Rarity.RARE).food(LegaciesFoods.ENCHANTED_BEETROOT).component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true));
     public static final Item ENCHANTED_BEETROOT_SOUP = new Item(new Item.Properties().rarity(Rarity.EPIC).food(LegaciesFoods.ENCHANTED_BEETROOT_SOUP).component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true).stacksTo(1));
@@ -54,12 +55,15 @@ public final class LegaciesItems {
     public static final Item WARD_BOOTS = new ArmorItem(LegaciesArmorMaterials.WARD, ArmorItem.Type.BOOTS, new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(41)));
 
     public static void register() {
-        registerItemAfter(Items.NETHERITE_AXE, HOOK, "hook", CreativeModeTabs.COMBAT);
+        registerItemAfter(Items.NETHERITE_AXE, ANCIENT_KNIFE, "ancient_knife", CreativeModeTabs.COMBAT);
+        registerItemAfter(ANCIENT_KNIFE, HOOK, "hook", CreativeModeTabs.COMBAT);
+
         registerItemAfter(Items.MUSIC_DISC_FAR, MUSIC_DISC_SVALL, "music_disc_svall", CreativeModeTabs.TOOLS_AND_UTILITIES);
         registerItemAfter(Items.MUSIC_DISC_11, MUSIC_DISC_TASWELL, "music_disc_taswell", CreativeModeTabs.TOOLS_AND_UTILITIES);
         registerItemAfter(Items.MUSIC_DISC_OTHERSIDE, MUSIC_DISC_SHULKER, "music_disc_shulker", CreativeModeTabs.TOOLS_AND_UTILITIES);
         registerItemAfter(Items.MUSIC_DISC_CREATOR_MUSIC_BOX, MUSIC_DISC_TUNDRA, "music_disc_tundra", CreativeModeTabs.TOOLS_AND_UTILITIES);
         registerItemAfter(Items.MUSIC_DISC_RELIC, MUSIC_DISC_FAR_LANDS, "music_disc_far_lands", CreativeModeTabs.TOOLS_AND_UTILITIES);
+
         registerItemAfter(Items.HEART_OF_THE_SEA, METAL_CHUNK, "metal_chunk", CreativeModeTabs.INGREDIENTS);
         registerItemAfter(METAL_CHUNK, DISC_FRAGMENT_FAR_LANDS, "disc_fragment_far_lands", CreativeModeTabs.INGREDIENTS);
         registerItemAfter(Items.BEETROOT, ENCHANTED_BEETROOT, "enchanted_beetroot", CreativeModeTabs.FOOD_AND_DRINKS);

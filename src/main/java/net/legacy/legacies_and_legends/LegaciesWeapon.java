@@ -15,8 +15,8 @@ import net.minecraft.world.item.component.Tool;
 
 import java.util.List;
 
-public class LegaciesHook extends TieredItem {
-    public LegaciesHook(Tier tier, Item.Properties properties) {
+public class LegaciesWeapon extends TieredItem {
+    public LegaciesWeapon(Tier tier, Item.Properties properties) {
         super(tier, properties.component(DataComponents.TOOL, createToolProperties()));
     }
 
