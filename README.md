@@ -1,6 +1,6 @@
 GitHub Repo for Legacies and Legends.
 
-Contributions, translations and issues are all welcome.
+Contributions, translations and issue reports are all welcome.
 
 Mod license: Legacy License
 - Assets ARR / specific to the relevant author
