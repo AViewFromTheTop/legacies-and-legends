@@ -6,7 +6,7 @@ import net.minecraft.resources.ResourceLocation;
 /**
  * by Rebel459
  */
-public class Legacies implements ModInitializer {
+public class LegaciesAndLegends implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		LegaciesItems.register();
