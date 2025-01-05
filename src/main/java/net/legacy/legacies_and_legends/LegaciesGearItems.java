@@ -12,7 +12,6 @@ import java.util.function.Function;
 
 public final class LegaciesGearItems {
 
-
     // Weapons
     public static final LegaciesWeapon HOOK = register("hook", settings -> new LegaciesWeapon(LegaciesToolMaterial.METAL, 4f, -3.2f, settings
             .stacksTo(1)
@@ -27,6 +26,56 @@ public final class LegaciesGearItems {
     public static final ArmorItem DUNGEON_HELMET = register("dungeon_helmet", settings -> new ArmorItem(LegaciesArmorMaterials.DUNGEON, ArmorType.HELMET, settings
             .stacksTo(1)
             .durability(ArmorType.HELMET.getDurability(27))
+    ));
+    public static final ArmorItem DUNGEON_CHESTPLATE = register("dungeon_chestplate", settings -> new ArmorItem(LegaciesArmorMaterials.DUNGEON, ArmorType.HELMET, settings
+            .stacksTo(1)
+            .durability(ArmorType.CHESTPLATE.getDurability(27))
+    ));
+    public static final ArmorItem DUNGEON_LEGGINGS = register("dungeon_leggings", settings -> new ArmorItem(LegaciesArmorMaterials.DUNGEON, ArmorType.HELMET, settings
+            .stacksTo(1)
+            .durability(ArmorType.LEGGINGS.getDurability(27))
+    ));
+    public static final ArmorItem DUNGEON_BOOTS = register("dungeon_boots", settings -> new ArmorItem(LegaciesArmorMaterials.DUNGEON, ArmorType.HELMET, settings
+            .stacksTo(1)
+            .durability(ArmorType.BOOTS.getDurability(27))
+    ));
+
+    public static final ArmorItem FORTRESS_HELMET = register("fortress_helmet", settings -> new ArmorItem(LegaciesArmorMaterials.FORTRESS, ArmorType.HELMET, settings
+            .stacksTo(1)
+            .durability(ArmorType.HELMET.getDurability(23))
+            .fireResistant()
+    ));
+    public static final ArmorItem FORTRESS_CHESTPLATE = register("fortress_chestplate", settings -> new ArmorItem(LegaciesArmorMaterials.FORTRESS, ArmorType.HELMET, settings
+            .stacksTo(1)
+            .durability(ArmorType.CHESTPLATE.getDurability(23))
+            .fireResistant()
+    ));
+    public static final ArmorItem FORTRESS_LEGGINGS = register("fortress_leggings", settings -> new ArmorItem(LegaciesArmorMaterials.FORTRESS, ArmorType.HELMET, settings
+            .stacksTo(1)
+            .durability(ArmorType.LEGGINGS.getDurability(23))
+            .fireResistant()
+    ));
+    public static final ArmorItem FORTRESS_BOOTS = register("fortress_boots", settings -> new ArmorItem(LegaciesArmorMaterials.FORTRESS, ArmorType.HELMET, settings
+            .stacksTo(1)
+            .durability(ArmorType.BOOTS.getDurability(23))
+            .fireResistant()
+    ));
+
+    public static final ArmorItem WARD_HELMET = register("ward_helmet", settings -> new ArmorItem(LegaciesArmorMaterials.WARD, ArmorType.HELMET, settings
+            .stacksTo(1)
+            .durability(ArmorType.HELMET.getDurability(41))
+    ));
+    public static final ArmorItem WARD_CHESTPLATE = register("ward_chestplate", settings -> new ArmorItem(LegaciesArmorMaterials.WARD, ArmorType.HELMET, settings
+            .stacksTo(1)
+            .durability(ArmorType.CHESTPLATE.getDurability(41))
+    ));
+    public static final ArmorItem WARD_LEGGINGS = register("ward_leggings", settings -> new ArmorItem(LegaciesArmorMaterials.WARD, ArmorType.HELMET, settings
+            .stacksTo(1)
+            .durability(ArmorType.LEGGINGS.getDurability(41))
+    ));
+    public static final ArmorItem WARD_BOOTS = register("ward_boots", settings -> new ArmorItem(LegaciesArmorMaterials.WARD, ArmorType.HELMET, settings
+            .stacksTo(1)
+            .durability(ArmorType.BOOTS.getDurability(41))
     ));
 
     public static void init() {

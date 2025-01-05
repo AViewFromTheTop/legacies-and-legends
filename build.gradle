@@ -50,3 +50,23 @@ java {
 	sourceCompatibility = JavaVersion.VERSION_21
 	targetCompatibility = JavaVersion.VERSION_21
 }
+
+// DATAGEN
+
+fabricApi {
+	configureDataGeneration()
+}
+
+loom {
+	mods {
+		"legacies_and_legends" {
+			sourceSet sourceSets.main
+		}
+	}
+
+	runs {
+		datagen {
+			inherit client
+		}
+	}
+}

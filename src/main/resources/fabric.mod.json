@@ -17,6 +17,9 @@
 	"entrypoints": {
 		"main": [
           "net.legacy.legacies_and_legends.LegaciesAndLegends"
+		],
+		"fabric-datagen": [
+			"net.legacy.legacies_and_legends.LegaciesDataGenerator"
 		]
 	},
 	"mixins": [

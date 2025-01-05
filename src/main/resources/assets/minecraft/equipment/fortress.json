@@ -1,0 +1,19 @@
+{
+  "layers": {
+    "horse_body": [
+      {
+        "texture": "minecraft:fortress"
+      }
+    ],
+    "humanoid": [
+      {
+        "texture": "minecraft:fortress"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "minecraft:fortress"
+      }
+    ]
+  }
+}
