@@ -51,7 +51,7 @@ java {
 	targetCompatibility = JavaVersion.VERSION_21
 }
 
-// DATAGEN
+// Datagen
 
 fabricApi {
 	configureDataGeneration()
