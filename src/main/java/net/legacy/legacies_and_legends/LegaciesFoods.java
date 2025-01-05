@@ -13,7 +13,7 @@ public class LegaciesFoods {
     }
 
     static {
-        ENCHANTED_BEETROOT = (new FoodProperties.Builder()).nutrition(3).saturationModifier(1.2F).effect(new MobEffectInstance(MobEffects.REGENERATION, 100, 1), 1.0F).alwaysEdible().build();
-        ENCHANTED_BEETROOT_SOUP = (new FoodProperties.Builder()).nutrition(9).saturationModifier(1.2F).effect(new MobEffectInstance(MobEffects.REGENERATION, 300, 2), 1.0F).effect(new MobEffectInstance(MobEffects.SATURATION, 10, 0), 1.0F).alwaysEdible().usingConvertsTo(Items.BOWL).build();
+        ENCHANTED_BEETROOT = (new FoodProperties.Builder()).nutrition(3).saturationModifier(1.2F).alwaysEdible().build();
+        ENCHANTED_BEETROOT_SOUP = (new FoodProperties.Builder()).nutrition(9).saturationModifier(1.2F).alwaysEdible().build();
     }
 }

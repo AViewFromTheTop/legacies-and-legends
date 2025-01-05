@@ -7,17 +7,32 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.equipment.ArmorMaterial;
+import net.minecraft.world.item.equipment.ArmorType;
+import net.minecraft.world.item.equipment.EquipmentAssets;
 import net.minecraft.world.level.ItemLike;
 
 import java.util.EnumMap;
 import java.util.List;
 import java.util.function.Supplier;
 
-public class LegaciesArmorMaterials {
+public interface LegaciesArmorMaterials {
+    net.minecraft.world.item.equipment.ArmorMaterial DUNGEON = new net.minecraft.world.item.equipment.ArmorMaterial(5, Util.make(new EnumMap(ArmorType.class), enumMap -> {
+        enumMap.put(ArmorType.BOOTS, 2);
+        enumMap.put(ArmorType.LEGGINGS, 5);
+        enumMap.put(ArmorType.CHESTPLATE, 6);
+        enumMap.put(ArmorType.HELMET, 3);
+        enumMap.put(ArmorType.BODY, 5);
+    }), 10, SoundEvents.ARMOR_EQUIP_DIAMOND, 0.0F, 0.1F, LegaciesItemTags.REPAIRS_DUNGEON_ARMOR, LegaciesEquipmentAssets.DUNGEON);
+}
+
+
+/*
+public class LegaciesArmorMaterialsOld {
     public static final Holder<ArmorMaterial> DUNGEON;
     public static final Holder<ArmorMaterial> FORTRESS;
     public static final Holder<ArmorMaterial> WARD;
@@ -72,4 +87,4 @@ public class LegaciesArmorMaterials {
             return Ingredient.of(new ItemLike[]{Items.ECHO_SHARD});
         });
     }
-}
+}*/

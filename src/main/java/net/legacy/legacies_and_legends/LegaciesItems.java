@@ -1,6 +1,5 @@
 package net.legacy.legacies_and_legends;
 
-import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.frozenblock.lib.item.api.FrozenCreativeTabs;
 import net.frozenblock.lib.shadow.org.jetbrains.annotations.NotNull;
 import net.minecraft.core.Registry;
@@ -8,12 +7,116 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.equipment.ArmorType;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.world.item.Item.Properties;
+
+import java.util.function.Function;
 
 public final class LegaciesItems {
+
+    // Misc Items
+    public static final Item DISC_FRAGMENT_FAR_LANDS = register("disc_fragment_far_lands",
+            Item::new,
+            new Properties()
+                    .stacksTo(64)
+    );
+    public static final Item METAL_CHUNK = register("metal_chunk",
+            Item::new,
+            new Properties()
+                    .stacksTo(64)
+    );
+    public static final Item WOODEN_BUCKET = register("wooden_bucket",
+            Item::new,
+            new Properties()
+                    .stacksTo(16)
+    );
+    public static final Item COAL_BUCKET = register("coal_bucket",
+            Item::new,
+            new Properties()
+                    .stacksTo(16)
+    );
+    public static final Item CHARCOAL_BUCKET = register("charcoal_bucket",
+            Item::new,
+            new Properties()
+                    .stacksTo(16)
+    );
+
+    // Discs
+    public static final Item MUSIC_DISC_SVALL = register("music_disc_svall",
+            Item::new,
+            new Properties()
+                    .stacksTo(1)
+                    .rarity(Rarity.RARE)
+                    .jukeboxPlayable(LegaciesJukeboxSongs.SVALL)
+    );
+    public static final Item MUSIC_DISC_TASWELL = register("music_disc_taswell",
+            Item::new,
+            new Properties()
+                    .stacksTo(1)
+                    .rarity(Rarity.RARE)
+                    .jukeboxPlayable(LegaciesJukeboxSongs.TASWELL)
+    );
+    public static final Item MUSIC_DISC_SHULKER = register("music_disc_shulker",
+            Item::new,
+            new Properties()
+                    .stacksTo(1)
+                    .rarity(Rarity.RARE)
+                    .jukeboxPlayable(LegaciesJukeboxSongs.SHULKER)
+    );
+    public static final Item MUSIC_DISC_TUNDRA = register("music_disc_tundra",
+            Item::new,
+            new Properties()
+                    .stacksTo(1)
+                    .rarity(Rarity.RARE)
+                    .jukeboxPlayable(LegaciesJukeboxSongs.TUNDRA)
+    );
+    public static final Item MUSIC_DISC_FAR_LANDS = register("music_disc_far_lands",
+            Item::new,
+            new Properties()
+                    .stacksTo(1)
+                    .rarity(Rarity.RARE)
+                    .jukeboxPlayable(LegaciesJukeboxSongs.FAR_LANDS)
+    );
+
+    // Food
+    public static final Item ENCHANTED_BEETROOT = register("enchanted_beetroot",
+            Item::new,
+            new Properties()
+                    .stacksTo(64)
+                    .rarity(Rarity.RARE)
+                    .food(LegaciesFoods.ENCHANTED_BEETROOT, LegaciesConsumables.ENCHANTED_BEETROOT)
+                    .component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true)
+    );
+    public static final Item ENCHANTED_BEETROOT_SOUP = register("enchanted_beetroot_soup",
+            Item::new,
+            new Properties()
+                    .stacksTo(1)
+                    .rarity(Rarity.EPIC)
+                    .food(LegaciesFoods.ENCHANTED_BEETROOT_SOUP, LegaciesConsumables.ENCHANTED_BEETROOT_SOUP)
+                    .component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true)
+                    .usingConvertsTo(Items.BOWL)
+    );
+
+    public static void init() {
+    }
+
+    private static @NotNull <T extends Item> T register(String name, @NotNull Function<Properties, Item> function, Item.@NotNull Properties properties) {
+        return (T) Items.registerItem(ResourceKey.create(Registries.ITEM, LegaciesConstants.id(name)), function, properties);
+    }
+
+    public static Function<Properties, Item> createBlockItemWithCustomItemName(Block block) {
+        return properties -> new BlockItem(block, properties.useItemDescriptionPrefix());
+    }
+
+}
+
+/*
+public final class LegaciesItemsOld {
     private LegaciesItems() {}
 
     public static final Item DISC_FRAGMENT_FAR_LANDS = new Item(new Item.Properties().stacksTo(64));
@@ -88,10 +191,6 @@ public final class LegaciesItems {
         registerItemAfter(WARD_CHESTPLATE, WARD_LEGGINGS, "ward_leggings", CreativeModeTabs.COMBAT);
         registerItemAfter(WARD_LEGGINGS, WARD_BOOTS, "ward_boots", CreativeModeTabs.COMBAT);
 
-        FuelRegistry.INSTANCE.add(LegaciesItems.COAL_BUCKET, 19200);
-        FuelRegistry.INSTANCE.add(LegaciesItems.WOODEN_BUCKET, 300);
-        FuelRegistry.INSTANCE.add(LegaciesItems.CHARCOAL_BUCKET, 19200);
-
         registerBlockAfter(Blocks.END_STONE_BRICKS, "cracked_end_stone_bricks", CRACKED_END_STONE_BRICKS, CreativeModeTabs.BUILDING_BLOCKS);
     }
 
@@ -142,3 +241,4 @@ public final class LegaciesItems {
         }
     }
 }
+*/
