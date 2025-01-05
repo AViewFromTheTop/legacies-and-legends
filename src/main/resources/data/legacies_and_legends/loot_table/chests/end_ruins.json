@@ -391,7 +391,7 @@
         },
         {
           "type": "minecraft:loot_table",
-          "value": "legacies_and_legends:books/only_the_beggining",
+          "value": "legacies_and_legends:books/only_the_beginning",
           "weight": 5
         }
       ],
