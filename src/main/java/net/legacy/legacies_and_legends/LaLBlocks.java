@@ -12,7 +12,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import org.jetbrains.annotations.NotNull;
 
-public class LegaciesBlocks {
+public class LaLBlocks {
 
     public static final Block CRACKED_END_STONE_BRICKS = register("cracked_end_stone_bricks",
             Block::new,
@@ -23,7 +23,7 @@ public class LegaciesBlocks {
     }
 
     private static <T extends Block> @NotNull T registerWithoutItem(String path, Function<Properties, T> block, Properties properties) {
-        ResourceLocation id = LegaciesConstants.id(path);
+        ResourceLocation id = LaLConstants.id(path);
         return doRegister(id, makeBlock(block, properties, id));
     }
 

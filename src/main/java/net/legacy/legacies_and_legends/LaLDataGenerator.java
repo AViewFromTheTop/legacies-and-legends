@@ -5,7 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.frozenblock.lib.feature_flag.api.FrozenFeatureFlags;
 import org.jetbrains.annotations.NotNull;
 
-public final class LegaciesDataGenerator implements DataGeneratorEntrypoint {
+public final class LaLDataGenerator implements DataGeneratorEntrypoint {
 
 	@Override
 	public void onInitializeDataGenerator(@NotNull FabricDataGenerator dataGenerator) {
@@ -13,7 +13,7 @@ public final class LegaciesDataGenerator implements DataGeneratorEntrypoint {
 		FrozenFeatureFlags.rebuild();
 		final FabricDataGenerator.Pack pack = dataGenerator.createPack();
 
-		pack.addProvider(LegaciesModelProvider::new);
+		pack.addProvider(LaLModelProvider::new);
 
 	}
 }

@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
 import java.nio.file.Path;
 import java.util.Map;
 
-public class LegaciesConstants {
+public class LaLConstants {
 	public static final String MOD_ID = "legacies_and_legends";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 	public static final ModContainer MOD_CONTAINER = FabricLoader.getInstance().getModContainer(MOD_ID).orElseThrow();
@@ -57,7 +57,7 @@ public class LegaciesConstants {
 
 	@NotNull
 	public static String string(@NotNull String path) {
-		return LegaciesConstants.id(path).toString();
+		return LaLConstants.id(path).toString();
 	}
 
 	public static String safeString(String path) {

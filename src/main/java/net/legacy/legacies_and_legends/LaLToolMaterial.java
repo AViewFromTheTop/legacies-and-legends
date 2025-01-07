@@ -17,11 +17,11 @@ import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.component.Tool;
 import net.minecraft.world.level.block.Blocks;
 
-public record LegaciesToolMaterial(
+public record LaLToolMaterial(
         TagKey<Block> incorrectBlocksForDrops, int durability, float speed, float attackDamageBonus, int enchantmentValue, TagKey<Item> repairItems
 ) {
-    public static final net.minecraft.world.item.ToolMaterial METAL = new net.minecraft.world.item.ToolMaterial(BlockTags.INCORRECT_FOR_IRON_TOOL, 250, 6.0F, 5.0F, 10, LegaciesItemTags.METAL_TOOL_MATERIALS);
-    public static final net.minecraft.world.item.ToolMaterial ANCIENT = new net.minecraft.world.item.ToolMaterial(BlockTags.INCORRECT_FOR_DIAMOND_TOOL, 1561, 8.0F, 3.0F, 25, LegaciesItemTags.ANCIENT_TOOL_MATERIALS);
+    public static final net.minecraft.world.item.ToolMaterial METAL = new net.minecraft.world.item.ToolMaterial(BlockTags.INCORRECT_FOR_IRON_TOOL, 250, 6.0F, 5.0F, 10, LaLItemTags.METAL_TOOL_MATERIALS);
+    public static final net.minecraft.world.item.ToolMaterial ANCIENT = new net.minecraft.world.item.ToolMaterial(BlockTags.INCORRECT_FOR_DIAMOND_TOOL, 1561, 8.0F, 3.0F, 25, LaLItemTags.ANCIENT_TOOL_MATERIALS);
 
     private Item.Properties applyCommonProperties(Item.Properties properties) {
         return properties.durability(this.durability).repairable(this.repairItems).enchantable(this.enchantmentValue);

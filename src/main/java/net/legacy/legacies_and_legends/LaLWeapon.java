@@ -10,10 +10,8 @@ import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 
-import java.util.List;
-
-public class LegaciesWeapon extends Item {
-    public LegaciesWeapon(ToolMaterial material, float attackDamage, float attackSpeed, Item.Properties properties) {
+public class LaLWeapon extends Item {
+    public LaLWeapon(ToolMaterial material, float attackDamage, float attackSpeed, Item.Properties properties) {
         super(material.applySwordProperties(properties, attackDamage, attackSpeed));
     }
 

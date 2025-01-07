@@ -5,7 +5,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.equipment.EquipmentAsset;
 
-public interface LegaciesEquipmentAssets {
+public interface LaLEquipmentAssets {
     ResourceKey<? extends Registry<EquipmentAsset>> ROOT_ID = ResourceKey.createRegistryKey(ResourceLocation.withDefaultNamespace("equipment_asset"));
     ResourceKey<EquipmentAsset> DUNGEON = createId("dungeon");
     ResourceKey<EquipmentAsset> FORTRESS = createId("fortress");

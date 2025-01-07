@@ -19,11 +19,11 @@
           "net.legacy.legacies_and_legends.LegaciesAndLegends"
 		],
 		"fabric-datagen": [
-			"net.legacy.legacies_and_legends.LegaciesDataGenerator"
+			"net.legacy.legacies_and_legends.LaLDataGenerator"
 		]
 	},
 	"mixins": [
-		"legacies.mixins.json"
+		"legacies_and_legends.mixins.json"
 	],
 	"depends": {
 		"minecraft": ">=1.21.3 <=1.21.4",

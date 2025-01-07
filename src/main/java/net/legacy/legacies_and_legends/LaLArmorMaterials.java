@@ -6,14 +6,14 @@ import net.minecraft.world.item.equipment.ArmorType;
 
 import java.util.EnumMap;
 
-public interface LegaciesArmorMaterials {
+public interface LaLArmorMaterials {
     net.minecraft.world.item.equipment.ArmorMaterial DUNGEON = new net.minecraft.world.item.equipment.ArmorMaterial(27, Util.make(new EnumMap(ArmorType.class), enumMap -> {
         enumMap.put(ArmorType.BOOTS, 2);
         enumMap.put(ArmorType.LEGGINGS, 5);
         enumMap.put(ArmorType.CHESTPLATE, 6);
         enumMap.put(ArmorType.HELMET, 3);
         enumMap.put(ArmorType.BODY, 5);
-    }), 10, SoundEvents.ARMOR_EQUIP_DIAMOND, 0.0F, 0.1F, LegaciesItemTags.REPAIRS_DUNGEON_ARMOR, LegaciesEquipmentAssets.DUNGEON);
+    }), 10, SoundEvents.ARMOR_EQUIP_DIAMOND, 0.0F, 0.1F, LaLItemTags.REPAIRS_DUNGEON_ARMOR, LaLEquipmentAssets.DUNGEON);
 
     net.minecraft.world.item.equipment.ArmorMaterial FORTRESS = new net.minecraft.world.item.equipment.ArmorMaterial(23, Util.make(new EnumMap(ArmorType.class), enumMap -> {
         enumMap.put(ArmorType.BOOTS, 3);
@@ -21,7 +21,7 @@ public interface LegaciesArmorMaterials {
         enumMap.put(ArmorType.CHESTPLATE, 6);
         enumMap.put(ArmorType.HELMET, 3);
         enumMap.put(ArmorType.BODY, 7);
-    }), 16, SoundEvents.ARMOR_EQUIP_DIAMOND, 0.0F, 0.1F, LegaciesItemTags.REPAIRS_FORTRESS_ARMOR, LegaciesEquipmentAssets.FORTRESS);
+    }), 16, SoundEvents.ARMOR_EQUIP_DIAMOND, 0.0F, 0.1F, LaLItemTags.REPAIRS_FORTRESS_ARMOR, LaLEquipmentAssets.FORTRESS);
 
     net.minecraft.world.item.equipment.ArmorMaterial WARD = new net.minecraft.world.item.equipment.ArmorMaterial(41, Util.make(new EnumMap(ArmorType.class), enumMap -> {
         enumMap.put(ArmorType.BOOTS, 3);
@@ -29,7 +29,7 @@ public interface LegaciesArmorMaterials {
         enumMap.put(ArmorType.CHESTPLATE, 7);
         enumMap.put(ArmorType.HELMET, 4);
         enumMap.put(ArmorType.BODY, 11);
-    }), 8, SoundEvents.ARMOR_EQUIP_DIAMOND, 1.0F, 0.2F, LegaciesItemTags.REPAIRS_WARD_ARMOR, LegaciesEquipmentAssets.WARD);
+    }), 8, SoundEvents.ARMOR_EQUIP_DIAMOND, 1.0F, 0.2F, LaLItemTags.REPAIRS_WARD_ARMOR, LaLEquipmentAssets.WARD);
 }
 
 

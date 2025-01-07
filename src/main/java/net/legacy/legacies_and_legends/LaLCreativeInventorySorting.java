@@ -6,44 +6,44 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 
-public class LegaciesCreativeInventorySorting {
+public class LaLCreativeInventorySorting {
 
 	public static void init() {
-		addAfterInToolsAndUtilities(Items.MUSIC_DISC_FAR, LegaciesItems.MUSIC_DISC_SVALL);
-		addAfterInToolsAndUtilities(Items.MUSIC_DISC_11, LegaciesItems.MUSIC_DISC_TASWELL);
-		addAfterInToolsAndUtilities(Items.MUSIC_DISC_OTHERSIDE, LegaciesItems.MUSIC_DISC_SHULKER);
-		addAfterInToolsAndUtilities(Items.MUSIC_DISC_CREATOR_MUSIC_BOX, LegaciesItems.MUSIC_DISC_TUNDRA);
-		addAfterInToolsAndUtilities(Items.MUSIC_DISC_RELIC, LegaciesItems.MUSIC_DISC_FAR_LANDS);
+		addAfterInToolsAndUtilities(Items.MUSIC_DISC_FAR, LaLItems.MUSIC_DISC_SVALL);
+		addAfterInToolsAndUtilities(Items.MUSIC_DISC_11, LaLItems.MUSIC_DISC_TASWELL);
+		addAfterInToolsAndUtilities(Items.MUSIC_DISC_OTHERSIDE, LaLItems.MUSIC_DISC_SHULKER);
+		addAfterInToolsAndUtilities(Items.MUSIC_DISC_CREATOR_MUSIC_BOX, LaLItems.MUSIC_DISC_TUNDRA);
+		addAfterInToolsAndUtilities(Items.MUSIC_DISC_RELIC, LaLItems.MUSIC_DISC_FAR_LANDS);
 
-		addAfterInToolsAndUtilities(Items.MILK_BUCKET, LegaciesItems.WOODEN_BUCKET);
-		addAfterInToolsAndUtilities(LegaciesItems.WOODEN_BUCKET, LegaciesItems.COAL_BUCKET);
-		addAfterInToolsAndUtilities(LegaciesItems.COAL_BUCKET, LegaciesItems.CHARCOAL_BUCKET);
+		addAfterInToolsAndUtilities(Items.MILK_BUCKET, LaLItems.WOODEN_BUCKET);
+		addAfterInToolsAndUtilities(LaLItems.WOODEN_BUCKET, LaLItems.COAL_BUCKET);
+		addAfterInToolsAndUtilities(LaLItems.COAL_BUCKET, LaLItems.CHARCOAL_BUCKET);
 
-		addAfterInIngredients(Items.HEART_OF_THE_SEA, LegaciesItems.METAL_CHUNK);
-		addAfterInIngredients(LegaciesItems.METAL_CHUNK, LegaciesItems.DISC_FRAGMENT_FAR_LANDS);
+		addAfterInIngredients(Items.HEART_OF_THE_SEA, LaLItems.METAL_CHUNK);
+		addAfterInIngredients(LaLItems.METAL_CHUNK, LaLItems.DISC_FRAGMENT_FAR_LANDS);
 
-		addAfterInFoodAndDrinks(Items.BEETROOT, LegaciesItems.ENCHANTED_BEETROOT);
-		addAfterInFoodAndDrinks(Items.BEETROOT_SOUP, LegaciesItems.ENCHANTED_BEETROOT_SOUP);
+		addAfterInFoodAndDrinks(Items.BEETROOT, LaLItems.ENCHANTED_BEETROOT);
+		addAfterInFoodAndDrinks(Items.BEETROOT_SOUP, LaLItems.ENCHANTED_BEETROOT_SOUP);
 
-		addAfterInCombat(Items.NETHERITE_AXE, LegaciesGearItems.ANCIENT_KNIFE);
-		addAfterInCombat(LegaciesGearItems.ANCIENT_KNIFE, LegaciesGearItems.HOOK);
+		addAfterInCombat(Items.NETHERITE_AXE, LaLGearItems.ANCIENT_KNIFE);
+		addAfterInCombat(LaLGearItems.ANCIENT_KNIFE, LaLGearItems.HOOK);
 
-		addAfterInCombat(Items.NETHERITE_BOOTS, LegaciesGearItems.DUNGEON_HELMET);
-		addAfterInCombat(LegaciesGearItems.DUNGEON_HELMET, LegaciesGearItems.DUNGEON_CHESTPLATE);
-		addAfterInCombat(LegaciesGearItems.DUNGEON_CHESTPLATE, LegaciesGearItems.DUNGEON_LEGGINGS);
-		addAfterInCombat(LegaciesGearItems.DUNGEON_LEGGINGS, LegaciesGearItems.DUNGEON_BOOTS);
+		addAfterInCombat(Items.NETHERITE_BOOTS, LaLGearItems.DUNGEON_HELMET);
+		addAfterInCombat(LaLGearItems.DUNGEON_HELMET, LaLGearItems.DUNGEON_CHESTPLATE);
+		addAfterInCombat(LaLGearItems.DUNGEON_CHESTPLATE, LaLGearItems.DUNGEON_LEGGINGS);
+		addAfterInCombat(LaLGearItems.DUNGEON_LEGGINGS, LaLGearItems.DUNGEON_BOOTS);
 
-		addAfterInCombat(LegaciesGearItems.DUNGEON_BOOTS, LegaciesGearItems.FORTRESS_HELMET);
-		addAfterInCombat(LegaciesGearItems.FORTRESS_HELMET, LegaciesGearItems.FORTRESS_CHESTPLATE);
-		addAfterInCombat(LegaciesGearItems.FORTRESS_CHESTPLATE, LegaciesGearItems.FORTRESS_LEGGINGS);
-		addAfterInCombat(LegaciesGearItems.FORTRESS_LEGGINGS, LegaciesGearItems.FORTRESS_BOOTS);
+		addAfterInCombat(LaLGearItems.DUNGEON_BOOTS, LaLGearItems.FORTRESS_HELMET);
+		addAfterInCombat(LaLGearItems.FORTRESS_HELMET, LaLGearItems.FORTRESS_CHESTPLATE);
+		addAfterInCombat(LaLGearItems.FORTRESS_CHESTPLATE, LaLGearItems.FORTRESS_LEGGINGS);
+		addAfterInCombat(LaLGearItems.FORTRESS_LEGGINGS, LaLGearItems.FORTRESS_BOOTS);
 
-		addAfterInCombat(LegaciesGearItems.FORTRESS_BOOTS, LegaciesGearItems.WARD_HELMET);
-		addAfterInCombat(LegaciesGearItems.WARD_HELMET, LegaciesGearItems.WARD_CHESTPLATE);
-		addAfterInCombat(LegaciesGearItems.WARD_CHESTPLATE, LegaciesGearItems.WARD_LEGGINGS);
-		addAfterInCombat(LegaciesGearItems.WARD_LEGGINGS, LegaciesGearItems.WARD_BOOTS);
+		addAfterInCombat(LaLGearItems.FORTRESS_BOOTS, LaLGearItems.WARD_HELMET);
+		addAfterInCombat(LaLGearItems.WARD_HELMET, LaLGearItems.WARD_CHESTPLATE);
+		addAfterInCombat(LaLGearItems.WARD_CHESTPLATE, LaLGearItems.WARD_LEGGINGS);
+		addAfterInCombat(LaLGearItems.WARD_LEGGINGS, LaLGearItems.WARD_BOOTS);
 
-		addAfterInBuildingBlocks(Blocks.END_STONE_BRICKS, LegaciesBlocks.CRACKED_END_STONE_BRICKS);
+		addAfterInBuildingBlocks(Blocks.END_STONE_BRICKS, LaLBlocks.CRACKED_END_STONE_BRICKS);
 	}
 
 	private static void addAfterInNaturalBlocks(ItemLike comparedItem, ItemLike item) {

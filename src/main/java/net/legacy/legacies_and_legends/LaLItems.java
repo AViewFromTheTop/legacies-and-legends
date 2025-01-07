@@ -10,7 +10,7 @@ import net.minecraft.world.item.Item.Properties;
 
 import java.util.function.Function;
 
-public final class LegaciesItems {
+public final class LaLItems {
 
     // Misc Items
     public static final Item DISC_FRAGMENT_FAR_LANDS = register("disc_fragment_far_lands",
@@ -45,35 +45,35 @@ public final class LegaciesItems {
             new Properties()
                     .stacksTo(1)
                     .rarity(Rarity.RARE)
-                    .jukeboxPlayable(LegaciesJukeboxSongs.SVALL)
+                    .jukeboxPlayable(LaLJukeboxSongs.SVALL)
     );
     public static final Item MUSIC_DISC_TASWELL = register("music_disc_taswell",
             Item::new,
             new Properties()
                     .stacksTo(1)
                     .rarity(Rarity.RARE)
-                    .jukeboxPlayable(LegaciesJukeboxSongs.TASWELL)
+                    .jukeboxPlayable(LaLJukeboxSongs.TASWELL)
     );
     public static final Item MUSIC_DISC_SHULKER = register("music_disc_shulker",
             Item::new,
             new Properties()
                     .stacksTo(1)
                     .rarity(Rarity.RARE)
-                    .jukeboxPlayable(LegaciesJukeboxSongs.SHULKER)
+                    .jukeboxPlayable(LaLJukeboxSongs.SHULKER)
     );
     public static final Item MUSIC_DISC_TUNDRA = register("music_disc_tundra",
             Item::new,
             new Properties()
                     .stacksTo(1)
                     .rarity(Rarity.RARE)
-                    .jukeboxPlayable(LegaciesJukeboxSongs.TUNDRA)
+                    .jukeboxPlayable(LaLJukeboxSongs.TUNDRA)
     );
     public static final Item MUSIC_DISC_FAR_LANDS = register("music_disc_far_lands",
             Item::new,
             new Properties()
                     .stacksTo(1)
                     .rarity(Rarity.RARE)
-                    .jukeboxPlayable(LegaciesJukeboxSongs.FAR_LANDS)
+                    .jukeboxPlayable(LaLJukeboxSongs.FAR_LANDS)
     );
 
     // Food
@@ -82,7 +82,7 @@ public final class LegaciesItems {
             new Properties()
                     .stacksTo(64)
                     .rarity(Rarity.RARE)
-                    .food(LegaciesFoods.ENCHANTED_BEETROOT, LegaciesConsumables.ENCHANTED_BEETROOT)
+                    .food(LaLFoods.ENCHANTED_BEETROOT, LaLConsumables.ENCHANTED_BEETROOT)
                     .component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true)
     );
     public static final Item ENCHANTED_BEETROOT_SOUP = register("enchanted_beetroot_soup",
@@ -90,7 +90,7 @@ public final class LegaciesItems {
             new Properties()
                     .stacksTo(1)
                     .rarity(Rarity.EPIC)
-                    .food(LegaciesFoods.ENCHANTED_BEETROOT_SOUP, LegaciesConsumables.ENCHANTED_BEETROOT_SOUP)
+                    .food(LaLFoods.ENCHANTED_BEETROOT_SOUP, LaLConsumables.ENCHANTED_BEETROOT_SOUP)
                     .component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true)
                     .usingConvertsTo(Items.BOWL)
     );
@@ -99,7 +99,7 @@ public final class LegaciesItems {
     }
 
     private static @NotNull <T extends Item> T register(String name, @NotNull Function<Properties, Item> function, Item.@NotNull Properties properties) {
-        return (T) Items.registerItem(ResourceKey.create(Registries.ITEM, LegaciesConstants.id(name)), function, properties);
+        return (T) Items.registerItem(ResourceKey.create(Registries.ITEM, LaLConstants.id(name)), function, properties);
     }
 
     public static Function<Properties, Item> createBlockItemWithCustomItemName(Block block) {

@@ -2,11 +2,11 @@ package net.legacy.legacies_and_legends;
 
 import net.minecraft.world.food.FoodProperties;
 
-public class LegaciesFoods {
+public class LaLFoods {
     public static final FoodProperties ENCHANTED_BEETROOT;
     public static final FoodProperties ENCHANTED_BEETROOT_SOUP;
 
-    public LegaciesFoods() {
+    public LaLFoods() {
     }
 
     static {

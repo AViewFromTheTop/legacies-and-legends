@@ -10,7 +10,7 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.JukeboxSong;
 import org.jetbrains.annotations.NotNull;
 
-public class LegaciesJukeboxSongs {
+public class LaLJukeboxSongs {
 	public static final ResourceKey<JukeboxSong> SVALL = create("svall");
 	public static final ResourceKey<JukeboxSong> TASWELL = create("taswell");
 	public static final ResourceKey<JukeboxSong> SHULKER = create("shulker");
@@ -21,7 +21,7 @@ public class LegaciesJukeboxSongs {
 	}
 
 	private static @NotNull ResourceKey<JukeboxSong> create(String path) {
-		return ResourceKey.create(Registries.JUKEBOX_SONG, LegaciesConstants.id(path));
+		return ResourceKey.create(Registries.JUKEBOX_SONG, LaLConstants.id(path));
 	}
 
 	private static void register(
@@ -38,10 +38,10 @@ public class LegaciesJukeboxSongs {
 	}
 
 	public static void bootstrap(BootstrapContext<JukeboxSong> context) {
-		register(context, SVALL, LegaciesSounds.MUSIC_DISC_SVALL, 244, 6);
-		register(context, TASWELL, LegaciesSounds.MUSIC_DISC_TASWELL, 600, 11);
-		register(context, SHULKER, LegaciesSounds.MUSIC_DISC_SHULKER, 128, 13);
-		register(context, TUNDRA, LegaciesSounds.MUSIC_DISC_TUNDRA, 118, 5);
-		register(context, FAR_LANDS, LegaciesSounds.MUSIC_DISC_FAR_LANDS, 266, 15);
+		register(context, SVALL, LaLSounds.MUSIC_DISC_SVALL, 244, 6);
+		register(context, TASWELL, LaLSounds.MUSIC_DISC_TASWELL, 600, 11);
+		register(context, SHULKER, LaLSounds.MUSIC_DISC_SHULKER, 128, 13);
+		register(context, TUNDRA, LaLSounds.MUSIC_DISC_TUNDRA, 118, 5);
+		register(context, FAR_LANDS, LaLSounds.MUSIC_DISC_FAR_LANDS, 266, 15);
 	}
 }

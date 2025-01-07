@@ -9,12 +9,12 @@ import net.minecraft.resources.ResourceLocation;
 public class LegaciesAndLegends implements ModInitializer {
 	@Override
 	public void onInitialize() {
-		LegaciesItems.init();
-		LegaciesGearItems.init();
-		LegaciesBlocks.init();
-		LegaciesCreativeInventorySorting.init();
-		LegaciesFuelRegistry.registerFuels();
-		LegaciesSounds.init();
+		LaLItems.init();
+		LaLGearItems.init();
+		LaLBlocks.init();
+		LaLCreativeInventorySorting.init();
+		LaLFuelRegistry.registerFuels();
+		LaLSounds.init();
 	}
 
 	public static ResourceLocation id(String path) {

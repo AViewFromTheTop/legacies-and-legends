@@ -9,7 +9,7 @@ import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
 
 import java.util.List;
 
-public class LegaciesConsumables {
+public class LaLConsumables {
     public static final Consumable ENCHANTED_BEETROOT = defaultFood()
             .onConsume(
                     new ApplyStatusEffectsConsumeEffect(
