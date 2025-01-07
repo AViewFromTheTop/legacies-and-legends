@@ -73,8 +73,8 @@ public final class LaLModelProvider extends FabricModelProvider {
 		generator.generateTrimmableItem(LaLGearItems.WARD_LEGGINGS, LaLEquipmentAssets.WARD, "leggings", false);
 		generator.generateTrimmableItem(LaLGearItems.WARD_BOOTS, LaLEquipmentAssets.WARD, "boots", false);
 
-		generator.generateFlatItem(LaLGearItems.ANCIENT_KNIFE, ModelTemplates.FLAT_ITEM);
-		generator.generateFlatItem(LaLGearItems.HOOK, ModelTemplates.FLAT_ITEM);
+		generator.generateFlatItem(LaLGearItems.ANCIENT_KNIFE, ModelTemplates.FLAT_HANDHELD_ITEM);
+		generator.generateFlatItem(LaLGearItems.HOOK, ModelTemplates.FLAT_HANDHELD_ITEM);
 
 		generator.generateFlatItem(LaLItems.METAL_CHUNK, ModelTemplates.FLAT_ITEM);
 		generator.generateFlatItem(LaLItems.DISC_FRAGMENT_FAR_LANDS, ModelTemplates.FLAT_ITEM);
