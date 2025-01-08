@@ -1,4 +1,4 @@
-package net.legacy.legacies_and_legends;
+package net.legacy.legacies_and_legends.datagen;
 
 import com.mojang.datafixers.util.Pair;
 
@@ -7,6 +7,7 @@ import java.util.Optional;
 import java.util.function.Function;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.legacy.legacies_and_legends.*;
 import net.minecraft.client.data.models.model.ModelTemplate;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
