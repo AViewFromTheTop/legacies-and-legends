@@ -27,15 +27,15 @@ public final class LaLGearItems {
             .stacksTo(1)
             .durability(ArmorType.HELMET.getDurability(27))
     ));
-    public static final ArmorItem DUNGEON_CHESTPLATE = register("dungeon_chestplate", settings -> new ArmorItem(LaLArmorMaterials.DUNGEON, ArmorType.HELMET, settings
+    public static final ArmorItem DUNGEON_CHESTPLATE = register("dungeon_chestplate", settings -> new ArmorItem(LaLArmorMaterials.DUNGEON, ArmorType.CHESTPLATE, settings
             .stacksTo(1)
             .durability(ArmorType.CHESTPLATE.getDurability(27))
     ));
-    public static final ArmorItem DUNGEON_LEGGINGS = register("dungeon_leggings", settings -> new ArmorItem(LaLArmorMaterials.DUNGEON, ArmorType.HELMET, settings
+    public static final ArmorItem DUNGEON_LEGGINGS = register("dungeon_leggings", settings -> new ArmorItem(LaLArmorMaterials.DUNGEON, ArmorType.LEGGINGS, settings
             .stacksTo(1)
             .durability(ArmorType.LEGGINGS.getDurability(27))
     ));
-    public static final ArmorItem DUNGEON_BOOTS = register("dungeon_boots", settings -> new ArmorItem(LaLArmorMaterials.DUNGEON, ArmorType.HELMET, settings
+    public static final ArmorItem DUNGEON_BOOTS = register("dungeon_boots", settings -> new ArmorItem(LaLArmorMaterials.DUNGEON, ArmorType.BOOTS, settings
             .stacksTo(1)
             .durability(ArmorType.BOOTS.getDurability(27))
     ));
@@ -45,17 +45,17 @@ public final class LaLGearItems {
             .durability(ArmorType.HELMET.getDurability(23))
             .fireResistant()
     ));
-    public static final ArmorItem FORTRESS_CHESTPLATE = register("fortress_chestplate", settings -> new ArmorItem(LaLArmorMaterials.FORTRESS, ArmorType.HELMET, settings
+    public static final ArmorItem FORTRESS_CHESTPLATE = register("fortress_chestplate", settings -> new ArmorItem(LaLArmorMaterials.FORTRESS, ArmorType.CHESTPLATE, settings
             .stacksTo(1)
             .durability(ArmorType.CHESTPLATE.getDurability(23))
             .fireResistant()
     ));
-    public static final ArmorItem FORTRESS_LEGGINGS = register("fortress_leggings", settings -> new ArmorItem(LaLArmorMaterials.FORTRESS, ArmorType.HELMET, settings
+    public static final ArmorItem FORTRESS_LEGGINGS = register("fortress_leggings", settings -> new ArmorItem(LaLArmorMaterials.FORTRESS, ArmorType.LEGGINGS, settings
             .stacksTo(1)
             .durability(ArmorType.LEGGINGS.getDurability(23))
             .fireResistant()
     ));
-    public static final ArmorItem FORTRESS_BOOTS = register("fortress_boots", settings -> new ArmorItem(LaLArmorMaterials.FORTRESS, ArmorType.HELMET, settings
+    public static final ArmorItem FORTRESS_BOOTS = register("fortress_boots", settings -> new ArmorItem(LaLArmorMaterials.FORTRESS, ArmorType.BOOTS, settings
             .stacksTo(1)
             .durability(ArmorType.BOOTS.getDurability(23))
             .fireResistant()
@@ -65,15 +65,15 @@ public final class LaLGearItems {
             .stacksTo(1)
             .durability(ArmorType.HELMET.getDurability(41))
     ));
-    public static final ArmorItem WARD_CHESTPLATE = register("ward_chestplate", settings -> new ArmorItem(LaLArmorMaterials.WARD, ArmorType.HELMET, settings
+    public static final ArmorItem WARD_CHESTPLATE = register("ward_chestplate", settings -> new ArmorItem(LaLArmorMaterials.WARD, ArmorType.CHESTPLATE, settings
             .stacksTo(1)
             .durability(ArmorType.CHESTPLATE.getDurability(41))
     ));
-    public static final ArmorItem WARD_LEGGINGS = register("ward_leggings", settings -> new ArmorItem(LaLArmorMaterials.WARD, ArmorType.HELMET, settings
+    public static final ArmorItem WARD_LEGGINGS = register("ward_leggings", settings -> new ArmorItem(LaLArmorMaterials.WARD, ArmorType.LEGGINGS, settings
             .stacksTo(1)
             .durability(ArmorType.LEGGINGS.getDurability(41))
     ));
-    public static final ArmorItem WARD_BOOTS = register("ward_boots", settings -> new ArmorItem(LaLArmorMaterials.WARD, ArmorType.HELMET, settings
+    public static final ArmorItem WARD_BOOTS = register("ward_boots", settings -> new ArmorItem(LaLArmorMaterials.WARD, ArmorType.BOOTS, settings
             .stacksTo(1)
             .durability(ArmorType.BOOTS.getDurability(41))
     ));
