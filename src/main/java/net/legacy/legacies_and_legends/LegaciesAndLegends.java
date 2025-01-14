@@ -25,7 +25,7 @@ public class LegaciesAndLegends implements ModInitializer {
 		LaLSounds.init();
 
 		ResourceManagerHelper.registerBuiltinResourcePack(
-				ResourceLocation.fromNamespaceAndPath(LaLConstants.MOD_ID, "progression_reborn_asset_overrides"), modContainer.get(),
+				ResourceLocation.fromNamespaceAndPath(LaLConstants.MOD_ID, "legacies_and_legends_asset_overrides"), modContainer.get(),
 				Component.translatable("pack.legacies_and_legends.legacies_and_legends_asset_overrides"),
 				ResourcePackActivationType.ALWAYS_ENABLED
 		);
