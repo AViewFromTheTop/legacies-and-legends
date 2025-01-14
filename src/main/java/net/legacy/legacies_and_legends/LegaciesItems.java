@@ -1,8 +1,6 @@
 package net.legacy.legacies_and_legends;
 
 import net.fabricmc.fabric.api.registry.FuelRegistry;
-import net.frozenblock.lib.item.api.FrozenCreativeTabs;
-import net.frozenblock.lib.shadow.org.jetbrains.annotations.NotNull;
 import net.minecraft.core.Registry;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -109,7 +107,7 @@ public final class LegaciesItems {
     @SafeVarargs
     private static void registerBlockItemAfter(ItemLike comparedItem, String path, Block block, CreativeModeTab.TabVisibility visibility, ResourceKey<CreativeModeTab>... tabs) {
         actualRegisterBlockItem(path, block);
-        FrozenCreativeTabs.addAfter(comparedItem, block, visibility, tabs);
+        LegaciesCreativeTabs.addAfter(comparedItem, block, visibility, tabs);
     }
 
     private static void actualRegisterBlock(String path, Block block) {
@@ -126,17 +124,17 @@ public final class LegaciesItems {
 
 
     @SafeVarargs
-    private static void registerItemAfter(@NotNull ItemLike comparedItem, @NotNull Item item, @NotNull String path, @NotNull ResourceKey<CreativeModeTab>... tabs) {
+    private static void registerItemAfter(@LegaciesNotNull ItemLike comparedItem, @LegaciesNotNull Item item, @LegaciesNotNull String path, @LegaciesNotNull ResourceKey<CreativeModeTab>... tabs) {
         registerItemAfter(comparedItem, item, path, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS, tabs);
     }
 
     @SafeVarargs
-    private static void registerItemAfter(@NotNull ItemLike comparedItem, @NotNull Item item, @NotNull String path, @NotNull CreativeModeTab.TabVisibility tabVisibility, @NotNull ResourceKey<CreativeModeTab>... tabs) {
+    private static void registerItemAfter(@LegaciesNotNull ItemLike comparedItem, @LegaciesNotNull Item item, @LegaciesNotNull String path, @LegaciesNotNull CreativeModeTab.TabVisibility tabVisibility, @LegaciesNotNull ResourceKey<CreativeModeTab>... tabs) {
         actualRegister(item, path);
-        FrozenCreativeTabs.addAfter(comparedItem, item, tabVisibility, tabs);
+        LegaciesCreativeTabs.addAfter(comparedItem, item, tabVisibility, tabs);
     }
 
-    private static void actualRegister(@NotNull Item item, @NotNull String path) {
+    private static void actualRegister(@LegaciesNotNull Item item, @LegaciesNotNull String path) {
         if (BuiltInRegistries.ITEM.getOptional(LegaciesConstants.id(path)).isEmpty()) {
             Registry.register(BuiltInRegistries.ITEM, LegaciesConstants.id(path), item);
         }
