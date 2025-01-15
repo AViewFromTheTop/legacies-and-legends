@@ -87,7 +87,22 @@ public final class LaLItems {
 
 
     // Sherds
-    public static final Item CREAK_POTTERY_SHERD = registerSherd("creak_pottery_sherd",
+    public static final Item DUSK_POTTERY_SHERD = registerSherd("dusk_pottery_sherd",
+            Item::new,
+            new Properties()
+                    .rarity(Rarity.UNCOMMON)
+    );
+    public static final Item HARVEST_POTTERY_SHERD = registerSherd("harvest_pottery_sherd",
+            Item::new,
+            new Properties()
+                    .rarity(Rarity.UNCOMMON)
+    );
+    public static final Item VERDANT_POTTERY_SHERD = registerSherd("verdant_pottery_sherd",
+            Item::new,
+            new Properties()
+                    .rarity(Rarity.UNCOMMON)
+    );
+    public static final Item FORAGER_POTTERY_SHERD = registerSherd("forager_pottery_sherd",
             Item::new,
             new Properties()
                     .rarity(Rarity.UNCOMMON)

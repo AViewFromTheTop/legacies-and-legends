@@ -6,37 +6,37 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "legacies_and_legends:verdant_pottery_sherd"
+          "name": "legacies_and_legends:dusk_pottery_sherd"
         },
         {
           "type": "minecraft:item",
-          "name": "legacies_and_legends:forager_pottery_sherd"
+          "name": "legacies_and_legends:harvest_pottery_sherd"
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:shelter_pottery_sherd"
+          "name": "minecraft:shears"
         },
         {
           "type": "minecraft:item",
-          "name": "legacies_and_legends:knife"
+          "name": "minecraft:emerald"
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:iron_hoe"
+          "name": "minecraft:iron_axe"
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:emerald",
+          "name": "minecraft:resin_clump",
           "weight": 2
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:wheat",
+          "name": "minecraft:seeds",
           "weight": 2
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:stone_shovel",
+          "name": "minecraft:stone_hoe",
           "weight": 2
         },
         {
@@ -53,5 +53,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "legacies_and_legends:archaeology/ruins"
+  "random_sequence": "legacies_and_legends:archaeology/obelisk"
 }

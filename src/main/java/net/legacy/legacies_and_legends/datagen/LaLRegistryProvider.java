@@ -27,7 +27,7 @@ public class LaLRegistryProvider extends FabricDynamicRegistryProvider {
 
     @Override
     public String getName() {
-        return "Progression Reborn";
+        return "Legacies and Legends";
     }
 
     @SuppressWarnings("UnusedReturnValue")

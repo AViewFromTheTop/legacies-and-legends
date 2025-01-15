@@ -19,16 +19,18 @@ public class LegaciesAndLegends implements ModInitializer {
 	public void onInitialize() {
 		Optional<ModContainer> modContainer = FabricLoader.getInstance().getModContainer("legacies_and_legends");
 		try {
-			LaLConfig.main(); // Delete this during Datagen if it doesn't work
+			LaLConfig.main();
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
+
 		LaLItems.init();
 		LaLGearItems.init();
 		LaLBlocks.init();
 		LaLCreativeInventorySorting.init();
-		LaLFuelRegistry.registerFuels();
+		LaLJukeboxSongs.init();
 		LaLSounds.init();
+		LaLFuelRegistry.registerFuels();
 
 		ResourceManagerHelper.registerBuiltinResourcePack(
 				ResourceLocation.fromNamespaceAndPath(LaLConstants.MOD_ID, "legacies_and_legends_asset_overrides"), modContainer.get(),

@@ -11,7 +11,10 @@ import org.jetbrains.annotations.NotNull;
 public class LaLDecoratedPotPatterns implements DecoratedPotPatternRegistryEntrypoint {
     @Override
     public void bootstrap(Registry<DecoratedPotPattern> registry) {
-        register(registry, "creak");
+        register(registry, "dusk");
+        register(registry, "harvest");
+        register(registry, "verdant");
+        register(registry, "forager");
     }
 
     public static void register(@NotNull Registry<DecoratedPotPattern> registry, String sherdName) {

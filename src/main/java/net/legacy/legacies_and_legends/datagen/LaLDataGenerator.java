@@ -3,6 +3,8 @@ package net.legacy.legacies_and_legends.datagen;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.frozenblock.lib.feature_flag.api.FrozenFeatureFlags;
+import net.minecraft.core.RegistrySetBuilder;
+import net.minecraft.core.registries.Registries;
 import org.jetbrains.annotations.NotNull;
 
 public final class LaLDataGenerator implements DataGeneratorEntrypoint {
@@ -16,5 +18,9 @@ public final class LaLDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(LaLModelProvider::new);
 		pack.addProvider(LaLRegistryProvider::new);
 		pack.addProvider(LaLItemTagProvider::new);
+	}
+
+	public void buildRegistry(RegistrySetBuilder registrySetBuilder) {
+		LaLRegistryProvider.buildRegistry(registrySetBuilder);
 	}
 }
