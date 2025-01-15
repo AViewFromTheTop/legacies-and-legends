@@ -16,7 +16,7 @@ public class LaLJukeboxSongs {
 	public static final ResourceKey<JukeboxSong> SHULKER = create("shulker");
 	public static final ResourceKey<JukeboxSong> TUNDRA = create("tundra");
 	public static final ResourceKey<JukeboxSong> FAR_LANDS = create("far_lands");
-	public static final ResourceKey<JukeboxSong> INFINITE_SPOOKY_AMETHYST = create("spooky_infinite_amethyst");
+	public static final ResourceKey<JukeboxSong> INFINITE_SPOOKY_AMETHYST = create("infinite_spooky_amethyst");
 
 	public static void init() {
 	}

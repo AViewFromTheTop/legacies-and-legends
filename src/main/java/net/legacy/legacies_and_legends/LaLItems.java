@@ -1,6 +1,7 @@
 package net.legacy.legacies_and_legends;
 
 import net.frozenblock.lib.shadow.org.jetbrains.annotations.NotNull;
+import net.frozenblock.lib.item.api.sherd.SherdRegistry;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.*;
@@ -14,9 +15,10 @@ public final class LaLItems {
 
     // Misc Items
     public static final Item DISC_FRAGMENT_FAR_LANDS = register("disc_fragment_far_lands",
-            Item::new,
+            DiscFragmentItem::new,
             new Properties()
                     .stacksTo(64)
+                    .rarity(Rarity.UNCOMMON)
     );
     public static final Item METAL_CHUNK = register("metal_chunk",
             Item::new,
@@ -83,6 +85,14 @@ public final class LaLItems {
                     .jukeboxPlayable(LaLJukeboxSongs.INFINITE_SPOOKY_AMETHYST)
     );
 
+
+    // Sherds
+    public static final Item CREAK_POTTERY_SHERD = registerSherd("creak_pottery_sherd",
+            Item::new,
+            new Properties()
+                    .rarity(Rarity.UNCOMMON)
+    );
+
     // Food
     public static final Item ENCHANTED_BEETROOT = register("enchanted_beetroot",
             Item::new,
@@ -112,4 +122,12 @@ public final class LaLItems {
     public static Function<Properties, Item> createBlockItemWithCustomItemName(Block block) {
         return properties -> new BlockItem(block, properties.useItemDescriptionPrefix());
     }
+
+
+    private static @org.jetbrains.annotations.NotNull <T extends Item> T registerSherd(String name, @org.jetbrains.annotations.NotNull Function<Properties, Item> function, Item.@org.jetbrains.annotations.NotNull Properties properties) {
+        T item = (T) Items.registerItem(ResourceKey.create(Registries.ITEM, LaLConstants.id(name)), function, properties);
+        SherdRegistry.register(item, LaLConstants.id(name.replace("sherd", "pattern")));
+        return item;
+    }
+
 }

@@ -55,7 +55,8 @@
     "sounds": [
       {
         "name": "legacies_and_legends:infinite_spooky_amethyst_music_disc",
-        "stream": true
+        "stream": true,
+        "volume": 0.7
       }
     ]
   }
