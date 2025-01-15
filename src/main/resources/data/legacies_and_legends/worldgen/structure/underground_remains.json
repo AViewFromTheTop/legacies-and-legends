@@ -1,10 +1,10 @@
 {
   "type":"minecraft:jigsaw",
-  "biomes": "#legacies_and_legends:has_structure/underground_remnants",
+  "biomes": "#legacies_and_legends:has_structure/underground_remains",
   "step":"surface_structures",
   "spawn_overrides":{},
   "terrain_adaptation":"bury",
-  "start_pool":"legacies_and_legends:underground_remnants",
+  "start_pool":"legacies_and_legends:underground_remains",
   "size":3,
 	"start_height": {
 		"type": "minecraft:uniform",

@@ -1,0 +1,14 @@
+{
+    "structures":[
+       {
+          "structure":"legacies_and_legends:underground_remains",
+          "weight": 1
+       }
+    ],
+    "placement":{
+       "type":"minecraft:random_spread",
+       "salt":8475039,
+       "spacing":30,
+       "separation":10
+    }
+ }

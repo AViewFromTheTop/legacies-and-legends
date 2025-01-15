@@ -3,12 +3,16 @@
        {
           "structure":"legacies_and_legends:deep_ruins",
           "weight":1
+       },
+       {
+         "structure":"legacies_and_legends:sculk_ruins",
+         "weight":1
        }
     ],
     "placement":{
        "type":"minecraft:random_spread",
        "salt":9852201,
-       "spacing":33,
-       "separation":11
+       "spacing":30,
+       "separation":10
     }
  }

@@ -2,10 +2,6 @@
     "structures":[
       {
          "structure":"legacies_and_legends:end_ruins",
-         "weight":3
-      },
-      {
-         "structure":"legacies_and_legends:end_ruins_2",
          "weight":1
       }
     ],
