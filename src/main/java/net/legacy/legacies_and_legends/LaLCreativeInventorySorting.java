@@ -25,8 +25,8 @@ public class LaLCreativeInventorySorting {
 		addAfterInFoodAndDrinks(Items.BEETROOT, LaLItems.ENCHANTED_BEETROOT);
 		addAfterInFoodAndDrinks(Items.BEETROOT_SOUP, LaLItems.ENCHANTED_BEETROOT_SOUP);
 
-		addAfterInCombat(Items.NETHERITE_AXE, LaLGearItems.ANCIENT_KNIFE);
-		addAfterInCombat(LaLGearItems.ANCIENT_KNIFE, LaLGearItems.HOOK);
+		addAfterInCombat(Items.NETHERITE_AXE, LaLGearItems.KNIFE);
+		addAfterInCombat(LaLGearItems.KNIFE, LaLGearItems.HOOK);
 
 		addAfterInCombat(Items.NETHERITE_BOOTS, LaLGearItems.DUNGEON_HELMET);
 		addAfterInCombat(LaLGearItems.DUNGEON_HELMET, LaLGearItems.DUNGEON_CHESTPLATE);

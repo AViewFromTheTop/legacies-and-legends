@@ -54,7 +54,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "legacies_and_legends:ancient_knife"
+          "name": "legacies_and_legends:knife"
         }
       ],
       "rolls": 1.0

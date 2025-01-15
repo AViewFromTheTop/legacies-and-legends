@@ -17,7 +17,7 @@ public final class LaLGearItems {
             .stacksTo(1)
             .durability(750)
     ));
-    public static final LaLWeapon ANCIENT_KNIFE = register("ancient_knife", settings -> new LaLWeapon(LaLToolMaterial.ANCIENT, 2f, -2f, settings
+    public static final LaLWeapon KNIFE = register("knife", settings -> new LaLWeapon(LaLToolMaterial.ANCIENT, 2f, -2f, settings
             .stacksTo(1)
             .durability(3048)
     ));
