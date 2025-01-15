@@ -48,5 +48,15 @@
         "stream": true
       }
     ]
+  },
+  "music_disc.infinite_spooky_amethyst": {
+    "category": "record",
+    "subtitle": "subtitles.music_disc_infinite_spooky_amethyst",
+    "sounds": [
+      {
+        "name": "legacies_and_legends:infinite_spooky_amethyst_music_disc",
+        "stream": true
+      }
+    ]
   }
 }

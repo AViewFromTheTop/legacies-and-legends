@@ -22,6 +22,7 @@
           "net.legacy.legacies_and_legends.datagen.LaLDataGenerator"
 		]
 	},
+	"accessWidener": "legacies_and_legends.accesswidener",
 	"mixins": [
 		"legacies_and_legends.mixins.json"
 	],

@@ -14,6 +14,7 @@ public final class LaLDataGenerator implements DataGeneratorEntrypoint {
 		final FabricDataGenerator.Pack pack = dataGenerator.createPack();
 
 		pack.addProvider(LaLModelProvider::new);
+		pack.addProvider(LaLRegistryProvider::new);
 
 	}
 }

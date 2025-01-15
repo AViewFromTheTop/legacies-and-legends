@@ -9,11 +9,12 @@ import net.minecraft.world.level.block.Blocks;
 public class LaLCreativeInventorySorting {
 
 	public static void init() {
-		addAfterInToolsAndUtilities(Items.MUSIC_DISC_FAR, LaLItems.MUSIC_DISC_SVALL);
-		addAfterInToolsAndUtilities(Items.MUSIC_DISC_11, LaLItems.MUSIC_DISC_TASWELL);
-		addAfterInToolsAndUtilities(Items.MUSIC_DISC_OTHERSIDE, LaLItems.MUSIC_DISC_SHULKER);
-		addAfterInToolsAndUtilities(Items.MUSIC_DISC_CREATOR_MUSIC_BOX, LaLItems.MUSIC_DISC_TUNDRA);
+		addAfterInToolsAndUtilities(Items.MUSIC_DISC_MALL, LaLItems.MUSIC_DISC_SVALL);
+		addAfterInToolsAndUtilities(Items.MUSIC_DISC_MELLOHI, LaLItems.MUSIC_DISC_TASWELL);
+		addAfterInToolsAndUtilities(Items.MUSIC_DISC_PRECIPICE, LaLItems.MUSIC_DISC_SHULKER);
+		addAfterInToolsAndUtilities(Items.MUSIC_DISC_FAR, LaLItems.MUSIC_DISC_TUNDRA);
 		addAfterInToolsAndUtilities(Items.MUSIC_DISC_RELIC, LaLItems.MUSIC_DISC_FAR_LANDS);
+		addAfterInToolsAndUtilities(Items.MUSIC_DISC_CREATOR_MUSIC_BOX, LaLItems.MUSIC_DISC_INFINITE_SPOOKY_AMETHYST);
 
 		addAfterInToolsAndUtilities(Items.MILK_BUCKET, LaLItems.WOODEN_BUCKET);
 		addAfterInToolsAndUtilities(LaLItems.WOODEN_BUCKET, LaLItems.COAL_BUCKET);

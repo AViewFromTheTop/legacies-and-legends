@@ -213,16 +213,6 @@
         "weight": 2
       },
       {
-        "name": "legacy:music/menu/beginning",
-        "stream": true,
-        "weight": 1
-      },
-      {
-        "name": "legacy:music/menu/moog_city",
-        "stream": true,
-        "weight": 1
-      },
-      {
         "name": "music/game/deeper",
         "stream": true,
         "volume": 0.4
@@ -270,7 +260,7 @@
       {
         "name": "music/menu/beginning_2",
         "stream": true,
-        "weight": 3
+        "weight": 4
       },
       {
         "name": "music/menu/floating_trees",
@@ -280,7 +270,7 @@
       {
         "name": "music/menu/moog_city_2",
         "stream": true,
-        "weight": 3
+        "weight": 4
       },
       {
         "name": "music/menu/mutation",

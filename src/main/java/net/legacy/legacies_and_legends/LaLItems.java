@@ -75,6 +75,13 @@ public final class LaLItems {
                     .rarity(Rarity.RARE)
                     .jukeboxPlayable(LaLJukeboxSongs.FAR_LANDS)
     );
+    public static final Item MUSIC_DISC_INFINITE_SPOOKY_AMETHYST = register("music_disc_infinite_spooky_amethyst",
+            Item::new,
+            new Properties()
+                    .stacksTo(1)
+                    .rarity(Rarity.RARE)
+                    .jukeboxPlayable(LaLJukeboxSongs.INFINITE_SPOOKY_AMETHYST)
+    );
 
     // Food
     public static final Item ENCHANTED_BEETROOT = register("enchanted_beetroot",

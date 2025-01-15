@@ -356,16 +356,15 @@
       "bonus_rolls": 0.0,
       "entries": [
         {
-          "type": "minecraft:empty",
-          "weight": 65
-        },
-        {
           "type": "minecraft:item",
-          "name": "minecraft:music_disc_far",
-          "weight": 35
+          "name": "minecraft:music_disc_far"
         }
       ],
-      "rolls": 1.0
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 1.0,
+        "min": 0.0
+      }
     }
   ],
   "random_sequence": "legacies_and_legends:chests/cherry_ruins"

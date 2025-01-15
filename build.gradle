@@ -13,6 +13,22 @@ base {
 repositories {
 	maven { url = "https://api.modrinth.com/maven"}
 	maven { url = 'https://maven.parchmentmc.org' }
+	exclusiveContent {
+		forRepository {
+			maven {
+				url 'https://jitpack.io'
+			}
+		}
+		filter {
+			includeGroup "com.github.ramixin"
+		}
+	}
+}
+
+subprojects {
+	dependencies {
+		modImplementation "com.github.ramixin:mixson:${project.mixson_version}"
+	}
 }
 
 dependencies {
@@ -26,6 +42,8 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
 	include modImplementation("maven.modrinth:frozenlib:${project.frozenlib_version}")
+
+	include modImplementation("com.github.ramixin:mixson:${project.mixson_version}")
 
 }
 
@@ -49,6 +67,10 @@ java {
 
 	sourceCompatibility = JavaVersion.VERSION_21
 	targetCompatibility = JavaVersion.VERSION_21
+}
+
+loom {
+	accessWidenerPath = file("src/main/resources/legacies_and_legends.accesswidener")
 }
 
 // Datagen
