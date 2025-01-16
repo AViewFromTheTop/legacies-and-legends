@@ -31,7 +31,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:seeds",
+          "name": "minecraft:wheat_seeds",
           "weight": 2
         },
         {
