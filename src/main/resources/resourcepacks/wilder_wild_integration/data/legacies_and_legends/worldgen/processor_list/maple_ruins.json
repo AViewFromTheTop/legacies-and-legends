@@ -106,6 +106,58 @@
                 "output_state":{
                    "Name":"minecraft:air"
                 }
+             },
+             {
+                "location_predicate":{
+                   "predicate_type":"minecraft:always_true"
+                },
+                "input_predicate":{
+                   "predicate_type":"minecraft:random_block_match",
+                   "block":"minecraft:crafting_table",
+                   "probability":0.20
+                },
+                "output_state":{
+                   "Name":"minecraft:air"
+                }
+             },
+             {
+                "location_predicate":{
+                   "predicate_type":"minecraft:always_true"
+                },
+                "input_predicate":{
+                   "predicate_type":"minecraft:random_block_match",
+                   "block":"minecraft:fletching_table",
+                   "probability":0.20
+                },
+                "output_state":{
+                   "Name":"minecraft:air"
+                }
+             },
+             {
+                "location_predicate":{
+                   "predicate_type":"minecraft:always_true"
+                },
+                "input_predicate":{
+                   "predicate_type":"minecraft:random_block_match",
+                   "block":"minecraft:crafting_table",
+                   "probability":0.20
+                },
+                "output_state":{
+                   "Name":"minecraft:air"
+                }
+             },
+             {
+                "location_predicate":{
+                   "predicate_type":"minecraft:always_true"
+                },
+                "input_predicate":{
+                   "predicate_type":"minecraft:random_block_match",
+                   "block":"minecraft:fletching_table",
+                   "probability":0.20
+                },
+                "output_state":{
+                   "Name":"minecraft:air"
+                }
              }
           ]
        }

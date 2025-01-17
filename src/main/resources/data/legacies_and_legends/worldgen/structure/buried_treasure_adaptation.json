@@ -4,7 +4,7 @@
   "step":"local_modifications",
   "spawn_overrides":{},
   "terrain_adaptation":"beard_thin",
-  "start_pool":"legacies_and_legends:buried_treasure_adaptation",
+  "start_pool":"legacies_and_legends:adaptation_8",
   "size":3,
   "project_start_to_heightmap": "WORLD_SURFACE",
   "start_height": {

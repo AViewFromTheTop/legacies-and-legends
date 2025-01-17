@@ -4,7 +4,7 @@
   "step":"underground_structures",
   "spawn_overrides":{},
   "terrain_adaptation":"beard_thin",
-  "start_pool":"legacies_and_legends:obelisk_adaptation",
+  "start_pool":"legacies_and_legends:adaptation_12",
   "size":3,
   "project_start_to_heightmap": "WORLD_SURFACE_WG",
   "start_height": {

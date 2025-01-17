@@ -1,5 +1,5 @@
 {
-    "name":"legacies_and_legends:buried_treasure_adaptation",
+    "name":"legacies_and_legends:adaptation_12",
     "fallback":"minecraft:empty",
     "elements":[
        {
@@ -7,8 +7,8 @@
           "element":{
              "element_type":"minecraft:single_pool_element",
              "projection":"rigid",
-             "location":"legacies_and_legends:buried_treasure_adaptation",
-             "processors":"legacies_and_legends:ruins"
+             "location":"legacies_and_legends:adaptation_12",
+             "processors":"minecraft:empty"
           }
        }
     ]

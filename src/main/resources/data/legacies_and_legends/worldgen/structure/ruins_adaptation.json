@@ -1,12 +1,12 @@
 {
   "type":"minecraft:jigsaw",
-  "biomes": "#legacies_and_legends:has_structure/shattered_obelisk",
+  "biomes":"#legacies_and_legends:has_structure/ruins",
   "step":"underground_structures",
   "spawn_overrides":{},
   "terrain_adaptation":"beard_thin",
-  "start_pool":"legacies_and_legends:adaptation_12",
+  "start_pool":"legacies_and_legends:adaptation_8",
   "size":3,
-  "project_start_to_heightmap": "WORLD_SURFACE_WG",
+  "project_start_to_heightmap": "WORLD_SURFACE",
   "start_height": {
     "absolute": 0
   },
