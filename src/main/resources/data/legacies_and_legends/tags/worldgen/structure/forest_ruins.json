@@ -1,0 +1,10 @@
+{
+  "values": [
+    "legacies_and_legends:birch_ruins",
+    "legacies_and_legends:cherry_ruins",
+    {
+      "id": "legacies_and_legends:maple_ruins",
+      "required": false
+    }
+  ]
+}

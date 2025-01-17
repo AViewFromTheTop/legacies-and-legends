@@ -14,6 +14,7 @@ public class LaLConfig {
 
   public static boolean music_and_melody;
   public static boolean reworked_buried_treasure;
+  public static boolean integration_datapacks_enabled;
 
   public LaLConfig() {}
 
@@ -33,6 +34,7 @@ public class LaLConfig {
 
       music_and_melody = config.get("music_and_melody").getAsBoolean();
       reworked_buried_treasure = config.get("reworked_buried_treasure").getAsBoolean();
+      integration_datapacks_enabled = config.get("integration_datapacks_enabled").getAsBoolean();
 
     } catch (final IOException e) {
       System.err.println("An error occurred, delete the legacies and legends config file in your config/ folder and relaunch");
@@ -46,6 +48,7 @@ public class LaLConfig {
     JsonObject configObject = new JsonObject();
     configObject.addProperty("music_and_melody", true);
     configObject.addProperty("reworked_buried_treasure", true);
+    configObject.addProperty("integration_datapacks_enabled", true);
     jsonObjects.add("config", configObject);
 
     return jsonObjects;

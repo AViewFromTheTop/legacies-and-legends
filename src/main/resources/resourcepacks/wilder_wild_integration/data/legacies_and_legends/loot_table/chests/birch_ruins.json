@@ -56,7 +56,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:cherry_planks",
+          "name": "minecraft:birch_planks",
           "weight": 6
         },
         {
@@ -72,7 +72,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:cherry_log",
+          "name": "minecraft:birch_log",
           "weight": 3
         },
         {
@@ -184,7 +184,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:cherry_sapling",
+          "name": "minecraft:birch_sapling",
           "weight": 3
         },
         {
@@ -200,8 +200,24 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:pink_petals",
-          "weight": 6
+          "name": "minecraft:dandelion",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 3.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "wilderwild:seeding_dandelion",
+          "weight": 3
         },
         {
           "type": "minecraft:item",
@@ -367,5 +383,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "legacies_and_legends:chests/cherry_ruins"
+  "random_sequence": "legacies_and_legends:chests/birch_ruins"
 }

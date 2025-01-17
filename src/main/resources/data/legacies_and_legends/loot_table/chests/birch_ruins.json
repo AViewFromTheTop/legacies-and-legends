@@ -56,7 +56,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:cherry_planks",
+          "name": "minecraft:birch_planks",
           "weight": 6
         },
         {
@@ -72,7 +72,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:cherry_log",
+          "name": "minecraft:birch_log",
           "weight": 3
         },
         {
@@ -184,7 +184,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:cherry_sapling",
+          "name": "minecraft:birch_sapling",
           "weight": 3
         },
         {
@@ -200,7 +200,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:pink_petals",
+          "name": "minecraft:dandelion",
           "weight": 6
         },
         {
@@ -367,5 +367,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "legacies_and_legends:chests/cherry_ruins"
+  "random_sequence": "legacies_and_legends:chests/birch_ruins"
 }

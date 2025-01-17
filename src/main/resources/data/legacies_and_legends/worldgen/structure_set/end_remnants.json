@@ -1,8 +1,12 @@
 {
     "structures":[
       {
-         "structure":"legacies_and_legends:end_remnants",
-         "weight":1
+        "structure":"legacies_and_legends:end_remnants",
+        "weight":2
+      },
+      {
+        "structure":"legacies_and_legends:end_remnants_surface",
+        "weight":1
       }
     ],
     "placement":{
