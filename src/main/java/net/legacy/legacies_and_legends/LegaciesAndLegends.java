@@ -19,7 +19,7 @@ public class LegaciesAndLegends implements ModInitializer {
 	public void onInitialize() {
 		Optional<ModContainer> modContainer = FabricLoader.getInstance().getModContainer("legacies_and_legends");
 		try {
-			LaLConfig.main();
+			LaLConfig.main(); // Delete during datagen
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
