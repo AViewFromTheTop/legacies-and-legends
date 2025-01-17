@@ -358,7 +358,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:iron_sword",
+          "name": "minecraft:iron_axe",
           "weight": 3
         }
       ],
