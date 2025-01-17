@@ -52,7 +52,7 @@ public class LegaciesAndLegends implements ModInitializer {
 					ResourcePackActivationType.ALWAYS_ENABLED
 			);
 		}
-		if (FabricLoader.getInstance().isModLoaded("wilderwild") && LaLConfig.integration_datapacks_enabled) {
+		if (FabricLoader.getInstance().isModLoaded("wilderwild") && LaLConfig.mod_integration_datapacks) {
 			ResourceManagerHelper.registerBuiltinResourcePack(
 					ResourceLocation.fromNamespaceAndPath(LaLConstants.MOD_ID, "wilder_wild_integration"), modContainer.get(),
 					Component.translatable("pack.legacies_and_legends.wilder_wild_integration"),
