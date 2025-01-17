@@ -9,7 +9,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:resin_clump",
+          "name": "minecraft:resin_brick",
           "weight": 5,
           "functions": [
             {
