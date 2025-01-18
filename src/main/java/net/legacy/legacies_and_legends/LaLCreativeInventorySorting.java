@@ -23,6 +23,11 @@ public class LaLCreativeInventorySorting {
 		addAfterInIngredients(Items.HEART_OF_THE_SEA, LaLItems.METAL_CHUNK);
 		addAfterInIngredients(LaLItems.METAL_CHUNK, LaLItems.DISC_FRAGMENT_FAR_LANDS);
 
+		addAfterInIngredients(Items.DANGER_POTTERY_SHERD, LaLItems.DUSK_POTTERY_SHERD);
+		addAfterInIngredients(Items.FLOW_POTTERY_SHERD, LaLItems.FORAGER_POTTERY_SHERD);
+		addAfterInIngredients(Items.HEARTBREAK_POTTERY_SHERD, LaLItems.HARVEST_POTTERY_SHERD);
+		addAfterInIngredients(Items.SNORT_POTTERY_SHERD, LaLItems.VERDANT_POTTERY_SHERD);
+
 		addAfterInFoodAndDrinks(Items.BEETROOT, LaLItems.ENCHANTED_BEETROOT);
 		addAfterInFoodAndDrinks(Items.BEETROOT_SOUP, LaLItems.ENCHANTED_BEETROOT_SOUP);
 

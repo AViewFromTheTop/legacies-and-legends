@@ -1,4 +1,5 @@
 {
+  "replace": false,
   "values": [
     "minecraft:swift_sneak",
     "legacies_and_legends:tangled"

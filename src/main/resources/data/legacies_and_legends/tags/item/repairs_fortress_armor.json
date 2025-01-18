@@ -1,5 +1,7 @@
 {
+  "replace": false,
   "values": [
-    "minecraft:blaze_rod"
+    "#minecraft:repairs_netherite_armor",
+    "minecraft:netherite_scrap"
   ]
 }
