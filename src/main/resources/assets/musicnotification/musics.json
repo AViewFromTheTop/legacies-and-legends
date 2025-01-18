@@ -151,17 +151,17 @@
     },
     "legacies_and_legends:sounds/svall_music_disc": {
         "album": "Legacies",
-        "author": "Svall",
-        "title": "Sigma_"
+        "author": "Sigma_",
+        "title": "Svall"
     },
     "legacies_and_legends:sounds/taswell_music_disc": {
         "album": "Legacies",
-        "author": "Taswell",
-        "title": "bouncytorch"
+        "author": "bouncytorch",
+        "title": "Taswell"
     },
     "legacies_and_legends:sounds/tundra_music_disc": {
         "album": "Legacies",
-        "author": "Tundra (Music Disc)",
-        "title": "T_en_M"
+        "author": "T_en_M",
+        "title": "Tundra"
     }
 }
