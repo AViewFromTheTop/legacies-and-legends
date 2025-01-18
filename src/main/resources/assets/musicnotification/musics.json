@@ -1,32 +1,32 @@
 {
     "legacies_and_legends:sounds/far_lands_music_disc": {
         "album": "Legacies",
-        "title": "Far Lands",
-        "author": "Steelman"
+        "author": "Steelman",
+        "title": "Far Lands"
     },
     "legacies_and_legends:sounds/shulker_music_disc": {
         "album": "Legacies",
-        "title": "Shulker",
-        "author": "T_en_M"
+        "author": "T_en_M",
+        "title": "Shulker"
     },
     "legacies_and_legends:sounds/svall_music_disc": {
         "album": "Legacies",
-        "title": "Svall",
-        "author": "Soul_"
+        "author": "Sigma_",
+        "title": "Svall"
     },
     "legacies_and_legends:sounds/taswell_music_disc": {
         "album": "Legacies",
-        "title": "Taswell",
-        "author": "bouncytorch"
+        "author": "bouncytorch",
+        "title": "Taswell"
     },
     "legacies_and_legends:sounds/tundra_music_disc": {
         "album": "Legacies",
-        "title": "Tundra",
-        "author": "T_en_M"
+        "author": "T_en_M",
+        "title": "Tundra"
     },
     "legacies_and_legends:sounds/infinite_spooky_amethyst_music_disc": {
         "album": "Legacies",
-        "title": "Infinite Spooky Amethyst",
-        "author": "Jukio Kallio"
+        "author": "Jukio Kallio",
+        "title": "Infinite Spooky Amethyst"
     }
 }
