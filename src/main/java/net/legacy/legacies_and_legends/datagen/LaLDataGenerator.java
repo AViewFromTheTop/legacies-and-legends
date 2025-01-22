@@ -4,7 +4,6 @@ import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.frozenblock.lib.feature_flag.api.FrozenFeatureFlags;
 import net.minecraft.core.RegistrySetBuilder;
-import net.minecraft.core.registries.Registries;
 import org.jetbrains.annotations.NotNull;
 
 public final class LaLDataGenerator implements DataGeneratorEntrypoint {
