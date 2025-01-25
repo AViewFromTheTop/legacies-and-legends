@@ -199,30 +199,6 @@
         }
       ],
       "rolls": 1.0
-    },
-    {
-      "bonus_rolls": 0.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 8
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_randomly",
-              "options": [
-                "minecraft:flame",
-                "minecraft:fire_aspect"
-              ]
-            }
-          ],
-          "name": "minecraft:book",
-          "weight": 1
-        }
-      ],
-      "rolls": 1.0
     }
   ],
   "random_sequence": "minecraft:chests/nether_bridge"

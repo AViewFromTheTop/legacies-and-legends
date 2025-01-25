@@ -88,21 +88,6 @@
           "name": "minecraft:nautilus_shell"
         },
         {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_randomly",
-              "options": [
-                "minecraft:luck_of_the_sea",
-                "minecraft:frost_walker",
-                "minecraft:respiration"
-              ]
-            }
-          ],
-          "name": "minecraft:book",
-          "weight": 1
-        },
-        {
           "type": "minecraft:loot_table",
           "conditions": [
             {
