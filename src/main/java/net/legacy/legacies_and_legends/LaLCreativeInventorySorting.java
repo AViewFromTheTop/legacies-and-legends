@@ -49,7 +49,6 @@ public class LaLCreativeInventorySorting {
 		addAfterInCombat(LaLGearItems.WARD_CHESTPLATE, LaLGearItems.WARD_LEGGINGS);
 		addAfterInCombat(LaLGearItems.WARD_LEGGINGS, LaLGearItems.WARD_BOOTS);
 
-		addAfterInBuildingBlocks(Blocks.END_STONE_BRICKS, LaLBlocks.CRACKED_END_STONE_BRICKS);
 	}
 
 	private static void addAfterInNaturalBlocks(ItemLike comparedItem, ItemLike item) {

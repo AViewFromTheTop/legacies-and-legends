@@ -65,7 +65,6 @@ public final class LaLModelProvider extends FabricModelProvider {
 
 	@Override
 	public void generateBlockStateModels(@NotNull BlockModelGenerators generator) {
-		generator.createTrivialCube(LaLBlocks.CRACKED_END_STONE_BRICKS);
 	}
 
 	@Override
