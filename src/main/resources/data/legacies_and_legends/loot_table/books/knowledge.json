@@ -12,7 +12,7 @@
                     "function": "minecraft:set_components",
                     "components": {
                       "minecraft:written_book_content": {
-                        "title": "The Library",
+                        "title": "Knowledge",
                         "author": "Minecraft",
                         "pages": [
                           "{\"text\":\"They have outposts across the world. They have great mansions hidden in the depths of the forests. They have a great Citadel, in lands far away.\n\nThey hold the last remains of forgotten knowledge. They know of the Strongholds. They know of the\"}",
