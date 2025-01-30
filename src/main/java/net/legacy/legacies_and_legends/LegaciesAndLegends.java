@@ -2,7 +2,6 @@ package net.legacy.legacies_and_legends;
 
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.ArmorMaterial;
 
 /**
  * by Rebel459
