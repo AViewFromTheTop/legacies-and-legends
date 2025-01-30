@@ -363,8 +363,7 @@
             {
               "function": "minecraft:enchant_randomly",
               "options": [
-                "legacies_and_legends:tangled",
-                "minecraft:thorns"
+                "legacies_and_legends:tangled"
               ]
             }
           ],
