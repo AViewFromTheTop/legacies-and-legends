@@ -61,7 +61,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "legacies_and_legends:cracked_end_stone_bricks",
+          "name": "minecraft:end_stone_bricks",
           "weight": 5
         },
         {
