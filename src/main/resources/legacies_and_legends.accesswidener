@@ -6,3 +6,4 @@ accessible method net/minecraft/world/item/equipment/trim/TrimMaterials register
 accessible method net/minecraft/world/item/equipment/trim/TrimMaterials register (Lnet/minecraft/data/worldgen/BootstrapContext;Lnet/minecraft/resources/ResourceKey;Lnet/minecraft/world/item/Item;Lnet/minecraft/network/chat/Style;Ljava/util/Map;)V
 accessible method net/minecraft/world/item/SmithingTemplateItem createNetheriteUpgradeIconList ()Ljava/util/List;
 accessible method net/minecraft/world/item/SmithingTemplateItem createNetheriteUpgradeMaterialList ()Ljava/util/List;
+accessible class net/minecraft/world/item/enchantment/ItemEnchantments

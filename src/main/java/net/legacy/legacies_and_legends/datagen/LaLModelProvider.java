@@ -69,20 +69,7 @@ public final class LaLModelProvider extends FabricModelProvider {
 
 	@Override
 	public void generateItemModels(@NotNull ItemModelGenerators generator) {
-		generator.generateTrimmableItem(LaLGearItems.DUNGEON_HELMET, LaLEquipmentAssets.DUNGEON, "helmet", false);
-		generator.generateTrimmableItem(LaLGearItems.DUNGEON_CHESTPLATE, LaLEquipmentAssets.DUNGEON, "chestplate", false);
-		generator.generateTrimmableItem(LaLGearItems.DUNGEON_LEGGINGS, LaLEquipmentAssets.DUNGEON, "leggings", false);
-		generator.generateTrimmableItem(LaLGearItems.DUNGEON_BOOTS, LaLEquipmentAssets.DUNGEON, "boots", false);
-
-		generator.generateTrimmableItem(LaLGearItems.FORTRESS_HELMET, LaLEquipmentAssets.FORTRESS, "helmet", false);
-		generator.generateTrimmableItem(LaLGearItems.FORTRESS_CHESTPLATE, LaLEquipmentAssets.FORTRESS, "chestplate", false);
-		generator.generateTrimmableItem(LaLGearItems.FORTRESS_LEGGINGS, LaLEquipmentAssets.FORTRESS, "leggings", false);
-		generator.generateTrimmableItem(LaLGearItems.FORTRESS_BOOTS, LaLEquipmentAssets.FORTRESS, "boots", false);
-
-		generator.generateTrimmableItem(LaLGearItems.WARD_HELMET, LaLEquipmentAssets.WARD, "helmet", false);
-		generator.generateTrimmableItem(LaLGearItems.WARD_CHESTPLATE, LaLEquipmentAssets.WARD, "chestplate", false);
-		generator.generateTrimmableItem(LaLGearItems.WARD_LEGGINGS, LaLEquipmentAssets.WARD, "leggings", false);
-		generator.generateTrimmableItem(LaLGearItems.WARD_BOOTS, LaLEquipmentAssets.WARD, "boots", false);
+		//generator.generateTrimmableItem(LaLGearItems.DUNGEON_HELMET, LaLEquipmentAssets.DUNGEON, "helmet", false);
 
 		generator.generateFlatItem(LaLGearItems.KNIFE, ModelTemplates.FLAT_HANDHELD_ITEM);
 		generator.generateFlatItem(LaLGearItems.HOOK, ModelTemplates.FLAT_HANDHELD_ITEM);
@@ -132,20 +119,6 @@ public final class LaLModelProvider extends FabricModelProvider {
 		this.registerArmorTrims(generator, Items.NETHERITE_LEGGINGS, EquipmentAssets.NETHERITE, "leggings", false);
 		this.registerArmorTrims(generator, Items.NETHERITE_BOOTS, EquipmentAssets.NETHERITE, "boots", false);
 
-		this.registerArmorTrims(generator, LaLGearItems.DUNGEON_HELMET, LaLEquipmentAssets.DUNGEON, "helmet", false);
-		this.registerArmorTrims(generator, LaLGearItems.DUNGEON_CHESTPLATE, LaLEquipmentAssets.DUNGEON, "chestplate", false);
-		this.registerArmorTrims(generator, LaLGearItems.DUNGEON_LEGGINGS, LaLEquipmentAssets.DUNGEON, "leggings", false);
-		this.registerArmorTrims(generator, LaLGearItems.DUNGEON_BOOTS, LaLEquipmentAssets.DUNGEON, "boots", false);
-
-		this.registerArmorTrims(generator, LaLGearItems.FORTRESS_HELMET, LaLEquipmentAssets.FORTRESS, "helmet", false);
-		this.registerArmorTrims(generator, LaLGearItems.FORTRESS_CHESTPLATE, LaLEquipmentAssets.FORTRESS, "chestplate", false);
-		this.registerArmorTrims(generator, LaLGearItems.FORTRESS_LEGGINGS, LaLEquipmentAssets.FORTRESS, "leggings", false);
-		this.registerArmorTrims(generator, LaLGearItems.FORTRESS_BOOTS, LaLEquipmentAssets.FORTRESS, "boots", false);
-
-		this.registerArmorTrims(generator, LaLGearItems.WARD_HELMET, LaLEquipmentAssets.WARD, "helmet", false);
-		this.registerArmorTrims(generator, LaLGearItems.WARD_CHESTPLATE, LaLEquipmentAssets.WARD, "chestplate", false);
-		this.registerArmorTrims(generator, LaLGearItems.WARD_LEGGINGS, LaLEquipmentAssets.WARD, "leggings", false);
-		this.registerArmorTrims(generator, LaLGearItems.WARD_BOOTS, LaLEquipmentAssets.WARD, "boots", false);
 	}
 
 	@Contract("_, _ -> new")

@@ -1,8 +1,21 @@
 package net.legacy.legacies_and_legends;
 
+import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import net.frozenblock.lib.shadow.org.jetbrains.annotations.NotNull;
+import net.minecraft.core.component.DataComponentType;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.EquipmentSlotGroup;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.component.ItemAttributeModifiers;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.item.enchantment.ItemEnchantments;
+import net.minecraft.world.item.equipment.ArmorMaterials;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.core.registries.Registries;
@@ -23,59 +36,14 @@ public final class LaLGearItems {
     ));
 
     // Armor
-    public static final ArmorItem DUNGEON_HELMET = register("dungeon_helmet", settings -> new ArmorItem(LaLArmorMaterials.DUNGEON, ArmorType.HELMET, settings
-            .stacksTo(1)
-            .durability(ArmorType.HELMET.getDurability(27))
-    ));
-    public static final ArmorItem DUNGEON_CHESTPLATE = register("dungeon_chestplate", settings -> new ArmorItem(LaLArmorMaterials.DUNGEON, ArmorType.CHESTPLATE, settings
-            .stacksTo(1)
-            .durability(ArmorType.CHESTPLATE.getDurability(27))
-    ));
-    public static final ArmorItem DUNGEON_LEGGINGS = register("dungeon_leggings", settings -> new ArmorItem(LaLArmorMaterials.DUNGEON, ArmorType.LEGGINGS, settings
-            .stacksTo(1)
-            .durability(ArmorType.LEGGINGS.getDurability(27))
-    ));
-    public static final ArmorItem DUNGEON_BOOTS = register("dungeon_boots", settings -> new ArmorItem(LaLArmorMaterials.DUNGEON, ArmorType.BOOTS, settings
+    public static final ArmorItem WANDERER_BOOTS = register("wanderer_boots", settings -> new ArmorItem(LaLArmorMaterials.DUNGEON, ArmorType.BOOTS, settings
             .stacksTo(1)
             .durability(ArmorType.BOOTS.getDurability(27))
     ));
 
-    public static final ArmorItem FORTRESS_HELMET = register("fortress_helmet", settings -> new ArmorItem(LaLArmorMaterials.FORTRESS, ArmorType.HELMET, settings
-            .stacksTo(1)
-            .durability(ArmorType.HELMET.getDurability(23))
-            .fireResistant()
-    ));
-    public static final ArmorItem FORTRESS_CHESTPLATE = register("fortress_chestplate", settings -> new ArmorItem(LaLArmorMaterials.FORTRESS, ArmorType.CHESTPLATE, settings
-            .stacksTo(1)
-            .durability(ArmorType.CHESTPLATE.getDurability(23))
-            .fireResistant()
-    ));
-    public static final ArmorItem FORTRESS_LEGGINGS = register("fortress_leggings", settings -> new ArmorItem(LaLArmorMaterials.FORTRESS, ArmorType.LEGGINGS, settings
-            .stacksTo(1)
-            .durability(ArmorType.LEGGINGS.getDurability(23))
-            .fireResistant()
-    ));
-    public static final ArmorItem FORTRESS_BOOTS = register("fortress_boots", settings -> new ArmorItem(LaLArmorMaterials.FORTRESS, ArmorType.BOOTS, settings
-            .stacksTo(1)
-            .durability(ArmorType.BOOTS.getDurability(23))
-            .fireResistant()
-    ));
-
-    public static final ArmorItem WARD_HELMET = register("ward_helmet", settings -> new ArmorItem(LaLArmorMaterials.WARD, ArmorType.HELMET, settings
-            .stacksTo(1)
-            .durability(ArmorType.HELMET.getDurability(41))
-    ));
-    public static final ArmorItem WARD_CHESTPLATE = register("ward_chestplate", settings -> new ArmorItem(LaLArmorMaterials.WARD, ArmorType.CHESTPLATE, settings
+    public static final ArmorItem REINFORCED_CHESTPLATE = register("reinforced_chestplate", settings -> new ArmorItem(LaLArmorMaterials.WARD, ArmorType.CHESTPLATE, settings
             .stacksTo(1)
             .durability(ArmorType.CHESTPLATE.getDurability(41))
-    ));
-    public static final ArmorItem WARD_LEGGINGS = register("ward_leggings", settings -> new ArmorItem(LaLArmorMaterials.WARD, ArmorType.LEGGINGS, settings
-            .stacksTo(1)
-            .durability(ArmorType.LEGGINGS.getDurability(41))
-    ));
-    public static final ArmorItem WARD_BOOTS = register("ward_boots", settings -> new ArmorItem(LaLArmorMaterials.WARD, ArmorType.BOOTS, settings
-            .stacksTo(1)
-            .durability(ArmorType.BOOTS.getDurability(41))
     ));
 
     public static void init() {
@@ -92,5 +60,13 @@ public final class LaLGearItems {
     public static Function<Properties, Item> createBlockItemWithCustomItemName(Block block) {
         return properties -> new BlockItem(block, properties.useItemDescriptionPrefix());
     }
+
+    public static ItemAttributeModifiers createAmuletOfAllureAttributes() {
+        return ItemAttributeModifiers.builder()
+                .add(Attributes.TEMPT_RANGE, new AttributeModifier(TEMPT_RANGE_ID, 10, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.HEAD)
+                .build();
+    }
+
+    public static final ResourceLocation TEMPT_RANGE_ID = ResourceLocation.withDefaultNamespace("tempt_range");
 
 }

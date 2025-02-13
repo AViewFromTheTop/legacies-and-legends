@@ -34,21 +34,6 @@ public class LaLCreativeInventorySorting {
 		addAfterInCombat(Items.NETHERITE_AXE, LaLGearItems.KNIFE);
 		addAfterInCombat(LaLGearItems.KNIFE, LaLGearItems.HOOK);
 
-		addAfterInCombat(Items.NETHERITE_BOOTS, LaLGearItems.DUNGEON_HELMET);
-		addAfterInCombat(LaLGearItems.DUNGEON_HELMET, LaLGearItems.DUNGEON_CHESTPLATE);
-		addAfterInCombat(LaLGearItems.DUNGEON_CHESTPLATE, LaLGearItems.DUNGEON_LEGGINGS);
-		addAfterInCombat(LaLGearItems.DUNGEON_LEGGINGS, LaLGearItems.DUNGEON_BOOTS);
-
-		addAfterInCombat(LaLGearItems.DUNGEON_BOOTS, LaLGearItems.FORTRESS_HELMET);
-		addAfterInCombat(LaLGearItems.FORTRESS_HELMET, LaLGearItems.FORTRESS_CHESTPLATE);
-		addAfterInCombat(LaLGearItems.FORTRESS_CHESTPLATE, LaLGearItems.FORTRESS_LEGGINGS);
-		addAfterInCombat(LaLGearItems.FORTRESS_LEGGINGS, LaLGearItems.FORTRESS_BOOTS);
-
-		addAfterInCombat(LaLGearItems.FORTRESS_BOOTS, LaLGearItems.WARD_HELMET);
-		addAfterInCombat(LaLGearItems.WARD_HELMET, LaLGearItems.WARD_CHESTPLATE);
-		addAfterInCombat(LaLGearItems.WARD_CHESTPLATE, LaLGearItems.WARD_LEGGINGS);
-		addAfterInCombat(LaLGearItems.WARD_LEGGINGS, LaLGearItems.WARD_BOOTS);
-
 	}
 
 	private static void addAfterInNaturalBlocks(ItemLike comparedItem, ItemLike item) {
