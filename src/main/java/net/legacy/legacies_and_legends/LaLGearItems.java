@@ -1,9 +1,6 @@
 package net.legacy.legacies_and_legends;
 
-import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import net.frozenblock.lib.shadow.org.jetbrains.annotations.NotNull;
-import net.minecraft.core.component.DataComponentType;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlotGroup;
@@ -11,11 +8,6 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
-import net.minecraft.world.item.enchantment.Enchantment;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
-import net.minecraft.world.item.enchantment.Enchantments;
-import net.minecraft.world.item.enchantment.ItemEnchantments;
-import net.minecraft.world.item.equipment.ArmorMaterials;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.core.registries.Registries;
