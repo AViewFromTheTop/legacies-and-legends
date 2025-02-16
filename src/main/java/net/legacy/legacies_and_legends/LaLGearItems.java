@@ -28,12 +28,12 @@ public final class LaLGearItems {
     ));
 
     // Armor
-    public static final ArmorItem WANDERER_BOOTS = register("wanderer_boots", settings -> new ArmorItem(LaLArmorMaterials.DUNGEON, ArmorType.BOOTS, settings
+    public static final ArmorItem WANDERER_BOOTS = register("wanderer_boots", settings -> new ArmorItem(LaLArmorMaterials.WANDERER, ArmorType.BOOTS, settings
             .stacksTo(1)
             .durability(ArmorType.BOOTS.getDurability(27))
     ));
 
-    public static final ArmorItem REINFORCED_CHESTPLATE = register("reinforced_chestplate", settings -> new ArmorItem(LaLArmorMaterials.WARD, ArmorType.CHESTPLATE, settings
+    public static final ArmorItem REINFORCED_CHESTPLATE = register("reinforced_chestplate", settings -> new ArmorItem(LaLArmorMaterials.REINFORCED, ArmorType.CHESTPLATE, settings
             .stacksTo(1)
             .durability(ArmorType.CHESTPLATE.getDurability(41))
     ));

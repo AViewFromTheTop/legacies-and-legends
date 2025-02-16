@@ -21,6 +21,9 @@
 		"fabric-datagen": [
           "net.legacy.legacies_and_legends.datagen.LaLDataGenerator"
 		],
+		"modmenu": [
+			"net.legacy.legacies_and_legends.config.LaLModMenuIntegration"
+		],
 		"frozenlib:decorated_pot_patterns": [
 			"net.legacy.legacies_and_legends.LaLDecoratedPotPatterns"
 		]
