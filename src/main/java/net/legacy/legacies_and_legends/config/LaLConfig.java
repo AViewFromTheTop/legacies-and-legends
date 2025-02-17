@@ -1,161 +1,166 @@
 package net.legacy.legacies_and_legends.config;
 
-import net.frozenblock.lib.config.api.instance.Config;
-import net.frozenblock.lib.config.api.instance.json.JsonConfig;
-import net.frozenblock.lib.config.api.instance.json.JsonType;
+import me.shedaniel.autoconfig.ConfigData;
+import me.shedaniel.autoconfig.annotation.Config;
+import me.shedaniel.autoconfig.annotation.ConfigEntry;
+import me.shedaniel.clothconfig2.api.AbstractConfigListEntry;
+import me.shedaniel.clothconfig2.api.ConfigCategory;
+import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
+import me.shedaniel.clothconfig2.impl.builders.SubCategoryBuilder;
 import net.frozenblock.lib.config.api.registry.ConfigRegistry;
-import net.frozenblock.lib.config.api.sync.SyncBehavior;
-import net.frozenblock.lib.config.api.sync.annotation.EntrySyncData;
+import net.frozenblock.lib.config.clothconfig.FrozenClothConfig;
+import net.frozenblock.lib.shadow.org.jetbrains.annotations.NotNull;
+import net.legacy.legacies_and_legends.LaLConstants;
 import net.legacy.legacies_and_legends.LaLPreLoadConstants;
 import me.shedaniel.autoconfig.annotation.ConfigEntry.Gui.CollapsibleObject;
-import static net.legacy.legacies_and_legends.LaLConstants.MOD_ID;
+import net.minecraft.network.chat.Component;
 
-public final class LaLConfig {
+import java.util.Arrays;
 
-	public static final Config<LaLConfig> INSTANCE = ConfigRegistry.register(
-			new JsonConfig<>(
-					MOD_ID,
-					LaLConfig.class,
-					LaLPreLoadConstants.configPath(true),
-					JsonType.JSON5,
-					null,
-					null
-			)
-	);
+import static net.legacy.legacies_and_legends.LaLConstants.*;
+
+
+@Config(name = LaLConstants.MOD_ID)
+public class LaLConfig implements ConfigData {
 
 	@CollapsibleObject
-	public final StructuresConfig structures = new StructuresConfig();
+	public static StructuresConfig structures = new StructuresConfig();
 
 	@CollapsibleObject
-	public final LootConfig loot = new LootConfig();
+	public static LootConfig loot = new LootConfig();
 
 	@CollapsibleObject
-	public final ArtifactsConfig artifacts = new ArtifactsConfig();
+	public static ArtifactsConfig artifacts = new ArtifactsConfig();
 
 	@CollapsibleObject
-	public final EnchantmentsConfig enchantments = new EnchantmentsConfig();
+	public static EnchantmentsConfig enchantments = new EnchantmentsConfig();
 
 	@CollapsibleObject
-	public final MusicConfig music = new MusicConfig();
+	public static MusicConfig music = new MusicConfig();
 
 	@CollapsibleObject
-	public final MiscConfig misc = new MiscConfig();
-
-	public static LaLConfig get() {
-		return get(false);
-	}
-
-	public static LaLConfig get(boolean real) {
-		if (real)
-			return INSTANCE.instance();
-		return INSTANCE.config();
-	}
-
-	public static LaLConfig getWithSync() {
-		return INSTANCE.configWithSync();
-	}
+	public static MiscConfig misc = new MiscConfig();
 
 	public static class StructuresConfig {
-		@EntrySyncData("dungeonOverhaul")
+		@ConfigEntry.Category("config")
+		@ConfigEntry.Gui.Tooltip
+		@ConfigEntry.Gui.CollapsibleObject
 		public boolean dungeonOverhaul = true;
-		@EntrySyncData("swampHutVariants")
+		@ConfigEntry.Category("config")
+		@ConfigEntry.Gui.Tooltip
 		public boolean swampHutVariants = true;
-		@EntrySyncData("buriedTreasureRework")
+		@ConfigEntry.Category("config")
+		@ConfigEntry.Gui.Tooltip
 		public boolean buriedTreasureRework = true;
 
-		@EntrySyncData("newStructures")
+		@ConfigEntry.Category("config")
+		@ConfigEntry.Gui.Tooltip
 		public boolean newStructures = true;
 	}
 
 	public static class LootConfig {
-		@EntrySyncData("enchantedBeetroot")
+		@ConfigEntry.Category("config")
+		@ConfigEntry.Gui.Tooltip
 		public boolean enchantedBeetroot = true;
-		@EntrySyncData("metalChunk")
+		@ConfigEntry.Category("config")
+		@ConfigEntry.Gui.Tooltip
 		public boolean metalChunk = true;
-		@EntrySyncData("woodenBuckets")
+		@ConfigEntry.Category("config")
+		@ConfigEntry.Gui.Tooltip
 		public boolean woodenBuckets = true;
-		@EntrySyncData("musicDiscs")
+		@ConfigEntry.Category("config")
+		@ConfigEntry.Gui.Tooltip
 		public boolean musicDiscs = true;
 
-		@EntrySyncData("knife")
+		@ConfigEntry.Category("config")
+		@ConfigEntry.Gui.Tooltip
 		public boolean knife = true;
-		@EntrySyncData("hook")
+		@ConfigEntry.Category("config")
+		@ConfigEntry.Gui.Tooltip
 		public boolean hook = true;
 
-		@EntrySyncData("improvedLoot")
+		@ConfigEntry.Category("config")
+		@ConfigEntry.Gui.Tooltip
 		public boolean improvedLoot = true;
 	}
 
 	public static class ArtifactsConfig {
-		@EntrySyncData("reinforcedChestplate")
+		@ConfigEntry.Category("config")
 		public boolean reinforcedChestplate = true;
-		@EntrySyncData("travellingStrides")
+		@ConfigEntry.Category("config")
 		public boolean travellingStrides = true;
-		@EntrySyncData("wandererBoots")
+		@ConfigEntry.Category("config")
 		public boolean wandererBoots = true;
 
-		@EntrySyncData("verdantSword")
+		@ConfigEntry.Category("config")
 		public boolean verdantSword = true;
-		@EntrySyncData("cleavingBattleaxe")
+		@ConfigEntry.Category("config")
 		public boolean cleavingBattleaxe = true;
-		@EntrySyncData("moltenPickaxe")
+		@ConfigEntry.Category("config")
 		public boolean moltenPickaxe = true;
-		@EntrySyncData("prospectorShovel")
+		@ConfigEntry.Category("config")
 		public boolean prospectorShovel = true;
-		@EntrySyncData("witheredHoe")
+		@ConfigEntry.Category("config")
 		public boolean witheredHoe = true;
 
-		@EntrySyncData("totemOfVengeance")
+		@ConfigEntry.Category("config")
 		public boolean totemOfVengeance = true;
-		@EntrySyncData("totemOfTeleportation")
+		@ConfigEntry.Category("config")
 		public boolean totemOfTeleportation = true;
 
-		@EntrySyncData("tabletOfRecall")
+		@ConfigEntry.Category("config")
 		public boolean tabletOfRecall = true;
-		@EntrySyncData("tabletOfHaste")
+		@ConfigEntry.Category("config")
 		public boolean tabletOfHaste = true;
-		@EntrySyncData("tabletOfLevitation")
+		@ConfigEntry.Category("config")
 		public boolean tabletOfLevitation = true;
 
-		@EntrySyncData("amuletOfAllure")
+		@ConfigEntry.Category("config")
 		public boolean amuletOfAllure = true;
-		@EntrySyncData("amuletOfSynthesis")
+		@ConfigEntry.Category("config")
 		public boolean amuletOfSynthesis = true;
-		@EntrySyncData("amuletOfEvasion")
+		@ConfigEntry.Category("config")
 		public boolean amuletOfEvasion = true;
 	}
 
 	public static class EnchantmentsConfig {
-		@EntrySyncData("freeze")
+		@ConfigEntry.Category("config")
 		public boolean freeze = true;
-		@EntrySyncData("tangled")
+		@ConfigEntry.Category("config")
 		public boolean tangled = true;
-		@EntrySyncData("shatter")
+		@ConfigEntry.Category("config")
 		public boolean shatter = true;
-		@EntrySyncData("rapidStrike")
+		@ConfigEntry.Category("config")
 		public boolean rapidStrike = true;
-		@EntrySyncData("slaughter")
+		@ConfigEntry.Category("config")
 		public boolean slaughter = true;
 	}
 
 	public static class MusicConfig {
-		@EntrySyncData(value = "savannaMusic", behavior = SyncBehavior.UNSYNCABLE)
+		@ConfigEntry.Category("config")
+		@ConfigEntry.Gui.Tooltip
 		public boolean savannaMusic = true;
-		@EntrySyncData(value = "snowyMusic", behavior = SyncBehavior.UNSYNCABLE)
+		@ConfigEntry.Category("config")
+		@ConfigEntry.Gui.Tooltip
 		public boolean snowyMusic = true;
 
-		@EntrySyncData(value = "endPortalMusic", behavior = SyncBehavior.UNSYNCABLE)
+		@ConfigEntry.Category("config")
+		@ConfigEntry.Gui.Tooltip
 		public boolean endPortalMusic = true;
 
-		@EntrySyncData(value = "musicAndMelody", behavior = SyncBehavior.UNSYNCABLE)
+		@ConfigEntry.Category("config")
+		@ConfigEntry.Gui.Tooltip
 		public boolean musicAndMelody = true;
 	}
 
 	public static class MiscConfig {
-		@EntrySyncData("echoShardTrim")
+		@ConfigEntry.Category("config")
+		@ConfigEntry.Gui.Tooltip
 		public boolean echoShardTrim = true;
 
-		@EntrySyncData("integrationDatapacks")
+		@ConfigEntry.Category("config")
+		@ConfigEntry.Gui.Tooltip
 		public boolean integrationDatapacks = true;
 	}
+
 }
