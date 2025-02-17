@@ -2,9 +2,9 @@ package net.legacy.legacies_and_legends.registry;
 
 import net.frozenblock.lib.shadow.org.jetbrains.annotations.NotNull;
 import net.legacy.legacies_and_legends.LaLConstants;
-import net.legacy.legacies_and_legends.material.LaLToolMaterial;
-import net.legacy.legacies_and_legends.misc.LaLWeapon;
-import net.legacy.legacies_and_legends.material.LaLArmorMaterials;
+import net.legacy.legacies_and_legends.equipment.LaLToolMaterial;
+import net.legacy.legacies_and_legends.equipment.LaLWeapon;
+import net.legacy.legacies_and_legends.equipment.LaLArmorMaterials;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlotGroup;

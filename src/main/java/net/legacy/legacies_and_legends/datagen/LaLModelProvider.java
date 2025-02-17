@@ -9,7 +9,7 @@ import java.util.function.Function;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.legacy.legacies_and_legends.*;
-import net.legacy.legacies_and_legends.material.LaLTrimMaterials;
+import net.legacy.legacies_and_legends.equipment.LaLTrimMaterials;
 import net.legacy.legacies_and_legends.registry.LaLGearItems;
 import net.legacy.legacies_and_legends.registry.LaLItems;
 import net.minecraft.client.data.models.model.ModelTemplate;

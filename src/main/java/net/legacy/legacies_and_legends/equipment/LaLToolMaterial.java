@@ -1,4 +1,4 @@
-package net.legacy.legacies_and_legends.material;
+package net.legacy.legacies_and_legends.equipment;
 
 import net.legacy.legacies_and_legends.tag.LaLItemTags;
 import net.minecraft.tags.BlockTags;

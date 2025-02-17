@@ -3,7 +3,7 @@ package net.legacy.legacies_and_legends.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricDynamicRegistryProvider;
 import net.legacy.legacies_and_legends.LaLConstants;
-import net.legacy.legacies_and_legends.material.LaLTrimMaterials;
+import net.legacy.legacies_and_legends.equipment.LaLTrimMaterials;
 import net.minecraft.core.*;
 import net.minecraft.core.registries.Registries;
 

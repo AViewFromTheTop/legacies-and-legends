@@ -7,7 +7,7 @@ import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.ModContainer;
 import net.legacy.legacies_and_legends.config.LaLConfig;
 import net.legacy.legacies_and_legends.config.LaLMainConfig;
-import net.legacy.legacies_and_legends.material.LaLTrimItemModels;
+import net.legacy.legacies_and_legends.equipment.LaLTrimItemModels;
 import net.legacy.legacies_and_legends.registry.LaLCreativeInventorySorting;
 import net.legacy.legacies_and_legends.registry.LaLFuelRegistry;
 import net.legacy.legacies_and_legends.registry.LaLGearItems;
