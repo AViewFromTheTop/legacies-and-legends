@@ -1,6 +1,7 @@
-package net.legacy.legacies_and_legends;
+package net.legacy.legacies_and_legends.registry;
 
 import net.frozenblock.lib.item.impl.sherd.DecoratedPotPatternRegistryEntrypoint;
+import net.legacy.legacies_and_legends.LaLConstants;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;

@@ -1,5 +1,6 @@
-package net.legacy.legacies_and_legends;
+package net.legacy.legacies_and_legends.material;
 
+import net.legacy.legacies_and_legends.LaLConstants;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.network.chat.Style;
@@ -10,7 +11,6 @@ import net.minecraft.world.item.equipment.trim.TrimMaterial;
 import net.minecraft.world.item.equipment.trim.TrimMaterials;
 
 import java.util.List;
-import java.util.Map;
 
 public class LaLTrimMaterials {
     public static final List<String> TRIM_MATERIALS = List.of("echo_shard");

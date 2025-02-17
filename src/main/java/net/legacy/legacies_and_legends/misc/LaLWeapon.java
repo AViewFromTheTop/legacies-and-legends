@@ -1,4 +1,4 @@
-package net.legacy.legacies_and_legends;
+package net.legacy.legacies_and_legends.misc;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.EquipmentSlot;

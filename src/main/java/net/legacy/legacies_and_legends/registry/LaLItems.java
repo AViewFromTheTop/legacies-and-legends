@@ -1,7 +1,11 @@
-package net.legacy.legacies_and_legends;
+package net.legacy.legacies_and_legends.registry;
 
 import net.frozenblock.lib.shadow.org.jetbrains.annotations.NotNull;
 import net.frozenblock.lib.item.api.sherd.SherdRegistry;
+import net.legacy.legacies_and_legends.LaLConstants;
+import net.legacy.legacies_and_legends.food.LaLFoods;
+import net.legacy.legacies_and_legends.sound.LaLJukeboxSongs;
+import net.legacy.legacies_and_legends.food.LaLConsumables;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.*;

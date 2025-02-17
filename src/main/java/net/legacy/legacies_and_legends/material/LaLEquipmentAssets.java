@@ -1,4 +1,4 @@
-package net.legacy.legacies_and_legends;
+package net.legacy.legacies_and_legends.material;
 
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;

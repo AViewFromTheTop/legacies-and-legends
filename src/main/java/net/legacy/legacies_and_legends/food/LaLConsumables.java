@@ -1,4 +1,4 @@
-package net.legacy.legacies_and_legends;
+package net.legacy.legacies_and_legends.food;
 
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.effect.MobEffectInstance;

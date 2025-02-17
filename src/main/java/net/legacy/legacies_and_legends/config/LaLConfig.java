@@ -3,21 +3,11 @@ package net.legacy.legacies_and_legends.config;
 import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
 import me.shedaniel.autoconfig.annotation.ConfigEntry;
-import me.shedaniel.clothconfig2.api.AbstractConfigListEntry;
-import me.shedaniel.clothconfig2.api.ConfigCategory;
-import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
-import me.shedaniel.clothconfig2.impl.builders.SubCategoryBuilder;
 import net.frozenblock.lib.config.api.instance.json.JsonConfig;
 import net.frozenblock.lib.config.api.instance.json.JsonType;
 import net.frozenblock.lib.config.api.registry.ConfigRegistry;
-import net.frozenblock.lib.config.clothconfig.FrozenClothConfig;
-import net.frozenblock.lib.shadow.org.jetbrains.annotations.NotNull;
 import net.legacy.legacies_and_legends.LaLConstants;
-import net.legacy.legacies_and_legends.LaLPreLoadConstants;
 import me.shedaniel.autoconfig.annotation.ConfigEntry.Gui.CollapsibleObject;
-import net.minecraft.network.chat.Component;
-
-import java.util.Arrays;
 
 import static net.legacy.legacies_and_legends.LaLConstants.*;
 
@@ -29,7 +19,7 @@ public class LaLConfig implements ConfigData {
 			new JsonConfig<>(
 					MOD_ID,
 					LaLConfig.class,
-					LaLPreLoadConstants.configPath(true),
+					LaLMainConfig.configPath(true),
 					JsonType.JSON5,
 					null,
 					null
@@ -47,6 +37,7 @@ public class LaLConfig implements ConfigData {
 	}
 
 	@CollapsibleObject
+
 	public final StructuresConfig structures = new StructuresConfig();
 
 	@CollapsibleObject
@@ -67,7 +58,6 @@ public class LaLConfig implements ConfigData {
 	public static class StructuresConfig {
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
-		@ConfigEntry.Gui.CollapsibleObject
 		public boolean dungeonOverhaul = true;
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
@@ -97,10 +87,10 @@ public class LaLConfig implements ConfigData {
 
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
-		public boolean knife = true;
+		public boolean hook = true;
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
-		public boolean hook = true;
+		public boolean knife = true;
 
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip

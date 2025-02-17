@@ -1,7 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    "#minecraft:repairs_netherite_armor",
-    "minecraft:netherite_scrap"
-  ]
-}

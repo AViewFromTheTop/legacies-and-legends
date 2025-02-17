@@ -1,4 +1,4 @@
-package net.legacy.legacies_and_legends;
+package net.legacy.legacies_and_legends.registry;
 import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
 
 public final class LaLFuelRegistry {

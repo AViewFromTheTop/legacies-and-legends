@@ -25,7 +25,7 @@
 			"net.legacy.legacies_and_legends.config.LaLModMenuIntegration"
 		],
 		"frozenlib:decorated_pot_patterns": [
-			"net.legacy.legacies_and_legends.LaLDecoratedPotPatterns"
+			"net.legacy.legacies_and_legends.registry.LaLDecoratedPotPatterns"
 		]
 	},
 	"accessWidener": "legacies_and_legends.accesswidener",

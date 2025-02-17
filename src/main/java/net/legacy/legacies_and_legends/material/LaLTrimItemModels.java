@@ -1,8 +1,9 @@
-package net.legacy.legacies_and_legends;
+package net.legacy.legacies_and_legends.material;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import net.legacy.legacies_and_legends.LaLConstants;
 import net.minecraft.resources.ResourceLocation;
 import net.ramixin.mixson.Mixson;
 import net.ramixin.mixson.events.ModificationEvent;
