@@ -6,7 +6,6 @@ import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.ModContainer;
 import net.legacy.legacies_and_legends.config.LaLConfig;
-import net.legacy.legacies_and_legends.config.LaLMainConfig;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 
@@ -27,26 +26,27 @@ public class LegaciesAndLegends implements ModInitializer {
 		LaLSounds.init();
 		LaLFuelRegistry.registerFuels();
 		LaLTrimItemModels.init();
-		LaLMainConfig.initClient();
 
 		ResourceManagerHelper.registerBuiltinResourcePack(
 				ResourceLocation.fromNamespaceAndPath(LaLConstants.MOD_ID, "legacies_and_legends_asset_overrides"), modContainer.get(),
 				Component.translatable("pack.legacies_and_legends.legacies_and_legends_asset_overrides"),
 				ResourcePackActivationType.ALWAYS_ENABLED
-		); if (LaLConfig.structures.buriedTreasureRework) {
+		);
+		if (LaLConfig.get().music.musicAndMelody) {
 			ResourceManagerHelper.registerBuiltinResourcePack(
 					ResourceLocation.fromNamespaceAndPath(LaLConstants.MOD_ID, "music_and_melody"), modContainer.get(),
 					Component.translatable("pack.legacies_and_legends.music_and_melody"),
 					ResourcePackActivationType.ALWAYS_ENABLED
 			);
 		}
-		if (LaLConfig.structures.buriedTreasureRework) {
+		if (LaLConfig.get().structures.buriedTreasureRework) {
 			ResourceManagerHelper.registerBuiltinResourcePack(
 					ResourceLocation.fromNamespaceAndPath(LaLConstants.MOD_ID, "reworked_buried_treasure"), modContainer.get(),
 					Component.translatable("pack.legacies_and_legends.reworked_buried_treasure"),
 					ResourcePackActivationType.ALWAYS_ENABLED
 			);
-		} if (FabricLoader.getInstance().isModLoaded("wilderwild") && LaLConfig.misc.integrationDatapacks) {
+		}
+		if (FabricLoader.getInstance().isModLoaded("wilderwild") && LaLConfig.get().misc.integrationDatapacks) {
 			ResourceManagerHelper.registerBuiltinResourcePack(
 					ResourceLocation.fromNamespaceAndPath(LaLConstants.MOD_ID, "wilder_wild_integration"), modContainer.get(),
 					Component.translatable("pack.legacies_and_legends.wilder_wild_integration"),
