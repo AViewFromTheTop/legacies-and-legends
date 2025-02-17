@@ -7,6 +7,8 @@ import me.shedaniel.clothconfig2.api.AbstractConfigListEntry;
 import me.shedaniel.clothconfig2.api.ConfigCategory;
 import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
 import me.shedaniel.clothconfig2.impl.builders.SubCategoryBuilder;
+import net.frozenblock.lib.config.api.instance.json.JsonConfig;
+import net.frozenblock.lib.config.api.instance.json.JsonType;
 import net.frozenblock.lib.config.api.registry.ConfigRegistry;
 import net.frozenblock.lib.config.clothconfig.FrozenClothConfig;
 import net.frozenblock.lib.shadow.org.jetbrains.annotations.NotNull;
@@ -23,23 +25,44 @@ import static net.legacy.legacies_and_legends.LaLConstants.*;
 @Config(name = LaLConstants.MOD_ID)
 public class LaLConfig implements ConfigData {
 
-	@CollapsibleObject
-	public static StructuresConfig structures = new StructuresConfig();
+	public static final net.frozenblock.lib.config.api.instance.Config<LaLConfig> INSTANCE = ConfigRegistry.register(
+			new JsonConfig<>(
+					MOD_ID,
+					LaLConfig.class,
+					LaLPreLoadConstants.configPath(true),
+					JsonType.JSON5,
+					null,
+					null
+			)
+	);
+
+	public static LaLConfig get() {
+		return get(false);
+	}
+
+	public static LaLConfig get(boolean real) {
+		if (real)
+			return INSTANCE.instance();
+		return INSTANCE.config();
+	}
 
 	@CollapsibleObject
-	public static LootConfig loot = new LootConfig();
+	public final StructuresConfig structures = new StructuresConfig();
 
 	@CollapsibleObject
-	public static ArtifactsConfig artifacts = new ArtifactsConfig();
+	public LootConfig loot = new LootConfig();
 
 	@CollapsibleObject
-	public static EnchantmentsConfig enchantments = new EnchantmentsConfig();
+	public ArtifactsConfig artifacts = new ArtifactsConfig();
 
 	@CollapsibleObject
-	public static MusicConfig music = new MusicConfig();
+	public EnchantmentsConfig enchantments = new EnchantmentsConfig();
 
 	@CollapsibleObject
-	public static MiscConfig misc = new MiscConfig();
+	public MusicConfig music = new MusicConfig();
+
+	@CollapsibleObject
+	public MiscConfig misc = new MiscConfig();
 
 	public static class StructuresConfig {
 		@ConfigEntry.Category("config")
