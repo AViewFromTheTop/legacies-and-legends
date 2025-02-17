@@ -1,5 +1,6 @@
 package net.legacy.legacies_and_legends.food;
 
+import net.legacy.legacies_and_legends.sound.LaLSounds;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -25,6 +26,48 @@ public class LaLConsumables {
                             List.of(
                                     new MobEffectInstance(MobEffects.REGENERATION, 300, 2),
                                     new MobEffectInstance(MobEffects.SATURATION, 10, 0)
+                            )
+                    )
+            )
+            .build();
+
+    public static final Consumable TABLET_OF_RECALL = Consumable.builder()
+            .consumeSeconds(12.8F)
+            .animation(ItemUseAnimation.BOW)
+            .sound(LaLSounds.TABLET_USE)
+            .soundAfterConsume(LaLSounds.TABLET_TELEPORT)
+            .hasConsumeParticles(false)
+            .onConsume(
+                    new ApplyStatusEffectsConsumeEffect(
+                            List.of(
+                            )
+                    )
+            )
+            .build();
+    public static final Consumable TABLET_OF_HASTE = Consumable.builder()
+            .consumeSeconds(1.6F)
+            .animation(ItemUseAnimation.BOW)
+            .sound(LaLSounds.TABLET_USE)
+            .soundAfterConsume(LaLSounds.TABLET_BREAK)
+            .hasConsumeParticles(false)
+            .onConsume(
+                    new ApplyStatusEffectsConsumeEffect(
+                            List.of(
+                                    new MobEffectInstance(MobEffects.DIG_SPEED, 1800, 0)
+                            )
+                    )
+            )
+            .build();
+    public static final Consumable TABLET_OF_LEVITATION = Consumable.builder()
+            .consumeSeconds(0.8F)
+            .animation(ItemUseAnimation.BOW)
+            .sound(LaLSounds.TABLET_USE)
+            .soundAfterConsume(LaLSounds.TABLET_BREAK)
+            .hasConsumeParticles(false)
+            .onConsume(
+                    new ApplyStatusEffectsConsumeEffect(
+                            List.of(
+                                    new MobEffectInstance(MobEffects.LEVITATION, 100, 15)
                             )
                     )
             )

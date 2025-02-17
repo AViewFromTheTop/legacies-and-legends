@@ -2,7 +2,9 @@ package net.legacy.legacies_and_legends.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.legacy.legacies_and_legends.registry.LaLGearItems;
 import net.legacy.legacies_and_legends.registry.LaLItems;
+import net.legacy.legacies_and_legends.tag.LaLItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
@@ -30,5 +32,19 @@ public class LaLItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(LaLItems.FORAGER_POTTERY_SHERD)
                 .add(LaLItems.HARVEST_POTTERY_SHERD)
                 .add(LaLItems.DUSK_POTTERY_SHERD);
+
+        this.getOrCreateTagBuilder(LaLItemTags.TABLETS)
+                .add(LaLItems.TABLET_OF_HASTE)
+                .add(LaLItems.TABLET_OF_LEVITATION)
+                .add(LaLItems.TABLET_OF_RECALL);
+
+        this.getOrCreateTagBuilder(LaLItemTags.HAS_ITEM_EFFECT)
+                .add(LaLItems.AMULET_OF_ALLURE)
+                .add(LaLItems.AMULET_OF_SYNTHESIS)
+                .add(LaLItems.AMULET_OF_EVASION);
+        this.getOrCreateTagBuilder(LaLItemTags.HAS_BREED_EFFECT)
+                .add(LaLItems.AMULET_OF_ALLURE);
+        this.getOrCreateTagBuilder(LaLItemTags.HAS_KILL_EFFECT)
+                .add(LaLItems.AMULET_OF_SYNTHESIS);
     }
 }

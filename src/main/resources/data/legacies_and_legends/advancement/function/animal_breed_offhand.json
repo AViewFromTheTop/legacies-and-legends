@@ -1,0 +1,19 @@
+{
+  "criteria": {
+    "tablet_used": {
+      "trigger": "minecraft:bred_animals",
+      "conditions": {
+        "player": {
+          "equipment": {
+            "offhand": {
+              "items": "#legacies_and_legends:has_breed_effect"
+            }
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "legacies_and_legends:breed_effect"
+  }
+}

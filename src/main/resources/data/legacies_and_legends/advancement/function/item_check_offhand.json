@@ -1,0 +1,19 @@
+{
+  "criteria": {
+    "time_passed": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "equipment": {
+            "offhand": {
+              "items": "#legacies_and_legends:has_item_effect"
+            }
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "legacies_and_legends:item_effect"
+  }
+}

@@ -2,7 +2,9 @@
 	"required": true,
 	"package": "net.legacy.legacies_and_legends.mixin",
 	"compatibilityLevel": "JAVA_21",
-	"mixins": [],
+	"mixins": [
+		"LaLPlayerMixin"
+	],
 	"injectors": {
 		"defaultRequire": 1
 	}

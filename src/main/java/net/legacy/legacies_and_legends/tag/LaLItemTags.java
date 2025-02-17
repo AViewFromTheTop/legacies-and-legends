@@ -20,6 +20,12 @@ public class LaLItemTags {
     public static final TagKey<Item> REPAIRS_TRAVELLING_ARMOR = bind("repairs_travelling_armor");
     public static final TagKey<Item> REPAIRS_REINFORCED_ARMOR = bind("repairs_reinforced_armor");
 
+    public static final TagKey<Item> TABLETS = bind("tablets");
+
+    public static final TagKey<Item> HAS_ITEM_EFFECT = bind("has_item_effect");
+    public static final TagKey<Item> HAS_BREED_EFFECT = bind("has_breed_effect");
+    public static final TagKey<Item> HAS_KILL_EFFECT = bind("has_kill_effect");
+
     @NotNull
     private static TagKey<Item> bind(@NotNull String path) {
         return TagKey.create(Registries.ITEM, LaLConstants.id(path));

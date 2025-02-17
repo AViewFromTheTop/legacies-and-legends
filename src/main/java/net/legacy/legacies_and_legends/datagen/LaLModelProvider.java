@@ -9,6 +9,7 @@ import java.util.function.Function;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.legacy.legacies_and_legends.*;
+import net.legacy.legacies_and_legends.equipment.LaLEquipmentAssets;
 import net.legacy.legacies_and_legends.equipment.LaLTrimMaterials;
 import net.legacy.legacies_and_legends.registry.LaLGearItems;
 import net.legacy.legacies_and_legends.registry.LaLItems;
@@ -72,10 +73,29 @@ public final class LaLModelProvider extends FabricModelProvider {
 
 	@Override
 	public void generateItemModels(@NotNull ItemModelGenerators generator) {
-		//generator.generateTrimmableItem(LaLGearItems.DUNGEON_HELMET, LaLEquipmentAssets.DUNGEON, "helmet", false);
+		generator.generateTrimmableItem(LaLGearItems.REINFORCED_CHESTPLATE, LaLEquipmentAssets.REINFORCED, "chestplate", false);
+		generator.generateTrimmableItem(LaLGearItems.TRAVELLING_STRIDES, LaLEquipmentAssets.TRAVELLING, "leggings", false);
+		generator.generateTrimmableItem(LaLGearItems.WANDERER_BOOTS, LaLEquipmentAssets.WANDERER, "boots", false);
 
 		generator.generateFlatItem(LaLGearItems.KNIFE, ModelTemplates.FLAT_HANDHELD_ITEM);
 		generator.generateFlatItem(LaLGearItems.HOOK, ModelTemplates.FLAT_HANDHELD_ITEM);
+
+		generator.generateFlatItem(LaLGearItems.VERDANT_SWORD, ModelTemplates.FLAT_HANDHELD_ITEM);
+		generator.generateFlatItem(LaLGearItems.CLEAVING_BATTLEAXE, ModelTemplates.FLAT_HANDHELD_ITEM);
+		generator.generateFlatItem(LaLGearItems.MOLTEN_PICKAXE, ModelTemplates.FLAT_HANDHELD_ITEM);
+		generator.generateFlatItem(LaLGearItems.PROSPECTOR_SHOVEL, ModelTemplates.FLAT_HANDHELD_ITEM);
+		generator.generateFlatItem(LaLGearItems.WITHERED_HOE, ModelTemplates.FLAT_HANDHELD_ITEM);
+
+		generator.generateFlatItem(LaLItems.TOTEM_OF_TELEPORTATION, ModelTemplates.FLAT_ITEM);
+		generator.generateFlatItem(LaLItems.TOTEM_OF_VENGEANCE, ModelTemplates.FLAT_ITEM);
+
+		generator.generateFlatItem(LaLItems.TABLET_OF_HASTE, ModelTemplates.FLAT_ITEM);
+		generator.generateFlatItem(LaLItems.TABLET_OF_LEVITATION, ModelTemplates.FLAT_ITEM);
+		generator.generateFlatItem(LaLItems.TABLET_OF_RECALL, ModelTemplates.FLAT_ITEM);
+
+		generator.generateFlatItem(LaLItems.AMULET_OF_ALLURE, ModelTemplates.FLAT_ITEM);
+		generator.generateFlatItem(LaLItems.AMULET_OF_EVASION, ModelTemplates.FLAT_ITEM);
+		generator.generateFlatItem(LaLItems.AMULET_OF_SYNTHESIS, ModelTemplates.FLAT_ITEM);
 
 		generator.generateFlatItem(LaLItems.METAL_CHUNK, ModelTemplates.FLAT_ITEM);
 		generator.generateFlatItem(LaLItems.DISC_FRAGMENT_FAR_LANDS, ModelTemplates.FLAT_ITEM);
@@ -121,6 +141,10 @@ public final class LaLModelProvider extends FabricModelProvider {
 		this.registerArmorTrims(generator, Items.NETHERITE_CHESTPLATE, EquipmentAssets.NETHERITE, "chestplate", false);
 		this.registerArmorTrims(generator, Items.NETHERITE_LEGGINGS, EquipmentAssets.NETHERITE, "leggings", false);
 		this.registerArmorTrims(generator, Items.NETHERITE_BOOTS, EquipmentAssets.NETHERITE, "boots", false);
+
+		this.registerArmorTrims(generator, LaLGearItems.REINFORCED_CHESTPLATE, LaLEquipmentAssets.REINFORCED, "chestplate", false);
+		this.registerArmorTrims(generator, LaLGearItems.TRAVELLING_STRIDES, LaLEquipmentAssets.TRAVELLING, "leggings", false);
+		this.registerArmorTrims(generator, LaLGearItems.WANDERER_BOOTS, LaLEquipmentAssets.WANDERER, "boots", false);
 
 	}
 

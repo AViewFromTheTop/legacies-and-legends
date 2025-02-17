@@ -3,16 +3,25 @@ package net.legacy.legacies_and_legends.registry;
 import net.frozenblock.lib.shadow.org.jetbrains.annotations.NotNull;
 import net.frozenblock.lib.item.api.sherd.SherdRegistry;
 import net.legacy.legacies_and_legends.LaLConstants;
+import net.legacy.legacies_and_legends.equipment.LaLRecallTablet;
 import net.legacy.legacies_and_legends.food.LaLFoods;
 import net.legacy.legacies_and_legends.sound.LaLJukeboxSongs;
 import net.legacy.legacies_and_legends.food.LaLConsumables;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.component.Consumable;
+import net.minecraft.world.item.component.DeathProtection;
+import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
+import net.minecraft.world.item.consume_effects.ClearAllStatusEffectsConsumeEffect;
+import net.minecraft.world.item.consume_effects.TeleportRandomlyConsumeEffect;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.Item.Properties;
 
+import java.util.List;
 import java.util.function.Function;
 
 public final class LaLItems {
@@ -129,6 +138,83 @@ public final class LaLItems {
                     .food(LaLFoods.ENCHANTED_BEETROOT_SOUP, LaLConsumables.ENCHANTED_BEETROOT_SOUP)
                     .component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true)
                     .usingConvertsTo(Items.BOWL)
+    );
+
+    // Artifacts
+    public static final Item TOTEM_OF_VENGEANCE = register("totem_of_vengeance",
+            Item::new,
+            new Properties()
+                    .stacksTo(1)
+                    .rarity(Rarity.UNCOMMON)
+                    .component(DataComponents.DEATH_PROTECTION, new DeathProtection(
+                            List.of(
+                                    new ClearAllStatusEffectsConsumeEffect(),
+                                    new ApplyStatusEffectsConsumeEffect(
+                                            List.of(
+                                                    new MobEffectInstance(MobEffects.HEAL, 1, 255),
+                                                    new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1200, 1),
+                                                    new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 1200, 1),
+                                                    new MobEffectInstance(MobEffects.WITHER, 6000, 0)
+                                            )
+                                    )
+                            )
+                    ))
+    );
+    public static final Item TOTEM_OF_TELEPORTATION = register("totem_of_teleporation",
+            Item::new,
+            new Properties()
+                    .stacksTo(1)
+                    .rarity(Rarity.RARE)
+                    .component(DataComponents.DEATH_PROTECTION, new DeathProtection(
+                            List.of(
+                                    new ClearAllStatusEffectsConsumeEffect(),
+                                    new ApplyStatusEffectsConsumeEffect(
+                                            List.of(
+                                                    new MobEffectInstance(MobEffects.REGENERATION, 300, 1),
+                                                    new MobEffectInstance(MobEffects.INVISIBILITY, 600, 0)
+                                            )
+                                    ),
+                                    new TeleportRandomlyConsumeEffect()
+                            )
+                    ))
+    );
+
+    public static final LaLRecallTablet TABLET_OF_RECALL = register("tablet_of_recall",
+            LaLRecallTablet::new,
+            new Properties()
+                    .stacksTo(16)
+                    .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_RECALL)
+                    .useCooldown(300f)
+    );
+    public static final Item TABLET_OF_HASTE = register("tablet_of_haste",
+            Item::new,
+            new Properties()
+                    .stacksTo(16)
+                    .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_HASTE)
+                    .useCooldown(60f)
+    );
+    public static final Item TABLET_OF_LEVITATION = register("tablet_of_levitation",
+            Item::new,
+            new Properties()
+                    .stacksTo(16)
+                    .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_LEVITATION)
+                    .useCooldown(30f)
+    );
+
+    public static final Item AMULET_OF_ALLURE = register("amulet_of_allure",
+            Item::new,
+            new Properties()
+                    .stacksTo(1)
+    );
+    public static final Item AMULET_OF_SYNTHESIS = register("amulet_of_synthesis",
+            Item::new,
+            new Properties()
+                    .stacksTo(1)
+    );
+    public static final Item AMULET_OF_EVASION = register("amulet_of_evasion",
+            Item::new,
+            new Properties()
+                    .stacksTo(1)
     );
 
     public static void init() {

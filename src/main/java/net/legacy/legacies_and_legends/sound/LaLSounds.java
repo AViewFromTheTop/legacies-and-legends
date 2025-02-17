@@ -16,6 +16,10 @@ public class LaLSounds {
 	public static final Holder.Reference<SoundEvent> MUSIC_DISC_FAR_LANDS = registerForHolder("music_disc.far_lands");
 	public static final Holder.Reference<SoundEvent> INFINITE_SPOOKY_AMETHYST = registerForHolder("music_disc.infinite_spooky_amethyst");
 
+	public static final Holder.Reference<SoundEvent> TABLET_USE = registerForHolder("tablet.use");
+	public static final Holder.Reference<SoundEvent> TABLET_BREAK = registerForHolder("tablet.break");
+	public static final Holder.Reference<SoundEvent> TABLET_TELEPORT = registerForHolder("tablet.teleport");
+
 	@NotNull
 	private static SoundEvent register(@NotNull String string) {
 		ResourceLocation resourceLocation = LaLConstants.id(string);
