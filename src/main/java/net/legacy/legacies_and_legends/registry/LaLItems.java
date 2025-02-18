@@ -4,16 +4,22 @@ import net.frozenblock.lib.shadow.org.jetbrains.annotations.NotNull;
 import net.frozenblock.lib.item.api.sherd.SherdRegistry;
 import net.legacy.legacies_and_legends.LaLConstants;
 import net.legacy.legacies_and_legends.equipment.LaLRecallTablet;
+import net.legacy.legacies_and_legends.equipment.LaLTablet;
 import net.legacy.legacies_and_legends.food.LaLFoods;
 import net.legacy.legacies_and_legends.sound.LaLJukeboxSongs;
 import net.legacy.legacies_and_legends.food.LaLConsumables;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EquipmentSlotGroup;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.Consumable;
 import net.minecraft.world.item.component.DeathProtection;
+import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
 import net.minecraft.world.item.consume_effects.ClearAllStatusEffectsConsumeEffect;
 import net.minecraft.world.item.consume_effects.TeleportRandomlyConsumeEffect;
@@ -25,6 +31,8 @@ import java.util.List;
 import java.util.function.Function;
 
 public final class LaLItems {
+
+    public static final ResourceLocation TEMPT_RANGE_ID = ResourceLocation.withDefaultNamespace("tempt_range");
 
     // Misc Items
     public static final Item DISC_FRAGMENT_FAR_LANDS = register("disc_fragment_far_lands",
@@ -186,25 +194,44 @@ public final class LaLItems {
                     .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_RECALL)
                     .useCooldown(300f)
     );
-    public static final Item TABLET_OF_HASTE = register("tablet_of_haste",
-            Item::new,
+    public static final LaLTablet TABLET_OF_HASTE = register("tablet_of_haste",
+            LaLTablet::new,
             new Properties()
                     .stacksTo(16)
                     .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_HASTE)
                     .useCooldown(60f)
     );
-    public static final Item TABLET_OF_LEVITATION = register("tablet_of_levitation",
-            Item::new,
+    public static final LaLTablet TABLET_OF_LEVITATION = register("tablet_of_levitation",
+            LaLTablet::new,
             new Properties()
                     .stacksTo(16)
                     .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_LEVITATION)
                     .useCooldown(30f)
+    );
+    public static final LaLTablet TABLET_OF_CHANNELING = register("tablet_of_channeling",
+            LaLTablet::new,
+            new Properties()
+                    .stacksTo(16)
+                    .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_CHANNELING)
+                    .useCooldown(300f)
+    );
+    public static final LaLTablet TABLET_OF_DEAFENING = register("tablet_of_deafening",
+            LaLTablet::new,
+            new Properties()
+                    .stacksTo(16)
+                    .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_DEAFENING)
+                    .useCooldown(60f)
     );
 
     public static final Item AMULET_OF_ALLURE = register("amulet_of_allure",
             Item::new,
             new Properties()
                     .stacksTo(1)
+                    .attributes(ItemAttributeModifiers.builder()
+                            .add(Attributes.TEMPT_RANGE, new AttributeModifier(TEMPT_RANGE_ID, 10, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
+                            .add(Attributes.TEMPT_RANGE, new AttributeModifier(TEMPT_RANGE_ID, 10, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.OFFHAND)
+                            .build()
+                    )
     );
     public static final Item AMULET_OF_SYNTHESIS = register("amulet_of_synthesis",
             Item::new,

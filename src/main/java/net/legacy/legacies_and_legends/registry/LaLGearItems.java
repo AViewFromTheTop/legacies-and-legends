@@ -10,6 +10,7 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
+import net.minecraft.world.item.equipment.ArmorMaterials;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.core.registries.Registries;
@@ -18,6 +19,10 @@ import net.minecraft.world.item.Item.Properties;
 import java.util.function.Function;
 
 public final class LaLGearItems {
+
+    public static final ResourceLocation MOVEMENT_SPEED_ID = ResourceLocation.withDefaultNamespace("movement_speed");
+    public static final ResourceLocation STEP_HEIGHT_ID = ResourceLocation.withDefaultNamespace("step_height");
+
     // Equipment
     public static final LaLGenericWeapon HOOK = register("hook", settings -> new LaLGenericWeapon(LaLToolMaterial.HOOK, 4f, -3.2f, settings
             .stacksTo(1)
@@ -34,9 +39,17 @@ public final class LaLGearItems {
     ));
     public static final ArmorItem TRAVELLING_STRIDES = register("travelling_strides", settings -> new ArmorItem(LaLArmorMaterials.TRAVELLING, ArmorType.LEGGINGS, settings
             .stacksTo(1)
+            .attributes(ItemAttributeModifiers.builder()
+                    .add(Attributes.MOVEMENT_SPEED, new AttributeModifier(MOVEMENT_SPEED_ID, 1.2, AttributeModifier.Operation.ADD_MULTIPLIED_BASE), EquipmentSlotGroup.LEGS)
+                    .build()
+            )
     ));
     public static final ArmorItem WANDERER_BOOTS = register("wanderer_boots", settings -> new ArmorItem(LaLArmorMaterials.WANDERER, ArmorType.BOOTS, settings
             .stacksTo(1)
+            .attributes(ItemAttributeModifiers.builder()
+                    .add(Attributes.STEP_HEIGHT, new AttributeModifier(STEP_HEIGHT_ID, 2, AttributeModifier.Operation.ADD_MULTIPLIED_BASE), EquipmentSlotGroup.FEET)
+                    .build()
+            )
     ));
 
     public static final LaLVerdantSword VERDANT_SWORD = register("verdant_sword", settings -> new LaLVerdantSword(LaLToolMaterial.VERDANT, 3f, -2.4f, settings
@@ -69,13 +82,5 @@ public final class LaLGearItems {
     public static Function<Properties, Item> createBlockItemWithCustomItemName(Block block) {
         return properties -> new BlockItem(block, properties.useItemDescriptionPrefix());
     }
-
-    public static ItemAttributeModifiers createAmuletOfAllureAttributes() {
-        return ItemAttributeModifiers.builder()
-                .add(Attributes.TEMPT_RANGE, new AttributeModifier(TEMPT_RANGE_ID, 10, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.HEAD)
-                .build();
-    }
-
-    public static final ResourceLocation TEMPT_RANGE_ID = ResourceLocation.withDefaultNamespace("tempt_range");
 
 }

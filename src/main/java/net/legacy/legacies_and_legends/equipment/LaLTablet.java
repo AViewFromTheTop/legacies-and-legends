@@ -1,18 +1,19 @@
 package net.legacy.legacies_and_legends.equipment;
 
-import net.legacy.legacies_and_legends.registry.LaLItems;
+import net.legacy.legacies_and_legends.LaLConstants;
 import net.legacy.legacies_and_legends.sound.LaLSounds;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.portal.TeleportTransition;
 
-public class LaLRecallTablet extends Item {
-    public LaLRecallTablet(Settings settings) {
+public class LaLTablet extends Item {
+    public LaLTablet(Settings settings) {
         super((Properties) settings);
     }
 
@@ -25,14 +26,14 @@ public class LaLRecallTablet extends Item {
         ServerPlayer serverPlayer = (ServerPlayer) player;
         ServerLevel targetLevel = serverPlayer.server.getLevel(serverPlayer.getRespawnDimension());
 
-        targetLevel.playSound(null, serverPlayer.blockPosition(), LaLSounds.TABLET_BREAK, SoundSource.PLAYERS, 0.6f, 1f);
+        if (serverPlayer.level() != targetLevel) {
+            serverPlayer.sendSystemMessage(Component.translatable(LaLConstants.MOD_ID + "tablet_of_recall.invalid_dimension"), false);
+            return stack;
+        }
 
-        if (stack.getItem() == LaLItems.TABLET_OF_CHANNELING) {
-            targetLevel.playSound(null, serverPlayer.blockPosition(), SoundEvents.LIGHTNING_BOLT_THUNDER, SoundSource.PLAYERS, 0.6f, 1f);
-        }
-        if (stack.getItem() == LaLItems.TABLET_OF_DEAFENING) {
-            targetLevel.playSound(null, serverPlayer.blockPosition(), SoundEvents.SCULK_SHRIEKER_SHRIEK, SoundSource.PLAYERS, 0.6f, 1f);
-        }
+        targetLevel.playSound(null, serverPlayer.blockPosition(), LaLSounds.TABLET_BREAK, SoundSource.PLAYERS, 0.6f, 1f);
+        serverPlayer.teleport(serverPlayer.findRespawnPositionAndUseSpawnBlock(false, TeleportTransition.DO_NOTHING));
+        targetLevel.playSound(null, serverPlayer.blockPosition(), LaLSounds.TABLET_TELEPORT, SoundSource.PLAYERS, 0.6f, 1f);
 
         if (serverPlayer.gameMode.getGameModeForPlayer().isCreative()) {
             return stack;

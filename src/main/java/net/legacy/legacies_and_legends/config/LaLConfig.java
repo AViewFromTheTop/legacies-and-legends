@@ -55,35 +55,38 @@ public class LaLConfig implements ConfigData {
 	@CollapsibleObject
 	public MiscConfig misc = new MiscConfig();
 
+	@CollapsibleObject
+	public IntegrationsConfig integrations = new IntegrationsConfig();
+
 	public static class StructuresConfig {
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
-		public boolean dungeonOverhaul = true;
+		public boolean dungeon_overhaul = true;
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
-		public boolean swampHutVariants = true;
+		public boolean swamp_hut_variants = true;
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
-		public boolean buriedTreasureRework = true;
+		public boolean buried_treasure_rework = true;
 
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
-		public boolean newStructures = true;
+		public boolean new_structures = true;
 	}
 
 	public static class LootConfig {
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
-		public boolean enchantedBeetroot = true;
+		public boolean enchanted_beetroot = true;
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
-		public boolean metalChunk = true;
+		public boolean metal_chunk = true;
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
-		public boolean woodenBuckets = true;
+		public boolean wooden_buckets = true;
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
-		public boolean musicDiscs = true;
+		public boolean music_discs = true;
 
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
@@ -94,46 +97,50 @@ public class LaLConfig implements ConfigData {
 
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
-		public boolean improvedLoot = true;
+		public boolean improved_loot = true;
 	}
 
 	public static class ArtifactsConfig {
 		@ConfigEntry.Category("config")
-		public boolean reinforcedChestplate = true;
+		public boolean reinforced_chestplate = true;
 		@ConfigEntry.Category("config")
-		public boolean travellingStrides = true;
+		public boolean travelling_strides = true;
 		@ConfigEntry.Category("config")
-		public boolean wandererBoots = true;
+		public boolean wanderer_boots = true;
 
 		@ConfigEntry.Category("config")
-		public boolean verdantSword = true;
+		public boolean verdant_sword = true;
 		@ConfigEntry.Category("config")
-		public boolean cleavingBattleaxe = true;
+		public boolean cleaving_battleaxe = true;
 		@ConfigEntry.Category("config")
-		public boolean moltenPickaxe = true;
+		public boolean molten_pickaxe = true;
 		@ConfigEntry.Category("config")
-		public boolean prospectorShovel = true;
+		public boolean prospector_shovel = true;
 		@ConfigEntry.Category("config")
-		public boolean witheredHoe = true;
+		public boolean withered_hoe = true;
 
 		@ConfigEntry.Category("config")
-		public boolean totemOfVengeance = true;
+		public boolean totem_of_vengeance = true;
 		@ConfigEntry.Category("config")
-		public boolean totemOfTeleportation = true;
+		public boolean totem_of_teleportation = true;
 
 		@ConfigEntry.Category("config")
-		public boolean tabletOfRecall = true;
+		public boolean tablet_of_recall = true;
 		@ConfigEntry.Category("config")
-		public boolean tabletOfHaste = true;
+		public boolean tablet_of_haste = true;
 		@ConfigEntry.Category("config")
-		public boolean tabletOfLevitation = true;
+		public boolean tablet_of_levitation = true;
+		@ConfigEntry.Category("config")
+		public boolean tablet_of_channeling = true;
+		@ConfigEntry.Category("config")
+		public boolean tablet_of_deafening = true;
 
 		@ConfigEntry.Category("config")
-		public boolean amuletOfAllure = true;
+		public boolean amulet_of_allure = true;
 		@ConfigEntry.Category("config")
-		public boolean amuletOfSynthesis = true;
+		public boolean amulet_of_synthesis = true;
 		@ConfigEntry.Category("config")
-		public boolean amuletOfEvasion = true;
+		public boolean amulet_of_evasion = true;
 	}
 
 	public static class EnchantmentsConfig {
@@ -144,7 +151,7 @@ public class LaLConfig implements ConfigData {
 		@ConfigEntry.Category("config")
 		public boolean shatter = true;
 		@ConfigEntry.Category("config")
-		public boolean rapidStrike = true;
+		public boolean rapid_strike = true;
 		@ConfigEntry.Category("config")
 		public boolean slaughter = true;
 	}
@@ -152,28 +159,30 @@ public class LaLConfig implements ConfigData {
 	public static class MusicConfig {
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
-		public boolean savannaMusic = true;
+		public boolean savanna_music = true;
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
-		public boolean snowyMusic = true;
+		public boolean snowy_music = true;
 
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
-		public boolean endPortalMusic = true;
+		public boolean end_portal_music = true;
 
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
-		public boolean musicAndMelody = true;
+		public boolean music_and_melody = true;
 	}
 
 	public static class MiscConfig {
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
-		public boolean echoShardTrim = true;
+		public boolean trim_materials = true;
+	}
 
+	public static class IntegrationsConfig {
 		@ConfigEntry.Category("config")
-		@ConfigEntry.Gui.Tooltip
-		public boolean integrationDatapacks = true;
+		public boolean wilder_wild = true;
+		public boolean variants_and_ventures = true;
 	}
 
 }

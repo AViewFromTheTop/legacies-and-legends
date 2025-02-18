@@ -35,7 +35,6 @@ public class LaLConsumables {
             .consumeSeconds(12.8F)
             .animation(ItemUseAnimation.BOW)
             .sound(LaLSounds.TABLET_USE)
-            .soundAfterConsume(LaLSounds.TABLET_TELEPORT)
             .hasConsumeParticles(false)
             .onConsume(
                     new ApplyStatusEffectsConsumeEffect(
@@ -48,7 +47,6 @@ public class LaLConsumables {
             .consumeSeconds(1.6F)
             .animation(ItemUseAnimation.BOW)
             .sound(LaLSounds.TABLET_USE)
-            .soundAfterConsume(LaLSounds.TABLET_BREAK)
             .hasConsumeParticles(false)
             .onConsume(
                     new ApplyStatusEffectsConsumeEffect(
@@ -62,12 +60,35 @@ public class LaLConsumables {
             .consumeSeconds(0.8F)
             .animation(ItemUseAnimation.BOW)
             .sound(LaLSounds.TABLET_USE)
-            .soundAfterConsume(LaLSounds.TABLET_BREAK)
             .hasConsumeParticles(false)
             .onConsume(
                     new ApplyStatusEffectsConsumeEffect(
                             List.of(
                                     new MobEffectInstance(MobEffects.LEVITATION, 100, 15)
+                            )
+                    )
+            )
+            .build();
+    public static final Consumable TABLET_OF_CHANNELING = Consumable.builder()
+            .consumeSeconds(12.8F)
+            .animation(ItemUseAnimation.BOW)
+            .sound(LaLSounds.TABLET_USE)
+            .hasConsumeParticles(false)
+            .onConsume(
+                    new ApplyStatusEffectsConsumeEffect(
+                            List.of(
+                            )
+                    )
+            )
+            .build();
+    public static final Consumable TABLET_OF_DEAFENING = Consumable.builder()
+            .consumeSeconds(6.4F)
+            .animation(ItemUseAnimation.BOW)
+            .sound(LaLSounds.TABLET_USE)
+            .hasConsumeParticles(false)
+            .onConsume(
+                    new ApplyStatusEffectsConsumeEffect(
+                            List.of(
                             )
                     )
             )
