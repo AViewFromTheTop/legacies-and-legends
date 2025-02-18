@@ -33,7 +33,7 @@ public class LaLConsumables {
 
     public static final Consumable TABLET_OF_RECALL = Consumable.builder()
             .consumeSeconds(12.8F)
-            .animation(ItemUseAnimation.BOW)
+            .animation(ItemUseAnimation.BLOCK)
             .sound(LaLSounds.TABLET_USE)
             .soundAfterConsume(LaLSounds.TABLET_BREAK)
             .hasConsumeParticles(false)
@@ -46,7 +46,7 @@ public class LaLConsumables {
             .build();
     public static final Consumable TABLET_OF_HASTE = Consumable.builder()
             .consumeSeconds(1.6F)
-            .animation(ItemUseAnimation.BOW)
+            .animation(ItemUseAnimation.BLOCK)
             .sound(LaLSounds.TABLET_USE)
             .soundAfterConsume(LaLSounds.TABLET_BREAK)
             .hasConsumeParticles(false)
@@ -60,7 +60,7 @@ public class LaLConsumables {
             .build();
     public static final Consumable TABLET_OF_LEVITATION = Consumable.builder()
             .consumeSeconds(0.8F)
-            .animation(ItemUseAnimation.BOW)
+            .animation(ItemUseAnimation.BLOCK)
             .sound(LaLSounds.TABLET_USE)
             .soundAfterConsume(LaLSounds.TABLET_BREAK)
             .hasConsumeParticles(false)
@@ -74,7 +74,7 @@ public class LaLConsumables {
             .build();
     public static final Consumable TABLET_OF_CHANNELING = Consumable.builder()
             .consumeSeconds(12.8F)
-            .animation(ItemUseAnimation.BOW)
+            .animation(ItemUseAnimation.BLOCK)
             .sound(LaLSounds.TABLET_USE)
             .soundAfterConsume(LaLSounds.TABLET_BREAK)
             .hasConsumeParticles(false)
@@ -87,7 +87,7 @@ public class LaLConsumables {
             .build();
     public static final Consumable TABLET_OF_DEAFENING = Consumable.builder()
             .consumeSeconds(6.4F)
-            .animation(ItemUseAnimation.BOW)
+            .animation(ItemUseAnimation.BLOCK)
             .sound(LaLSounds.TABLET_USE)
             .soundAfterConsume(LaLSounds.TABLET_BREAK)
             .hasConsumeParticles(false)
@@ -100,7 +100,7 @@ public class LaLConsumables {
             .build();
     public static final Consumable TABLET_OF_REVEALING = Consumable.builder()
             .consumeSeconds(1.6F)
-            .animation(ItemUseAnimation.BOW)
+            .animation(ItemUseAnimation.BLOCK)
             .sound(LaLSounds.TABLET_USE)
             .soundAfterConsume(LaLSounds.TABLET_BREAK)
             .hasConsumeParticles(false)

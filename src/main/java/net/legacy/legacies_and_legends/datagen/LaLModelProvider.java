@@ -89,10 +89,6 @@ public final class LaLModelProvider extends FabricModelProvider {
 		generator.generateFlatItem(LaLItems.TOTEM_OF_TELEPORTATION, ModelTemplates.FLAT_ITEM);
 		generator.generateFlatItem(LaLItems.TOTEM_OF_VENGEANCE, ModelTemplates.FLAT_ITEM);
 
-		generator.generateFlatItem(LaLItems.TABLET_OF_HASTE, ModelTemplates.FLAT_ITEM);
-		generator.generateFlatItem(LaLItems.TABLET_OF_LEVITATION, ModelTemplates.FLAT_ITEM);
-		generator.generateFlatItem(LaLItems.TABLET_OF_RECALL, ModelTemplates.FLAT_ITEM);
-
 		generator.generateFlatItem(LaLItems.AMULET_OF_ALLURE, ModelTemplates.FLAT_ITEM);
 		generator.generateFlatItem(LaLItems.AMULET_OF_EVASION, ModelTemplates.FLAT_ITEM);
 		generator.generateFlatItem(LaLItems.AMULET_OF_SYNTHESIS, ModelTemplates.FLAT_ITEM);
