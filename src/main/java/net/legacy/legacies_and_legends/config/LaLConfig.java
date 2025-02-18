@@ -134,6 +134,8 @@ public class LaLConfig implements ConfigData {
 		public boolean tablet_of_channeling = true;
 		@ConfigEntry.Category("config")
 		public boolean tablet_of_deafening = true;
+		@ConfigEntry.Category("config")
+		public boolean tablet_of_revealing = true;
 
 		@ConfigEntry.Category("config")
 		public boolean amulet_of_allure = true;

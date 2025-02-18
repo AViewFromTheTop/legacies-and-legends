@@ -46,5 +46,9 @@ public class LaLItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(LaLItems.AMULET_OF_ALLURE);
         this.getOrCreateTagBuilder(LaLItemTags.HAS_KILL_EFFECT)
                 .add(LaLItems.AMULET_OF_SYNTHESIS);
+        this.getOrCreateTagBuilder(LaLItemTags.HAS_USE_EFFECT)
+                .add(LaLItems.TABLET_OF_CHANNELING)
+                .add(LaLItems.TABLET_OF_DEAFENING)
+                .add(LaLItems.TABLET_OF_REVEALING);
     }
 }

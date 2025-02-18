@@ -93,6 +93,18 @@ public class LaLConsumables {
                     )
             )
             .build();
+    public static final Consumable TABLET_OF_REVEALING = Consumable.builder()
+            .consumeSeconds(1.6F)
+            .animation(ItemUseAnimation.BOW)
+            .sound(LaLSounds.TABLET_USE)
+            .hasConsumeParticles(false)
+            .onConsume(
+                    new ApplyStatusEffectsConsumeEffect(
+                            List.of(
+                            )
+                    )
+            )
+            .build();
 
     public static Consumable.Builder defaultFood() {
         return Consumable.builder().consumeSeconds(1.6F).animation(ItemUseAnimation.EAT).sound(SoundEvents.GENERIC_EAT).hasConsumeParticles(true);

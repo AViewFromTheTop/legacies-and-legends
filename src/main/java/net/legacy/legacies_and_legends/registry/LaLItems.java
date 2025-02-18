@@ -222,6 +222,13 @@ public final class LaLItems {
                     .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_DEAFENING)
                     .useCooldown(60f)
     );
+    public static final LaLTablet TABLET_OF_REVEALING = register("tablet_of_revealing",
+            LaLTablet::new,
+            new Properties()
+                    .stacksTo(16)
+                    .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_REVEALING)
+                    .useCooldown(60f)
+    );
 
     public static final Item AMULET_OF_ALLURE = register("amulet_of_allure",
             Item::new,
