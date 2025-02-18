@@ -3,26 +3,29 @@ package net.legacy.legacies_and_legends.registry;
 import net.frozenblock.lib.shadow.org.jetbrains.annotations.NotNull;
 import net.frozenblock.lib.item.api.sherd.SherdRegistry;
 import net.legacy.legacies_and_legends.LaLConstants;
+import net.legacy.legacies_and_legends.equipment.LaLEquipmentAssets;
 import net.legacy.legacies_and_legends.equipment.LaLRecallTablet;
-import net.legacy.legacies_and_legends.equipment.LaLTablet;
 import net.legacy.legacies_and_legends.food.LaLFoods;
 import net.legacy.legacies_and_legends.sound.LaLJukeboxSongs;
 import net.legacy.legacies_and_legends.food.LaLConsumables;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.*;
-import net.minecraft.world.item.component.Consumable;
 import net.minecraft.world.item.component.DeathProtection;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
 import net.minecraft.world.item.consume_effects.ClearAllStatusEffectsConsumeEffect;
 import net.minecraft.world.item.consume_effects.TeleportRandomlyConsumeEffect;
+import net.minecraft.world.item.equipment.ArmorType;
+import net.minecraft.world.item.equipment.Equippable;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.Item.Properties;
@@ -32,7 +35,32 @@ import java.util.function.Function;
 
 public final class LaLItems {
 
+    public static final ResourceLocation ARMOR_ID = ResourceLocation.withDefaultNamespace("armor");
+    public static final ResourceLocation KNOCKBACK_RESISTANCE_ID = ResourceLocation.withDefaultNamespace("knockback_resistance_id");
+    public static final ResourceLocation MOVEMENT_SPEED_ID = ResourceLocation.withDefaultNamespace("movement_speed");
+    public static final ResourceLocation STEP_HEIGHT_ID = ResourceLocation.withDefaultNamespace("step_height");
+
     public static final ResourceLocation TEMPT_RANGE_ID = ResourceLocation.withDefaultNamespace("tempt_range");
+
+    private static final ItemAttributeModifiers createAmuletOfAllureAttributes = ItemAttributeModifiers.builder()
+            .add(Attributes.TEMPT_RANGE, new AttributeModifier(TEMPT_RANGE_ID, 10, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
+            .add(Attributes.TEMPT_RANGE, new AttributeModifier(TEMPT_RANGE_ID, 10, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.OFFHAND)
+            .build();
+
+    private static final ItemAttributeModifiers createReinforcedChestplateAttributes = ItemAttributeModifiers.builder()
+            .add(Attributes.ARMOR, new AttributeModifier(ARMOR_ID, 7, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.CHEST)
+            .add(Attributes.KNOCKBACK_RESISTANCE, new AttributeModifier(KNOCKBACK_RESISTANCE_ID, 5, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.CHEST)
+            .build();
+
+    private static final ItemAttributeModifiers createTravellingStridesAttributes = ItemAttributeModifiers.builder()
+            .add(Attributes.ARMOR, new AttributeModifier(ARMOR_ID, 3, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.LEGS)
+            .add(Attributes.MOVEMENT_SPEED, new AttributeModifier(MOVEMENT_SPEED_ID, 0.2, AttributeModifier.Operation.ADD_MULTIPLIED_BASE), EquipmentSlotGroup.LEGS)
+            .build();
+
+    private static final ItemAttributeModifiers createWandererBootsAttributes = ItemAttributeModifiers.builder()
+            .add(Attributes.ARMOR, new AttributeModifier(ARMOR_ID, 2, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.FEET)
+            .add(Attributes.STEP_HEIGHT, new AttributeModifier(STEP_HEIGHT_ID, 1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE), EquipmentSlotGroup.FEET)
+            .build();
 
     // Misc Items
     public static final Item DISC_FRAGMENT_FAR_LANDS = register("disc_fragment_far_lands",
@@ -194,36 +222,36 @@ public final class LaLItems {
                     .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_RECALL)
                     .useCooldown(300f)
     );
-    public static final LaLTablet TABLET_OF_HASTE = register("tablet_of_haste",
-            LaLTablet::new,
+    public static final Item TABLET_OF_HASTE = register("tablet_of_haste",
+            Item::new,
             new Properties()
                     .stacksTo(16)
                     .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_HASTE)
                     .useCooldown(60f)
     );
-    public static final LaLTablet TABLET_OF_LEVITATION = register("tablet_of_levitation",
-            LaLTablet::new,
+    public static final Item TABLET_OF_LEVITATION = register("tablet_of_levitation",
+            Item::new,
             new Properties()
                     .stacksTo(16)
                     .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_LEVITATION)
                     .useCooldown(30f)
     );
-    public static final LaLTablet TABLET_OF_CHANNELING = register("tablet_of_channeling",
-            LaLTablet::new,
+    public static final Item TABLET_OF_CHANNELING = register("tablet_of_channeling",
+            Item::new,
             new Properties()
                     .stacksTo(16)
                     .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_CHANNELING)
                     .useCooldown(300f)
     );
-    public static final LaLTablet TABLET_OF_DEAFENING = register("tablet_of_deafening",
-            LaLTablet::new,
+    public static final Item TABLET_OF_DEAFENING = register("tablet_of_deafening",
+            Item::new,
             new Properties()
                     .stacksTo(16)
                     .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_DEAFENING)
                     .useCooldown(60f)
     );
-    public static final LaLTablet TABLET_OF_REVEALING = register("tablet_of_revealing",
-            LaLTablet::new,
+    public static final Item TABLET_OF_REVEALING = register("tablet_of_revealing",
+            Item::new,
             new Properties()
                     .stacksTo(16)
                     .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_REVEALING)
@@ -234,11 +262,7 @@ public final class LaLItems {
             Item::new,
             new Properties()
                     .stacksTo(1)
-                    .attributes(ItemAttributeModifiers.builder()
-                            .add(Attributes.TEMPT_RANGE, new AttributeModifier(TEMPT_RANGE_ID, 10, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
-                            .add(Attributes.TEMPT_RANGE, new AttributeModifier(TEMPT_RANGE_ID, 10, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.OFFHAND)
-                            .build()
-                    )
+                    .attributes(createAmuletOfAllureAttributes)
     );
     public static final Item AMULET_OF_SYNTHESIS = register("amulet_of_synthesis",
             Item::new,
@@ -249,6 +273,31 @@ public final class LaLItems {
             Item::new,
             new Properties()
                     .stacksTo(1)
+    );
+
+    public static final Item REINFORCED_CHESTPLATE = register("reinforced_chestplate",
+            Item::new,
+            new Properties()
+                .stacksTo(1)
+                .durability(731)
+                .component(DataComponents.EQUIPPABLE, Equippable.builder(ArmorType.CHESTPLATE.getSlot()).setEquipSound(SoundEvents.ARMOR_EQUIP_DIAMOND).setAsset(LaLEquipmentAssets.REINFORCED).build())
+                .attributes(createReinforcedChestplateAttributes)
+    );
+    public static final Item TRAVELLING_STRIDES = register("travelling_strides",
+            Item::new,
+            new Properties()
+                .stacksTo(1)
+                .durability(165)
+                .component(DataComponents.EQUIPPABLE, Equippable.builder(ArmorType.LEGGINGS.getSlot()).setEquipSound(SoundEvents.ARMOR_EQUIP_LEATHER).setAsset(LaLEquipmentAssets.TRAVELLING).build())
+                .attributes(createTravellingStridesAttributes)
+    );
+    public static final Item WANDERER_BOOTS = register("wanderer_boots",
+            Item::new,
+            new Properties()
+                .stacksTo(1)
+                .durability(386)
+                .component(DataComponents.EQUIPPABLE, Equippable.builder(ArmorType.BOOTS.getSlot()).setEquipSound(SoundEvents.ARMOR_EQUIP_IRON).setAsset(LaLEquipmentAssets.WANDERER).build())
+                .attributes(createWandererBootsAttributes)
     );
 
     public static void init() {
@@ -268,5 +317,4 @@ public final class LaLItems {
         SherdRegistry.register(item, LaLConstants.id(name.replace("sherd", "pattern")));
         return item;
     }
-
 }

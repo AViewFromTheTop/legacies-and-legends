@@ -3,8 +3,11 @@ package net.legacy.legacies_and_legends.registry;
 import net.frozenblock.lib.shadow.org.jetbrains.annotations.NotNull;
 import net.legacy.legacies_and_legends.LaLConstants;
 import net.legacy.legacies_and_legends.equipment.*;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -12,6 +15,7 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.equipment.ArmorMaterials;
 import net.minecraft.world.item.equipment.ArmorType;
+import net.minecraft.world.item.equipment.Equippable;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.Item.Properties;
@@ -19,9 +23,6 @@ import net.minecraft.world.item.Item.Properties;
 import java.util.function.Function;
 
 public final class LaLGearItems {
-
-    public static final ResourceLocation MOVEMENT_SPEED_ID = ResourceLocation.withDefaultNamespace("movement_speed");
-    public static final ResourceLocation STEP_HEIGHT_ID = ResourceLocation.withDefaultNamespace("step_height");
 
     // Equipment
     public static final LaLGenericWeapon HOOK = register("hook", settings -> new LaLGenericWeapon(LaLToolMaterial.HOOK, 4f, -3.2f, settings
@@ -34,24 +35,6 @@ public final class LaLGearItems {
     ));
 
     // Artifacts
-    public static final ArmorItem REINFORCED_CHESTPLATE = register("reinforced_chestplate", settings -> new ArmorItem(LaLArmorMaterials.REINFORCED, ArmorType.CHESTPLATE, settings
-            .stacksTo(1)
-    ));
-    public static final ArmorItem TRAVELLING_STRIDES = register("travelling_strides", settings -> new ArmorItem(LaLArmorMaterials.TRAVELLING, ArmorType.LEGGINGS, settings
-            .stacksTo(1)
-            .attributes(ItemAttributeModifiers.builder()
-                    .add(Attributes.MOVEMENT_SPEED, new AttributeModifier(MOVEMENT_SPEED_ID, 1.2, AttributeModifier.Operation.ADD_MULTIPLIED_BASE), EquipmentSlotGroup.LEGS)
-                    .build()
-            )
-    ));
-    public static final ArmorItem WANDERER_BOOTS = register("wanderer_boots", settings -> new ArmorItem(LaLArmorMaterials.WANDERER, ArmorType.BOOTS, settings
-            .stacksTo(1)
-            .attributes(ItemAttributeModifiers.builder()
-                    .add(Attributes.STEP_HEIGHT, new AttributeModifier(STEP_HEIGHT_ID, 2, AttributeModifier.Operation.ADD_MULTIPLIED_BASE), EquipmentSlotGroup.FEET)
-                    .build()
-            )
-    ));
-
     public static final LaLVerdantSword VERDANT_SWORD = register("verdant_sword", settings -> new LaLVerdantSword(LaLToolMaterial.VERDANT, 3f, -2.4f, settings
             .stacksTo(1)
     ));

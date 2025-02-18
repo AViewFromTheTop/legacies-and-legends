@@ -35,6 +35,7 @@ public class LaLConsumables {
             .consumeSeconds(12.8F)
             .animation(ItemUseAnimation.BOW)
             .sound(LaLSounds.TABLET_USE)
+            .soundAfterConsume(LaLSounds.TABLET_BREAK)
             .hasConsumeParticles(false)
             .onConsume(
                     new ApplyStatusEffectsConsumeEffect(
@@ -47,6 +48,7 @@ public class LaLConsumables {
             .consumeSeconds(1.6F)
             .animation(ItemUseAnimation.BOW)
             .sound(LaLSounds.TABLET_USE)
+            .soundAfterConsume(LaLSounds.TABLET_BREAK)
             .hasConsumeParticles(false)
             .onConsume(
                     new ApplyStatusEffectsConsumeEffect(
@@ -60,6 +62,7 @@ public class LaLConsumables {
             .consumeSeconds(0.8F)
             .animation(ItemUseAnimation.BOW)
             .sound(LaLSounds.TABLET_USE)
+            .soundAfterConsume(LaLSounds.TABLET_BREAK)
             .hasConsumeParticles(false)
             .onConsume(
                     new ApplyStatusEffectsConsumeEffect(
@@ -73,6 +76,7 @@ public class LaLConsumables {
             .consumeSeconds(12.8F)
             .animation(ItemUseAnimation.BOW)
             .sound(LaLSounds.TABLET_USE)
+            .soundAfterConsume(LaLSounds.TABLET_BREAK)
             .hasConsumeParticles(false)
             .onConsume(
                     new ApplyStatusEffectsConsumeEffect(
@@ -85,6 +89,7 @@ public class LaLConsumables {
             .consumeSeconds(6.4F)
             .animation(ItemUseAnimation.BOW)
             .sound(LaLSounds.TABLET_USE)
+            .soundAfterConsume(LaLSounds.TABLET_BREAK)
             .hasConsumeParticles(false)
             .onConsume(
                     new ApplyStatusEffectsConsumeEffect(
@@ -97,6 +102,7 @@ public class LaLConsumables {
             .consumeSeconds(1.6F)
             .animation(ItemUseAnimation.BOW)
             .sound(LaLSounds.TABLET_USE)
+            .soundAfterConsume(LaLSounds.TABLET_BREAK)
             .hasConsumeParticles(false)
             .onConsume(
                     new ApplyStatusEffectsConsumeEffect(

@@ -73,9 +73,9 @@ public final class LaLModelProvider extends FabricModelProvider {
 
 	@Override
 	public void generateItemModels(@NotNull ItemModelGenerators generator) {
-		generator.generateTrimmableItem(LaLGearItems.REINFORCED_CHESTPLATE, LaLEquipmentAssets.REINFORCED, "chestplate", false);
-		generator.generateTrimmableItem(LaLGearItems.TRAVELLING_STRIDES, LaLEquipmentAssets.TRAVELLING, "leggings", false);
-		generator.generateTrimmableItem(LaLGearItems.WANDERER_BOOTS, LaLEquipmentAssets.WANDERER, "boots", false);
+		generator.generateTrimmableItem(LaLItems.REINFORCED_CHESTPLATE, LaLEquipmentAssets.REINFORCED, "chestplate", false);
+		generator.generateTrimmableItem(LaLItems.TRAVELLING_STRIDES, LaLEquipmentAssets.TRAVELLING, "leggings", false);
+		generator.generateTrimmableItem(LaLItems.WANDERER_BOOTS, LaLEquipmentAssets.WANDERER, "boots", false);
 
 		generator.generateFlatItem(LaLGearItems.KNIFE, ModelTemplates.FLAT_HANDHELD_ITEM);
 		generator.generateFlatItem(LaLGearItems.HOOK, ModelTemplates.FLAT_HANDHELD_ITEM);
@@ -142,9 +142,9 @@ public final class LaLModelProvider extends FabricModelProvider {
 		this.registerArmorTrims(generator, Items.NETHERITE_LEGGINGS, EquipmentAssets.NETHERITE, "leggings", false);
 		this.registerArmorTrims(generator, Items.NETHERITE_BOOTS, EquipmentAssets.NETHERITE, "boots", false);
 
-		this.registerArmorTrims(generator, LaLGearItems.REINFORCED_CHESTPLATE, LaLEquipmentAssets.REINFORCED, "chestplate", false);
-		this.registerArmorTrims(generator, LaLGearItems.TRAVELLING_STRIDES, LaLEquipmentAssets.TRAVELLING, "leggings", false);
-		this.registerArmorTrims(generator, LaLGearItems.WANDERER_BOOTS, LaLEquipmentAssets.WANDERER, "boots", false);
+		this.registerArmorTrims(generator, LaLItems.REINFORCED_CHESTPLATE, LaLEquipmentAssets.REINFORCED, "chestplate", false);
+		this.registerArmorTrims(generator, LaLItems.TRAVELLING_STRIDES, LaLEquipmentAssets.TRAVELLING, "leggings", false);
+		this.registerArmorTrims(generator, LaLItems.WANDERER_BOOTS, LaLEquipmentAssets.WANDERER, "boots", false);
 
 	}
 
