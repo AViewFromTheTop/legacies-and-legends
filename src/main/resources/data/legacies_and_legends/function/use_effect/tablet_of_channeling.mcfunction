@@ -1,3 +1,3 @@
-execute as @a if items entity @s weapon.mainhand legacies_and_legends:tablet_of_channeling run weather thunder
+weather thunder
 
-execute as @a if items entity @s weapon.offhand legacies_and_legends:tablet_of_channeling run weather thunder
+playsound minecraft:block.sculk_shrieker.shriek player @a[sort=nearest,distance=..16] ~ ~ ~

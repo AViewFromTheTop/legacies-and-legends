@@ -1,6 +1,15 @@
-package net.legacy.legacies_and_legends.equipment;
+package net.legacy.legacies_and_legends.entity;
 
+import com.mojang.serialization.Codec;
+import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
+import net.fabricmc.fabric.api.attachment.v1.AttachmentSyncPredicate;
+import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
+import net.legacy.legacies_and_legends.LaLConstants;
+import net.legacy.legacies_and_legends.equipment.LaLBoomerang;
+import net.legacy.legacies_and_legends.registry.LaLItems;
+import net.legacy.legacies_and_legends.sound.LaLSounds;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -13,22 +22,15 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.control.FlyingMoveControl;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.ProjectileDeflection;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.pathfinder.PathType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class LaLThrownBoomerang extends AbstractArrow {
@@ -37,21 +39,33 @@ public class LaLThrownBoomerang extends AbstractArrow {
     private static final float WATER_INERTIA = 0.33F;
     private boolean dealtDamage;
     public int clientSideReturnTridentTickCount;
+    public static int ticks = 0;
+    public static boolean hasLanded = false;
 
-    public LaLThrownBoomerang(@NotNull EntityType<? extends LaLThrownBoomerang> entityType, @NotNull Level level) {
-        super(entityType, level);
+    public LaLThrownBoomerang(EntityType entityEntityType, Level level) {
+        super((EntityType<? extends LaLThrownBoomerang>) entityEntityType, level);
     }
 
     public LaLThrownBoomerang(Level level, LivingEntity shooter, ItemStack pickupItemStack) {
-        super(EntityType.TRIDENT, shooter, level, pickupItemStack, null);
+        super(LaLEntityType.THROWN_BOOMERANG, shooter, level, pickupItemStack, null);
         this.entityData.set(ID_LOYALTY, this.getLoyaltyFromItem(pickupItemStack));
         this.entityData.set(ID_FOIL, pickupItemStack.hasFoil());
     }
 
     public LaLThrownBoomerang(Level level, double x, double y, double z, ItemStack pickupItemStack) {
-        super(EntityType.TRIDENT, x, y, z, level, pickupItemStack, pickupItemStack);
+        super(LaLEntityType.THROWN_BOOMERANG, x, y, z, level, pickupItemStack, pickupItemStack);
         this.entityData.set(ID_LOYALTY, this.getLoyaltyFromItem(pickupItemStack));
         this.entityData.set(ID_FOIL, pickupItemStack.hasFoil());
+    }
+
+    @Override
+    public void shoot (double x, double y, double z, float speed, float divergence) {
+        super.shoot(x, y * 0.5, z, speed * 0.8F, divergence * 0.5F);
+    }
+
+    @Override
+    protected double getDefaultGravity () {
+        return 0.01;
     }
 
     @Override
@@ -63,6 +77,14 @@ public class LaLThrownBoomerang extends AbstractArrow {
 
     @Override
     public void tick() {
+        if (this.inGroundTime == 0){
+            playSound(LaLSounds.BOOMERANG_WHOOSH);
+            ticks = ticks + 1;
+        }
+        else {
+            hasLanded = true;
+        }
+
         if (this.inGroundTime > 4) {
             this.dealtDamage = true;
         }
@@ -72,7 +94,7 @@ public class LaLThrownBoomerang extends AbstractArrow {
         if (i > 0 && (this.dealtDamage || this.isNoPhysics()) && entity != null) {
             if (!this.isAcceptibleReturnOwner()) {
                 if (this.level() instanceof ServerLevel serverLevel && this.pickup == AbstractArrow.Pickup.ALLOWED) {
-                    this.spawnAtLocation(serverLevel, this.getPickupItem(), 0.1F);
+                    this.spawnAtLocation(serverLevel, this.getPickupItem(), -1F);
                 }
 
                 this.discard();
@@ -116,7 +138,7 @@ public class LaLThrownBoomerang extends AbstractArrow {
     @Override
     protected void onHitEntity(EntityHitResult result) {
         Entity entity = result.getEntity();
-        float f = 8.0F;
+        float f = LaLBoomerang.THROW_DAMAGE;
         Entity entity2 = this.getOwner();
         DamageSource damageSource = this.damageSources().trident(this, (Entity)(entity2 == null ? this : entity2));
         if (this.level() instanceof ServerLevel serverLevel) {
@@ -141,7 +163,8 @@ public class LaLThrownBoomerang extends AbstractArrow {
 
         this.deflect(ProjectileDeflection.REVERSE, entity, this.getOwner(), false);
         this.setDeltaMovement(this.getDeltaMovement().multiply(0.02, 0.2, 0.02));
-        this.playSound(SoundEvents.TRIDENT_HIT, 1.0F, 1.0F);
+        this.playSound(LaLSounds.BOOMERANG_LAND, 1.0F, 1.0F);
+
     }
 
     @Override
@@ -171,12 +194,12 @@ public class LaLThrownBoomerang extends AbstractArrow {
 
     @Override
     protected ItemStack getDefaultPickupItem() {
-        return new ItemStack(Items.TRIDENT);
+        return new ItemStack(LaLItems.BOOMERANG);
     }
 
     @Override
     protected SoundEvent getDefaultHitGroundSoundEvent() {
-        return SoundEvents.TRIDENT_HIT_GROUND;
+        return LaLSounds.BOOMERANG_LAND;
     }
 
     @Override
@@ -201,7 +224,7 @@ public class LaLThrownBoomerang extends AbstractArrow {
 
     private byte getLoyaltyFromItem(ItemStack stack) {
         return this.level() instanceof ServerLevel serverLevel
-                ? (byte) Mth.clamp(EnchantmentHelper.getTridentReturnToOwnerAcceleration(serverLevel, stack, this), 0, 127)
+                ? (byte)Mth.clamp(EnchantmentHelper.getTridentReturnToOwnerAcceleration(serverLevel, stack, this), 0, 127)
                 : 0;
     }
 
@@ -215,7 +238,7 @@ public class LaLThrownBoomerang extends AbstractArrow {
 
     @Override
     protected float getWaterInertia() {
-        return 0.99F;
+        return 0.33F;
     }
 
     @Override

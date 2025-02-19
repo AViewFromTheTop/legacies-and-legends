@@ -3,6 +3,7 @@ package net.legacy.legacies_and_legends.registry;
 import net.frozenblock.lib.shadow.org.jetbrains.annotations.NotNull;
 import net.frozenblock.lib.item.api.sherd.SherdRegistry;
 import net.legacy.legacies_and_legends.LaLConstants;
+import net.legacy.legacies_and_legends.equipment.LaLBoomerang;
 import net.legacy.legacies_and_legends.equipment.LaLEquipmentAssets;
 import net.legacy.legacies_and_legends.equipment.LaLRecallTablet;
 import net.legacy.legacies_and_legends.food.LaLFoods;
@@ -61,6 +62,15 @@ public final class LaLItems {
             .add(Attributes.ARMOR, new AttributeModifier(ARMOR_ID, 2, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.FEET)
             .add(Attributes.STEP_HEIGHT, new AttributeModifier(STEP_HEIGHT_ID, 1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE), EquipmentSlotGroup.FEET)
             .build();
+
+    // Boomerang
+    public static final LaLBoomerang BOOMERANG = register("boomerang",
+            LaLBoomerang::new,
+            new Properties()
+                    .stacksTo(16)
+                    .component(DataComponents.TOOL, LaLBoomerang.createToolProperties())
+                    .component(DataComponents.ATTRIBUTE_MODIFIERS, LaLBoomerang.createAttributes())
+    );
 
     // Misc Items
     public static final Item DISC_FRAGMENT_FAR_LANDS = register("disc_fragment_far_lands",
@@ -133,7 +143,6 @@ public final class LaLItems {
                     .rarity(Rarity.RARE)
                     .jukeboxPlayable(LaLJukeboxSongs.INFINITE_SPOOKY_AMETHYST)
     );
-
 
     // Sherds
     public static final Item DUSK_POTTERY_SHERD = registerSherd("dusk_pottery_sherd",

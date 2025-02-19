@@ -16,7 +16,10 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-          "net.legacy.legacies_and_legends.LegaciesAndLegends"
+			"net.legacy.legacies_and_legends.LegaciesAndLegends"
+		],
+		"client": [
+			"net.legacy.legacies_and_legends.LegaciesAndLegendsClient"
 		],
 		"fabric-datagen": [
           "net.legacy.legacies_and_legends.datagen.LaLDataGenerator"
