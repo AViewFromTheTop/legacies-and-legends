@@ -36,7 +36,7 @@ import java.util.List;
 
 public class LaLBoomerang extends Item implements ProjectileItem {
     public static final int THROW_THRESHOLD_TIME = 12;
-    public static final float THROW_DAMAGE = 7.0F;
+    public static final float THROW_DAMAGE = 6.0F;
     public static final float BASE_DAMAGE = THROW_DAMAGE / 2;
     public static final float PROJECTILE_SHOOT_POWER = 2F;
 

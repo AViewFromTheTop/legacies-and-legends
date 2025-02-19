@@ -19,4 +19,5 @@ public class LaLVerdantSword extends SwordItem {
         target.addEffect(new MobEffectInstance(MobEffects.POISON, 100, 0), attacker);
         stack.hurtAndBreak(1, attacker, EquipmentSlot.MAINHAND);
     }
+
 }

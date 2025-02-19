@@ -7,7 +7,7 @@
     },
     "on_true": {
       "type": "minecraft:model",
-      "model": "legacies_and_legends:item/tablet_of_recall_revealing"
+      "model": "legacies_and_legends:item/tablet_of_revealing_rotated"
     },
     "property": "minecraft:using_item"
   }
