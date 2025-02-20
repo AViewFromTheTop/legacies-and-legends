@@ -16,7 +16,7 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 
 @Environment(EnvType.CLIENT)
-public class LaLThrownBoomerangRenderer extends EntityRenderer<LaLThrownBoomerang, ThrownTridentRenderState> {
+public class LaLThrownBoomerangRenderer extends EntityRenderer<LaLThrownBoomerang, LaLThrownBoomerangRenderState> {
     public static final ResourceLocation BOOMERANG_LOCATION = ResourceLocation.fromNamespaceAndPath(LaLConstants.MOD_ID,"textures/entity/boomerang.png");
     private final LaLBoomerangModel model;
 
@@ -27,23 +27,25 @@ public class LaLThrownBoomerangRenderer extends EntityRenderer<LaLThrownBoomeran
         this.model = new LaLBoomerangModel(context.bakeLayer(LaLModelLayers.THROWN_BOOMERANG));
     }
 
-    public void render(ThrownTridentRenderState thrownTridentRenderState, PoseStack poseStack, MultiBufferSource multiBufferSource, int i) {
+
+    public void render(LaLThrownBoomerangRenderState thrownBoomerangRenderState, PoseStack poseStack, MultiBufferSource multiBufferSource, int i) {
         poseStack.pushPose();
-        poseStack.mulPose(Axis.YP.rotationDegrees(thrownTridentRenderState.yRot - 45));
-        VertexConsumer vertexConsumer = ItemRenderer.getFoilBuffer(multiBufferSource, this.model.renderType(BOOMERANG_LOCATION), false, thrownTridentRenderState.isFoil);
+        poseStack.mulPose(Axis.YP.rotationDegrees(thrownBoomerangRenderState.yRot - 45));
+        VertexConsumer vertexConsumer = ItemRenderer.getFoilBuffer(multiBufferSource, this.model.renderType(BOOMERANG_LOCATION), false, thrownBoomerangRenderState.isFoil);
         this.model.renderToBuffer(poseStack, vertexConsumer, i, OverlayTexture.NO_OVERLAY);
         poseStack.popPose();
-        super.render(thrownTridentRenderState, poseStack, multiBufferSource, i);
+        super.render(thrownBoomerangRenderState, poseStack, multiBufferSource, i);
     }
 
-    public ThrownTridentRenderState createRenderState() {
-        return new ThrownTridentRenderState();
+
+    public LaLThrownBoomerangRenderState createRenderState() {
+        return new LaLThrownBoomerangRenderState();
     }
 
-    public void extractRenderState(LaLThrownBoomerang thrownBoomerang, ThrownTridentRenderState thrownTridentRenderState, float f) {
-        super.extractRenderState(thrownBoomerang, thrownTridentRenderState, f);
-        thrownTridentRenderState.yRot = thrownBoomerang.getYRot(f);
-        thrownTridentRenderState.xRot = thrownBoomerang.getXRot(f);
-        thrownTridentRenderState.isFoil = thrownBoomerang.isFoil();
+    public void extractRenderState(LaLThrownBoomerang thrownBoomerang, LaLThrownBoomerangRenderState thrownBoomerangRenderState, float f) {
+        super.extractRenderState(thrownBoomerang, thrownBoomerangRenderState, f);
+        thrownBoomerangRenderState.yRot = thrownBoomerang.getYRot(f);
+        thrownBoomerangRenderState.xRot = thrownBoomerang.getXRot(f);
+        thrownBoomerangRenderState.isFoil = thrownBoomerang.isFoil();
     }
 }

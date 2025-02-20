@@ -50,5 +50,8 @@ public class LaLItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(LaLItems.TABLET_OF_CHANNELING)
                 .add(LaLItems.TABLET_OF_DEAFENING)
                 .add(LaLItems.TABLET_OF_REVEALING);
+
+        this.getOrCreateTagBuilder(LaLItemTags.PROSPECTING)
+                .add(LaLGearItems.PROSPECTOR_SHOVEL);
     }
 }

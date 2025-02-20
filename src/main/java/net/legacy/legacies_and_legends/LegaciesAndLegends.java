@@ -50,9 +50,16 @@ public class LegaciesAndLegends implements ModInitializer {
 					ResourcePackActivationType.ALWAYS_ENABLED
 			);
 		}
+		if (LaLConfig.get().structures.dungeon_overhaul) {
+			ResourceManagerHelper.registerBuiltinResourcePack(
+					ResourceLocation.fromNamespaceAndPath(LaLConstants.MOD_ID, "dungeon_overhaul"), modContainer.get(),
+					Component.translatable("pack.legacies_and_legends.reworked_buried_treasure"),
+					ResourcePackActivationType.ALWAYS_ENABLED
+			);
+		}
 		if (LaLConfig.get().structures.buried_treasure_rework) {
 			ResourceManagerHelper.registerBuiltinResourcePack(
-					ResourceLocation.fromNamespaceAndPath(LaLConstants.MOD_ID, "reworked_buried_treasure"), modContainer.get(),
+					ResourceLocation.fromNamespaceAndPath(LaLConstants.MOD_ID, "buried_treasure_rework"), modContainer.get(),
 					Component.translatable("pack.legacies_and_legends.reworked_buried_treasure"),
 					ResourcePackActivationType.ALWAYS_ENABLED
 			);

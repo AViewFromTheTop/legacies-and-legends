@@ -1,15 +1,9 @@
 package net.legacy.legacies_and_legends.entity;
 
-import com.mojang.serialization.Codec;
-import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
-import net.fabricmc.fabric.api.attachment.v1.AttachmentSyncPredicate;
-import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
-import net.legacy.legacies_and_legends.LaLConstants;
 import net.legacy.legacies_and_legends.equipment.LaLBoomerang;
 import net.legacy.legacies_and_legends.registry.LaLItems;
 import net.legacy.legacies_and_legends.sound.LaLSounds;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -39,7 +33,7 @@ public class LaLThrownBoomerang extends AbstractArrow {
     private static final float WATER_INERTIA = 0.33F;
     private boolean dealtDamage;
     public int clientSideReturnTridentTickCount;
-    public static int ticks = 0;
+    public float ticks = 0;
     public static boolean hasLanded = false;
 
     public LaLThrownBoomerang(EntityType entityEntityType, Level level) {
@@ -79,7 +73,7 @@ public class LaLThrownBoomerang extends AbstractArrow {
     public void tick() {
         if (this.inGroundTime == 0){
             playSound(LaLSounds.BOOMERANG_WHOOSH);
-            ticks = ticks + 1;
+            this.ticks = this.ticks + 1;
         }
         else {
             hasLanded = true;

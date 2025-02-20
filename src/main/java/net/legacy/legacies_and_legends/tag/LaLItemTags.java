@@ -27,7 +27,7 @@ public class LaLItemTags {
     public static final TagKey<Item> HAS_KILL_EFFECT = bind("has_kill_effect");
     public static final TagKey<Item> HAS_USE_EFFECT = bind("has_use_effect");
 
-    public static final TagKey<Item> SMELTS_BLOCKS = bind("smelts_blocks");
+    public static final TagKey<Item> PROSPECTING = bind("prospecting");
 
     @NotNull
     private static TagKey<Item> bind(@NotNull String path) {
