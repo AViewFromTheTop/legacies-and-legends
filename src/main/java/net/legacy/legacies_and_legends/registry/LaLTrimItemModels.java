@@ -1,4 +1,4 @@
-package net.legacy.legacies_and_legends.equipment;
+package net.legacy.legacies_and_legends.registry;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;

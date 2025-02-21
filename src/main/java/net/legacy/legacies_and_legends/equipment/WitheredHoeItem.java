@@ -27,7 +27,7 @@ import java.util.Map;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 
-public class LaLWitheredHoe extends DiggerItem {
+public class WitheredHoeItem extends DiggerItem {
     protected static final Map<Block, Pair<Predicate<UseOnContext>, Consumer<UseOnContext>>> TILLABLES = Maps.<Block, Pair<Predicate<UseOnContext>, Consumer<UseOnContext>>>newHashMap(
             ImmutableMap.of(
                     Blocks.WARPED_NYLIUM,
@@ -41,7 +41,7 @@ public class LaLWitheredHoe extends DiggerItem {
             )
     );
 
-    public LaLWitheredHoe(ToolMaterial material, float attackDamage, float attackSpeed, Item.Properties properties) {
+    public WitheredHoeItem(ToolMaterial material, float attackDamage, float attackSpeed, Item.Properties properties) {
         super(material, BlockTags.MINEABLE_WITH_HOE, attackDamage, attackSpeed, properties);
     }
 

@@ -1,4 +1,4 @@
-package net.legacy.legacies_and_legends.food;
+package net.legacy.legacies_and_legends.registry;
 
 import net.minecraft.world.food.FoodProperties;
 

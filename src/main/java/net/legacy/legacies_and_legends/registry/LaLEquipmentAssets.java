@@ -1,4 +1,4 @@
-package net.legacy.legacies_and_legends.equipment;
+package net.legacy.legacies_and_legends.registry;
 
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;

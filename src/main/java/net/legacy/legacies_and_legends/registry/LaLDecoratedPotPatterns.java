@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.entity.DecoratedPotPattern;
 import org.jetbrains.annotations.NotNull;
 
 public class LaLDecoratedPotPatterns implements DecoratedPotPatternRegistryEntrypoint {
+
     @Override
     public void bootstrap(Registry<DecoratedPotPattern> registry) {
         register(registry, "dusk");

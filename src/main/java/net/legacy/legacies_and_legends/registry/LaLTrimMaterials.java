@@ -1,4 +1,4 @@
-package net.legacy.legacies_and_legends.equipment;
+package net.legacy.legacies_and_legends.registry;
 
 import net.legacy.legacies_and_legends.LaLConstants;
 import net.minecraft.core.registries.Registries;

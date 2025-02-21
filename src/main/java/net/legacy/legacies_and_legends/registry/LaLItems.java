@@ -3,19 +3,15 @@ package net.legacy.legacies_and_legends.registry;
 import net.frozenblock.lib.shadow.org.jetbrains.annotations.NotNull;
 import net.frozenblock.lib.item.api.sherd.SherdRegistry;
 import net.legacy.legacies_and_legends.LaLConstants;
-import net.legacy.legacies_and_legends.equipment.LaLBoomerang;
-import net.legacy.legacies_and_legends.equipment.LaLEquipmentAssets;
-import net.legacy.legacies_and_legends.equipment.LaLRecallTablet;
-import net.legacy.legacies_and_legends.food.LaLFoods;
+import net.legacy.legacies_and_legends.equipment.BoomerangItem;
+import net.legacy.legacies_and_legends.equipment.RecallTabletItem;
 import net.legacy.legacies_and_legends.sound.LaLJukeboxSongs;
-import net.legacy.legacies_and_legends.food.LaLConsumables;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -30,7 +26,6 @@ import net.minecraft.world.item.equipment.Equippable;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.Item.Properties;
-import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 
 import java.util.List;
 import java.util.function.Function;
@@ -65,12 +60,12 @@ public final class LaLItems {
             .build();
 
     // Boomerang
-    public static final LaLBoomerang BOOMERANG = register("boomerang",
-            LaLBoomerang::new,
+    public static final BoomerangItem BOOMERANG = register("boomerang",
+            BoomerangItem::new,
             new Properties()
                     .stacksTo(16)
-                    .component(DataComponents.TOOL, LaLBoomerang.createToolProperties())
-                    .component(DataComponents.ATTRIBUTE_MODIFIERS, LaLBoomerang.createAttributes())
+                    .component(DataComponents.TOOL, BoomerangItem.createToolProperties())
+                    .component(DataComponents.ATTRIBUTE_MODIFIERS, BoomerangItem.createAttributes())
     );
 
     // Misc Items
@@ -225,8 +220,8 @@ public final class LaLItems {
                     ))
     );
 
-    public static final LaLRecallTablet TABLET_OF_RECALL = register("tablet_of_recall",
-            LaLRecallTablet::new,
+    public static final RecallTabletItem TABLET_OF_RECALL = register("tablet_of_recall",
+            RecallTabletItem::new,
             new Properties()
                     .stacksTo(16)
                     .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_RECALL)
