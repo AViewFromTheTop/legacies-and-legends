@@ -1,4 +1,4 @@
-package net.legacy.legacies_and_legends.food;
+package net.legacy.legacies_and_legends.registry;
 
 import net.legacy.legacies_and_legends.sound.LaLSounds;
 import net.minecraft.sounds.SoundEvents;

@@ -12,8 +12,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.portal.TeleportTransition;
 
-public class LaLRecallTablet extends Item {
-    public LaLRecallTablet(Settings settings) {
+public class RecallTabletItem extends Item {
+    public RecallTabletItem(Settings settings) {
         super((Properties) settings);
     }
 

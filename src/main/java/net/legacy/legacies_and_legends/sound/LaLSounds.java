@@ -20,7 +20,7 @@ public class LaLSounds {
 	public static final Holder.Reference<SoundEvent> TABLET_BREAK = registerForHolder("tablet.break");
 	public static final SoundEvent TABLET_TELEPORT = register("tablet.teleport");
 
-	public static final Holder.Reference<SoundEvent> BOOMERANG_THROW = registerForHolder("boomerang.throw");
+	public static final SoundEvent BOOMERANG_THROW = register("boomerang.throw");
 	public static final SoundEvent BOOMERANG_HIT = register("boomerang.hit");
 	public static final SoundEvent BOOMERANG_WOOSH = register("boomerang.woosh");
 
