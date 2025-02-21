@@ -1,66 +1,27 @@
 {
     "replace": false,
     "values": [
-        "minecraft:stony_shore",
-        "minecraft:beach",
-        "minecraft:forest",
-        "minecraft:flower_forest",
-        "minecraft:birch_forest",
-        "minecraft:old_growth_birch_forest",
-        "minecraft:dark_forest",
-        "minecraft:pale_garden",
-        "#minecraft:is_hill",
-        "minecraft:meadow",
-        "minecraft:stony_peaks",
-        "minecraft:cherry_grove",
-        "minecraft:ocean",
-        "minecraft:cold_ocean",
-        "minecraft:lukewarm_ocean",
-        "minecraft:warm_ocean",
-        "minecraft:river",
-        "minecraft:taiga",
-        "minecraft:old_growth_pine_taiga",
-        "minecraft:old_growth_spruce_taiga",
-        "minecraft:mushroom_fields",
-        "minecraft:plains",
-        "minecraft:sunflower_plains",
-        "minecraft:swamp",
-        "minecraft:mangrove_swamp",
-        "minecraft:savanna_plateau",
-        "minecraft:dripstone_caves",
-        "minecraft:lush_caves",
-        "#legacies_and_legends:has_structure/dungeon/simple_verdant",
-        "#legacies_and_legends:has_structure/dungeon/simple_infernal",
+        "minecraft:frozen_ocean",
+        "minecraft:grove",
+        "minecraft:snowy_slopes",
+        "minecraft:frozen_peaks",
+        "minecraft:jagged_peaks",
+        "minecraft:snowy_beach",
+        "minecraft:frozen_river",
+        "minecraft:ice_spikes",
+        "minecraft:snowy_taiga",
+        "minecraft:snowy_plains",
+        "#minecraft:has_structure/igloo",
         {
-            "id": "#c:is_temperate/overworld",
+            "id": "#c:is_snowy",
             "required": false
         },
         {
-            "id": "#c:is_floral",
+            "id": "#wilderwild:below_surface_snow",
             "required": false
         },
         {
-            "id": "#c:is_aquatic",
-            "required": false
-        },
-        {
-            "id": "wilderwild:dying_forest",
-            "required": false
-        },
-        {
-            "id": "wilderwild:dying_mixed_forest",
-            "required": false
-        },
-        {
-            "id": "wilderwild:sparse_forest",
-            "required": false
-        },
-        {
-            "id": "wilderwild:maple_forest",
-            "required": false
-        },
-        {
-            "id": "wilderwild:autumnal_plains",
+            "id": "wilderwild:frozen_caves",
             "required": false
         }
     ]
