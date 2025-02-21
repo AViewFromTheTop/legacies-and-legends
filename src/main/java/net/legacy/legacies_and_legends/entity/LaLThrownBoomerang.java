@@ -33,8 +33,7 @@ public class LaLThrownBoomerang extends AbstractArrow {
     private static final float WATER_INERTIA = 0.33F;
     private boolean dealtDamage;
     public int clientSideReturnTridentTickCount;
-    public float ticks = 0;
-    public static boolean hasLanded = false;
+    public int loopTick = 3;
 
     public LaLThrownBoomerang(EntityType entityEntityType, Level level) {
         super((EntityType<? extends LaLThrownBoomerang>) entityEntityType, level);
@@ -72,11 +71,11 @@ public class LaLThrownBoomerang extends AbstractArrow {
     @Override
     public void tick() {
         if (this.inGroundTime == 0){
-            playSound(LaLSounds.BOOMERANG_WHOOSH);
-            this.ticks = this.ticks + 1;
-        }
-        else {
-            hasLanded = true;
+            this.loopTick = this.loopTick + 1;
+            if (this.loopTick >= 4){
+                this.playSound(LaLSounds.BOOMERANG_WOOSH);
+                this.loopTick = 0;
+            }
         }
 
         if (this.inGroundTime > 4) {
@@ -157,7 +156,7 @@ public class LaLThrownBoomerang extends AbstractArrow {
 
         this.deflect(ProjectileDeflection.REVERSE, entity, this.getOwner(), false);
         this.setDeltaMovement(this.getDeltaMovement().multiply(0.02, 0.2, 0.02));
-        this.playSound(LaLSounds.BOOMERANG_LAND, 1.0F, 1.0F);
+        this.playSound(LaLSounds.BOOMERANG_HIT, 1.0F, 1.0F);
 
     }
 
@@ -193,7 +192,7 @@ public class LaLThrownBoomerang extends AbstractArrow {
 
     @Override
     protected SoundEvent getDefaultHitGroundSoundEvent() {
-        return LaLSounds.BOOMERANG_LAND;
+        return LaLSounds.BOOMERANG_HIT;
     }
 
     @Override
@@ -232,7 +231,7 @@ public class LaLThrownBoomerang extends AbstractArrow {
 
     @Override
     protected float getWaterInertia() {
-        return 0.33F;
+        return WATER_INERTIA;
     }
 
     @Override

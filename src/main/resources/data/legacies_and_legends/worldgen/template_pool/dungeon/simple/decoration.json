@@ -3,20 +3,11 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "legacies_and_legends:dungeon/simple/decoration/bench",
-        "processors": "legacies_and_legends:dungeon/simple",
-        "projection": "rigid"
-      },
-      "weight": 9
-    },
-    {
-      "element": {
-        "element_type": "minecraft:single_pool_element",
         "location": "legacies_and_legends:dungeon/simple/decoration/pot",
         "processors": "legacies_and_legends:dungeon/simple",
         "projection": "rigid"
       },
-      "weight": 9
+      "weight": 36
     },
     {
       "element": {
@@ -25,7 +16,16 @@
         "processors": "legacies_and_legends:dungeon/simple",
         "projection": "rigid"
       },
-      "weight": 9
+      "weight": 36
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "legacies_and_legends:dungeon/simple/decoration/bench",
+        "processors": "legacies_and_legends:dungeon/simple",
+        "projection": "rigid"
+      },
+      "weight": 18
     },
     {
       "element": {
@@ -34,7 +34,34 @@
         "processors": "legacies_and_legends:dungeon/simple",
         "projection": "rigid"
       },
-      "weight": 9
+      "weight": 18
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "legacies_and_legends:dungeon/simple/decoration/bookshelf",
+        "processors": "legacies_and_legends:dungeon/simple",
+        "projection": "rigid"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "legacies_and_legends:dungeon/simple/decoration/bookshelf_2",
+        "processors": "legacies_and_legends:dungeon/simple",
+        "projection": "rigid"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "legacies_and_legends:dungeon/simple/decoration/bookshelf_3",
+        "processors": "legacies_and_legends:dungeon/simple",
+        "projection": "rigid"
+      },
+      "weight": 2
     },
     {
       "element": {
@@ -58,33 +85,6 @@
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "legacies_and_legends:dungeon/simple/decoration/barrel_3",
-        "processors": "legacies_and_legends:dungeon/simple",
-        "projection": "rigid"
-      },
-      "weight": 1
-    },
-    {
-      "element": {
-        "element_type": "minecraft:single_pool_element",
-        "location": "legacies_and_legends:dungeon/simple/decoration/bookshelf",
-        "processors": "legacies_and_legends:dungeon/simple",
-        "projection": "rigid"
-      },
-      "weight": 1
-    },
-    {
-      "element": {
-        "element_type": "minecraft:single_pool_element",
-        "location": "legacies_and_legends:dungeon/simple/decoration/bookshelf_2",
-        "processors": "legacies_and_legends:dungeon/simple",
-        "projection": "rigid"
-      },
-      "weight": 1
-    },
-    {
-      "element": {
-        "element_type": "minecraft:single_pool_element",
-        "location": "legacies_and_legends:dungeon/simple/decoration/bookshelf_3",
         "processors": "legacies_and_legends:dungeon/simple",
         "projection": "rigid"
       },

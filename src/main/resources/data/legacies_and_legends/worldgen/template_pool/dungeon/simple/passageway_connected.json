@@ -7,7 +7,7 @@
         "processors": "legacies_and_legends:dungeon/simple_no_air",
         "projection": "rigid"
       },
-      "weight": 6
+      "weight": 3
     },
     {
       "element": {
@@ -16,7 +16,7 @@
         "processors": "legacies_and_legends:dungeon/simple_no_air",
         "projection": "rigid"
       },
-      "weight": 6
+      "weight": 3
     },
     {
       "element": {
@@ -25,7 +25,7 @@
         "processors": "legacies_and_legends:dungeon/simple_no_air",
         "projection": "rigid"
       },
-      "weight": 6
+      "weight": 3
     },
     {
       "element": {
@@ -39,11 +39,56 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
+        "location": "legacies_and_legends:dungeon/simple/crossway/intersection",
+        "processors": "legacies_and_legends:dungeon/simple_no_air",
+        "projection": "rigid"
+      },
+      "weight": 3
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "legacies_and_legends:dungeon/simple/crossway/crossing",
+        "processors": "legacies_and_legends:dungeon/simple_no_air",
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "legacies_and_legends:dungeon/simple/crossway/crossing_2",
+        "processors": "legacies_and_legends:dungeon/simple_no_air",
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "legacies_and_legends:dungeon/simple/crossway/crossing_3",
+        "processors": "legacies_and_legends:dungeon/simple_no_air",
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "legacies_and_legends:dungeon/simple/crossway/crossing_4",
+        "processors": "legacies_and_legends:dungeon/simple_no_air",
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
         "location": "legacies_and_legends:dungeon/simple/room/reward",
         "processors": "legacies_and_legends:dungeon/simple_no_air",
         "projection": "rigid"
       },
-      "weight": 4
+      "weight": 2
     },
     {
       "element": {
@@ -52,7 +97,7 @@
         "processors": "legacies_and_legends:dungeon/simple_no_air",
         "projection": "rigid"
       },
-      "weight": 4
+      "weight": 2
     },
     {
       "element": {
@@ -61,7 +106,16 @@
         "processors": "legacies_and_legends:dungeon/simple_no_air",
         "projection": "rigid"
       },
-      "weight": 4
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "legacies_and_legends:dungeon/simple/room/library_2",
+        "processors": "legacies_and_legends:dungeon/simple_no_air",
+        "projection": "rigid"
+      },
+      "weight": 1
     },
     {
       "element": {
@@ -210,7 +264,7 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "legacies_and_legends:dungeon/simple/dungeon/dungeon_long",
+        "location": "legacies_and_legends:dungeon/simple/dungeon/dungeon_long_2",
         "processors": "legacies_and_legends:dungeon/simple_no_air",
         "projection": "rigid"
       },
@@ -219,7 +273,7 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "legacies_and_legends:dungeon/simple/dungeon/dungeon_long_2",
+        "location": "legacies_and_legends:dungeon/simple/dungeon/dungeon_long_3",
         "processors": "legacies_and_legends:dungeon/simple_no_air",
         "projection": "rigid"
       },
@@ -233,7 +287,16 @@
         "projection": "rigid"
       },
       "weight": 4
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "legacies_and_legends:dungeon/simple/wall/wall",
+        "processors": "legacies_and_legends:dungeon/simple_no_air",
+        "projection": "rigid"
+      },
+      "weight": 8
     }
   ],
-  "fallback": "minecraft:empty"
+  "fallback": "legacies_and_legends:dungeon/simple/wall"
 }

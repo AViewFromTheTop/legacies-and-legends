@@ -39,11 +39,11 @@ public class LegaciesAndLegends implements ModInitializer {
 		LaLMainConfig.initClient();
 
 		ResourceManagerHelper.registerBuiltinResourcePack(
-				ResourceLocation.fromNamespaceAndPath(LaLConstants.MOD_ID, "legacies_and_legends_asset_overrides"), modContainer.get(),
-				Component.translatable("pack.legacies_and_legends.legacies_and_legends_asset_overrides"),
+				ResourceLocation.fromNamespaceAndPath(LaLConstants.MOD_ID, "asset_overrides"), modContainer.get(),
+				Component.translatable("pack.legacies_and_legends.asset_overrides"),
 				ResourcePackActivationType.ALWAYS_ENABLED
 		);
-		if (LaLConfig.get().structures.buried_treasure_rework) {
+		if (LaLConfig.get().music.music_and_melody) {
 			ResourceManagerHelper.registerBuiltinResourcePack(
 					ResourceLocation.fromNamespaceAndPath(LaLConstants.MOD_ID, "music_and_melody"), modContainer.get(),
 					Component.translatable("pack.legacies_and_legends.music_and_melody"),
@@ -53,7 +53,14 @@ public class LegaciesAndLegends implements ModInitializer {
 		if (LaLConfig.get().structures.dungeon_overhaul) {
 			ResourceManagerHelper.registerBuiltinResourcePack(
 					ResourceLocation.fromNamespaceAndPath(LaLConstants.MOD_ID, "dungeon_overhaul"), modContainer.get(),
-					Component.translatable("pack.legacies_and_legends.reworked_buried_treasure"),
+					Component.translatable("pack.legacies_and_legends.dungeon_overhaul"),
+					ResourcePackActivationType.ALWAYS_ENABLED
+			);
+		}
+		if (LaLConfig.get().structures.swamp_hut_variants) {
+			ResourceManagerHelper.registerBuiltinResourcePack(
+					ResourceLocation.fromNamespaceAndPath(LaLConstants.MOD_ID, "swamp_hut_variants"), modContainer.get(),
+					Component.translatable("pack.legacies_and_legends.swamp_hut_variants"),
 					ResourcePackActivationType.ALWAYS_ENABLED
 			);
 		}

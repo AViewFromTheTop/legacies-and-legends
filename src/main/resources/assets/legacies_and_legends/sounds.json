@@ -1,4 +1,31 @@
 {
+  "boomerang.hit": {
+    "sounds": [
+      {
+        "name": "legacies_and_legends:item/boomerang/hit",
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.item.boomerang.hit"
+  },
+  "boomerang.throw": {
+    "sounds": [
+      {
+        "name": "legacies_and_legends:item/boomerang/throw",
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.item.boomerang.throw"
+  },
+  "boomerang.woosh": {
+    "sounds": [
+      {
+        "name": "legacies_and_legends:item/boomerang/woosh",
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.item.boomerang.woosh"
+  },
   "music_disc.svall": {
     "category": "record",
     "subtitle": "subtitles.music_disc_svall",

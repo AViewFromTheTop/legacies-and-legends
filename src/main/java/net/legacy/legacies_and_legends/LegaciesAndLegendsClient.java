@@ -17,6 +17,5 @@ public final class LegaciesAndLegendsClient implements ClientModInitializer {
     public void onInitializeClient() {
         LaLEntityRenderers.init();
         LaLModelLayers.init();
-        FlyBySoundHub.AUTO_ENTITIES_AND_SOUNDS.put(LaLEntityType.THROWN_BOOMERANG, new FlyBySoundHub.FlyBySound(1.0F, 1.0F, SoundSource.NEUTRAL, LaLSounds.BOOMERANG_WHOOSH));
     }
 }

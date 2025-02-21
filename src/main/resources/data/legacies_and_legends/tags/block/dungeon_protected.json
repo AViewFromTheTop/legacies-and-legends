@@ -1,5 +1,6 @@
 {
   "values": [
+	  "minecraft:air",
 	  "minecraft:cave_vines",
 	  "minecraft:cave_vines_plant",
 	  "minecraft:vine",
@@ -15,6 +16,6 @@
 	  "minecraft:packed_ice",
 	  "minecraft:blue_ice",
 	  "minecraft:water",
-	  "minecraft:lava"
+	  "#minecraft:features_cannot_replace"
   ]
 }
