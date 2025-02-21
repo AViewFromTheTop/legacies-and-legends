@@ -28,7 +28,7 @@ public class BoomerangRenderer extends EntityRenderer<BoomerangProjectile, Boome
     @Override
     public void render(@NotNull BoomerangRenderState boomerangRenderState, @NotNull PoseStack poseStack, MultiBufferSource multiBufferSource, int i) {
         poseStack.pushPose();
-        poseStack.mulPose(Axis.YP.rotationDegrees(boomerangRenderState.yRot - 45F));
+        poseStack.mulPose(Axis.YP.rotationDegrees(boomerangRenderState.yRot - 45 + boomerangRenderState.spinTick * 20));
         VertexConsumer vertexConsumer = ItemRenderer.getFoilBuffer(multiBufferSource, this.model.renderType(TEXTURE), false, boomerangRenderState.isFoil);
         this.model.renderToBuffer(poseStack, vertexConsumer, i, OverlayTexture.NO_OVERLAY);
         poseStack.popPose();
@@ -42,9 +42,10 @@ public class BoomerangRenderer extends EntityRenderer<BoomerangProjectile, Boome
 
     public void extractRenderState(BoomerangProjectile boomerangProjectile, BoomerangRenderState boomerangRenderState, float partialTick) {
         super.extractRenderState(boomerangProjectile, boomerangRenderState, partialTick);
-        boomerangRenderState.yRot = boomerangProjectile.getYRot(partialTick);
+        //boomerangRenderState.yRot = boomerangProjectile.getYRot(partialTick);
         boomerangRenderState.xRot = boomerangProjectile.getXRot(partialTick);
         boomerangRenderState.boomerangYaw = boomerangProjectile.getBoomerangYaw(partialTick);
         boomerangRenderState.wobbleProgress = boomerangProjectile.getWobbleProgress(partialTick);
+        boomerangRenderState.spinTick = boomerangProjectile.getSpinTick();
     }
 }

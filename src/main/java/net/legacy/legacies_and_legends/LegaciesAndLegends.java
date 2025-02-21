@@ -75,5 +75,19 @@ public class LegaciesAndLegends implements ModInitializer {
 					ResourcePackActivationType.ALWAYS_ENABLED
 			);
 		}
+		if (FabricLoader.getInstance().isModLoaded("trailiertales") && LaLConfig.get().integrations.trailier_tales) {
+			ResourceManagerHelper.registerBuiltinResourcePack(
+					LaLConstants.id("trailier_tales_integration"), modContainer.get(),
+					Component.translatable("pack.legacies_and_legends.wilder_wild_integration"),
+					ResourcePackActivationType.ALWAYS_ENABLED
+			);
+		}
+		if (FabricLoader.getInstance().isModLoaded("variantsandventures") && LaLConfig.get().integrations.variants_and_ventures) {
+			ResourceManagerHelper.registerBuiltinResourcePack(
+					LaLConstants.id("variants_and_ventures_integration"), modContainer.get(),
+					Component.translatable("pack.legacies_and_legends.wilder_wild_integration"),
+					ResourcePackActivationType.ALWAYS_ENABLED
+			);
+		}
 	}
 }

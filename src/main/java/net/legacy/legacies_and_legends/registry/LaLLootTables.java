@@ -30,6 +30,28 @@ public class LaLLootTables {
 
 	public static final ResourceKey<LootTable> OBELISK_ARCHAEOLOGY = register("archaeology/obelisk");
 
+	public static final ResourceKey<LootTable> DUNGEON_CHEST = register("chests/dungeon/chest");
+	public static final ResourceKey<LootTable> DUNGEON_BARREL = register("chests/dungeon/barrel");
+	public static final ResourceKey<LootTable> DUNGEON_LIBRARY = register("chests/dungeon/library");
+	public static final ResourceKey<LootTable> DUNGEON_SIMPLE_CHEST = register("chests/dungeon/simple/chest");
+	public static final ResourceKey<LootTable> DUNGEON_SIMPLE_BARREL = register("chests/dungeon/simple/barrel");
+	public static final ResourceKey<LootTable> DUNGEON_SIMPLE_LIBRARY = register("chests/dungeon/simple/library");
+	public static final ResourceKey<LootTable> DUNGEON_DEEP_CHEST = register("chests/dungeon/deep/chest");
+	public static final ResourceKey<LootTable> DUNGEON_DEEP_BARREL = register("chests/dungeon/deep/barrel");
+	public static final ResourceKey<LootTable> DUNGEON_DEEP_LIBRARY = register("chests/dungeon/deep/library");
+	public static final ResourceKey<LootTable> DUNGEON_ARID_CHEST = register("chests/dungeon/arid/chest");
+	public static final ResourceKey<LootTable> DUNGEON_ARID_BARREL = register("chests/dungeon/arid/barrel");
+	public static final ResourceKey<LootTable> DUNGEON_ARID_LIBRARY = register("chests/dungeon/arid/library");
+	public static final ResourceKey<LootTable> DUNGEON_FROZEN_CHEST = register("chests/dungeon/frozen/chest");
+	public static final ResourceKey<LootTable> DUNGEON_FROZEN_BARREL = register("chests/dungeon/frozen/barrel");
+	public static final ResourceKey<LootTable> DUNGEON_FROZEN_LIBRARY = register("chests/dungeon/frozen/library");
+	public static final ResourceKey<LootTable> DUNGEON_VERDANT_CHEST = register("chests/dungeon/verdant/chest");
+	public static final ResourceKey<LootTable> DUNGEON_VERDANT_BARREL = register("chests/dungeon/verdant/barrel");
+	public static final ResourceKey<LootTable> DUNGEON_VERDANT_LIBRARY = register("chests/dungeon/verdant/library");
+	public static final ResourceKey<LootTable> DUNGEON_INFERNAL_CHEST = register("chests/dungeon/infernal/chest");
+	public static final ResourceKey<LootTable> DUNGEON_INFERNAL_BARREL = register("chests/dungeon/infernal/barrel");
+	public static final ResourceKey<LootTable> DUNGEON_INFERNAL_LIBRARY = register("chests/dungeon/infernal/library");
+
 	private static @NotNull ResourceKey<LootTable> register(String path) {
 		return ResourceKey.create(Registries.LOOT_TABLE, LaLConstants.id(path));
 	}

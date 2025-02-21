@@ -34,6 +34,7 @@ public class BoomerangProjectile extends AbstractArrow {
 
     private boolean dealtDamage;
     public int loopTick = 3;
+    public float spinTick = 0;
 
     public float prevWobbleProgress;
     public float wobbleProgress;
@@ -60,7 +61,15 @@ public class BoomerangProjectile extends AbstractArrow {
 
     @Override
     protected double getDefaultGravity() {
-        return 0.01D;
+        if (this.isInWater()){
+            return 0.02D;
+        }
+        else if (this.wasTouchingWater || this.isInWaterOrRain()){
+            return 0.015D;
+        }
+        else {
+            return 0.01D;
+        }
     }
 
     @Override
@@ -72,6 +81,9 @@ public class BoomerangProjectile extends AbstractArrow {
     @Override
     public void tick() {
         if (this.inGroundTime <= 0) {
+            if (!this.isInWater()){
+                this.spinTick = this.spinTick + 1;
+            }
             this.loopTick = this.loopTick + 1;
             if (this.loopTick >= 4){
                 this.playSound(LaLSounds.BOOMERANG_WOOSH);
@@ -122,6 +134,10 @@ public class BoomerangProjectile extends AbstractArrow {
 
     public float getWobbleProgress(float partialTick) {
         return Mth.lerp(partialTick, this.prevWobbleProgress, this.wobbleProgress);
+    }
+
+    public float getSpinTick() {
+        return this.spinTick;
     }
 
     public float getBoomerangYaw(float partialTick) {
