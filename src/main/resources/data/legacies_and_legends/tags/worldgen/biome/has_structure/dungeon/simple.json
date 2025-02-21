@@ -9,7 +9,6 @@
         "minecraft:old_growth_birch_forest",
         "minecraft:dark_forest",
         "minecraft:pale_garden",
-        "#minecraft:is_hill",
         "minecraft:meadow",
         "minecraft:stony_peaks",
         "minecraft:cherry_grove",
@@ -28,8 +27,8 @@
         "minecraft:mangrove_swamp",
         "minecraft:dripstone_caves",
         "minecraft:lush_caves",
+        "#minecraft:is_hill",
         "#legacies_and_legends:has_structure/dungeon/simple_verdant",
-        "#legacies_and_legends:has_structure/dungeon/simple_infernal",
         {
             "id": "#c:is_temperate/overworld",
             "required": false
