@@ -11,10 +11,10 @@ import net.minecraft.world.item.Item.Properties;
 
 import java.util.function.Function;
 
-public final class LaLGearItems {
+public final class LaLEquipmentItems {
 
     // Equipment
-    public static final GenericWeaponItem HOOK = register("hook", settings -> new GenericWeaponItem(LaLToolMaterial.HOOK, 4f, -3.2f, settings
+    public static final GenericWeaponItem HOOK = register("hook", settings -> new GenericWeaponItem(LaLToolMaterial.HOOK, 3f, -3.2f, settings
             .stacksTo(1)
             .durability(750)
     ));

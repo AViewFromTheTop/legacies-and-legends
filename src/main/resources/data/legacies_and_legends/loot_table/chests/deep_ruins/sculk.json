@@ -365,36 +365,6 @@
       "entries": [
         {
           "type": "minecraft:empty",
-          "weight": 84
-        },
-        {
-         "type":"item",
-         "name":"legacies_and_legends:ward_helmet",
-         "weight":4
-        },
-        {
-         "type":"item",
-         "name":"legacies_and_legends:ward_chestplate",
-         "weight":4
-        },
-        {
-         "type":"item",
-         "name":"legacies_and_legends:ward_leggings",
-         "weight":4
-        },
-        {
-         "type":"item",
-         "name":"legacies_and_legends:ward_boots",
-         "weight":4
-        }
-      ],
-      "rolls": 1.0
-    },
-    {
-      "bonus_rolls": 0.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
           "weight": 80
         },
         {

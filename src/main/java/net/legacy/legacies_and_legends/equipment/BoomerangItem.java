@@ -8,6 +8,7 @@ import net.minecraft.core.Position;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
+import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -21,6 +22,7 @@ import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.component.Tool;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Contract;
@@ -29,9 +31,9 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 public class BoomerangItem extends Item implements ProjectileItem {
-    public static final int THROW_THRESHOLD_TIME = 12;
-    public static final float THROW_DAMAGE = 6F;
-    public static final float BASE_DAMAGE = THROW_DAMAGE / 2F;
+    public static final int THROW_THRESHOLD_TIME = 10;
+    public static final float THROW_DAMAGE = 7F;
+    public static final float BASE_DAMAGE = THROW_DAMAGE / 2;
     public static final float PROJECTILE_SHOOT_POWER = 2F;
 
     public BoomerangItem(Item.Properties properties) {
@@ -41,7 +43,7 @@ public class BoomerangItem extends Item implements ProjectileItem {
     public static @NotNull ItemAttributeModifiers createAttributes() {
         return ItemAttributeModifiers.builder()
                 .add(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_ID, BASE_DAMAGE, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
-                .add(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_ID, -2.9F, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
+                .add(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_ID, -1.8F, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
                 .build();
     }
 

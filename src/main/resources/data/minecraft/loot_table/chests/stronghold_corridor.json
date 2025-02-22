@@ -141,11 +141,6 @@
           "weight": 3
         },
         {
-          "type": "item",
-          "name": "legacies_and_legends:enchanted_beetroot",
-          "weight": 3
-        },
-        {
           "type": "minecraft:item",
           "name": "minecraft:saddle"
         },

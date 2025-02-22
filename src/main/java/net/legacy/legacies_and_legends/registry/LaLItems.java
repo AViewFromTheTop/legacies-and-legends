@@ -192,30 +192,31 @@ public final class LaLItems {
                                     new ClearAllStatusEffectsConsumeEffect(),
                                     new ApplyStatusEffectsConsumeEffect(
                                             List.of(
-                                                    new MobEffectInstance(MobEffects.HEAL, 1, 255),
+                                                    new MobEffectInstance(MobEffects.REGENERATION, 300, 4),
                                                     new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1200, 1),
                                                     new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 1200, 1),
-                                                    new MobEffectInstance(MobEffects.WITHER, 6000, 0)
+                                                    new MobEffectInstance(MobEffects.WITHER, 6000, 2)
                                             )
                                     )
                             )
                     ))
     );
-    public static final Item TOTEM_OF_TELEPORTATION = register("totem_of_teleporation",
+    public static final Item TOTEM_OF_TELEPORTATION = register("totem_of_teleportation",
             Item::new,
             new Properties()
                     .stacksTo(1)
                     .rarity(Rarity.RARE)
                     .component(DataComponents.DEATH_PROTECTION, new DeathProtection(
                             List.of(
+                                    new TeleportRandomlyConsumeEffect(),
                                     new ClearAllStatusEffectsConsumeEffect(),
                                     new ApplyStatusEffectsConsumeEffect(
                                             List.of(
                                                     new MobEffectInstance(MobEffects.REGENERATION, 300, 1),
+                                                    new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 0),
                                                     new MobEffectInstance(MobEffects.INVISIBILITY, 600, 0)
                                             )
-                                    ),
-                                    new TeleportRandomlyConsumeEffect()
+                                    )
                             )
                     ))
     );

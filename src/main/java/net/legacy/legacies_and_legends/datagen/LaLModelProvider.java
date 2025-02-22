@@ -10,8 +10,8 @@ import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.legacy.legacies_and_legends.*;
 import net.legacy.legacies_and_legends.registry.LaLEquipmentAssets;
+import net.legacy.legacies_and_legends.registry.LaLEquipmentItems;
 import net.legacy.legacies_and_legends.registry.LaLTrimMaterials;
-import net.legacy.legacies_and_legends.registry.LaLGearItems;
 import net.legacy.legacies_and_legends.registry.LaLItems;
 import net.minecraft.client.data.models.model.ModelTemplate;
 import net.minecraft.client.data.models.BlockModelGenerators;
@@ -77,14 +77,14 @@ public final class LaLModelProvider extends FabricModelProvider {
 		generator.generateTrimmableItem(LaLItems.TRAVELLING_STRIDES, LaLEquipmentAssets.TRAVELLING, "leggings", false);
 		generator.generateTrimmableItem(LaLItems.WANDERER_BOOTS, LaLEquipmentAssets.WANDERER, "boots", false);
 
-		generator.generateFlatItem(LaLGearItems.KNIFE, ModelTemplates.FLAT_HANDHELD_ITEM);
-		generator.generateFlatItem(LaLGearItems.HOOK, ModelTemplates.FLAT_HANDHELD_ITEM);
+		generator.generateFlatItem(LaLEquipmentItems.KNIFE, ModelTemplates.FLAT_HANDHELD_ITEM);
+		generator.generateFlatItem(LaLEquipmentItems.HOOK, ModelTemplates.FLAT_HANDHELD_ITEM);
 
-		generator.generateFlatItem(LaLGearItems.VERDANT_SWORD, ModelTemplates.FLAT_HANDHELD_ITEM);
-		generator.generateFlatItem(LaLGearItems.CLEAVING_BATTLEAXE, ModelTemplates.FLAT_HANDHELD_ITEM);
-		generator.generateFlatItem(LaLGearItems.MOLTEN_PICKAXE, ModelTemplates.FLAT_HANDHELD_ITEM);
-		generator.generateFlatItem(LaLGearItems.PROSPECTOR_SHOVEL, ModelTemplates.FLAT_HANDHELD_ITEM);
-		generator.generateFlatItem(LaLGearItems.WITHERED_HOE, ModelTemplates.FLAT_HANDHELD_ITEM);
+		generator.generateFlatItem(LaLEquipmentItems.VERDANT_SWORD, ModelTemplates.FLAT_HANDHELD_ITEM);
+		generator.generateFlatItem(LaLEquipmentItems.CLEAVING_BATTLEAXE, ModelTemplates.FLAT_HANDHELD_ITEM);
+		generator.generateFlatItem(LaLEquipmentItems.MOLTEN_PICKAXE, ModelTemplates.FLAT_HANDHELD_ITEM);
+		generator.generateFlatItem(LaLEquipmentItems.PROSPECTOR_SHOVEL, ModelTemplates.FLAT_HANDHELD_ITEM);
+		generator.generateFlatItem(LaLEquipmentItems.WITHERED_HOE, ModelTemplates.FLAT_HANDHELD_ITEM);
 
 		generator.generateFlatItem(LaLItems.TOTEM_OF_TELEPORTATION, ModelTemplates.FLAT_ITEM);
 		generator.generateFlatItem(LaLItems.TOTEM_OF_VENGEANCE, ModelTemplates.FLAT_ITEM);

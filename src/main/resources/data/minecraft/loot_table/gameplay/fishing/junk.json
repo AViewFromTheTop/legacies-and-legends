@@ -11,16 +11,6 @@
         },
         {
           "type": "minecraft:item",
-          "name": "legacies_and_legends:metal_chunk",
-          "weight": 10
-        },
-        {
-          "type": "minecraft:item",
-          "name": "legacies_and_legends:wooden_bucket",
-          "weight": 10
-        },
-        {
-          "type": "minecraft:item",
           "functions": [
             {
               "add": false,
@@ -75,22 +65,6 @@
             }
           ],
           "name": "minecraft:fishing_rod",
-          "weight": 2
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "damage": {
-                "type": "minecraft:uniform",
-                "max": 0.9,
-                "min": 0.0
-              },
-              "function": "minecraft:set_damage"
-            }
-          ],
-          "name": "legacies_and_legends:hook",
           "weight": 2
         },
         {

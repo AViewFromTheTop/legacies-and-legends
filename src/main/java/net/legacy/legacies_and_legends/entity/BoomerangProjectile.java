@@ -9,7 +9,9 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
@@ -18,6 +20,8 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.ProjectileDeflection;
+import net.minecraft.world.entity.projectile.ThrownTrident;
+import net.minecraft.world.item.CrossbowItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
@@ -28,13 +32,22 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class BoomerangProjectile extends AbstractArrow {
+    private static final EntityDataAccessor<Byte> ID_REBOUND = SynchedEntityData.defineId(BoomerangProjectile.class, EntityDataSerializers.BYTE);
+    private static final EntityDataAccessor<Byte> ID_FEATHERWEIGHT = SynchedEntityData.defineId(BoomerangProjectile.class, EntityDataSerializers.BYTE);
+    private static final EntityDataAccessor<Boolean> ID_FOIL = SynchedEntityData.defineId(BoomerangProjectile.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Boolean> WOBBLING = SynchedEntityData.defineId(BoomerangProjectile.class, EntityDataSerializers.BOOLEAN);
     private static final float WATER_INERTIA = 0.1F;
     private static final float ROTATION_AMOUNT = 55F;
+    public int clientSideReturnBoomerangTickCount;
 
     private boolean dealtDamage;
+    private boolean hitEntity;
     public int loopTick = 3;
     public float spinTick = 0;
+    public float fBoost = 0;
+    public double gravity = 0;
+    public int s = 0;
+    public int d = 0;
 
     public float prevWobbleProgress;
     public float wobbleProgress;
@@ -42,51 +55,86 @@ public class BoomerangProjectile extends AbstractArrow {
     public float yaw;
     private float lookRot;
 
+    private byte getReboundFromItem(ItemStack stack) {
+        return this.level() instanceof ServerLevel serverLevel
+                ? (byte)Mth.clamp(EnchantmentHelper.getTridentReturnToOwnerAcceleration(serverLevel, stack, this), 0, 127)
+                : 0;
+    }
+
+    private byte getFeatherweightSpeedFromItem(ItemStack stack) {
+        return this.level() instanceof ServerLevel serverLevel
+                ? (byte)Mth.clamp(EnchantmentHelper.getFishingTimeReduction(serverLevel, stack, this), 0, 127)
+                : 0;
+    }
+
     public BoomerangProjectile(EntityType<? extends BoomerangProjectile> entityEntityType, Level level) {
         super(entityEntityType, level);
     }
 
     public BoomerangProjectile(Level level, LivingEntity shooter, ItemStack pickupItemStack) {
         super(LaLEntityTypes.BOOMERANG, shooter, level, pickupItemStack, null);
+        this.entityData.set(ID_REBOUND, this.getReboundFromItem(pickupItemStack));
+        this.entityData.set(ID_FEATHERWEIGHT, this.getFeatherweightSpeedFromItem(pickupItemStack));
+        this.entityData.set(ID_FOIL, pickupItemStack.hasFoil());
     }
 
     public BoomerangProjectile(Level level, double x, double y, double z, ItemStack pickupItemStack) {
         super(LaLEntityTypes.BOOMERANG, x, y, z, level, pickupItemStack, pickupItemStack);
+        this.entityData.set(ID_REBOUND, this.getReboundFromItem(pickupItemStack));
+        this.entityData.set(ID_FEATHERWEIGHT, this.getFeatherweightSpeedFromItem(pickupItemStack));
+        this.entityData.set(ID_FOIL, pickupItemStack.hasFoil());
     }
 
     @Override
     public void shoot(double x, double y, double z, float speed, float divergence) {
-        super.shoot(x, y * 0.5D, z, speed * 0.8F, divergence * 0.5F);
+        if (this.entityData.get(ID_FEATHERWEIGHT) / 10 >= 1){
+            this.s = this.entityData.get(ID_FEATHERWEIGHT) / 10;
+            this.d = this.entityData.get(ID_FEATHERWEIGHT) * 10;
+        }
+        else {
+            this.s = 1;
+            this.d = 1;
+        }
+        super.shoot(x, y * 0.5D, z, speed * 0.8F * this.s, divergence * 0.5F / this.d);
     }
 
     @Override
     protected double getDefaultGravity() {
-        if (this.isInWater()){
-            return 0.02D;
+        if (this.isInWater() || this.isInPowderSnow || this.isInLava()){
+            this.gravity = 0.1;
         }
         else if (this.wasTouchingWater || this.isInWaterOrRain()){
-            return 0.015D;
+            this.gravity = 0.02;
         }
         else {
-            return 0.01D;
+            this.gravity = 0.01;
         }
+
+        if (this.entityData.get(ID_FEATHERWEIGHT) / 10 >= 1) {
+            this.gravity = this.gravity / this.entityData.get(ID_FEATHERWEIGHT) * 10;
+        }
+
+        return this.gravity;
     }
 
     @Override
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
         super.defineSynchedData(builder);
         builder.define(WOBBLING, false);
+        builder.define(ID_REBOUND, (byte)0);
+        builder.define(ID_FEATHERWEIGHT, (byte)0);
+        builder.define(ID_FOIL, false);
     }
 
     @Override
     public void tick() {
-        if (this.inGroundTime <= 0) {
-            if (!this.isInWater()){
-                this.spinTick = this.spinTick + 1;
-            }
+        if (this.inGroundTime <= 0 && !this.isInWater() && !this.isInPowderSnow && !this.isInLava()) {
+            this.spinTick = this.spinTick + 1;
             this.loopTick = this.loopTick + 1;
             if (this.loopTick >= 4){
-                this.playSound(LaLSounds.BOOMERANG_WOOSH);
+                if (!this.isInWater() && !this.isInPowderSnow) {
+                    this.playSound(LaLSounds.BOOMERANG_WOOSH);
+                }
                 this.loopTick = 0;
             }
         }
@@ -95,9 +143,42 @@ public class BoomerangProjectile extends AbstractArrow {
             this.dealtDamage = true;
         }
 
+        Entity entity = this.getOwner();
+        int i = this.entityData.get(ID_REBOUND);
+        if (i > 0 && (this.dealtDamage || this.isNoPhysics()) && entity != null && this.hitEntity) {
+            if (!this.isAcceptibleReturnOwner()) {
+                if (this.level() instanceof ServerLevel serverLevel && this.pickup == AbstractArrow.Pickup.ALLOWED) {
+                    this.spawnAtLocation(serverLevel, this.getPickupItem(), 0.1F);
+                }
+
+                this.discard();
+            } else {
+                if (!(entity instanceof Player) && this.position().distanceTo(entity.getEyePosition()) < (double)entity.getBbWidth() + 1.0) {
+                    this.discard();
+                    return;
+                }
+
+                this.setNoPhysics(true);
+                Vec3 vec3 = entity.getEyePosition().subtract(this.position());
+                this.setPosRaw(this.getX(), this.getY() + vec3.y * 0.015 * (double)i, this.getZ());
+                double d = 0.05 * (double)i;
+                this.setDeltaMovement(this.getDeltaMovement().scale(0.95).add(vec3.normalize().scale(d)));
+                if (this.clientSideReturnBoomerangTickCount == 0) {
+                    this.playSound(LaLSounds.BOOMERANG_HIT, 10.0F, 1.0F);
+                }
+
+                this.clientSideReturnBoomerangTickCount++;
+            }
+        }
+
         super.tick();
         Vec3 deltaPos = this.getDeltaPos();
         this.setAngles(deltaPos);
+    }
+
+    private boolean isAcceptibleReturnOwner() {
+        Entity entity = this.getOwner();
+        return entity == null || !entity.isAlive() ? false : !(entity instanceof ServerPlayer) || !entity.isSpectator();
     }
 
     public void setAngles(@NotNull Vec3 deltaPos) {
@@ -152,8 +233,20 @@ public class BoomerangProjectile extends AbstractArrow {
 
     @Override
     protected void onHitEntity(@NotNull EntityHitResult result) {
+        this.hitEntity = true;
         Entity entity = result.getEntity();
         float f = BoomerangItem.THROW_DAMAGE;
+        if (!this.isInWater() && !this.isInLava() && !this.isInPowderSnow) {
+            if (this.entityData.get(ID_FEATHERWEIGHT) / 10 >= 1 && this.spinTick * this.entityData.get(ID_FEATHERWEIGHT) / 10 / 15 >= 1) {
+                this.fBoost = this.spinTick * this.entityData.get(ID_FEATHERWEIGHT) / 10 / 15;
+            } else if (this.spinTick / 10 / 15 >= 1){
+                this.fBoost = this.spinTick / 10 / 15;
+            }
+            if (this.fBoost >= BoomerangItem.THROW_DAMAGE) {
+                this.fBoost = BoomerangItem.THROW_DAMAGE;
+            }
+            f = f + this.fBoost;
+        }
         Entity entity2 = this.getOwner();
         DamageSource damageSource = this.damageSources().trident(this, (Entity)(entity2 == null ? this : entity2));
         if (this.level() instanceof ServerLevel serverLevel) {
@@ -227,6 +320,7 @@ public class BoomerangProjectile extends AbstractArrow {
         super.readAdditionalSaveData(tag);
         this.dealtDamage = tag.getBoolean("DealtDamage");
         this.setWobbling(tag.getBoolean("Wobbling"));
+        this.entityData.set(ID_REBOUND, this.getReboundFromItem(this.getPickupItemStackOrigin()));
     }
 
     @Override
@@ -238,7 +332,8 @@ public class BoomerangProjectile extends AbstractArrow {
 
     @Override
     public void tickDespawn() {
-        if (this.pickup != AbstractArrow.Pickup.ALLOWED) {
+        int i = this.entityData.get(ID_REBOUND);
+        if (this.pickup != AbstractArrow.Pickup.ALLOWED || i <= 0) {
             super.tickDespawn();
         }
     }

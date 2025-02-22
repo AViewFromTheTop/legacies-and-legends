@@ -30,8 +30,8 @@ public class LaLCreativeInventorySorting {
 		addAfterInFoodAndDrinks(Items.BEETROOT, LaLItems.ENCHANTED_BEETROOT);
 		addAfterInFoodAndDrinks(Items.BEETROOT_SOUP, LaLItems.ENCHANTED_BEETROOT_SOUP);
 
-		addAfterInCombat(Items.NETHERITE_AXE, LaLGearItems.KNIFE);
-		addAfterInCombat(LaLGearItems.KNIFE, LaLGearItems.HOOK);
+		addAfterInCombat(Items.NETHERITE_AXE, LaLEquipmentItems.KNIFE);
+		addAfterInCombat(LaLEquipmentItems.KNIFE, LaLEquipmentItems.HOOK);
 
 	}
 

@@ -83,22 +83,6 @@
           "type": "minecraft:item",
           "functions": [
             {
-              "function": "minecraft:enchant_randomly",
-              "options": "#minecraft:on_random_loot"
-            }
-          ],
-          "name": "legacies_and_legends:hook",
-          "weight": 1
-        },
-        {
-          "type": "minecraft:item",
-          "name": "legacies_and_legends:hook",
-          "weight": 2
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
               "function": "minecraft:enchant_with_levels",
               "levels": {
                 "type": "minecraft:uniform",

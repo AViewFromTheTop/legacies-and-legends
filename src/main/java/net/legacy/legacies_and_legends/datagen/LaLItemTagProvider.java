@@ -2,7 +2,7 @@ package net.legacy.legacies_and_legends.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.legacy.legacies_and_legends.registry.LaLGearItems;
+import net.legacy.legacies_and_legends.registry.LaLEquipmentItems;
 import net.legacy.legacies_and_legends.registry.LaLItems;
 import net.legacy.legacies_and_legends.tag.LaLItemTags;
 import net.minecraft.core.HolderLookup;
@@ -52,6 +52,6 @@ public class LaLItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(LaLItems.TABLET_OF_REVEALING);
 
         this.getOrCreateTagBuilder(LaLItemTags.PROSPECTING)
-                .add(LaLGearItems.PROSPECTOR_SHOVEL);
+                .add(LaLEquipmentItems.PROSPECTOR_SHOVEL);
     }
 }

@@ -151,11 +151,11 @@ public class LaLConfig implements ConfigData {
 		@ConfigEntry.Category("config")
 		public boolean tangled = true;
 		@ConfigEntry.Category("config")
-		public boolean shatter = true;
+		public boolean rejuvenate = true;
 		@ConfigEntry.Category("config")
-		public boolean rapid_strike = true;
+		public boolean decay = true;
 		@ConfigEntry.Category("config")
-		public boolean slaughter = true;
+		public boolean featherweight = true;
 	}
 
 	public static class MusicConfig {
@@ -176,6 +176,9 @@ public class LaLConfig implements ConfigData {
 	}
 
 	public static class MiscConfig {
+		@ConfigEntry.Category("config")
+		@ConfigEntry.Gui.Tooltip
+		public boolean wandering_trader_trades = true;
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
 		public boolean trim_materials = true;
