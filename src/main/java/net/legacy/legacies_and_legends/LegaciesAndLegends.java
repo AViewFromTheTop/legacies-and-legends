@@ -73,6 +73,22 @@ public class LegaciesAndLegends implements ModInitializer {
 					ResourcePackActivationType.ALWAYS_ENABLED
 			);
 		}
+		if (!LaLConfig.get().artifacts.travelling_strides) {
+			isVariantsAndVenturesLoaded = true;
+			ResourceManagerHelper.registerBuiltinResourcePack(
+					LaLConstants.id("no_travelling_strides"), modContainer.get(),
+					Component.translatable("pack.legacies_and_legends.no_travelling_strides"),
+					ResourcePackActivationType.ALWAYS_ENABLED
+			);
+		}
+		if (!LaLConfig.get().artifacts.withered_hoe) {
+			isVariantsAndVenturesLoaded = true;
+			ResourceManagerHelper.registerBuiltinResourcePack(
+					LaLConstants.id("no_withered_hoe"), modContainer.get(),
+					Component.translatable("pack.legacies_and_legends.no_withered_hoe"),
+					ResourcePackActivationType.ALWAYS_ENABLED
+			);
+		}
 		if (FabricLoader.getInstance().isModLoaded("enchants_and_expeditions")) {
 			isEnchantsAndExpeditionsLoaded = true;
 		}

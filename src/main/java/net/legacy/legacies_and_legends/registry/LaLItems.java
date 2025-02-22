@@ -6,6 +6,7 @@ import net.legacy.legacies_and_legends.LaLConstants;
 import net.legacy.legacies_and_legends.equipment.BoomerangItem;
 import net.legacy.legacies_and_legends.equipment.RecallTabletItem;
 import net.legacy.legacies_and_legends.sound.LaLJukeboxSongs;
+import net.legacy.legacies_and_legends.tag.LaLItemTags;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -284,26 +285,29 @@ public final class LaLItems {
     public static final Item REINFORCED_CHESTPLATE = register("reinforced_chestplate",
             Item::new,
             new Properties()
-                .stacksTo(1)
-                .durability(731)
-                .component(DataComponents.EQUIPPABLE, Equippable.builder(ArmorType.CHESTPLATE.getSlot()).setEquipSound(SoundEvents.ARMOR_EQUIP_DIAMOND).setAsset(LaLEquipmentAssets.REINFORCED).build())
-                .attributes(createReinforcedChestplateAttributes)
+                    .stacksTo(1)
+                    .durability(731)
+                    .repairable(LaLItemTags.REPAIRS_REINFORCED_ARMOR)
+                    .component(DataComponents.EQUIPPABLE, Equippable.builder(ArmorType.CHESTPLATE.getSlot()).setEquipSound(SoundEvents.ARMOR_EQUIP_DIAMOND).setAsset(LaLEquipmentAssets.REINFORCED).build())
+                    .attributes(createReinforcedChestplateAttributes)
     );
     public static final Item TRAVELLING_STRIDES = register("travelling_strides",
             Item::new,
             new Properties()
-                .stacksTo(1)
-                .durability(165)
-                .component(DataComponents.EQUIPPABLE, Equippable.builder(ArmorType.LEGGINGS.getSlot()).setEquipSound(SoundEvents.ARMOR_EQUIP_LEATHER).setAsset(LaLEquipmentAssets.TRAVELLING).build())
-                .attributes(createTravellingStridesAttributes)
+                    .stacksTo(1)
+                    .durability(165)
+                    .repairable(LaLItemTags.REPAIRS_TRAVELLING_ARMOR)
+                    .component(DataComponents.EQUIPPABLE, Equippable.builder(ArmorType.LEGGINGS.getSlot()).setEquipSound(SoundEvents.ARMOR_EQUIP_LEATHER).setAsset(LaLEquipmentAssets.TRAVELLING).build())
+                    .attributes(createTravellingStridesAttributes)
     );
     public static final Item WANDERER_BOOTS = register("wanderer_boots",
             Item::new,
             new Properties()
-                .stacksTo(1)
-                .durability(386)
-                .component(DataComponents.EQUIPPABLE, Equippable.builder(ArmorType.BOOTS.getSlot()).setEquipSound(SoundEvents.ARMOR_EQUIP_IRON).setAsset(LaLEquipmentAssets.WANDERER).build())
-                .attributes(createWandererBootsAttributes)
+                    .stacksTo(1)
+                    .durability(386)
+                    .repairable(LaLItemTags.REPAIRS_WANDERER_ARMOR)
+                    .component(DataComponents.EQUIPPABLE, Equippable.builder(ArmorType.BOOTS.getSlot()).setEquipSound(SoundEvents.ARMOR_EQUIP_IRON).setAsset(LaLEquipmentAssets.WANDERER).build())
+                    .attributes(createWandererBootsAttributes)
     );
 
     public static void init() {
