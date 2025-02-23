@@ -57,6 +57,13 @@ public class LegaciesAndLegends implements ModInitializer {
 					ResourcePackActivationType.ALWAYS_ENABLED
 			);
 		}
+		if (!LaLConfig.get.music.end_portal_music) {
+			ResourceManagerHelper.registerBuiltinResourcePack(
+					LaLConstants.id("no_end_portal_music"), modContainer.get(),
+					Component.translatable("pack.legacies_and_legends.no_end_portal_music"),
+					ResourcePackActivationType.ALWAYS_ENABLED
+			);
+		}
 		if (LaLConfig.get.structures.dungeon_overhaul) {
 			ResourceManagerHelper.registerBuiltinResourcePack(
 					LaLConstants.id("dungeon_overhaul"), modContainer.get(),
