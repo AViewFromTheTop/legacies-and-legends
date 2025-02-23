@@ -1211,7 +1211,7 @@
         "name": "music/game/left_to_bloom",
         "stream": true,
         "volume": 0.4,
-        "weight": 3
+        "weight": 4
       },
       {
         "name": "music/game/mice_on_venus",
@@ -1299,14 +1299,14 @@
     "replace": true,
     "sounds": [
       {
+        "name": "legacy:music/overworld/mosaic",
+        "stream": true,
+        "weight": 9
+      },
+      {
         "name": "legacy:music/overworld/cliff_hanger",
         "stream": true,
         "weight": 3
-      },
-      {
-        "name": "legacy:music/overworld/mosaic",
-        "stream": true,
-        "weight": 6
       },
       {
         "name": "music/game/clark",
