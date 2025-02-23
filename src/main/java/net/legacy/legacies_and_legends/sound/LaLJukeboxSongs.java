@@ -13,6 +13,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class LaLJukeboxSongs {
 	public static final ResourceKey<JukeboxSong> SVALL = create("svall");
+	public static final ResourceKey<JukeboxSong> CASTLES = create("castles");
 	public static final ResourceKey<JukeboxSong> TASWELL = create("taswell");
 	public static final ResourceKey<JukeboxSong> SHULKER = create("shulker");
 	public static final ResourceKey<JukeboxSong> TUNDRA = create("tundra");
@@ -41,6 +42,7 @@ public class LaLJukeboxSongs {
 
 	public static void bootstrap(BootstrapContext<JukeboxSong> context) {
 		register(context, SVALL, LaLSounds.MUSIC_DISC_SVALL, 244, 6);
+		register(context, CASTLES, LaLSounds.MUSIC_DISC_SVALL, 260, 9);
 		register(context, TASWELL, LaLSounds.MUSIC_DISC_TASWELL, 600, 7);
 		register(context, SHULKER, LaLSounds.MUSIC_DISC_SHULKER, 128, 13);
 		register(context, TUNDRA, LaLSounds.MUSIC_DISC_TUNDRA, 118, 5);

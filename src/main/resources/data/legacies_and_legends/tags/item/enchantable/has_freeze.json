@@ -2,6 +2,6 @@
   "replace": false,
   "values": [
     "legacies_and_legends:boomerang",
-    "#minecraft:enchantable/crossbow"
+    "#minecraft:enchantable/bow"
   ]
 }

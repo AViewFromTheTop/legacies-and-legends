@@ -4,6 +4,45 @@
       "total_exp_required": 0,
       "groups": [
         {
+          "num_to_select": {
+            "min": 0,
+            "max": 1
+          },
+          "trades": [
+            {
+              "cost_a": {
+                "type": "minecraft:item",
+                "name": "minecraft:emerald",
+                "functions": [
+                  {
+                    "function": "minecraft:set_count",
+                    "count": 8
+                  }
+                ]
+              },
+              "result": {
+                "type": "minecraft:item",
+                "name": "minecraft:map",
+                "functions": [
+                  {
+                    "function": "minecraft:exploration_map",
+                    "destination": "legacies_and_legends:on_dungeon_maps",
+                    "decoration": "legacies_and_legends:dungeon"
+                  },
+                  {
+                    "function": "minecraft:set_name",
+                    "name": {
+                      "translate": "filled_map.legacies_and_legends.dungeon"
+                    },
+                    "target": "item_name"
+                  }
+                ]
+              },
+              "trader_experience": 0
+            }
+          ]
+        },
+        {
           "num_to_select": 5,
           "trades": [
             {
@@ -1495,6 +1534,46 @@
               "price_multiplier": 0.05,
               "trader_experience": 1,
               "max_uses": 4
+            },
+            {
+              "cost_a": {
+                "type": "minecraft:item",
+                "name": "minecraft:emerald",
+                "functions": [
+                  {
+                    "function": "minecraft:set_count",
+                    "count": 2,
+                    "add": false
+                  }
+                ]
+              },
+              "result": {
+                "type": "minecraft:item",
+                "name": "legacies_and_legends:metal_chunk"
+              },
+              "price_multiplier": 0.05,
+              "trader_experience": 1,
+              "max_uses": 8
+            },
+            {
+              "cost_a": {
+                "type": "minecraft:item",
+                "name": "minecraft:emerald",
+                "functions": [
+                  {
+                    "function": "minecraft:set_count",
+                    "count": 3,
+                    "add": false
+                  }
+                ]
+              },
+              "result": {
+                "type": "minecraft:item",
+                "name": "legacies_and_legends:wooden_bucket"
+              },
+              "price_multiplier": 0.05,
+              "trader_experience": 1,
+              "max_uses": 1
             }
           ]
         },
@@ -2045,6 +2124,66 @@
               "price_multiplier": 0.05,
               "trader_experience": 1,
               "max_uses": 4
+            },
+            {
+              "cost_a": {
+                "type": "minecraft:item",
+                "name": "minecraft:emerald",
+                "functions": [
+                  {
+                    "function": "minecraft:set_count",
+                    "count": 8,
+                    "add": false
+                  }
+                ]
+              },
+              "result": {
+                "type": "minecraft:item",
+                "name": "legacies_and_legends:tablet_of_recall"
+              },
+              "price_multiplier": 0.05,
+              "trader_experience": 1,
+              "max_uses": 2
+            },
+            {
+              "cost_a": {
+                "type": "minecraft:item",
+                "name": "minecraft:emerald",
+                "functions": [
+                  {
+                    "function": "minecraft:set_count",
+                    "count": 8,
+                    "add": false
+                  }
+                ]
+              },
+              "result": {
+                "type": "minecraft:item",
+                "name": "legacies_and_legends:tablet_of_haste"
+              },
+              "price_multiplier": 0.05,
+              "trader_experience": 1,
+              "max_uses": 2
+            },
+            {
+              "cost_a": {
+                "type": "minecraft:item",
+                "name": "minecraft:emerald",
+                "functions": [
+                  {
+                    "function": "minecraft:set_count",
+                    "count": 8,
+                    "add": false
+                  }
+                ]
+              },
+              "result": {
+                "type": "minecraft:item",
+                "name": "legacies_and_legends:tablet_of_revealing"
+              },
+              "price_multiplier": 0.05,
+              "trader_experience": 1,
+              "max_uses": 2
             }
           ]
         }

@@ -6,4 +6,5 @@ public class BoomerangRenderState extends ThrownTridentRenderState {
     public float boomerangYaw;
     public float wobbleProgress;
     public float spinTick;
+    public boolean isFoil;
 }

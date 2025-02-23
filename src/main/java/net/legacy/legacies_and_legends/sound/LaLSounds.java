@@ -24,6 +24,11 @@ public class LaLSounds {
 	public static final SoundEvent BOOMERANG_HIT = register("boomerang.hit");
 	public static final SoundEvent BOOMERANG_WOOSH = register("boomerang.woosh");
 
+	public static final Holder.Reference<SoundEvent> SNOWY_MUSIC = registerForHolder("music.overworld.snowy");
+	public static final Holder.Reference<SoundEvent> SAVANNA_MUSIC = registerForHolder("music.overworld.savanna");
+	public static final Holder.Reference<SoundEvent> DARK_FOREST_MUSIC = registerForHolder("music.overworld.dark_forest");
+	public static final Holder.Reference<SoundEvent> MAIN_END_ISLAND_MUSIC = registerForHolder("music.the_end.main_island");
+
 	@NotNull
 	private static SoundEvent register(@NotNull String string) {
 		ResourceLocation resourceLocation = LaLConstants.id(string);

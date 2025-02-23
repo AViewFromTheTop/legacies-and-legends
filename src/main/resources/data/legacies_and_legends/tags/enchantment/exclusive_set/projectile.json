@@ -2,7 +2,6 @@
   "replace": false,
   "values": [
     "minecraft:flame",
-    "minecraft:infinity",
     "legacies_and_legends:freeze"
   ]
 }

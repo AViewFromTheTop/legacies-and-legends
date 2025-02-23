@@ -2,7 +2,10 @@
   "block.end_portal.spawn": {
     "replace": true,
     "sounds": [
-      "legacy:music/other/threshold_end_portal"
+      {
+        "name": "legacies_and_legends:misc.threshold",
+        "type": "event"
+      }
     ],
     "subtitle": "subtitles.block.end_portal.spawn"
   },
@@ -75,7 +78,8 @@
       {
         "name": "legacy:music/end/only_the_beginning",
         "stream": true,
-        "weight": 2
+        "weight": 2,
+        "volume": 0.7
       },
       {
         "name": "legacy:music/end/vacuum_decay",
@@ -430,13 +434,16 @@
     "sounds": [
       {
         "name": "legacy:music/nether/prophet",
-        "stream": true,
-        "weight": 5
+        "stream": true
       },
       {
-        "name": "legacy:music/other/placeholder_silence",
+        "name": "legacy:music/nether/psilopsychotic",
         "stream": true,
-        "weight": 3
+        "volume": 0.8
+      },
+      {
+        "name": "legacy:music/misc/placeholder_silence",
+        "stream": true
       }
     ]
   },
@@ -633,8 +640,9 @@
     "replace": true,
     "sounds": [
       {
-        "name": "legacy:music/overworld/sunrise_on_the_mesa_2",
-        "stream": true
+        "name": "legacy:music/overworld/black_desert_of_endless_stars",
+        "stream": true,
+        "volume": 0.8
       },
       {
         "name": "music/game/crescent_dunes",
@@ -1144,6 +1152,7 @@
       },
       {
         "name": "music/game/left_to_bloom",
+        "stream": true,
         "volume": 0.4
       },
       {

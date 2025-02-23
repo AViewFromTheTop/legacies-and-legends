@@ -47,5 +47,6 @@ public class BoomerangRenderer extends EntityRenderer<BoomerangProjectile, Boome
         boomerangRenderState.boomerangYaw = boomerangProjectile.getBoomerangYaw(partialTick);
         boomerangRenderState.wobbleProgress = boomerangProjectile.getWobbleProgress(partialTick);
         boomerangRenderState.spinTick = boomerangProjectile.getSpinTick();
+        boomerangRenderState.isFoil = boomerangProjectile.isFoil();
     }
 }

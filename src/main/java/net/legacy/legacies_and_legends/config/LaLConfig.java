@@ -51,33 +51,25 @@ public class LaLConfig implements ConfigData {
 
 	public static class StructuresConfig {
 		@ConfigEntry.Category("config")
-		@ConfigEntry.Gui.Tooltip
 		public boolean dungeon_overhaul = true;
 		@ConfigEntry.Category("config")
-		@ConfigEntry.Gui.Tooltip
 		public boolean swamp_hut_variants = true;
 		@ConfigEntry.Category("config")
-		@ConfigEntry.Gui.Tooltip
 		public boolean buried_treasure_rework = true;
 
 		@ConfigEntry.Category("config")
-		@ConfigEntry.Gui.Tooltip
 		public boolean new_structures = true;
 	}
 
 	public static class LootConfig {
 		@ConfigEntry.Category("config")
-		@ConfigEntry.Gui.Tooltip
 		public boolean enchanted_beetroot = true;
 		@ConfigEntry.Category("config")
-		@ConfigEntry.Gui.Tooltip
 		public boolean metal_chunk = true;
 		@ConfigEntry.Category("config")
-		@ConfigEntry.Gui.Tooltip
 		public boolean wooden_buckets = true;
 		@ConfigEntry.Category("config")
-		@ConfigEntry.Gui.Tooltip
-		public boolean music_discs = true;
+		public boolean new_music_discs = true;
 
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
@@ -155,11 +147,17 @@ public class LaLConfig implements ConfigData {
 	public static class MusicConfig {
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
+		public boolean snowy_music = true;
+		@ConfigEntry.Category("config")
+		@ConfigEntry.Gui.Tooltip
 		public boolean savanna_music = true;
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
-		public boolean snowy_music = true;
+		public boolean dark_forest_music = true;
 
+		@ConfigEntry.Category("config")
+		@ConfigEntry.Gui.Tooltip
+		public boolean main_end_island_music = true;
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
 		public boolean end_portal_music = true;
@@ -175,7 +173,7 @@ public class LaLConfig implements ConfigData {
 		public boolean wandering_trader_trades = true;
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
-		public boolean trim_materials = true;
+		public boolean new_trim_materials = true;
 	}
 
 	public static class IntegrationsConfig {

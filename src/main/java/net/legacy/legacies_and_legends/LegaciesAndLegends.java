@@ -11,6 +11,7 @@ import net.legacy.legacies_and_legends.enchantment.LaLEnchantments;
 import net.legacy.legacies_and_legends.enchantment.LaLMobEffects;
 import net.legacy.legacies_and_legends.registry.*;
 import net.legacy.legacies_and_legends.sound.LaLJukeboxSongs;
+import net.legacy.legacies_and_legends.sound.LaLMusic;
 import net.legacy.legacies_and_legends.sound.LaLSounds;
 import net.minecraft.network.chat.Component;
 
@@ -18,6 +19,7 @@ import java.util.Optional;
 
 public class LegaciesAndLegends implements ModInitializer {
 
+	public static boolean isVillagerConfigLoaded = false;
 	public static boolean isWilderWildLoaded = false;
 	public static boolean isVariantsAndVenturesLoaded = false;
 	public static boolean isTrailierTalesLoaded = false;
@@ -40,6 +42,8 @@ public class LegaciesAndLegends implements ModInitializer {
 		LaLMobEffects.init();
 		LaLLootTables.init();
 		LaLEnchantments.init();
+		LaLMusic.insertMusic();
+		LaLMapDecorationTypes.init();
 
 		ResourceManagerHelper.registerBuiltinResourcePack(
 				LaLConstants.id("asset_overrides"), modContainer.get(),
@@ -74,6 +78,13 @@ public class LegaciesAndLegends implements ModInitializer {
 					ResourcePackActivationType.ALWAYS_ENABLED
 			);
 		}
+		if (LaLConfig.get.misc.new_trim_materials) {
+			ResourceManagerHelper.registerBuiltinResourcePack(
+					LaLConstants.id("new_trim_materials"), modContainer.get(),
+					Component.translatable("pack.legacies_and_legends.new_trim_materials"),
+					ResourcePackActivationType.ALWAYS_ENABLED
+			);
+		}
 		if (!LaLConfig.get.artifacts.travelling_strides) {
 			isVariantsAndVenturesLoaded = true;
 			ResourceManagerHelper.registerBuiltinResourcePack(
@@ -92,6 +103,14 @@ public class LegaciesAndLegends implements ModInitializer {
 		}
 		if (FabricLoader.getInstance().isModLoaded("enchants_and_expeditions")) {
 			isEnchantsAndExpeditionsLoaded = true;
+		}
+		if (FabricLoader.getInstance().isModLoaded("villagerconfig") && LaLConfig.get.misc.wandering_trader_trades && LaLConfig.get.loot.wooden_buckets && LaLConfig.get.loot.metal_chunk && LaLConfig.get.artifacts.tablet_of_recall && LaLConfig.get.artifacts.tablet_of_haste && LaLConfig.get.artifacts.tablet_of_revealing && LaLConfig.get.structures.dungeon_overhaul) {
+			isVillagerConfigLoaded = true;
+			ResourceManagerHelper.registerBuiltinResourcePack(
+					LaLConstants.id("wandering_trader_trades"), modContainer.get(),
+					Component.translatable("pack.legacies_and_legends.wandering_trader_trades"),
+					ResourcePackActivationType.ALWAYS_ENABLED
+			);
 		}
 		if (FabricLoader.getInstance().isModLoaded("wilderwild") && LaLConfig.get.integrations.wilder_wild) {
 			isWilderWildLoaded = true;

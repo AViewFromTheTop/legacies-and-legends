@@ -504,87 +504,87 @@ public class LaLLootTables {
 
 			// LOOT - Music Discs
 
-			if (BuiltInLootTables.ABANDONED_MINESHAFT.equals(id) && LaLConfig.get.loot.music_discs) {
+			if (BuiltInLootTables.ABANDONED_MINESHAFT.equals(id) && LaLConfig.get.loot.new_music_discs) {
 				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 						.add(EmptyLootItem.emptyItem().setWeight(5))
 						.add(LootItem.lootTableItem(LaLItems.MUSIC_DISC_SVALL).setWeight(1));
 				tableBuilder.withPool(pool);
 			}
 
-			if (LaLLootTables.DEEP_RUINS.equals(id) && LaLConfig.get.loot.music_discs) {
+			if (LaLLootTables.DEEP_RUINS.equals(id) && LaLConfig.get.loot.new_music_discs) {
 				pool = LootPool.lootPool().setRolls(UniformGenerator.between(0.0F, 1.0F))
 						.add(LootItem.lootTableItem(LaLItems.MUSIC_DISC_TASWELL).setWeight(1));
 				tableBuilder.withPool(pool);
 			}
 
-			if (BuiltInLootTables.END_CITY_TREASURE.equals(id) && LaLConfig.get.loot.music_discs) {
+			if (BuiltInLootTables.END_CITY_TREASURE.equals(id) && LaLConfig.get.loot.new_music_discs) {
 				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 						.add(EmptyLootItem.emptyItem().setWeight(20))
 						.add(LootItem.lootTableItem(LaLItems.MUSIC_DISC_SHULKER).setWeight(1));
 				tableBuilder.withPool(pool);
 			}
 
-			if (LaLLootTables.PALE_CABIN_SECRET.equals(id) && LaLConfig.get.loot.music_discs) {
+			if (LaLLootTables.PALE_CABIN_SECRET.equals(id) && LaLConfig.get.loot.new_music_discs) {
 				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 						.add(LootItem.lootTableItem(LaLItems.MUSIC_DISC_INFINITE_SPOOKY_AMETHYST).setWeight(1));
 				tableBuilder.withPool(pool);
 			}
-			else if (LaLLootTables.PALE_CABIN_SECRET.equals(id) && !LaLConfig.get.loot.music_discs) {
+			else if (LaLLootTables.PALE_CABIN_SECRET.equals(id) && !LaLConfig.get.loot.new_music_discs) {
 				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 						.add(LootItem.lootTableItem(Items.DIAMOND).setWeight(1));
 				tableBuilder.withPool(pool);
 			}
 
-			if (BuiltInLootTables.IGLOO_CHEST.equals(id) && LaLConfig.get.loot.music_discs && !LaLConfig.get.structures.dungeon_overhaul) {
+			if (BuiltInLootTables.IGLOO_CHEST.equals(id) && LaLConfig.get.loot.new_music_discs && !LaLConfig.get.structures.dungeon_overhaul) {
 				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 						.add(EmptyLootItem.emptyItem().setWeight(2))
 						.add(LootItem.lootTableItem(LaLItems.MUSIC_DISC_TUNDRA).setWeight(1));
 				tableBuilder.withPool(pool);
 			}
-			else if (BuiltInLootTables.IGLOO_CHEST.equals(id) && LaLConfig.get.loot.music_discs && LaLConfig.get.structures.dungeon_overhaul) {
+			else if (BuiltInLootTables.IGLOO_CHEST.equals(id) && LaLConfig.get.loot.new_music_discs && LaLConfig.get.structures.dungeon_overhaul) {
 				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 						.add(EmptyLootItem.emptyItem().setWeight(5))
 						.add(LootItem.lootTableItem(LaLItems.MUSIC_DISC_TUNDRA).setWeight(1));
 				tableBuilder.withPool(pool);
 			}
-			if (LaLLootTables.DUNGEON_CHEST_FROZEN.equals(id) && LaLConfig.get.loot.music_discs) {
+			if (LaLLootTables.DUNGEON_CHEST_FROZEN.equals(id) && LaLConfig.get.loot.new_music_discs) {
 				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 						.add(EmptyLootItem.emptyItem().setWeight(8))
 						.add(LootItem.lootTableItem(LaLItems.MUSIC_DISC_TUNDRA).setWeight(1));
 				tableBuilder.withPool(pool);
 			}
 
-			if (BuiltInLootTables.WOODLAND_MANSION.equals(id) && LaLConfig.get.loot.music_discs) {
+			if (BuiltInLootTables.WOODLAND_MANSION.equals(id) && LaLConfig.get.loot.new_music_discs) {
 				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 						.add(EmptyLootItem.emptyItem().setWeight(20))
 						.add(LootItem.lootTableItem(LaLItems.DISC_FRAGMENT_FAR_LANDS).setWeight(1));
 				tableBuilder.withPool(pool);
 			}
-			if (BuiltInLootTables.STRONGHOLD_CROSSING.equals(id) && LaLConfig.get.loot.music_discs) {
+			if (BuiltInLootTables.STRONGHOLD_CROSSING.equals(id) && LaLConfig.get.loot.new_music_discs) {
 				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 						.add(EmptyLootItem.emptyItem().setWeight(8))
 						.add(LootItem.lootTableItem(LaLItems.DISC_FRAGMENT_FAR_LANDS).setWeight(1));
 				tableBuilder.withPool(pool);
 			}
-			if (BuiltInLootTables.JUNGLE_TEMPLE.equals(id) && LaLConfig.get.loot.music_discs) {
+			if (BuiltInLootTables.JUNGLE_TEMPLE.equals(id) && LaLConfig.get.loot.new_music_discs) {
 				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 						.add(EmptyLootItem.emptyItem().setWeight(5))
 						.add(LootItem.lootTableItem(LaLItems.DISC_FRAGMENT_FAR_LANDS).setWeight(1));
 				tableBuilder.withPool(pool);
 			}
-			if (BuiltInLootTables.ABANDONED_MINESHAFT.equals(id) && LaLConfig.get.loot.music_discs) {
+			if (BuiltInLootTables.ABANDONED_MINESHAFT.equals(id) && LaLConfig.get.loot.new_music_discs) {
 				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 						.add(EmptyLootItem.emptyItem().setWeight(20))
 						.add(LootItem.lootTableItem(LaLItems.DISC_FRAGMENT_FAR_LANDS).setWeight(1));
 				tableBuilder.withPool(pool);
 			}
-			if (LaLLootTables.RUINS.equals(id) && LaLConfig.get.loot.music_discs) {
+			if (LaLLootTables.RUINS.equals(id) && LaLConfig.get.loot.new_music_discs) {
 				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 						.add(EmptyLootItem.emptyItem().setWeight(2))
 						.add(LootItem.lootTableItem(LaLItems.DISC_FRAGMENT_FAR_LANDS).setWeight(1));
 				tableBuilder.withPool(pool);
 			}
-			if (LaLConfig.get.loot.music_discs) {
+			if (LaLConfig.get.loot.new_music_discs) {
 				LootTableModifier.editTable(
 						BuiltInLootTables.SIMPLE_DUNGEON, false,
 						(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
@@ -618,6 +618,21 @@ public class LaLLootTables {
 						(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
 								MutableLootTable.has(Items.GOLDEN_APPLE),
 								(lootPool) -> lootPool.add(LaLItems.DISC_FRAGMENT_FAR_LANDS, 10, SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
+						)
+				);
+
+				LootTableModifier.editTable(
+						LaLLootTables.DUNGEON_CHEST_SIMPLE, false,
+						(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
+								MutableLootTable.has(Items.MUSIC_DISC_13),
+								(lootPool) -> lootPool.replace(Items.MUSIC_DISC_13, LaLItems.MUSIC_DISC_CASTLES)
+						)
+				);
+				LootTableModifier.editTable(
+						LaLLootTables.DUNGEON_CHEST_VERDANT, false,
+						(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
+								MutableLootTable.has(Items.MUSIC_DISC_13),
+								(lootPool) -> lootPool.replace(Items.MUSIC_DISC_13, LaLItems.MUSIC_DISC_CASTLES)
 						)
 				);
 			}

@@ -102,28 +102,35 @@ public final class LaLItems {
             Item::new,
             new Properties()
                     .stacksTo(1)
-                    .rarity(Rarity.RARE)
+                    .rarity(Rarity.UNCOMMON)
                     .jukeboxPlayable(LaLJukeboxSongs.SVALL)
+    );
+    public static final Item MUSIC_DISC_CASTLES = register("music_disc_castles",
+            Item::new,
+            new Properties()
+                    .stacksTo(1)
+                    .rarity(Rarity.UNCOMMON)
+                    .jukeboxPlayable(LaLJukeboxSongs.CASTLES)
     );
     public static final Item MUSIC_DISC_TASWELL = register("music_disc_taswell",
             Item::new,
             new Properties()
                     .stacksTo(1)
-                    .rarity(Rarity.RARE)
+                    .rarity(Rarity.UNCOMMON)
                     .jukeboxPlayable(LaLJukeboxSongs.TASWELL)
     );
     public static final Item MUSIC_DISC_SHULKER = register("music_disc_shulker",
             Item::new,
             new Properties()
                     .stacksTo(1)
-                    .rarity(Rarity.RARE)
+                    .rarity(Rarity.UNCOMMON)
                     .jukeboxPlayable(LaLJukeboxSongs.SHULKER)
     );
     public static final Item MUSIC_DISC_TUNDRA = register("music_disc_tundra",
             Item::new,
             new Properties()
                     .stacksTo(1)
-                    .rarity(Rarity.RARE)
+                    .rarity(Rarity.UNCOMMON)
                     .jukeboxPlayable(LaLJukeboxSongs.TUNDRA)
     );
     public static final Item MUSIC_DISC_FAR_LANDS = register("music_disc_far_lands",

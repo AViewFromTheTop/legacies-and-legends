@@ -66,6 +66,10 @@
         {
             "id": "wilderwild:autumnal_plains",
             "required": false
+        },
+        {
+            "id": "newworld:wooded_meadow",
+            "required": false
         }
     ]
 }
