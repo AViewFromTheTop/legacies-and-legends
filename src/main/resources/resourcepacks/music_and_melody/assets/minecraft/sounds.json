@@ -1306,7 +1306,7 @@
       {
         "name": "legacy:music/overworld/mosaic",
         "stream": true,
-        "weight": 5
+        "weight": 6
       },
       {
         "name": "music/game/clark",

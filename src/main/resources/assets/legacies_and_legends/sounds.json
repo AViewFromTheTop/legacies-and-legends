@@ -111,6 +111,10 @@
         "weight": 3
       },
       {
+        "name": "legacy:music/overworld/mosaic",
+        "stream": true
+      },
+      {
         "name": "legacy:music/overworld/814",
         "stream": true
       },
