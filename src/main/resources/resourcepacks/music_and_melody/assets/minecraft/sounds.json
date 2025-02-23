@@ -439,7 +439,7 @@
       {
         "name": "legacy:music/nether/psilopsychotic",
         "stream": true,
-        "volume": 0.8
+        "volume": 0.5
       },
       {
         "name": "legacy:music/misc/placeholder_silence",
@@ -454,6 +454,11 @@
         "name": "legacy:music/overworld/sunrise_on_the_mesa_2",
         "stream": true,
         "weight": 2
+      },
+      {
+        "name": "legacy:music/overworld/black_desert_of_endless_stars",
+        "stream": true,
+        "volume": 0.8
       },
       {
         "name": "music/game/crescent_dunes",
@@ -642,7 +647,8 @@
       {
         "name": "legacy:music/overworld/black_desert_of_endless_stars",
         "stream": true,
-        "volume": 0.8
+        "volume": 0.8,
+        "weight": 2
       },
       {
         "name": "music/game/crescent_dunes",
