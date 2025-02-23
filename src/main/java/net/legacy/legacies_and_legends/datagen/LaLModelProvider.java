@@ -77,6 +77,7 @@ public final class LaLModelProvider extends FabricModelProvider {
 		generator.generateTrimmableItem(LaLItems.TRAVELLING_STRIDES, LaLEquipmentAssets.TRAVELLING, "leggings", false);
 		generator.generateTrimmableItem(LaLItems.WANDERER_BOOTS, LaLEquipmentAssets.WANDERER, "boots", false);
 
+		generator.generateFlatItem(LaLItems.BOOMERANG, ModelTemplates.FLAT_HANDHELD_ITEM);
 		generator.generateFlatItem(LaLEquipmentItems.KNIFE, ModelTemplates.FLAT_HANDHELD_ITEM);
 		generator.generateFlatItem(LaLEquipmentItems.HOOK, ModelTemplates.FLAT_HANDHELD_ITEM);
 

@@ -27,12 +27,17 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:music_disc_13",
-          "weight": 15
+          "weight": 10
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:music_disc_cat",
-          "weight": 15
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:music_disc_ward",
+          "weight": 10
         },
         {
           "type": "minecraft:item",
@@ -289,36 +294,6 @@
         }
       ],
       "rolls": 3.0
-    },
-    {
-      "bonus_rolls": 0.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 76
-        },
-        {
-         "type":"item",
-         "name":"legacies_and_legends:dungeon_helmet",
-         "weight":6
-        },
-        {
-         "type":"item",
-         "name":"legacies_and_legends:dungeon_chestplate",
-         "weight":6
-        },
-        {
-         "type":"item",
-         "name":"legacies_and_legends:dungeon_leggings",
-         "weight":6
-        },
-        {
-         "type":"item",
-         "name":"legacies_and_legends:dungeon_boots",
-         "weight":6
-        }
-      ],
-      "rolls": 1.0
     }
   ],
   "random_sequence": "minecraft:chests/simple_dungeon"

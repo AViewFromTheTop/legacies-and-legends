@@ -26,7 +26,7 @@
           "entity": "this",
           "predicate": {
             "effects": {
-              "legacies_and_legends:frozen": {}
+              "legacies_and_legends:freezing": {}
             }
           }
         },
@@ -73,7 +73,7 @@
             },
             {
               "type": "minecraft:apply_mob_effect",
-              "to_apply": "legacies_and_legends:frozen",
+              "to_apply": "legacies_and_legends:freezing",
               "min_duration": {
                 "type": "minecraft:linear",
                 "base": 2,

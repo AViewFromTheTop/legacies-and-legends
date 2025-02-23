@@ -1,43 +1,34 @@
 package net.legacy.legacies_and_legends.config;
 
+import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
 import me.shedaniel.autoconfig.annotation.ConfigEntry;
-import net.frozenblock.lib.config.api.instance.json.JsonConfig;
-import net.frozenblock.lib.config.api.instance.json.JsonType;
-import net.frozenblock.lib.config.api.registry.ConfigRegistry;
+import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.legacy.legacies_and_legends.LaLConstants;
 import me.shedaniel.autoconfig.annotation.ConfigEntry.Gui.CollapsibleObject;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
 
-import static net.legacy.legacies_and_legends.LaLConstants.*;
+import java.nio.file.Path;
 
 
 @Config(name = LaLConstants.MOD_ID)
 public class LaLConfig implements ConfigData {
 
-	public static final net.frozenblock.lib.config.api.instance.Config<LaLConfig> INSTANCE = ConfigRegistry.register(
-			new JsonConfig<>(
-					MOD_ID,
-					LaLConfig.class,
-					LaLMainConfig.configPath(true),
-					JsonType.JSON5,
-					null,
-					null
-			)
-	);
-
-	public static LaLConfig get() {
-		return get(false);
+	@Contract(pure = true)
+	public static @NotNull Path configPath(boolean json5) {
+		return Path.of("./config/" + LaLConstants.MOD_ID + "." + (json5 ? "json5" : "json"));
 	}
 
-	public static LaLConfig get(boolean real) {
-		if (real)
-			return INSTANCE.instance();
-		return INSTANCE.config();
+	public static LaLConfig get;
+
+	public static void initClient() {
+		AutoConfig.register(LaLConfig.class, JanksonConfigSerializer::new);
+		get = AutoConfig.getConfigHolder(LaLConfig.class).getConfig();
 	}
 
 	@CollapsibleObject
-
 	public final StructuresConfig structures = new StructuresConfig();
 
 	@CollapsibleObject
@@ -88,6 +79,9 @@ public class LaLConfig implements ConfigData {
 		@ConfigEntry.Gui.Tooltip
 		public boolean music_discs = true;
 
+		@ConfigEntry.Category("config")
+		@ConfigEntry.Gui.Tooltip
+		public boolean boomerang = true;
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
 		public boolean hook = true;

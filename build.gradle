@@ -46,8 +46,6 @@ dependencies {
 
 	include modImplementation("com.github.ramixin:mixson:${project.mixson_version}")
 
-	modImplementation "maven.modrinth:frozenlib:${project.loader_version}"
-
 	modImplementation("maven.modrinth:modmenu:$modmenu_version")
 
 	modImplementation("maven.modrinth:cloth-config:$cloth_config_version")
