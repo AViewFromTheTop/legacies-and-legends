@@ -40,8 +40,6 @@ public class LaLLootTables {
 
 	public static final ResourceKey<LootTable> RUINED_LIBRARY = register("chests/ruined_library");
 
-	public static final ResourceKey<LootTable> UNDERGROUND_REMAINS = register("chests/underground_remains");
-
 	public static final ResourceKey<LootTable> END_RUINS = register("chests/end_ruins");
 
 	public static final ResourceKey<LootTable> SWAMP_HUT = register("chests/swamp_hut");
