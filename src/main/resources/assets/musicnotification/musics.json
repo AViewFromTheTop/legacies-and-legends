@@ -5,9 +5,9 @@
         "title": "Echoes"
     },
     "legacy:sounds/music/caves/excuse": {
-        "album": "Legacies",
+        "album": "Minecraft - Volume Alpha",
         "author": "C418",
-        "title": "Excuses"
+        "title": "Excuse"
     },
     "legacy:sounds/music/creative/miscible": {
         "album": "Legacies",
@@ -54,9 +54,14 @@
         "author": "Firch",
         "title": "Prophet"
     },
+    "legacy:sounds/music/nether/psilopsychotic": {
+        "album": "Legacies",
+        "author": "Soul_",
+        "title": "Psilopsychotic"
+    },
     "legacy:sounds/music/misc/placeholder_silence": {
         "album": "Legacies",
-        "author": "Silent",
+        "author": "####",
         "title": "####"
     },
     "legacy:sounds/music/misc/threshold_end_portal": {
@@ -105,7 +110,7 @@
         "title": "Kall"
     },
     "legacy:sounds/music/overworld/kyoto": {
-        "album": "Legacies",
+        "album": "Minecraft - Volume Beta",
         "author": "C418",
         "title": "Kyoto"
     },
@@ -119,6 +124,11 @@
         "author": "Oh Eight",
         "title": "Ravine"
     },
+    "legacy:sounds/music/overworld/black_desert_of_endless_stars": {
+        "album": "Legacies",
+        "author": "Louie Zong",
+        "title": "Black Desert of Endless Stars"
+    },
     "legacy:sounds/music/overworld/sunrise_on_the_mesa_2": {
         "album": "Legacies",
         "author": "Oh Eight",
@@ -129,32 +139,42 @@
         "author": "Talon Trueblood",
         "title": "Tundra"
     },
-    "legacies_and_legends:sounds/far_lands_music_disc": {
+    "legacies_and_legends:sounds/music/overworld/flake": {
+        "album": "Minecraft - Volume Beta",
+        "author": "C418",
+        "title": "Flake"
+    },
+    "legacies_and_legends:sounds/music/disc/far_lands": {
         "album": "Legacies",
         "author": "Steelman",
         "title": "Far Lands"
     },
-    "legacies_and_legends:sounds/shulker_music_disc": {
+    "legacies_and_legends:sounds/music/disc/shulker": {
         "album": "Legacies",
         "author": "T_en_M",
         "title": "Shulker"
     },
-    "legacies_and_legends:sounds/svall_music_disc": {
+    "legacies_and_legends:sounds/music/disc/svall": {
         "album": "Legacies",
         "author": "Soul_",
         "title": "Svall"
     },
-    "legacies_and_legends:sounds/taswell_music_disc": {
+    "legacies_and_legends:sounds/music/disc/castles": {
+        "album": "Legacies",
+        "author": "Soul_",
+        "title": "Castles"
+    },
+    "legacies_and_legends:sounds/music/disc/taswell": {
         "album": "Legacies",
         "author": "bouncytorch",
         "title": "Taswell"
     },
-    "legacies_and_legends:sounds/tundra_music_disc": {
+    "legacies_and_legends:sounds/music/disc/tundra": {
         "album": "Legacies",
         "author": "T_en_M",
         "title": "Tundra"
     },
-    "legacies_and_legends:sounds/infinite_spooky_amethyst_music_disc": {
+    "legacies_and_legends:sounds/music/disc/infinite_spooky_amethyst": {
         "album": "Legacies",
         "author": "Jukio Kallio",
         "title": "Infinite Spooky Amethyst"
