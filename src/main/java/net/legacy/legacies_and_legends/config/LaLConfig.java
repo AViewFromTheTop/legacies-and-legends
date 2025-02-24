@@ -51,24 +51,32 @@ public class LaLConfig implements ConfigData {
 
 	public static class StructuresConfig {
 		@ConfigEntry.Category("config")
+		@ConfigEntry.Gui.Tooltip
 		public boolean dungeon_overhaul = true;
 		@ConfigEntry.Category("config")
+		@ConfigEntry.Gui.Tooltip
 		public boolean swamp_hut_variants = true;
 		@ConfigEntry.Category("config")
+		@ConfigEntry.Gui.Tooltip
 		public boolean buried_treasure_rework = true;
 
 		@ConfigEntry.Category("config")
+		@ConfigEntry.Gui.Tooltip
 		public boolean new_structures = true;
 	}
 
 	public static class LootConfig {
 		@ConfigEntry.Category("config")
+		@ConfigEntry.Gui.Tooltip
 		public boolean enchanted_beetroot = true;
 		@ConfigEntry.Category("config")
+		@ConfigEntry.Gui.Tooltip
 		public boolean metal_chunk = true;
 		@ConfigEntry.Category("config")
+		@ConfigEntry.Gui.Tooltip
 		public boolean wooden_buckets = true;
 		@ConfigEntry.Category("config")
+		@ConfigEntry.Gui.Tooltip
 		public boolean new_music_discs = true;
 
 		@ConfigEntry.Category("config")
@@ -81,6 +89,9 @@ public class LaLConfig implements ConfigData {
 		@ConfigEntry.Gui.Tooltip
 		public boolean knife = true;
 
+		@ConfigEntry.Category("config")
+		@ConfigEntry.Gui.Tooltip
+		public boolean lore_books = true;
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
 		public boolean improved_loot = true;
@@ -133,15 +144,15 @@ public class LaLConfig implements ConfigData {
 
 	public static class EnchantmentsConfig {
 		@ConfigEntry.Category("config")
+		public boolean tangled = true;
+		@ConfigEntry.Category("config")
 		public boolean freeze = true;
 		@ConfigEntry.Category("config")
-		public boolean tangled = true;
+		public boolean featherweight = true;
 		@ConfigEntry.Category("config")
 		public boolean rejuvenate = true;
 		@ConfigEntry.Category("config")
 		public boolean decay = true;
-		@ConfigEntry.Category("config")
-		public boolean featherweight = true;
 	}
 
 	public static class MusicConfig {
@@ -170,10 +181,10 @@ public class LaLConfig implements ConfigData {
 	public static class MiscConfig {
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
-		public boolean wandering_trader_trades = true;
+		public boolean new_trim_materials = true;
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
-		public boolean new_trim_materials = true;
+		public boolean wandering_trader_trades = true;
 	}
 
 	public static class IntegrationsConfig {

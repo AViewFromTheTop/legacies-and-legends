@@ -7,6 +7,7 @@ import net.minecraft.world.item.Item;
 import org.jetbrains.annotations.NotNull;
 
 public class LaLItemTags {
+    public static final TagKey<Item> BOOMERANG_TOOL_MATERIALS = bind("boomerang_tool_materials");
     public static final TagKey<Item> HOOK_TOOL_MATERIALS = bind("hook_tool_materials");
     public static final TagKey<Item> KNIFE_TOOL_MATERIALS = bind("knife_tool_materials");
 

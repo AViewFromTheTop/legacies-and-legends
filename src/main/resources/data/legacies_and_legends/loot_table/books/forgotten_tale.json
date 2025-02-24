@@ -5,23 +5,8 @@
         "rolls": 1,
         "entries": [
           {
-            "type": "minecraft:item",
-            "name": "minecraft:written_book",
-            "functions": [
-                {
-                    "function": "minecraft:set_components",
-                    "components": {
-                      "minecraft:written_book_content": {
-                        "title": "Forgotten Tale",
-                        "author": "Minecraft",
-                        "pages": [
-                          "{\"text\":\"Footsteps. Echoes. Silence.\n\nThere must be silence.\n\nHome, safety, soft.\n\nSilence.\n\nSleep, quiet, life.\n\nSilence.\"}",
-                          "{\"text\":\"Fear, terror, alone.\n\nSilence.\n\nPanick. Stumble. Fall.\n\nNoise. \n\nDeath. \n\nSilence.\"}"
-                        ]
-                      }
-                    }
-                  }
-            ]
+            "type": "minecraft:loot_table",
+            "value": "minecraft:gameplay/fishing/treasure"
           }
         ]
       }

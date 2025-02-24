@@ -32,8 +32,6 @@
     "subtitle": "subtitles.item.boomerang.woosh"
   },
   "music_disc.svall": {
-    "category": "music/disc",
-    "subtitle": "subtitles.music_disc_svall",
     "sounds": [
       {
         "name": "legacies_and_legends:music/disc/svall",
@@ -41,9 +39,15 @@
       }
     ]
   },
+  "music_disc.castles": {
+    "sounds": [
+      {
+        "name": "legacies_and_legends:music/disc/castles",
+        "stream": true
+      }
+    ]
+  },
   "music_disc.taswell": {
-    "category": "music/disc",
-    "subtitle": "subtitles.music_disc_taswell",
     "sounds": [
       {
         "name": "legacies_and_legends:music/disc/taswell",
@@ -52,8 +56,6 @@
     ]
   },
   "music_disc.tundra": {
-    "category": "music/disc",
-    "subtitle": "subtitles.music_disc_tundra",
     "sounds": [
       {
         "name": "legacies_and_legends:music/disc/tundra",
@@ -62,8 +64,6 @@
     ]
   },
   "music_disc.shulker": {
-    "category": "music/disc",
-    "subtitle": "subtitles.music_disc_shulker",
     "sounds": [
       {
         "name": "legacies_and_legends:music/disc/shulker",
@@ -72,8 +72,6 @@
     ]
   },
   "music_disc.far_lands": {
-    "category": "music/disc",
-    "subtitle": "subtitles.music_disc_far_lands",
     "sounds": [
       {
         "name": "legacies_and_legends:music/disc/far_lands",
@@ -82,8 +80,6 @@
     ]
   },
   "music_disc.infinite_spooky_amethyst": {
-    "category": "music/disc",
-    "subtitle": "subtitles.music_disc_infinite_spooky_amethyst",
     "sounds": [
       {
         "name": "legacies_and_legends:music/disc/infinite_spooky_amethyst",

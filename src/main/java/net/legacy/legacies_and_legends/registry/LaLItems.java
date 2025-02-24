@@ -67,6 +67,8 @@ public final class LaLItems {
                     .stacksTo(16)
                     .component(DataComponents.TOOL, BoomerangItem.createToolProperties())
                     .component(DataComponents.ATTRIBUTE_MODIFIERS, BoomerangItem.createAttributes())
+                    .repairable(LaLItemTags.BOOMERANG_TOOL_MATERIALS)
+                    .rarity(Rarity.RARE)
     );
 
     // Misc Items
@@ -235,6 +237,7 @@ public final class LaLItems {
                     .stacksTo(16)
                     .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_RECALL)
                     .useCooldown(300f)
+                    .rarity(Rarity.UNCOMMON)
     );
     public static final Item TABLET_OF_HASTE = register("tablet_of_haste",
             Item::new,
@@ -242,6 +245,7 @@ public final class LaLItems {
                     .stacksTo(16)
                     .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_HASTE)
                     .useCooldown(60f)
+                    .rarity(Rarity.UNCOMMON)
     );
     public static final Item TABLET_OF_LEVITATION = register("tablet_of_levitation",
             Item::new,
@@ -249,6 +253,7 @@ public final class LaLItems {
                     .stacksTo(16)
                     .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_LEVITATION)
                     .useCooldown(30f)
+                    .rarity(Rarity.UNCOMMON)
     );
     public static final Item TABLET_OF_CHANNELING = register("tablet_of_channeling",
             Item::new,
@@ -256,6 +261,7 @@ public final class LaLItems {
                     .stacksTo(16)
                     .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_CHANNELING)
                     .useCooldown(300f)
+                    .rarity(Rarity.RARE)
     );
     public static final Item TABLET_OF_DEAFENING = register("tablet_of_deafening",
             Item::new,
@@ -263,6 +269,7 @@ public final class LaLItems {
                     .stacksTo(16)
                     .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_DEAFENING)
                     .useCooldown(60f)
+                    .rarity(Rarity.RARE)
     );
     public static final Item TABLET_OF_REVEALING = register("tablet_of_revealing",
             Item::new,
@@ -270,6 +277,7 @@ public final class LaLItems {
                     .stacksTo(16)
                     .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_REVEALING)
                     .useCooldown(60f)
+                    .rarity(Rarity.UNCOMMON)
     );
 
     public static final Item AMULET_OF_ALLURE = register("amulet_of_allure",
@@ -277,16 +285,19 @@ public final class LaLItems {
             new Properties()
                     .stacksTo(1)
                     .attributes(createAmuletOfAllureAttributes)
+                    .rarity(Rarity.UNCOMMON)
     );
     public static final Item AMULET_OF_SYNTHESIS = register("amulet_of_synthesis",
             Item::new,
             new Properties()
                     .stacksTo(1)
+                    .rarity(Rarity.UNCOMMON)
     );
     public static final Item AMULET_OF_EVASION = register("amulet_of_evasion",
             Item::new,
             new Properties()
                     .stacksTo(1)
+                    .rarity(Rarity.RARE)
     );
 
     public static final Item REINFORCED_CHESTPLATE = register("reinforced_chestplate",
@@ -297,6 +308,7 @@ public final class LaLItems {
                     .repairable(LaLItemTags.REPAIRS_REINFORCED_ARMOR)
                     .component(DataComponents.EQUIPPABLE, Equippable.builder(ArmorType.CHESTPLATE.getSlot()).setEquipSound(SoundEvents.ARMOR_EQUIP_DIAMOND).setAsset(LaLEquipmentAssets.REINFORCED).build())
                     .attributes(createReinforcedChestplateAttributes)
+                    .rarity(Rarity.RARE)
     );
     public static final Item TRAVELLING_STRIDES = register("travelling_strides",
             Item::new,
@@ -315,6 +327,7 @@ public final class LaLItems {
                     .repairable(LaLItemTags.REPAIRS_WANDERER_ARMOR)
                     .component(DataComponents.EQUIPPABLE, Equippable.builder(ArmorType.BOOTS.getSlot()).setEquipSound(SoundEvents.ARMOR_EQUIP_IRON).setAsset(LaLEquipmentAssets.WANDERER).build())
                     .attributes(createWandererBootsAttributes)
+                    .rarity(Rarity.UNCOMMON)
     );
 
     public static void init() {

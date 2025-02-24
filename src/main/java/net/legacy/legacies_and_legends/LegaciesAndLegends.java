@@ -64,6 +64,20 @@ public class LegaciesAndLegends implements ModInitializer {
 					ResourcePackActivationType.ALWAYS_ENABLED
 			);
 		}
+		if (LaLConfig.get.loot.lore_books) {
+			ResourceManagerHelper.registerBuiltinResourcePack(
+					LaLConstants.id("lore_books"), modContainer.get(),
+					Component.translatable("pack.legacies_and_legends.lore_books"),
+					ResourcePackActivationType.ALWAYS_ENABLED
+			);
+		}
+		if (LaLConfig.get.loot.improved_loot) {
+			ResourceManagerHelper.registerBuiltinResourcePack(
+					LaLConstants.id("improved_loot"), modContainer.get(),
+					Component.translatable("pack.legacies_and_legends.improved_loot"),
+					ResourcePackActivationType.ALWAYS_ENABLED
+			);
+		}
 		if (LaLConfig.get.structures.dungeon_overhaul) {
 			ResourceManagerHelper.registerBuiltinResourcePack(
 					LaLConstants.id("dungeon_overhaul"), modContainer.get(),
@@ -92,8 +106,14 @@ public class LegaciesAndLegends implements ModInitializer {
 					ResourcePackActivationType.ALWAYS_ENABLED
 			);
 		}
+		if (!LaLConfig.get.structures.new_structures) {
+			ResourceManagerHelper.registerBuiltinResourcePack(
+					LaLConstants.id("no_new_structures"), modContainer.get(),
+					Component.translatable("pack.legacies_and_legends.no_new_structures"),
+					ResourcePackActivationType.ALWAYS_ENABLED
+			);
+		}
 		if (!LaLConfig.get.artifacts.travelling_strides) {
-			isVariantsAndVenturesLoaded = true;
 			ResourceManagerHelper.registerBuiltinResourcePack(
 					LaLConstants.id("no_travelling_strides"), modContainer.get(),
 					Component.translatable("pack.legacies_and_legends.no_travelling_strides"),
@@ -101,7 +121,6 @@ public class LegaciesAndLegends implements ModInitializer {
 			);
 		}
 		if (!LaLConfig.get.artifacts.withered_hoe) {
-			isVariantsAndVenturesLoaded = true;
 			ResourceManagerHelper.registerBuiltinResourcePack(
 					LaLConstants.id("no_withered_hoe"), modContainer.get(),
 					Component.translatable("pack.legacies_and_legends.no_withered_hoe"),

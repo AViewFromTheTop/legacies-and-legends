@@ -238,10 +238,10 @@ public class BoomerangProjectile extends AbstractArrow {
         Entity entity = result.getEntity();
         float f = BoomerangItem.THROW_DAMAGE;
         if (!this.isInWater() && !this.isInLava() && !this.isInPowderSnow) {
-            if (this.entityData.get(ID_FEATHERWEIGHT) / 10 >= 1 && this.spinTick * this.entityData.get(ID_FEATHERWEIGHT) / 10 / 15 >= 1) {
+            if (this.entityData.get(ID_FEATHERWEIGHT) / 10 >= 1) {
                 this.fBoost = this.spinTick * this.entityData.get(ID_FEATHERWEIGHT) / 10 / 15;
-            } else if (this.spinTick / 10 / 15 >= 1){
-                this.fBoost = this.spinTick / 10 / 15;
+            } else {
+                this.fBoost = this.spinTick * 5 / 10 / 15;
             }
             if (this.fBoost >= BoomerangItem.THROW_DAMAGE) {
                 this.fBoost = BoomerangItem.THROW_DAMAGE;

@@ -5,22 +5,8 @@
         "rolls": 1,
         "entries": [
           {
-            "type": "minecraft:item",
-            "name": "minecraft:written_book",
-            "functions": [
-                {
-                    "function": "minecraft:set_components",
-                    "components": {
-                      "minecraft:written_book_content": {
-                        "title": "Treasure Tale",
-                        "author": "Minecraft",
-                        "pages": [
-                          "{\"text\":\"From the Depths of the Sea, to the Dark and even the End of the world. Tales of the past, mysteries of the future... who knows what sort of treasures are hidden, just waiting to be found?\"}"
-                        ]
-                      }
-                    }
-                  }
-            ]
+            "type": "minecraft:loot_table",
+            "value": "minecraft:gameplay/fishing/treasure"
           }
         ]
       }
