@@ -43,9 +43,11 @@
   "pack.legacies_and_legends.no_withered_hoe": "No Withered Hoe",
   "pack.legacies_and_legends.no_new_structures": "No New Structures",
   "pack.legacies_and_legends.lore_books": "Lore Books",
-  "pack.legacies_and_legends.improved_loot": "Improved Loot",
+  "pack.legacies_and_legends.no_improved_loot": "No Improved Loot",
   "pack.legacies_and_legends.new_trim_materials": "New Trim Materials",
   "pack.legacies_and_legends.wandering_trader_trades": "Wandering Trader Trades",
+  "pack.legacies_and_legends.no_end_portal_music": "No End Portal Music",
+  "pack.legacies_and_legends.no_creeper_discs": "No Creeper Discs",
 
   "item.legacies_and_legends.reinforced_chestplate": "Reinforced Chestplate",
   "item.legacies_and_legends.travelling_strides": "Travelling Strides",
@@ -87,7 +89,6 @@
   "effect.legacies_and_legends.freezing": "Freezing",
 
   "filled_map.legacies_and_legends.dungeon": "Dungeon Explorer Map",
-  "pack.legacies_and_legends.no_end_portal_music": "No End Portal Music",
 
   "text.autoconfig.legacies_and_legends.title": "Legacies and Legends",
 
@@ -119,7 +120,7 @@
   "text.autoconfig.legacies_and_legends.option.loot.lore_books": "Lore Books",
   "text.autoconfig.legacies_and_legends.option.loot.lore_books.@Tooltip": "Whether unique written books containing snippets of lore should be found throughout the world.",
   "text.autoconfig.legacies_and_legends.option.loot.improved_loot": "Improved Loot",
-  "text.autoconfig.legacies_and_legends.option.loot.improved_loot.@Tooltip": "Whether to use improved vanilla loot tables, including rebalanced loot pools and structure-specific C418 discs. Disabling this will make certain lore books unobtainable.",
+  "text.autoconfig.legacies_and_legends.option.loot.improved_loot.@Tooltip": "Whether to use improved vanilla loot tables, including rebalanced loot pools and structure-specific C418 discs.",
 
   "text.autoconfig.legacies_and_legends.option.artifacts": "Artifacts",
   "text.autoconfig.legacies_and_legends.option.artifacts.reinforced_chestplate": "Reinforced Chestplate",
@@ -168,6 +169,8 @@
   "text.autoconfig.legacies_and_legends.option.misc.new_trim_materials.@Tooltip": "Whether to include new trimmable materials added by Legacies and Legends. Currently includes Echo Shards.",
   "text.autoconfig.legacies_and_legends.option.misc.wandering_trader_trades": "Wandering Trader Trades",
   "text.autoconfig.legacies_and_legends.option.misc.wandering_trader_trades.@Tooltip": "Whether Wandering Traders should have improved trades and be able to sell Legacies and Legends' items. Requires Villager Config.",
+  "text.autoconfig.legacies_and_legends.option.misc.no_creeper_discs": "Disable Creeper Discs",
+  "text.autoconfig.legacies_and_legends.option.misc.no_creeper_discs.@Tooltip": "Set to True to disable Creepers dropping C418 music discs, meaning they can only be found from their respective structures. Disabled by default.",
 
   "text.autoconfig.legacies_and_legends.option.integrations": "Mod Integration",
   "text.autoconfig.legacies_and_legends.option.integrations.wilder_wild": "Wilder Wild",

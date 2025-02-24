@@ -71,10 +71,10 @@ public class LegaciesAndLegends implements ModInitializer {
 					ResourcePackActivationType.ALWAYS_ENABLED
 			);
 		}
-		if (LaLConfig.get.loot.improved_loot) {
+		if (!LaLConfig.get.loot.improved_loot) {
 			ResourceManagerHelper.registerBuiltinResourcePack(
-					LaLConstants.id("improved_loot"), modContainer.get(),
-					Component.translatable("pack.legacies_and_legends.improved_loot"),
+					LaLConstants.id("no_improved_loot"), modContainer.get(),
+					Component.translatable("pack.legacies_and_legends.no_improved_loot"),
 					ResourcePackActivationType.ALWAYS_ENABLED
 			);
 		}
@@ -124,6 +124,13 @@ public class LegaciesAndLegends implements ModInitializer {
 			ResourceManagerHelper.registerBuiltinResourcePack(
 					LaLConstants.id("no_withered_hoe"), modContainer.get(),
 					Component.translatable("pack.legacies_and_legends.no_withered_hoe"),
+					ResourcePackActivationType.ALWAYS_ENABLED
+			);
+		}
+		if (LaLConfig.get.misc.no_creeper_discs) {
+			ResourceManagerHelper.registerBuiltinResourcePack(
+					LaLConstants.id("no_creeper_discs"), modContainer.get(),
+					Component.translatable("pack.legacies_and_legends.no_creeper_discs"),
 					ResourcePackActivationType.ALWAYS_ENABLED
 			);
 		}
