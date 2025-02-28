@@ -21,15 +21,23 @@
   "effects": {
     "minecraft:post_attack": [
       {
-        "requirements": {
-          "condition": "minecraft:entity_properties",
-          "entity": "this",
-          "predicate": {
-            "effects": {
-              "legacies_and_legends:freezing": {}
+        "requirements": [
+          {
+            "condition": "minecraft:damage_source_properties",
+            "predicate": {
+              "is_direct": true
+            }
+          },
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "effects": {
+                "legacies_and_legends:freezing": {}
+              }
             }
           }
-        },
+        ],
         "effect": {
           "type": "minecraft:all_of",
           "effects": [
@@ -38,13 +46,13 @@
               "damage_type": "minecraft:freeze",
               "min_damage": {
                 "type": "minecraft:linear",
-                "base": 2,
-                "per_level_above_first": 2
+                "base": 3,
+                "per_level_above_first": 3
               },
               "max_damage": {
                 "type": "minecraft:linear",
-                "base": 2,
-                "per_level_above_first": 2
+                "base": 3,
+                "per_level_above_first": 3
               }
             },
             {

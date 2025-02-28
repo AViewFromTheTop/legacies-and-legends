@@ -64,10 +64,11 @@ public final class LaLItems {
     public static final BoomerangItem BOOMERANG = register("boomerang",
             BoomerangItem::new,
             new Properties()
-                    .stacksTo(16)
+                    .stacksTo(1)
                     .component(DataComponents.TOOL, BoomerangItem.createToolProperties())
                     .component(DataComponents.ATTRIBUTE_MODIFIERS, BoomerangItem.createAttributes())
-                    .repairable(LaLItemTags.BOOMERANG_TOOL_MATERIALS)
+                    .repairable(LaLItemTags.BOOMERANG_REPAIR_MATERIALS)
+                    .durability(386)
                     .rarity(Rarity.RARE)
     );
 

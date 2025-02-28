@@ -1,6 +1,6 @@
 {
   "description": {
-    "translate": "enchantment.legacies_and_legends.shatter"
+    "translate": "enchantment.legacies_and_legends.striking"
   },
   "exclusive_set": "#minecraft:exclusive_set/damage",
   "supported_items": "#legacies_and_legends:enchantable/knife",
@@ -23,7 +23,11 @@
       {
         "attribute": "minecraft:attack_speed",
         "id": "attack_speed",
-        "amount": 0.2,
+        "amount": {
+          "type": "minecraft:linear",
+          "base": 0.2,
+          "per_level_above_first": 0.2
+        },
         "operation": "add_value"
       }
     ],

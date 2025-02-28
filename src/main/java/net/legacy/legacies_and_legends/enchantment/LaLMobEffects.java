@@ -10,7 +10,7 @@ import net.minecraft.world.effect.*;
 public class LaLMobEffects {
     public static final Holder<MobEffect> FREEZING = register(
             "freezing",
-            new MobEffect(MobEffectCategory.HARMFUL, 3402751)
+            new MobEffect(MobEffectCategory.HARMFUL, 7720931)
     );
 
     public static void init() {

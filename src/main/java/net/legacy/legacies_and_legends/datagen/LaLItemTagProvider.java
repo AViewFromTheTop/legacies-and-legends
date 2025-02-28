@@ -67,11 +67,11 @@ public class LaLItemTagProvider extends FabricTagProvider.ItemTagProvider {
         this.getOrCreateTagBuilder(LaLItemTags.REPAIRS_WANDERER_ARMOR)
                 .add(LaLItems.METAL_CHUNK);
 
-        this.getOrCreateTagBuilder(LaLItemTags.BOOMERANG_TOOL_MATERIALS)
+        this.getOrCreateTagBuilder(LaLItemTags.BOOMERANG_REPAIR_MATERIALS)
                 .add(LaLItems.METAL_CHUNK);
-        this.getOrCreateTagBuilder(LaLItemTags.HOOK_TOOL_MATERIALS)
+        this.getOrCreateTagBuilder(LaLItemTags.HOOK_REPAIR_MATERIALS)
                 .add(LaLItems.METAL_CHUNK);
-        this.getOrCreateTagBuilder(LaLItemTags.KNIFE_TOOL_MATERIALS)
+        this.getOrCreateTagBuilder(LaLItemTags.KNIFE_REPAIR_MATERIALS)
                 .addTag(ItemTags.DECORATED_POT_SHERDS);
 
         this.getOrCreateTagBuilder(LaLItemTags.VERDANT_TOOL_MATERIALS)

@@ -689,7 +689,7 @@ public class LaLLootTables {
 						.add(LootItem.lootTableItem(Items.ENCHANTED_BOOK).setWeight(1)).apply((new SetEnchantmentsFunction.Builder()).withEnchantment(registries.lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(LaLEnchantments.DECAY), UniformGenerator.between(1.0F, 1.0F)));
 				tableBuilder.withPool(pool);
 			}
-			if (BuiltInLootTables.JUNGLE_TEMPLE.equals(id) && LaLConfig.get.enchantments.decay && !LegaciesAndLegends.isVariantsAndVenturesLoaded && LaLConfig.get.structures.dungeon_overhaul) {
+			if (LaLLootTables.DUNGEON_CHEST_DEEP.equals(id) && LaLConfig.get.enchantments.decay && !LegaciesAndLegends.isVariantsAndVenturesLoaded) {
 				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 						.add(EmptyLootItem.emptyItem().setWeight(5))
 						.add(LootItem.lootTableItem(Items.ENCHANTED_BOOK).setWeight(1)).apply((new SetEnchantmentsFunction.Builder()).withEnchantment(registries.lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(LaLEnchantments.DECAY), UniformGenerator.between(1.0F, 1.0F)));
