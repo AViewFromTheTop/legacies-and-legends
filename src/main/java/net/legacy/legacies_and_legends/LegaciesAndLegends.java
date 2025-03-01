@@ -137,6 +137,13 @@ public class LegaciesAndLegends implements ModInitializer {
 		if (FabricLoader.getInstance().isModLoaded("enchants_and_expeditions")) {
 			isEnchantsAndExpeditionsLoaded = true;
 		}
+		if (isEnchantsAndExpeditionsLoaded || !LaLConfig.get.enchantments.extraction) {
+			ResourceManagerHelper.registerBuiltinResourcePack(
+					LaLConstants.id("no_extraction_enchant"), modContainer.get(),
+					Component.translatable("pack.legacies_and_legends.no_extraction_enchant"),
+					ResourcePackActivationType.ALWAYS_ENABLED
+			);
+		}
 		if (FabricLoader.getInstance().isModLoaded("villagerconfig") && LaLConfig.get.misc.wandering_trader_trades && LaLConfig.get.loot.wooden_buckets && LaLConfig.get.loot.metal_chunk && LaLConfig.get.artifacts.tablet_of_recall && LaLConfig.get.artifacts.tablet_of_haste && LaLConfig.get.artifacts.tablet_of_revealing && LaLConfig.get.structures.dungeon_overhaul) {
 			isVillagerConfigLoaded = true;
 			ResourceManagerHelper.registerBuiltinResourcePack(

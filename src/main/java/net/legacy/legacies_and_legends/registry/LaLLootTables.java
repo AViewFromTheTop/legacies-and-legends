@@ -435,40 +435,29 @@ public class LaLLootTables {
 			}
 
 			if (LaLConfig.get.loot.hook) {
-				if (LegaciesAndLegends.isEnchantsAndExpeditionsLoaded) {
-					LootTableModifier.editTable(
-							BuiltInLootTables.FISHING_TREASURE, false,
-							(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
-									MutableLootTable.has(Items.FISHING_ROD),
-									(lootPool) -> lootPool.add(LaLEquipmentItems.HOOK, 3, EnchantRandomlyFunction.randomApplicableEnchantment(registries))
-							)
-					);
-				}
-				else {
-					LootTableModifier.editTable(
-							BuiltInLootTables.FISHING_TREASURE, false,
-							(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
-									MutableLootTable.has(Items.FISHING_ROD),
-									(lootPool) -> lootPool
-											.add(LaLEquipmentItems.HOOK, 1, EnchantRandomlyFunction.randomApplicableEnchantment(registries))
-							)
-					);
-				}
 				LootTableModifier.editTable(
-						BuiltInLootTables.UNDERWATER_RUIN_BIG, false,
+						BuiltInLootTables.FISHING_TREASURE, false,
 						(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
 								MutableLootTable.has(Items.FISHING_ROD),
-								(lootPool) -> lootPool.add(LaLEquipmentItems.HOOK, 3, EnchantRandomlyFunction.randomApplicableEnchantment(registries))
-						)
-				);
-				LootTableModifier.editTable(
-						BuiltInLootTables.UNDERWATER_RUIN_SMALL, false,
-						(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
-								MutableLootTable.has(Items.FISHING_ROD),
-								(lootPool) -> lootPool.add(LaLEquipmentItems.HOOK, 3, SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
+								(lootPool) -> lootPool
+										.add(LaLEquipmentItems.HOOK, 1, EnchantRandomlyFunction.randomApplicableEnchantment(registries))
 						)
 				);
 			}
+			LootTableModifier.editTable(
+					BuiltInLootTables.UNDERWATER_RUIN_BIG, false,
+					(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
+							MutableLootTable.has(Items.FISHING_ROD),
+							(lootPool) -> lootPool.add(LaLEquipmentItems.HOOK, 3, EnchantRandomlyFunction.randomApplicableEnchantment(registries))
+					)
+			);
+			LootTableModifier.editTable(
+					BuiltInLootTables.UNDERWATER_RUIN_SMALL, false,
+					(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
+							MutableLootTable.has(Items.FISHING_ROD),
+							(lootPool) -> lootPool.add(LaLEquipmentItems.HOOK, 3, SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
+					)
+			);
 
 			if (LaLConfig.get.loot.knife) {
 				LootTableModifier.editTable(

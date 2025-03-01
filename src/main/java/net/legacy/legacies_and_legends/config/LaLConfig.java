@@ -146,6 +146,8 @@ public class LaLConfig implements ConfigData {
 		@ConfigEntry.Category("config")
 		public boolean tangled = true;
 		@ConfigEntry.Category("config")
+		public boolean extraction = true;
+		@ConfigEntry.Category("config")
 		public boolean freeze = true;
 		@ConfigEntry.Category("config")
 		public boolean featherweight = true;
