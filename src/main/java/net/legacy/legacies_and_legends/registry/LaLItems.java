@@ -33,12 +33,15 @@ import java.util.function.Function;
 
 public final class LaLItems {
 
-    public static final ResourceLocation ARMOR_ID = ResourceLocation.withDefaultNamespace("armor");
-    public static final ResourceLocation KNOCKBACK_RESISTANCE_ID = ResourceLocation.withDefaultNamespace("knockback_resistance_id");
-    public static final ResourceLocation MOVEMENT_SPEED_ID = ResourceLocation.withDefaultNamespace("movement_speed");
-    public static final ResourceLocation STEP_HEIGHT_ID = ResourceLocation.withDefaultNamespace("step_height");
+    public static final ResourceLocation ARMOR_CHESTPLATE_ID = LaLConstants.id("armor_chestplate");
+    public static final ResourceLocation ARMOR_LEGGINGS_ID = LaLConstants.id("armor_leggings");
+    public static final ResourceLocation ARMOR_BOOTS_ID = LaLConstants.id("armor_boots");
 
-    public static final ResourceLocation TEMPT_RANGE_ID = ResourceLocation.withDefaultNamespace("tempt_range");
+    public static final ResourceLocation KNOCKBACK_RESISTANCE_CHESTPLATE_ID = LaLConstants.id("knockback_resistance_chestplate");
+    public static final ResourceLocation MOVEMENT_SPEED_LEGGINGS_ID = LaLConstants.id("movement_speed_leggings");
+    public static final ResourceLocation STEP_HEIGHT_BOOTS_ID = LaLConstants.id("step_height_boots");
+
+    public static final ResourceLocation TEMPT_RANGE_ID = LaLConstants.id("tempt_range");
 
     private static final ItemAttributeModifiers createAmuletOfAllureAttributes = ItemAttributeModifiers.builder()
             .add(Attributes.TEMPT_RANGE, new AttributeModifier(TEMPT_RANGE_ID, 10, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
@@ -46,18 +49,18 @@ public final class LaLItems {
             .build();
 
     private static final ItemAttributeModifiers createReinforcedChestplateAttributes = ItemAttributeModifiers.builder()
-            .add(Attributes.ARMOR, new AttributeModifier(ARMOR_ID, 7, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.CHEST)
-            .add(Attributes.KNOCKBACK_RESISTANCE, new AttributeModifier(KNOCKBACK_RESISTANCE_ID, 5, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.CHEST)
+            .add(Attributes.ARMOR, new AttributeModifier(ARMOR_CHESTPLATE_ID, 7, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.CHEST)
+            .add(Attributes.KNOCKBACK_RESISTANCE, new AttributeModifier(KNOCKBACK_RESISTANCE_CHESTPLATE_ID, 0.5, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.CHEST)
             .build();
 
     private static final ItemAttributeModifiers createTravellingStridesAttributes = ItemAttributeModifiers.builder()
-            .add(Attributes.ARMOR, new AttributeModifier(ARMOR_ID, 3, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.LEGS)
-            .add(Attributes.MOVEMENT_SPEED, new AttributeModifier(MOVEMENT_SPEED_ID, 0.2, AttributeModifier.Operation.ADD_MULTIPLIED_BASE), EquipmentSlotGroup.LEGS)
+            .add(Attributes.ARMOR, new AttributeModifier(ARMOR_LEGGINGS_ID, 3, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.LEGS)
+            .add(Attributes.MOVEMENT_SPEED, new AttributeModifier(MOVEMENT_SPEED_LEGGINGS_ID, 0.2, AttributeModifier.Operation.ADD_MULTIPLIED_BASE), EquipmentSlotGroup.LEGS)
             .build();
 
     private static final ItemAttributeModifiers createWandererBootsAttributes = ItemAttributeModifiers.builder()
-            .add(Attributes.ARMOR, new AttributeModifier(ARMOR_ID, 2, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.FEET)
-            .add(Attributes.STEP_HEIGHT, new AttributeModifier(STEP_HEIGHT_ID, 1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE), EquipmentSlotGroup.FEET)
+            .add(Attributes.ARMOR, new AttributeModifier(ARMOR_BOOTS_ID, 2, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.FEET)
+            .add(Attributes.STEP_HEIGHT, new AttributeModifier(STEP_HEIGHT_BOOTS_ID, 1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE), EquipmentSlotGroup.FEET)
             .build();
 
     // Boomerang

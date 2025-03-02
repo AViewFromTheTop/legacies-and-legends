@@ -2,7 +2,7 @@
   "layers": {
     "humanoid_leggings": [
       {
-        "texture": "minecraft:travelling"
+        "texture": "legacies_and_legends:travelling"
       }
     ]
   }

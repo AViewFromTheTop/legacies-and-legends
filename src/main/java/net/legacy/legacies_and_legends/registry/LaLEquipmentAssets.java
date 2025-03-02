@@ -1,5 +1,6 @@
 package net.legacy.legacies_and_legends.registry;
 
+import net.legacy.legacies_and_legends.LaLConstants;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -11,7 +12,7 @@ public interface LaLEquipmentAssets {
     ResourceKey<EquipmentAsset> TRAVELLING = createId("travelling");
     ResourceKey<EquipmentAsset> REINFORCED = createId("reinforced");
 
-    static ResourceKey<EquipmentAsset> createId(String name) {
-        return ResourceKey.create(ROOT_ID, ResourceLocation.withDefaultNamespace(name));
+    static ResourceKey<EquipmentAsset> createId(String path) {
+        return ResourceKey.create(ROOT_ID, LaLConstants.id(path));
     }
 }
