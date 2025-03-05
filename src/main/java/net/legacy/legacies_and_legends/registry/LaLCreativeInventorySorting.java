@@ -36,6 +36,7 @@ public class LaLCreativeInventorySorting {
 		addAfterInToolsAndUtilities(Items.PINK_BUNDLE, LaLItems.TABLET_OF_DEAFENING);
 		addAfterInToolsAndUtilities(Items.PINK_BUNDLE, LaLItems.TABLET_OF_LEVITATION);
 
+		addBeforeInIngredients(Items.HEART_OF_THE_SEA, LaLItems.TRIDENT_SHARD);
 		addAfterInIngredients(Items.HEART_OF_THE_SEA, LaLItems.METAL_CHUNK);
 		addAfterInIngredients(LaLItems.METAL_CHUNK, LaLItems.DISC_FRAGMENT_FAR_LANDS);
 

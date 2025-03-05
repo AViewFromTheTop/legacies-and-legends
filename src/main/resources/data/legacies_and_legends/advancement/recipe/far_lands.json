@@ -1,6 +1,6 @@
 {
   "criteria": {
-    "iron_ingot": {
+    "has_items": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
