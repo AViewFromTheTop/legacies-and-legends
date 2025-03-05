@@ -1,3 +1,3 @@
 weather thunder
 
-playsound minecraft:block.sculk_shrieker.shriek player @a[sort=nearest,distance=..16] ~ ~ ~
+playsound minecraft:entity.lightning_bolt.thunder player @a[sort=nearest,distance=..16] ~ ~ ~

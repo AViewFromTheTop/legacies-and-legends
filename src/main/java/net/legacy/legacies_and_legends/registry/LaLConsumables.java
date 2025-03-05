@@ -67,7 +67,7 @@ public class LaLConsumables {
             .onConsume(
                     new ApplyStatusEffectsConsumeEffect(
                             List.of(
-                                    new MobEffectInstance(MobEffects.LEVITATION, 100, 15)
+                                    new MobEffectInstance(MobEffects.LEVITATION, 80, 15)
                             )
                     )
             )
