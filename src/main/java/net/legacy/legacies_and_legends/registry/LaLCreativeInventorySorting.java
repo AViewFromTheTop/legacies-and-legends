@@ -30,11 +30,11 @@ public class LaLCreativeInventorySorting {
 		addAfterInToolsAndUtilities(LaLItems.AMULET_OF_EVASION, LaLItems.AMULET_OF_SYNTHESIS);
 
 		addAfterInToolsAndUtilities(Items.PINK_BUNDLE, LaLItems.TABLET_OF_RECALL);
-		addAfterInToolsAndUtilities(Items.PINK_BUNDLE, LaLItems.TABLET_OF_HASTE);
-		addAfterInToolsAndUtilities(Items.PINK_BUNDLE, LaLItems.TABLET_OF_REVEALING);
-		addAfterInToolsAndUtilities(Items.PINK_BUNDLE, LaLItems.TABLET_OF_CHANNELING);
-		addAfterInToolsAndUtilities(Items.PINK_BUNDLE, LaLItems.TABLET_OF_DEAFENING);
-		addAfterInToolsAndUtilities(Items.PINK_BUNDLE, LaLItems.TABLET_OF_LEVITATION);
+		addAfterInToolsAndUtilities(LaLItems.TABLET_OF_RECALL, LaLItems.TABLET_OF_HASTE);
+		addAfterInToolsAndUtilities(LaLItems.TABLET_OF_HASTE, LaLItems.TABLET_OF_REVEALING);
+		addAfterInToolsAndUtilities(LaLItems.TABLET_OF_REVEALING, LaLItems.TABLET_OF_CHANNELING);
+		addAfterInToolsAndUtilities(LaLItems.TABLET_OF_CHANNELING, LaLItems.TABLET_OF_DEAFENING);
+		addAfterInToolsAndUtilities(LaLItems.TABLET_OF_DEAFENING, LaLItems.TABLET_OF_LEVITATION);
 
 		addBeforeInIngredients(Items.HEART_OF_THE_SEA, LaLItems.TRIDENT_SHARD);
 		addAfterInIngredients(Items.HEART_OF_THE_SEA, LaLItems.METAL_CHUNK);

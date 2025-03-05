@@ -79,7 +79,7 @@
         "name": "legacy:music/end/only_the_beginning",
         "stream": true,
         "weight": 2,
-        "volume": 0.7
+        "volume": 0.8
       },
       {
         "name": "legacy:music/end/vacuum_decay",
