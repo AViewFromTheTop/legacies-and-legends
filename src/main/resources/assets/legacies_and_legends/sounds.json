@@ -31,6 +31,36 @@
     ],
     "subtitle": "subtitles.item.boomerang.woosh"
   },
+  "tablet.use": {
+    "sounds": [],
+    "subtitle": "subtitles.item.tablet.use"
+  },
+  "tablet.break": {
+    "sounds": [
+      {
+        "name": "legacies_and_legends:item/tablet/break1",
+        "volume": 0.5
+      },
+      {
+        "name": "legacies_and_legends:item/tablet/break2",
+        "volume": 0.5
+      }
+    ],
+    "subtitle": "subtitles.item.tablet.break"
+  },
+  "tablet.teleport": {
+    "sounds": [
+      {
+        "name": "legacies_and_legends:item/tablet/teleport1",
+        "volume": 0.5
+      },
+      {
+        "name": "legacies_and_legends:item/tablet/teleport2",
+        "volume": 0.5
+      }
+    ],
+    "subtitle": "subtitles.item.tablet.teleport"
+  },
   "music_disc.svall": {
     "sounds": [
       {
