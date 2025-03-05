@@ -102,6 +102,11 @@ public final class LaLItems {
             new Properties()
                     .stacksTo(16)
     );
+    public static final Item TRIDENT_SHARD = register("trident_shard",
+            Item::new,
+            new Properties()
+                    .stacksTo(64)
+    );
 
     // Discs
     public static final Item MUSIC_DISC_SVALL = register("music_disc_svall",

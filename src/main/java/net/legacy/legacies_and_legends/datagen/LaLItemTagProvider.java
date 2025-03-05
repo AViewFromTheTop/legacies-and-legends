@@ -74,6 +74,9 @@ public class LaLItemTagProvider extends FabricTagProvider.ItemTagProvider {
         this.getOrCreateTagBuilder(LaLItemTags.KNIFE_REPAIR_MATERIALS)
                 .addTag(ItemTags.DECORATED_POT_SHERDS);
 
+        this.getOrCreateTagBuilder(LaLItemTags.TRIDENT_REPAIR_MATERIALS)
+                .add(LaLItems.TRIDENT_SHARD);
+
         this.getOrCreateTagBuilder(LaLItemTags.VERDANT_TOOL_MATERIALS)
                 .add(Items.MOSSY_COBBLESTONE.asItem());
         this.getOrCreateTagBuilder(LaLItemTags.CLEAVING_TOOL_MATERIALS)

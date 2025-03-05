@@ -44,6 +44,7 @@ public class LegaciesAndLegends implements ModInitializer {
 		LaLEnchantments.init();
 		LaLMusic.insertMusic();
 		LaLMapDecorationTypes.init();
+		LaLItemComponents.init();
 
 		ResourceManagerHelper.registerBuiltinResourcePack(
 				LaLConstants.id("asset_overrides"), modContainer.get(),
@@ -124,6 +125,13 @@ public class LegaciesAndLegends implements ModInitializer {
 			ResourceManagerHelper.registerBuiltinResourcePack(
 					LaLConstants.id("no_withered_hoe"), modContainer.get(),
 					Component.translatable("pack.legacies_and_legends.no_withered_hoe"),
+					ResourcePackActivationType.ALWAYS_ENABLED
+			);
+		}
+		if (!LaLConfig.get.loot.trident_shard) {
+			ResourceManagerHelper.registerBuiltinResourcePack(
+					LaLConstants.id("no_trident_shard"), modContainer.get(),
+					Component.translatable("pack.legacies_and_legends.no_trident_shard"),
 					ResourcePackActivationType.ALWAYS_ENABLED
 			);
 		}

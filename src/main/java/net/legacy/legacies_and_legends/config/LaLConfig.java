@@ -74,6 +74,9 @@ public class LaLConfig implements ConfigData {
 		public boolean metal_chunk = true;
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
+		public boolean trident_shard = true;
+		@ConfigEntry.Category("config")
+		@ConfigEntry.Gui.Tooltip
 		public boolean wooden_buckets = true;
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
