@@ -6,7 +6,6 @@ import net.frozenblock.lib.loot.MutableLootTable;
 import net.legacy.legacies_and_legends.LaLConstants;
 import net.legacy.legacies_and_legends.LegaciesAndLegends;
 import net.legacy.legacies_and_legends.config.LaLConfig;
-import net.legacy.legacies_and_legends.enchantment.LaLEnchantments;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;

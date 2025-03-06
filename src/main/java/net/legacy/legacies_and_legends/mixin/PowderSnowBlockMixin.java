@@ -1,6 +1,6 @@
 package net.legacy.legacies_and_legends.mixin;
 
-import net.legacy.legacies_and_legends.enchantment.LaLMobEffects;
+import net.legacy.legacies_and_legends.registry.LaLMobEffects;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
@@ -13,8 +13,6 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-
-import java.util.function.Predicate;
 
 @Mixin(PowderSnowBlock.class)
 public class PowderSnowBlockMixin {

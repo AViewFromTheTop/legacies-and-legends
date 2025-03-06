@@ -2,14 +2,10 @@ package net.legacy.legacies_and_legends.enchantment;
 
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.Registry;
-import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.enchantment.effects.EnchantmentEntityEffect;
 import net.minecraft.world.item.enchantment.effects.EnchantmentLocationBasedEffect;
-import org.jetbrains.annotations.NotNull;
-
-import java.util.function.UnaryOperator;
 
 public class LaLEnchantmentEffects {
 
