@@ -458,7 +458,7 @@
       {
         "name": "legacy:music/overworld/black_desert_of_endless_stars",
         "stream": true,
-        "volume": 0.8
+        "volume": 0.5
       },
       {
         "name": "music/game/crescent_dunes",
@@ -647,7 +647,7 @@
       {
         "name": "legacy:music/overworld/black_desert_of_endless_stars",
         "stream": true,
-        "volume": 0.8,
+        "volume": 0.5,
         "weight": 2
       },
       {
