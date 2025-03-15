@@ -262,7 +262,7 @@ public final class LaLItems {
                     .stacksTo(16)
                     .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_LEVITATION)
                     .useCooldown(30f)
-                    .rarity(Rarity.UNCOMMON)
+                    .rarity(Rarity.RARE)
     );
     public static final Item TABLET_OF_CHANNELING = register("tablet_of_channeling",
             Item::new,
