@@ -1,6 +1,5 @@
 package net.legacy.legacies_and_legends.registry;
 
-import net.frozenblock.lib.shadow.org.jetbrains.annotations.NotNull;
 import net.frozenblock.lib.item.api.sherd.SherdRegistry;
 import net.legacy.legacies_and_legends.LaLConstants;
 import net.legacy.legacies_and_legends.equipment.BoomerangItem;
@@ -27,6 +26,7 @@ import net.minecraft.world.item.equipment.Equippable;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.Item.Properties;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.function.Function;
@@ -351,7 +351,7 @@ public final class LaLItems {
     }
 
 
-    private static @org.jetbrains.annotations.NotNull <T extends Item> T registerSherd(String name, @org.jetbrains.annotations.NotNull Function<Properties, Item> function, Item.@org.jetbrains.annotations.NotNull Properties properties) {
+    private static @NotNull <T extends Item> T registerSherd(String name, @NotNull Function<Properties, Item> function, Item.@NotNull Properties properties) {
         T item = (T) Items.registerItem(ResourceKey.create(Registries.ITEM, LaLConstants.id(name)), function, properties);
         SherdRegistry.register(item, LaLConstants.id(name.replace("sherd", "pattern")));
         return item;

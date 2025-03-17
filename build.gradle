@@ -24,6 +24,9 @@ repositories {
 			includeGroup "com.github.ramixin"
 		}
 	}
+	flatDir {
+		dirs 'lib'
+	}
 }
 
 subprojects {
@@ -42,7 +45,9 @@ dependencies {
 
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-	include modImplementation("maven.modrinth:frozenlib:${project.frozenlib_version}")
+	//include modImplementation("maven.modrinth:frozenlib:${project.frozenlib_version}")
+
+	include modImplementation ("net.legacy.frozenlib:FrozenLib-1.9.15-mc1.21.4")
 
 	include modImplementation("com.github.ramixin:mixson:${project.mixson_version}")
 

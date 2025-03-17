@@ -1,8 +1,8 @@
 package net.legacy.legacies_and_legends.registry;
 
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
-import net.frozenblock.lib.loot.LootTableModifier;
-import net.frozenblock.lib.loot.MutableLootTable;
+import net.frozenblock.lib.loot.api.LootTableModificationApi;
+import net.frozenblock.lib.loot.impl.MutableLootTable;
 import net.legacy.legacies_and_legends.LaLConstants;
 import net.legacy.legacies_and_legends.LegaciesAndLegends;
 import net.legacy.legacies_and_legends.config.LaLConfig;
@@ -355,35 +355,35 @@ public class LaLLootTables {
 			// LOOT - General
 
 			if (LaLConfig.get.loot.enchanted_beetroot) {
-				LootTableModifier.editTable(
+				LootTableModificationApi.editTable(
 						LaLLootTables.END_RUINS, false,
 						(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
 								MutableLootTable.has(Items.FISHING_ROD),
 								(lootPool) -> lootPool.replace(Items.BEETROOT, LaLItems.ENCHANTED_BEETROOT)
 						)
 				);
-				LootTableModifier.editTable(
+				LootTableModificationApi.editTable(
 						BuiltInLootTables.END_CITY_TREASURE, false,
 						(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
 								MutableLootTable.has(Items.BEETROOT_SEEDS),
 								(lootPool) -> lootPool.add(LaLItems.ENCHANTED_BEETROOT, 1, SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
 						)
 				);
-				LootTableModifier.editTable(
+				LootTableModificationApi.editTable(
 						BuiltInLootTables.STRONGHOLD_CORRIDOR, false,
 						(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
 								MutableLootTable.has(Items.GOLDEN_APPLE),
 								(lootPool) -> lootPool.add(LaLItems.ENCHANTED_BEETROOT, 3, SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
 						)
 				);
-				LootTableModifier.editTable(
+				LootTableModificationApi.editTable(
 						BuiltInLootTables.STRONGHOLD_CROSSING, false,
 						(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
 								MutableLootTable.has(Items.APPLE),
 								(lootPool) -> lootPool.add(LaLItems.ENCHANTED_BEETROOT, 3, SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
 						)
 				);
-				LootTableModifier.editTable(
+				LootTableModificationApi.editTable(
 						LaLLootTables.END_REMAINS, false,
 						(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
 								(lootPool) -> lootPool.add(LaLItems.ENCHANTED_BEETROOT, 3, SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
@@ -391,25 +391,15 @@ public class LaLLootTables {
 				);
 			}
 
-			if (LaLConfig.get.loot.metal_chunk) {
-				LootTableModifier.editTable(
-						BuiltInLootTables.SIMPLE_DUNGEON, false,
-						(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
-								MutableLootTable.has(Items.BUCKET),
-								(lootPool) -> lootPool.add(LaLItems.METAL_CHUNK, 10, SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F)))
-						)
-				);
-				LootTableModifier.editTable(
-						LaLLootTables.DUNGEON_CHEST, false,
-						(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
-								MutableLootTable.has(Items.BUCKET),
-								(lootPool) -> lootPool.add(LaLItems.METAL_CHUNK, 10, SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F)))
-						)
-				);
+			if (LaLLootTables.DUNGEON_CHEST.equals(id) && LaLConfig.get.loot.metal_chunk) {
+				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+						.add(EmptyLootItem.emptyItem().setWeight(5))
+						.add(LootItem.lootTableItem(LaLItems.METAL_CHUNK).setWeight(1).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F))));
+				tableBuilder.withPool(pool);
 			}
 
 			if (LaLConfig.get.loot.wooden_buckets) {
-				LootTableModifier.editTable(
+				LootTableModificationApi.editTable(
 						BuiltInLootTables.SHIPWRECK_SUPPLY, false,
 						(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
 								MutableLootTable.has(Items.PAPER),
@@ -434,7 +424,7 @@ public class LaLLootTables {
 			}
 
 			if (LaLConfig.get.loot.hook) {
-				LootTableModifier.editTable(
+				LootTableModificationApi.editTable(
 						BuiltInLootTables.FISHING_TREASURE, false,
 						(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
 								MutableLootTable.has(Items.FISHING_ROD),
@@ -443,14 +433,14 @@ public class LaLLootTables {
 						)
 				);
 			}
-			LootTableModifier.editTable(
+			LootTableModificationApi.editTable(
 					BuiltInLootTables.UNDERWATER_RUIN_BIG, false,
 					(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
 							MutableLootTable.has(Items.FISHING_ROD),
 							(lootPool) -> lootPool.add(LaLEquipmentItems.HOOK, 3, EnchantRandomlyFunction.randomApplicableEnchantment(registries))
 					)
 			);
-			LootTableModifier.editTable(
+			LootTableModificationApi.editTable(
 					BuiltInLootTables.UNDERWATER_RUIN_SMALL, false,
 					(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
 							MutableLootTable.has(Items.FISHING_ROD),
@@ -459,7 +449,7 @@ public class LaLLootTables {
 			);
 
 			if (LaLConfig.get.loot.knife) {
-				LootTableModifier.editTable(
+				LootTableModificationApi.editTable(
 						BuiltInLootTables.TRAIL_RUINS_ARCHAEOLOGY_RARE, false,
 						(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
 								(lootPool) -> lootPool.add(LaLEquipmentItems.KNIFE, 1, SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
@@ -550,28 +540,28 @@ public class LaLLootTables {
 				tableBuilder.withPool(pool);
 			}
 			if (LaLConfig.get.loot.new_music_discs) {
-				LootTableModifier.editTable(
+				LootTableModificationApi.editTable(
 						BuiltInLootTables.SIMPLE_DUNGEON, false,
 						(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
 								MutableLootTable.has(Items.GOLDEN_APPLE),
 								(lootPool) -> lootPool.add(LaLItems.DISC_FRAGMENT_FAR_LANDS, 10, SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
 						)
 				);
-				LootTableModifier.editTable(
+				LootTableModificationApi.editTable(
 						LaLLootTables.DUNGEON_CHEST_ARID, false,
 						(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
 								MutableLootTable.has(Items.GOLDEN_APPLE),
 								(lootPool) -> lootPool.add(LaLItems.DISC_FRAGMENT_FAR_LANDS, 10, SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
 						)
 				);
-				LootTableModifier.editTable(
+				LootTableModificationApi.editTable(
 						LaLLootTables.DUNGEON_CHEST_FROZEN, false,
 						(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
 								MutableLootTable.has(Items.GOLDEN_APPLE),
 								(lootPool) -> lootPool.add(LaLItems.DISC_FRAGMENT_FAR_LANDS, 10, SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
 						)
 				);
-				LootTableModifier.editTable(
+				LootTableModificationApi.editTable(
 						LaLLootTables.DUNGEON_CHEST_VERDANT, false,
 						(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
 								MutableLootTable.has(Items.GOLDEN_APPLE),
@@ -581,7 +571,7 @@ public class LaLLootTables {
 						)
 				);
 
-				LootTableModifier.editTable(
+				LootTableModificationApi.editTable(
 						LaLLootTables.DUNGEON_CHEST_SIMPLE, false,
 						(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
 								MutableLootTable.has(Items.MUSIC_DISC_13),
@@ -684,10 +674,10 @@ public class LaLLootTables {
 				tableBuilder.withPool(pool);
 			}
 
-			// LootTableModifier Multi-Choice
+			// LootTableModificationApi Multi-Choice
 
 			if (LaLConfig.get.loot.hook && LaLConfig.get.loot.metal_chunk && LaLConfig.get.loot.wooden_buckets) {
-				LootTableModifier.editTable(
+				LootTableModificationApi.editTable(
 						BuiltInLootTables.FISHING_JUNK, false,
 						(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
 								MutableLootTable.has(Items.LILY_PAD),
@@ -699,7 +689,7 @@ public class LaLLootTables {
 				);
 			}
 			else if (LaLConfig.get.loot.hook && LaLConfig.get.loot.metal_chunk && !LaLConfig.get.loot.wooden_buckets) {
-				LootTableModifier.editTable(
+				LootTableModificationApi.editTable(
 						BuiltInLootTables.FISHING_JUNK, false,
 						(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
 								MutableLootTable.has(Items.LILY_PAD),
@@ -710,7 +700,7 @@ public class LaLLootTables {
 				);
 			}
 			else if (LaLConfig.get.loot.hook && !LaLConfig.get.loot.metal_chunk && LaLConfig.get.loot.wooden_buckets) {
-				LootTableModifier.editTable(
+				LootTableModificationApi.editTable(
 						BuiltInLootTables.FISHING_JUNK, false,
 						(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
 								MutableLootTable.has(Items.LILY_PAD),
@@ -721,7 +711,7 @@ public class LaLLootTables {
 				);
 			}
 			else if (!LaLConfig.get.loot.hook && LaLConfig.get.loot.metal_chunk && LaLConfig.get.loot.wooden_buckets) {
-				LootTableModifier.editTable(
+				LootTableModificationApi.editTable(
 						BuiltInLootTables.FISHING_JUNK, false,
 						(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
 								MutableLootTable.has(Items.LILY_PAD),
@@ -732,7 +722,7 @@ public class LaLLootTables {
 				);
 			}
 			else if (LaLConfig.get.loot.hook && !LaLConfig.get.loot.metal_chunk && !LaLConfig.get.loot.wooden_buckets) {
-				LootTableModifier.editTable(
+				LootTableModificationApi.editTable(
 						BuiltInLootTables.FISHING_JUNK, false,
 						(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
 								MutableLootTable.has(Items.LILY_PAD),
@@ -742,7 +732,7 @@ public class LaLLootTables {
 				);
 			}
 			else if (!LaLConfig.get.loot.hook && LaLConfig.get.loot.metal_chunk && !LaLConfig.get.loot.wooden_buckets) {
-				LootTableModifier.editTable(
+				LootTableModificationApi.editTable(
 						BuiltInLootTables.FISHING_JUNK, false,
 						(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
 								MutableLootTable.has(Items.LILY_PAD),
@@ -752,7 +742,7 @@ public class LaLLootTables {
 				);
 			}
 			else if (!LaLConfig.get.loot.hook && !LaLConfig.get.loot.metal_chunk && LaLConfig.get.loot.wooden_buckets) {
-				LootTableModifier.editTable(
+				LootTableModificationApi.editTable(
 						BuiltInLootTables.FISHING_JUNK, false,
 						(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
 								MutableLootTable.has(Items.LILY_PAD),

@@ -1,6 +1,5 @@
 package net.legacy.legacies_and_legends.registry;
 
-import net.frozenblock.lib.shadow.org.jetbrains.annotations.NotNull;
 import net.legacy.legacies_and_legends.LaLConstants;
 import net.legacy.legacies_and_legends.equipment.*;
 import net.minecraft.resources.ResourceKey;
@@ -8,6 +7,7 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.Item.Properties;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Function;
 
