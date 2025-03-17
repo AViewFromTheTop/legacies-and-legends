@@ -45,9 +45,7 @@ dependencies {
 
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-	//include modImplementation("maven.modrinth:frozenlib:${project.frozenlib_version}")
-
-	include modImplementation ("net.legacy.frozenlib:FrozenLib-2.0-mc1.21.4")
+	include modImplementation("maven.modrinth:frozenlib:${project.frozenlib_version}")
 
 	include modImplementation("com.github.ramixin:mixson:${project.mixson_version}")
 
