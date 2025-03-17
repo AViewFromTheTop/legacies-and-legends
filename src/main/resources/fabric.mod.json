@@ -38,7 +38,7 @@
 	"depends": {
 		"minecraft": "1.21.4",
 		"fabric-api": "*",
-		"frozenlib": "*",
+		"frozenlib": ">=2.0",
 		"cloth-config": "*"
 	}
 }
