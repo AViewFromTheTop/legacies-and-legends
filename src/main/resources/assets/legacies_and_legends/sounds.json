@@ -124,7 +124,6 @@
     ]
   },
   "music.the_end.main_island": {
-    "replace": true,
     "sounds": [
       {
         "name": "music/game/end/the_end",
@@ -133,7 +132,6 @@
     ]
   },
   "music.overworld.dark_forest": {
-    "replace": true,
     "sounds": [
       {
         "name": "legacy:music/creative/stolen_grid",
@@ -248,7 +246,6 @@
     ]
   },
   "music.overworld.snowy": {
-    "replace": true,
     "sounds": [
       {
         "name": "legacies_and_legends:music/overworld/flake",
@@ -367,7 +364,6 @@
     ]
   },
   "music.overworld.savanna": {
-  "replace": true,
   "sounds": [
     {
       "name": "legacy:music/overworld/sunrise_on_the_mesa_2",
