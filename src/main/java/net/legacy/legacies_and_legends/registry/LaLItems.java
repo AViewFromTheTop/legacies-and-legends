@@ -186,7 +186,7 @@ public final class LaLItems {
             Item::new,
             new Properties()
                     .stacksTo(64)
-                    .rarity(Rarity.RARE)
+                    .rarity(Rarity.UNCOMMON)
                     .food(LaLFoods.ENCHANTED_BEETROOT, LaLConsumables.ENCHANTED_BEETROOT)
                     .component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true)
     );
@@ -194,7 +194,7 @@ public final class LaLItems {
             Item::new,
             new Properties()
                     .stacksTo(1)
-                    .rarity(Rarity.EPIC)
+                    .rarity(Rarity.RARE)
                     .food(LaLFoods.ENCHANTED_BEETROOT_SOUP, LaLConsumables.ENCHANTED_BEETROOT_SOUP)
                     .component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true)
                     .usingConvertsTo(Items.BOWL)
