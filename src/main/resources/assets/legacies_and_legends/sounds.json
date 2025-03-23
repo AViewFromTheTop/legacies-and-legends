@@ -13,6 +13,23 @@
     ],
     "subtitle": "subtitles.item.boomerang.hit"
   },
+  "boomerang.return": {
+    "sounds": [
+      {
+        "name": "legacies_and_legends:item/boomerang/return",
+        "volume": 0.9
+      },
+      {
+        "name": "legacies_and_legends:item/boomerang/return2",
+        "volume": 0.9
+      },
+      {
+        "name": "legacies_and_legends:item/boomerang/return3",
+        "volume": 0.9
+      }
+    ],
+    "subtitle": "subtitles.item.boomerang.return"
+  },
   "boomerang.throw": {
     "sounds": [
       {
@@ -34,8 +51,16 @@
   "tablet.use": {
     "sounds": [
       {
-        "name": "legacies_and_legends:item/tablet/use_placeholder",
-        "volume": 0.8
+        "name": "legacies_and_legends:item/tablet/use1",
+        "volume": 1.5
+      },
+      {
+        "name": "legacies_and_legends:item/tablet/use2",
+        "volume": 1.5
+      },
+      {
+        "name": "legacies_and_legends:item/tablet/use3",
+        "volume": 1.5
       }
     ],
     "subtitle": "subtitles.item.tablet.use"
@@ -57,14 +82,31 @@
     "sounds": [
       {
         "name": "legacies_and_legends:item/tablet/teleport1",
-        "volume": 0.9
+        "volume": 0.6
       },
       {
         "name": "legacies_and_legends:item/tablet/teleport2",
-        "volume": 0.9
+        "volume": 0.6
       }
     ],
     "subtitle": "subtitles.item.tablet.teleport"
+  },
+  "enchantment.shatter": {
+    "sounds": [
+      {
+        "name": "legacies_and_legends:enchantment/shatter/shatter1",
+        "volume": 1.0
+      },
+      {
+        "name": "legacies_and_legends:enchantment/shatter/shatter2",
+        "volume": 1.0
+      },
+      {
+        "name": "legacies_and_legends:enchantment/shatter/shatter3",
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.enchantment.shatter"
   },
   "music_disc.svall": {
     "sounds": [

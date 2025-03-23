@@ -22,14 +22,14 @@
     "base": 50,
     "per_level_above_first": 0
   },
-  "max_level": 1,
+  "max_level": 3,
   "min_cost": {
-    "base": 20,
-    "per_level_above_first": 0
+    "base": 12,
+    "per_level_above_first": 7
   },
   "slots": [
     "mainhand"
   ],
   "supported_items": "#legacies_and_legends:enchantable/boomerang",
-  "weight": 2
+  "weight": 5
 }

@@ -22,7 +22,10 @@ public class LaLSounds {
 
 	public static final SoundEvent BOOMERANG_THROW = register("boomerang.throw");
 	public static final SoundEvent BOOMERANG_HIT = register("boomerang.hit");
+	public static final SoundEvent BOOMERANG_RETURN = register("boomerang.return");
 	public static final SoundEvent BOOMERANG_WOOSH = register("boomerang.woosh");
+
+	public static final SoundEvent SHATTER = register("enchantment.shatter");
 
 	public static final Holder.Reference<SoundEvent> SNOWY_MUSIC = registerForHolder("music.overworld.snowy");
 	public static final Holder.Reference<SoundEvent> SAVANNA_MUSIC = registerForHolder("music.overworld.savanna");

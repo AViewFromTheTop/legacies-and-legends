@@ -41,6 +41,5 @@ public class RecallTabletItem extends Item {
             return ItemStack.EMPTY;
         }
     }
-
-
+    
 }

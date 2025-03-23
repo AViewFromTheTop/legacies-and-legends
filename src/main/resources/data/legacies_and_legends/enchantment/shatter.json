@@ -4,7 +4,7 @@
   },
   "exclusive_set": "#minecraft:exclusive_set/damage",
   "supported_items": "#legacies_and_legends:enchantable/hook",
-  "weight": 2,
+  "weight": 5,
   "max_level": 3,
   "min_cost": {
     "base": 10,
@@ -58,7 +58,7 @@
             {
               "type": "minecraft:play_sound",
               "pitch": 1.0,
-              "sound": "minecraft:block.glass.break",
+              "sound": "legacies_and_legends:enchantment.shatter",
               "volume": 1.0
             }
           ]

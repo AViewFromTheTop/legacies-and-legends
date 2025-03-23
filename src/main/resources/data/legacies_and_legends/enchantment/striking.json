@@ -4,7 +4,7 @@
   },
   "exclusive_set": "#minecraft:exclusive_set/damage",
   "supported_items": "#legacies_and_legends:enchantable/knife",
-  "weight": 2,
+  "weight": 5,
   "max_level": 3,
   "min_cost": {
     "base": 10,

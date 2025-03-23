@@ -165,7 +165,7 @@ public class BoomerangProjectile extends AbstractArrow {
                 double d = 0.05 * (double)i;
                 this.setDeltaMovement(this.getDeltaMovement().scale(0.95).add(vec3.normalize().scale(d)));
                 if (this.clientSideReturnBoomerangTickCount == 0) {
-                    this.playSound(LaLSounds.BOOMERANG_HIT, 10.0F, 1.0F);
+                    this.playSound(LaLSounds.BOOMERANG_RETURN, 10.0F, 1.0F);
                 }
 
                 this.clientSideReturnBoomerangTickCount++;
