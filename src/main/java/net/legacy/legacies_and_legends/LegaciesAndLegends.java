@@ -24,6 +24,7 @@ public class LegaciesAndLegends implements ModInitializer {
 	public static boolean isVariantsAndVenturesLoaded = false;
 	public static boolean isTrailierTalesLoaded = false;
 	public static boolean isEnchantsAndExpeditionsLoaded = false;
+	public static boolean isC2MELoaded = false;
 
 	@Override
 	public void onInitialize() {
@@ -144,6 +145,9 @@ public class LegaciesAndLegends implements ModInitializer {
 		}
 		if (FabricLoader.getInstance().isModLoaded("enchants_and_expeditions")) {
 			isEnchantsAndExpeditionsLoaded = true;
+		}
+		if (FabricLoader.getInstance().isModLoaded("c2me")) {
+			isC2MELoaded = true;
 		}
 		if (isEnchantsAndExpeditionsLoaded || !LaLConfig.get.enchantments.extraction) {
 			ResourceManagerHelper.registerBuiltinResourcePack(

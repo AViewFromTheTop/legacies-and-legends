@@ -165,7 +165,7 @@
       }
     ]
   },
-  "music.the_end.main_island": {
+  "music.end.the_end": {
     "sounds": [
       {
         "name": "music/game/end/the_end",
