@@ -44,15 +44,13 @@ public final class LaLMusic {
 					}
 				});
 
-		if (!LegaciesAndLegends.isC2MELoaded) {
-			BiomeModifications.create(LaLConstants.id("end_island_music")).add(
-					ModificationPhase.REPLACEMENTS,
-					BiomeSelectors.includeByKey(Biomes.THE_END),
-					(selectionContext, modificationContext) -> {
-						if (LaLConfig.get.music.main_end_island_music) {
-							modificationContext.getEffects().setMusic(Musics.createGameMusic(LaLSounds.MAIN_END_ISLAND_MUSIC));
-						}
-					});
-		}
+		BiomeModifications.create(LaLConstants.id("end_island_music")).add(
+				ModificationPhase.REPLACEMENTS,
+				BiomeSelectors.includeByKey(Biomes.THE_END),
+				(selectionContext, modificationContext) -> {
+					if (LaLConfig.get.music.main_end_island_music) {
+						modificationContext.getEffects().setMusic(Musics.createGameMusic(LaLSounds.MAIN_END_ISLAND_MUSIC));
+					}
+				});
 	}
 }
