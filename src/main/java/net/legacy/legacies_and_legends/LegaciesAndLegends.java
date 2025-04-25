@@ -172,7 +172,7 @@ public class LegaciesAndLegends implements ModInitializer {
 			isTrailierTalesLoaded = true;
 			ResourceManagerHelper.registerBuiltinResourcePack(
 					LaLConstants.id("trailier_tales_integration"), modContainer.get(),
-					Component.translatable("pack.legacies_and_legends.wilder_wild_integration"),
+					Component.translatable("pack.legacies_and_legends.trailier_tales_integration"),
 					ResourcePackActivationType.ALWAYS_ENABLED
 			);
 		}
@@ -180,7 +180,7 @@ public class LegaciesAndLegends implements ModInitializer {
 			isVariantsAndVenturesLoaded = true;
 			ResourceManagerHelper.registerBuiltinResourcePack(
 					LaLConstants.id("variants_and_ventures_integration"), modContainer.get(),
-					Component.translatable("pack.legacies_and_legends.wilder_wild_integration"),
+					Component.translatable("pack.legacies_and_legends.variants_and_ventures_integration"),
 					ResourcePackActivationType.ALWAYS_ENABLED
 			);
 		}

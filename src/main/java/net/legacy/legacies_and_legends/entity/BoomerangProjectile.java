@@ -11,11 +11,13 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.monster.breeze.Breeze;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.ProjectileDeflection;
@@ -234,7 +236,6 @@ public class BoomerangProjectile extends AbstractArrow {
 
     @Override
     protected void onHitEntity(@NotNull EntityHitResult result) {
-        this.hitEntity = true;
         Entity entity = result.getEntity();
         float f = BoomerangItem.THROW_DAMAGE;
         if (!this.isInWater() && !this.isInLava() && !this.isInPowderSnow) {
@@ -254,7 +255,6 @@ public class BoomerangProjectile extends AbstractArrow {
             f = EnchantmentHelper.modifyDamage(serverLevel, this.getWeaponItem(), entity, damageSource, f);
         }
 
-        this.dealtDamage = true;
         if (entity.hurtOrSimulate(damageSource, f)) {
             if (entity.getType() == EntityType.ENDERMAN) return;
 
@@ -265,6 +265,8 @@ public class BoomerangProjectile extends AbstractArrow {
             if (entity instanceof LivingEntity livingEntity) {
                 this.doKnockback(livingEntity, damageSource);
                 this.doPostHurtEffects(livingEntity);
+                this.hitEntity = true;
+                this.dealtDamage = true;
             }
         }
 
