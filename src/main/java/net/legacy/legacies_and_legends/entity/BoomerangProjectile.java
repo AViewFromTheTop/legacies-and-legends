@@ -321,8 +321,8 @@ public class BoomerangProjectile extends AbstractArrow {
     @Override
     public void readAdditionalSaveData(CompoundTag tag) {
         super.readAdditionalSaveData(tag);
-        this.dealtDamage = tag.getBoolean("DealtDamage");
-        this.setWobbling(tag.getBoolean("Wobbling"));
+        //this.dealtDamage = tag.getBoolean("DealtDamage");
+        //this.setWobbling(tag.getBoolean("Wobbling"));
         this.entityData.set(ID_REBOUND, this.getReboundFromItem(this.getPickupItemStackOrigin()));
     }
 

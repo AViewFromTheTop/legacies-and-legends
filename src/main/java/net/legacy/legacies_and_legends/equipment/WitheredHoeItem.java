@@ -27,7 +27,7 @@ import java.util.Map;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 
-public class WitheredHoeItem extends DiggerItem {
+public class WitheredHoeItem extends Item {
     protected static final Map<Block, Pair<Predicate<UseOnContext>, Consumer<UseOnContext>>> TILLABLES = Maps.<Block, Pair<Predicate<UseOnContext>, Consumer<UseOnContext>>>newHashMap(
             ImmutableMap.of(
                     Blocks.WARPED_NYLIUM,
@@ -42,21 +42,18 @@ public class WitheredHoeItem extends DiggerItem {
     );
 
     public WitheredHoeItem(ToolMaterial material, float attackDamage, float attackSpeed, Item.Properties properties) {
-        super(material, BlockTags.MINEABLE_WITH_HOE, attackDamage, attackSpeed, properties);
+        super(properties.hoe(material, attackDamage, attackSpeed));
     }
 
-    @Override
     public InteractionResult useOn(UseOnContext context) {
         Level level = context.getLevel();
         BlockPos blockPos = context.getClickedPos();
-        Pair<Predicate<UseOnContext>, Consumer<UseOnContext>> pair = (Pair<Predicate<UseOnContext>, Consumer<UseOnContext>>)TILLABLES.get(
-                level.getBlockState(blockPos).getBlock()
-        );
+        Pair<Predicate<UseOnContext>, Consumer<UseOnContext>> pair = (Pair)TILLABLES.get(level.getBlockState(blockPos).getBlock());
         if (pair == null) {
             return InteractionResult.PASS;
         } else {
-            Predicate<UseOnContext> predicate = pair.getFirst();
-            Consumer<UseOnContext> consumer = pair.getSecond();
+            Predicate<UseOnContext> predicate = (Predicate)pair.getFirst();
+            Consumer<UseOnContext> consumer = (Consumer)pair.getSecond();
             if (predicate.test(context)) {
                 Player player = context.getPlayer();
                 level.playSound(player, blockPos, SoundEvents.HOE_TILL, SoundSource.BLOCKS, 1.0F, 1.0F);
@@ -75,22 +72,18 @@ public class WitheredHoeItem extends DiggerItem {
     }
 
     public static Consumer<UseOnContext> changeIntoState(BlockState state) {
-        return useOnContext -> {
+        return (useOnContext) -> {
             useOnContext.getLevel().setBlock(useOnContext.getClickedPos(), state, 11);
             useOnContext.getLevel().gameEvent(GameEvent.BLOCK_CHANGE, useOnContext.getClickedPos(), GameEvent.Context.of(useOnContext.getPlayer(), state));
         };
     }
 
     public static Consumer<UseOnContext> changeIntoStateAndDropItem(BlockState state, ItemLike itemToDrop) {
-        return useOnContext -> {
+        return (useOnContext) -> {
             useOnContext.getLevel().setBlock(useOnContext.getClickedPos(), state, 11);
             useOnContext.getLevel().gameEvent(GameEvent.BLOCK_CHANGE, useOnContext.getClickedPos(), GameEvent.Context.of(useOnContext.getPlayer(), state));
             Block.popResourceFromFace(useOnContext.getLevel(), useOnContext.getClickedPos(), useOnContext.getClickedFace(), new ItemStack(itemToDrop));
         };
-    }
-
-    public static boolean onlyIfAirAbove(UseOnContext context) {
-        return context.getClickedFace() != Direction.DOWN && context.getLevel().getBlockState(context.getClickedPos().above()).isAir();
     }
 
     @Override

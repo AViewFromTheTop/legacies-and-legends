@@ -18,6 +18,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.DeathProtection;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
+import net.minecraft.world.item.component.Weapon;
 import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
 import net.minecraft.world.item.consume_effects.ClearAllStatusEffectsConsumeEffect;
 import net.minecraft.world.item.consume_effects.TeleportRandomlyConsumeEffect;
@@ -73,6 +74,7 @@ public final class LaLItems {
                     .repairable(LaLItemTags.BOOMERANG_REPAIR_MATERIALS)
                     .durability(386)
                     .rarity(Rarity.RARE)
+                    .component(DataComponents.WEAPON, new Weapon(1))
     );
 
     // Misc Items
@@ -212,8 +214,8 @@ public final class LaLItems {
                                     new ApplyStatusEffectsConsumeEffect(
                                             List.of(
                                                     new MobEffectInstance(MobEffects.REGENERATION, 300, 4),
-                                                    new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1200, 1),
-                                                    new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 1200, 1),
+                                                    new MobEffectInstance(MobEffects.STRENGTH, 1200, 1),
+                                                    new MobEffectInstance(MobEffects.RESISTANCE, 1200, 1),
                                                     new MobEffectInstance(MobEffects.WITHER, 6000, 2)
                                             )
                                     )
@@ -232,7 +234,7 @@ public final class LaLItems {
                                     new ApplyStatusEffectsConsumeEffect(
                                             List.of(
                                                     new MobEffectInstance(MobEffects.REGENERATION, 300, 1),
-                                                    new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 0),
+                                                    new MobEffectInstance(MobEffects.SPEED, 300, 0),
                                                     new MobEffectInstance(MobEffects.INVISIBILITY, 600, 0)
                                             )
                                     )

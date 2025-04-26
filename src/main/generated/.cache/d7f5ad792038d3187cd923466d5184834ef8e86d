@@ -1,4 +1,4 @@
-// 1.21.4	-999999999-01-01T00:00:00	Legacies and Legends/Tags for minecraft:item
+// 1.21.5	-999999999-01-01T00:00:00	Legacies and Legends/Tags for minecraft:item
 4132ae09e40a14c7f2a6aa10b89e84926e8388bc data/legacies_and_legends/tags/item/boomerang_repair_materials.json
 4132ae09e40a14c7f2a6aa10b89e84926e8388bc data/legacies_and_legends/tags/item/cleaving_tool_materials.json
 7dc63a002352d8a97398b8ae8eba4166e9734fc4 data/legacies_and_legends/tags/item/has_breed_effect.json
@@ -28,3 +28,4 @@ abe224953b116621f5f6d35fa39030b29f6b1fdb data/minecraft/tags/item/leg_armor.json
 8b15c4208812c436a4d858e28422f6ca206ae011 data/minecraft/tags/item/pickaxes.json
 23eb54c19b3c435e3d5c53ed874c9c3281a21949 data/minecraft/tags/item/shovels.json
 b66a61d0f76c2ba5e40a9924f99a0201d1225071 data/minecraft/tags/item/swords.json
+3c136ad71b9cc1a962b06ab779e09369ea8e25a9 data/minecraft/tags/item/trim_materials.json

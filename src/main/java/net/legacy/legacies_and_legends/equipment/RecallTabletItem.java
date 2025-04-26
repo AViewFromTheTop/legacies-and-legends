@@ -24,15 +24,9 @@ public class RecallTabletItem extends Item {
         }
 
         ServerPlayer serverPlayer = (ServerPlayer) player;
-        ServerLevel targetLevel = serverPlayer.server.getLevel(serverPlayer.getRespawnDimension());
-
-        if (serverPlayer.level() != targetLevel) {
-            serverPlayer.sendSystemMessage(Component.translatable(LaLConstants.MOD_ID + "tablet_of_recall.invalid_dimension"), false);
-            return stack;
-        }
 
         serverPlayer.teleport(serverPlayer.findRespawnPositionAndUseSpawnBlock(false, TeleportTransition.DO_NOTHING));
-        targetLevel.playSound(null, serverPlayer.blockPosition(), LaLSounds.TABLET_TELEPORT, SoundSource.PLAYERS, 0.6f, 1f);
+        level.playSound(null, serverPlayer.blockPosition(), LaLSounds.TABLET_TELEPORT, SoundSource.PLAYERS, 0.6f, 1f);
 
         if (serverPlayer.gameMode.getGameModeForPlayer().isCreative()) {
             return stack;

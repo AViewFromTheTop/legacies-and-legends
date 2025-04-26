@@ -114,5 +114,8 @@ public class LaLItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(LaLItems.BOOMERANG)
                 .add(LaLEquipmentItems.HOOK)
                 .add(LaLEquipmentItems.KNIFE);
+
+        this.getOrCreateTagBuilder(ItemTags.TRIM_MATERIALS)
+                .add(Items.ECHO_SHARD);
     }
 }

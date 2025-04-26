@@ -2,7 +2,6 @@ package net.legacy.legacies_and_legends.equipment;
 
 import net.legacy.legacies_and_legends.entity.BoomerangProjectile;
 import net.legacy.legacies_and_legends.sound.LaLSounds;
-import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Position;
 import net.minecraft.server.level.ServerLevel;
@@ -22,7 +21,6 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.component.Tool;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
@@ -45,14 +43,8 @@ public class BoomerangItem extends Item implements ProjectileItem {
                 .build();
     }
 
-    @Contract(" -> new")
-    public static @NotNull Tool createToolProperties() {
-        return new Tool(List.of(), 1F, 2);
-    }
-
-    @Override
-    public boolean canAttackBlock(BlockState state, Level level, BlockPos pos, @NotNull Player player) {
-        return !player.isCreative();
+    public static Tool createToolProperties() {
+        return new Tool(List.of(), 1F, 2, false);
     }
 
     @Override
@@ -113,16 +105,6 @@ public class BoomerangItem extends Item implements ProjectileItem {
             player.startUsingItem(hand);
             return InteractionResult.CONSUME;
         }
-    }
-
-    @Override
-    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        return true;
-    }
-
-    @Override
-    public void postHurtEnemy(@NotNull ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        stack.hurtAndBreak(1, attacker, EquipmentSlot.MAINHAND);
     }
 
     @Override

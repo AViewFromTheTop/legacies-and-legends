@@ -16,8 +16,6 @@ import net.legacy.legacies_and_legends.registry.LaLItems;
 import net.minecraft.client.data.models.model.ModelTemplate;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
-import net.minecraft.client.data.models.blockstates.Variant;
-import net.minecraft.client.data.models.blockstates.VariantProperties;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.client.data.models.model.TextureMapping;
 import net.minecraft.client.data.models.model.TextureSlot;
@@ -27,40 +25,15 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.equipment.EquipmentAsset;
 import net.minecraft.world.item.equipment.EquipmentAssets;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.item.equipment.trim.MaterialAssetGroup;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 public final class LaLModelProvider extends FabricModelProvider {
-	private static final List<ItemModelGenerators.TrimMaterialData> TRIM_MATERIALS = List.of(
-			new ItemModelGenerators.TrimMaterialData("echo_shard", LaLTrimMaterials.ECHO, Map.of())
-	);
+	public static final MaterialAssetGroup ECHO_SHARD = MaterialAssetGroup.create("echo_shard");
 
-	public static final List<Pair<BooleanProperty, Function<ResourceLocation, Variant>>> MULTIFACE_GENERATOR_NO_UV_LOCK = List.of(
-		Pair.of(BlockStateProperties.NORTH, model -> Variant.variant().with(VariantProperties.MODEL, model)),
-		Pair.of(
-			BlockStateProperties.EAST,
-			model -> Variant.variant().with(VariantProperties.MODEL, model).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R90)
-		),
-		Pair.of(
-			BlockStateProperties.SOUTH,
-			model -> Variant.variant().with(VariantProperties.MODEL, model).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R180)
-		),
-		Pair.of(
-			BlockStateProperties.WEST,
-			model -> Variant.variant().with(VariantProperties.MODEL, model).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R270)
-		),
-		Pair.of(
-			BlockStateProperties.UP,
-			model -> Variant.variant().with(VariantProperties.MODEL, model).with(VariantProperties.X_ROT, VariantProperties.Rotation.R270)
-		),
-		Pair.of(
-			BlockStateProperties.DOWN,
-			resourceLocation -> Variant.variant()
-				.with(VariantProperties.MODEL, resourceLocation)
-				.with(VariantProperties.X_ROT, VariantProperties.Rotation.R90)
-		)
+	private static final List<ItemModelGenerators.TrimMaterialData> TRIM_MATERIALS = List.of(
+			new ItemModelGenerators.TrimMaterialData(ECHO_SHARD, LaLTrimMaterials.ECHO)
 	);
 
 	public LaLModelProvider(FabricDataOutput output) {
@@ -73,9 +46,9 @@ public final class LaLModelProvider extends FabricModelProvider {
 
 	@Override
 	public void generateItemModels(@NotNull ItemModelGenerators generator) {
-		generator.generateTrimmableItem(LaLItems.REINFORCED_CHESTPLATE, LaLEquipmentAssets.REINFORCED, "chestplate", false);
-		generator.generateTrimmableItem(LaLItems.TRAVELLING_STRIDES, LaLEquipmentAssets.TRAVELLING, "leggings", false);
-		generator.generateTrimmableItem(LaLItems.WANDERER_BOOTS, LaLEquipmentAssets.WANDERER, "boots", false);
+		generator.generateTrimmableItem(LaLItems.REINFORCED_CHESTPLATE, LaLEquipmentAssets.REINFORCED, LaLConstants.id("chestplate"), false);
+		generator.generateTrimmableItem(LaLItems.TRAVELLING_STRIDES, LaLEquipmentAssets.TRAVELLING, LaLConstants.id("leggings"), false);
+		generator.generateTrimmableItem(LaLItems.WANDERER_BOOTS, LaLEquipmentAssets.WANDERER, LaLConstants.id("boots"), false);
 
 		generator.generateFlatItem(LaLItems.BOOMERANG, ModelTemplates.FLAT_HANDHELD_ITEM);
 		generator.generateFlatItem(LaLEquipmentItems.KNIFE, ModelTemplates.FLAT_HANDHELD_ITEM);
@@ -166,9 +139,9 @@ public final class LaLModelProvider extends FabricModelProvider {
 		ResourceLocation armorOverlayTextures = TextureMapping.getItemTexture(armor, "_overlay");
 		for (ItemModelGenerators.TrimMaterialData trimMaterial : TRIM_MATERIALS) {
 			ResourceLocation trimmedModelId = ResourceLocation.fromNamespaceAndPath(LaLConstants.MOD_ID,
-					armorModelId.getPath()).withSuffix("_" + trimMaterial.name() + "_trim");
+					armorModelId.getPath()).withSuffix("_" + trimMaterial.assets().base().suffix() + "_trim");
 			ResourceLocation trimTextureId = ResourceLocation.withDefaultNamespace(
-					"trims/items/" + armorType + "_trim_" + trimMaterial.textureName(equipmentKey));
+					"trims/items/" + armorType + "_trim_" + trimMaterial.assets().assetId(equipmentKey).suffix());
 			if (dyeable) {
 				this.uploadArmor3(generator, trimmedModelId, armorTextures, armorOverlayTextures, trimTextureId);
 			} else {

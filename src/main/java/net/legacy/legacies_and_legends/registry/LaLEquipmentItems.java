@@ -2,7 +2,9 @@ package net.legacy.legacies_and_legends.registry;
 
 import net.legacy.legacies_and_legends.LaLConstants;
 import net.legacy.legacies_and_legends.equipment.*;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.core.registries.Registries;
@@ -26,17 +28,20 @@ public final class LaLEquipmentItems {
     ));
 
     // Artifacts
-    public static final VerdantSwordItem VERDANT_SWORD = register("verdant_sword", settings -> new VerdantSwordItem(LaLToolMaterial.VERDANT, 3f, -2.4f, settings
+    public static final VerdantSwordItem VERDANT_SWORD = register("verdant_sword", settings -> new VerdantSwordItem(settings
             .stacksTo(1)
             .rarity(Rarity.UNCOMMON)
+            .sword(LaLToolMaterial.VERDANT, 3F, -2.4F)
     ));
-    public static final AxeItem CLEAVING_BATTLEAXE = register("cleaving_battleaxe", settings -> new CleavingBattleAxeItem(LaLToolMaterial.CLEAVING, 5f, -3f, settings
+    public static final CleavingBattleAxeItem CLEAVING_BATTLEAXE = register("cleaving_battleaxe", settings -> new CleavingBattleAxeItem(settings
             .stacksTo(1)
             .rarity(Rarity.UNCOMMON)
+            .tool(LaLToolMaterial.CLEAVING, BlockTags.MINEABLE_WITH_AXE, 5F, -3f, 10F)
     ));
-    public static final PickaxeItem MOLTEN_PICKAXE = register("molten_pickaxe", settings -> new PickaxeItem(LaLToolMaterial.MOLTEN, 1f, -2.8f, settings
+    public static final Item MOLTEN_PICKAXE = register("molten_pickaxe", settings -> new Item(settings
             .stacksTo(1)
             .rarity(Rarity.RARE)
+            .pickaxe(LaLToolMaterial.MOLTEN, 1F, -2.8F)
     ));
     public static final ShovelItem PROSPECTOR_SHOVEL = register("prospector_shovel", settings -> new ShovelItem(LaLToolMaterial.PROSPECTOR, 1.5f, -3f, settings
             .stacksTo(1)

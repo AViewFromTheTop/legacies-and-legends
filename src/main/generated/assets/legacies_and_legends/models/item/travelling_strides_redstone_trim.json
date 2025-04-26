@@ -2,6 +2,6 @@
   "parent": "minecraft:item/generated",
   "textures": {
     "layer0": "legacies_and_legends:item/travelling_strides",
-    "layer1": "minecraft:trims/items/leggings_trim_redstone"
+    "layer1": "legacies_and_legends:leggings_redstone"
   }
 }

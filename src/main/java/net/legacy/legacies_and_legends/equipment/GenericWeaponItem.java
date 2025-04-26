@@ -14,20 +14,4 @@ public class GenericWeaponItem extends Item {
     public GenericWeaponItem(ToolMaterial material, float attackDamage, float attackSpeed, Item.Properties properties) {
         super(material.applySwordProperties(properties, attackDamage, attackSpeed));
     }
-
-    @Override
-    public boolean canAttackBlock(BlockState state, Level level, BlockPos pos, Player player) {
-        return !player.isCreative();
-    }
-
-    @Override
-    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        return true;
-    }
-
-    @Override
-    public void postHurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        stack.hurtAndBreak(1, attacker, EquipmentSlot.MAINHAND);
-    }
-
 }

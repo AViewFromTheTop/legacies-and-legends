@@ -8,6 +8,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.TridentItem;
+import net.minecraft.world.item.component.ProvidesTrimMaterial;
 import net.minecraft.world.item.enchantment.Repairable;
 
 public class LaLItemComponents {
@@ -17,6 +18,9 @@ public class LaLItemComponents {
                     builder.set(DataComponents.ATTRIBUTE_MODIFIERS, TridentItem.createAttributes());
                     HolderGetter<Item> holderGetter = BuiltInRegistries.acquireBootstrapRegistrationLookup(BuiltInRegistries.ITEM);
                     builder.set(DataComponents.REPAIRABLE, new Repairable(holderGetter.getOrThrow(LaLItemTags.TRIDENT_REPAIR_MATERIALS)));
+                });
+                context.modify(Items.ECHO_SHARD, builder -> {
+                    builder.set(DataComponents.PROVIDES_TRIM_MATERIAL, new ProvidesTrimMaterial(LaLTrimMaterials.ECHO));
                 });
             });
     }
