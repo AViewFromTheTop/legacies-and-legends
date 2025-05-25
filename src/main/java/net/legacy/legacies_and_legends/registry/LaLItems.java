@@ -73,6 +73,7 @@ public final class LaLItems {
                     .component(DataComponents.ATTRIBUTE_MODIFIERS, BoomerangItem.createAttributes())
                     .repairable(LaLItemTags.BOOMERANG_REPAIR_MATERIALS)
                     .durability(386)
+                    .enchantable(15)
                     .rarity(Rarity.RARE)
                     .component(DataComponents.WEAPON, new Weapon(1))
     );
