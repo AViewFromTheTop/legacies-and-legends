@@ -32,30 +32,25 @@ public final class LaLEquipmentItems {
     // Artifacts
     public static final VerdantSwordItem VERDANT_SWORD = register("verdant_sword", settings -> new VerdantSwordItem(settings
             .stacksTo(1)
-            .enchantable(5)
             .rarity(Rarity.UNCOMMON)
             .sword(LaLToolMaterial.VERDANT, 3F, -2.4F)
     ));
     public static final CleavingBattleAxeItem CLEAVING_BATTLEAXE = register("cleaving_battleaxe", settings -> new CleavingBattleAxeItem(settings
             .stacksTo(1)
-            .enchantable(14)
             .rarity(Rarity.UNCOMMON)
             .tool(LaLToolMaterial.CLEAVING, BlockTags.MINEABLE_WITH_AXE, 5F, -3f, 10F)
     ));
     public static final Item MOLTEN_PICKAXE = register("molten_pickaxe", settings -> new Item(settings
             .stacksTo(1)
-            .enchantable(14)
             .rarity(Rarity.RARE)
             .pickaxe(LaLToolMaterial.MOLTEN, 1F, -2.8F)
     ));
     public static final ShovelItem PROSPECTOR_SHOVEL = register("prospector_shovel", settings -> new ShovelItem(LaLToolMaterial.PROSPECTOR, 1.5f, -3f, settings
             .stacksTo(1)
-            .enchantable(22)
             .rarity(Rarity.UNCOMMON)
     ));
     public static final WitheredHoeItem WITHERED_HOE = register("withered_hoe", settings -> new WitheredHoeItem(LaLToolMaterial.WITHERED, -1f, -1f, settings
             .stacksTo(1)
-            .enchantable(5)
             .rarity(Rarity.UNCOMMON)
     ));
 
