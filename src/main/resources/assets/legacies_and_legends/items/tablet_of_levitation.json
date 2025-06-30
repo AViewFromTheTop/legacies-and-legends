@@ -7,7 +7,7 @@
     },
     "on_true": {
       "type": "minecraft:model",
-      "model": "legacies_and_legends:item/tablet_of_levitation_rotated"
+      "model": "legacies_and_legends:item/tablet_of_levitation_active"
     },
     "property": "minecraft:using_item"
   }

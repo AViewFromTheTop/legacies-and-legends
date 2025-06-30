@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "legacies_and_legends:item/tablet_of_haste_rotated"
+    "layer0": "legacies_and_legends:item/tablet_of_revealing_active"
   },
   "display": {
     "gui": {
