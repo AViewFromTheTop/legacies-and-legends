@@ -30,7 +30,7 @@ public class BoomerangItem extends Item implements ProjectileItem {
     public static final float BASE_DAMAGE = THROW_DAMAGE / 2F;
     public static final float PROJECTILE_SHOOT_POWER = 2F;
 
-    public BoomerangItem(Item.Properties properties) {
+    public BoomerangItem(Properties properties) {
         super(properties);
     }
 
