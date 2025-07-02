@@ -1,13 +1,12 @@
 {
-	"required": true,
-	"package": "net.legacy.legacies_and_legends.mixin",
-	"compatibilityLevel": "JAVA_21",
-	"mixins": [
-        "PlayerMixin",
-		"PowderSnowBlockMixin"
-
-	],
-	"injectors": {
-		"defaultRequire": 1
+  "required": true,
+  "package": "net.legacy.legacies_and_legends.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "PlayerMixin",
+    "PowderSnowBlockMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
 	}
 }

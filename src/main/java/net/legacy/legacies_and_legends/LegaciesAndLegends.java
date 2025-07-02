@@ -31,6 +31,7 @@ public class LegaciesAndLegends implements ModInitializer {
 		Optional<ModContainer> modContainer = FabricLoader.getInstance().getModContainer("legacies_and_legends");
 
 		LaLItems.init();
+		LaLBlocks.init();
 		LaLEquipmentItems.init();
 		LaLCreativeInventorySorting.init();
 		LaLJukeboxSongs.init();

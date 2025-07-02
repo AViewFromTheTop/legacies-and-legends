@@ -9,10 +9,7 @@ import java.util.function.Function;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.legacy.legacies_and_legends.*;
-import net.legacy.legacies_and_legends.registry.LaLEquipmentAssets;
-import net.legacy.legacies_and_legends.registry.LaLEquipmentItems;
-import net.legacy.legacies_and_legends.registry.LaLTrimMaterials;
-import net.legacy.legacies_and_legends.registry.LaLItems;
+import net.legacy.legacies_and_legends.registry.*;
 import net.minecraft.client.data.models.model.ModelTemplate;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
@@ -42,6 +39,7 @@ public final class LaLModelProvider extends FabricModelProvider {
 
 	@Override
 	public void generateBlockStateModels(@NotNull BlockModelGenerators generator) {
+		generator.createLantern(LaLBlocks.SAPPHIRE_LANTERN);
 	}
 
 	@Override

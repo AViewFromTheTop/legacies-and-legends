@@ -4,6 +4,7 @@ import net.frozenblock.lib.item.api.sherd.SherdRegistry;
 import net.legacy.legacies_and_legends.LaLConstants;
 import net.legacy.legacies_and_legends.equipment.BoomerangItem;
 import net.legacy.legacies_and_legends.equipment.RecallTabletItem;
+import net.legacy.legacies_and_legends.equipment.WandItem;
 import net.legacy.legacies_and_legends.sound.LaLJukeboxSongs;
 import net.legacy.legacies_and_legends.tag.LaLItemTags;
 import net.minecraft.core.component.DataComponents;
@@ -76,6 +77,19 @@ public final class LaLItems {
                     .enchantable(15)
                     .rarity(Rarity.RARE)
                     .component(DataComponents.WEAPON, new Weapon(1))
+    );
+
+    // Wand
+    public static final WandItem WAND = register("wand",
+            WandItem::new,
+            new Properties()
+                    .stacksTo(1)
+                    .repairable(LaLItemTags.BOOMERANG_REPAIR_MATERIALS)
+                    .durability(386)
+                    .enchantable(15)
+                    .rarity(Rarity.RARE)
+                    .component(DataComponents.WEAPON, new Weapon(1))
+                    .useCooldown((float) 0.5)
     );
 
     // Misc Items

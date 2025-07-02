@@ -1,8 +1,6 @@
 package net.legacy.legacies_and_legends.equipment;
 
-import net.legacy.legacies_and_legends.LaLConstants;
 import net.legacy.legacies_and_legends.sound.LaLSounds;
-import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
