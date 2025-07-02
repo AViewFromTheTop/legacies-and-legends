@@ -46,7 +46,7 @@ public class LegaciesAndLegends implements ModInitializer {
 		LaLEnchantments.init();
 		LaLMusic.insertMusic();
 		LaLMapDecorationTypes.init();
-		LaLItemComponents.init();
+		LaLDataComponents.init();
 
 		ResourceManagerHelper.registerBuiltinResourcePack(
 				LaLConstants.id("asset_overrides"), modContainer.get(),
