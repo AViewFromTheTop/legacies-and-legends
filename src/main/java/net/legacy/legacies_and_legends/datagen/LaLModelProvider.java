@@ -1,21 +1,16 @@
 package net.legacy.legacies_and_legends.datagen;
 
-import com.mojang.datafixers.util.Pair;
-
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
-import java.util.function.Function;
+
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.legacy.legacies_and_legends.*;
 import net.legacy.legacies_and_legends.registry.*;
-import net.minecraft.client.data.models.model.ModelTemplate;
+import net.minecraft.client.data.models.MultiVariant;
+import net.minecraft.client.data.models.model.*;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
-import net.minecraft.client.data.models.model.ModelTemplates;
-import net.minecraft.client.data.models.model.TextureMapping;
-import net.minecraft.client.data.models.model.TextureSlot;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -23,6 +18,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.equipment.EquipmentAsset;
 import net.minecraft.world.item.equipment.EquipmentAssets;
 import net.minecraft.world.item.equipment.trim.MaterialAssetGroup;
+import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
@@ -39,6 +35,7 @@ public final class LaLModelProvider extends FabricModelProvider {
 
 	@Override
 	public void generateBlockStateModels(@NotNull BlockModelGenerators generator) {
+		createSapphirePlatform(generator);
 		generator.createLantern(LaLBlocks.SAPPHIRE_LANTERN);
 	}
 
@@ -49,6 +46,7 @@ public final class LaLModelProvider extends FabricModelProvider {
 		generator.generateTrimmableItem(LaLItems.WANDERER_BOOTS, LaLEquipmentAssets.WANDERER, LaLConstants.id("boots"), false);
 
 		generator.generateFlatItem(LaLItems.BOOMERANG, ModelTemplates.FLAT_HANDHELD_ITEM);
+		generator.generateFlatItem(LaLItems.WAND, ModelTemplates.FLAT_ITEM);
 		generator.generateFlatItem(LaLEquipmentItems.KNIFE, ModelTemplates.FLAT_HANDHELD_ITEM);
 		generator.generateFlatItem(LaLEquipmentItems.HOOK, ModelTemplates.FLAT_HANDHELD_ITEM);
 
@@ -146,5 +144,14 @@ public final class LaLModelProvider extends FabricModelProvider {
 				this.uploadArmor2(generator, trimmedModelId, armorTextures, trimTextureId);
 			}
 		}
+	}
+
+	private static void createSapphirePlatform(BlockModelGenerators generator) {
+		Block block = LaLBlocks.SAPPHIRE_PLATFORM;
+		MultiVariant full = BlockModelGenerators.plainVariant(ModelLocationUtils.getModelLocation(block));
+		TextureMapping textureMapping = TextureMapping.cube(block);
+		MultiVariant bottom = BlockModelGenerators.plainVariant(ModelTemplates.SLAB_BOTTOM.create(block, textureMapping, generator.modelOutput));
+		MultiVariant top = BlockModelGenerators.plainVariant(ModelTemplates.SLAB_TOP.create(block, textureMapping, generator.modelOutput));
+		generator.blockStateOutput.accept(generator.createSlab(block, bottom, top, full));
 	}
 }
