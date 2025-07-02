@@ -27,7 +27,7 @@ import java.util.List;
 public class BoomerangItem extends Item implements ProjectileItem {
     public static final int THROW_THRESHOLD_TIME = 10;
     public static final float THROW_DAMAGE = 7F;
-    public static final float BASE_DAMAGE = THROW_DAMAGE / 2;
+    public static final float BASE_DAMAGE = THROW_DAMAGE / 2F;
     public static final float PROJECTILE_SHOOT_POWER = 2F;
 
     public BoomerangItem(Item.Properties properties) {
@@ -57,52 +57,44 @@ public class BoomerangItem extends Item implements ProjectileItem {
 
     @Override
     public boolean releaseUsing(ItemStack stack, Level level, LivingEntity entity, int timeLeft) {
-        if (entity instanceof Player player) {
-            int i = this.getUseDuration(stack, entity) - timeLeft;
-            if (i < THROW_THRESHOLD_TIME) {
-                return false;
-            } else {
-               if (stack.nextDamageWillBreak()) {
-                    return false;
-               } else {
-                    player.awardStat(Stats.ITEM_USED.get(this));
-                    if (level instanceof ServerLevel serverLevel) {
-                        stack.hurtWithoutBreaking(1, player);
-                        BoomerangProjectile thrownBoomerang = Projectile.spawnProjectileFromRotation(
-                                BoomerangProjectile::new,
-                                serverLevel,
-                                stack,
-                                player,
-                                0F,
-                                PROJECTILE_SHOOT_POWER,
-                                1F
-                        );
-                        if (player.hasInfiniteMaterials()) {
-                            thrownBoomerang.pickup = AbstractArrow.Pickup.CREATIVE_ONLY;
-                        } else {
-                            player.getInventory().removeItem(stack);
-                        }
+        if (!(entity instanceof Player player)) return false;
 
-                        level.playSound(null, thrownBoomerang, LaLSounds.BOOMERANG_THROW, SoundSource.PLAYERS, 1F, 1F);
-                        return true;
-                    } else {
-                        return true;
-                    }
-                }
+        int i = this.getUseDuration(stack, entity) - timeLeft;
+        if (i < THROW_THRESHOLD_TIME) return false;
+        if (stack.nextDamageWillBreak()) return false;
+
+        player.awardStat(Stats.ITEM_USED.get(this));
+        if (level instanceof ServerLevel serverLevel) {
+            stack.hurtWithoutBreaking(1, player);
+            BoomerangProjectile thrownBoomerang = Projectile.spawnProjectileFromRotation(
+                    BoomerangProjectile::new,
+                    serverLevel,
+                    stack,
+                    player,
+                    0F,
+                    PROJECTILE_SHOOT_POWER,
+                    1F
+            );
+
+            if (player.hasInfiniteMaterials()) {
+                thrownBoomerang.pickup = AbstractArrow.Pickup.CREATIVE_ONLY;
+            } else {
+                player.getInventory().removeItem(stack);
             }
+
+            level.playSound(null, thrownBoomerang, LaLSounds.BOOMERANG_THROW, SoundSource.PLAYERS, 1F, 1F);
         }
-        return false;
+
+        return true;
     }
 
     @Override
     public @NotNull InteractionResult use(Level level, @NotNull Player player, InteractionHand hand) {
         ItemStack itemStack = player.getItemInHand(hand);
-        if (itemStack.nextDamageWillBreak()) {
-            return InteractionResult.FAIL;
-        } else {
-            player.startUsingItem(hand);
-            return InteractionResult.CONSUME;
-        }
+        if (itemStack.nextDamageWillBreak()) return InteractionResult.FAIL;
+
+        player.startUsingItem(hand);
+        return InteractionResult.CONSUME;
     }
 
     @Override
