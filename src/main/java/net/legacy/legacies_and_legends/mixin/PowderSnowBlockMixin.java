@@ -18,7 +18,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class PowderSnowBlockMixin {
 
     @Inject(method = "entityInside", at = @At(value = "TAIL"))
-    private void frozenInPowderSnow(BlockState state, Level level, BlockPos pos, Entity entity, InsideBlockEffectApplier effectApplier, CallbackInfo ci) {
+    private void frozenInPowderSnow(BlockState state, Level level, BlockPos pos, Entity entity, InsideBlockEffectApplier effectApplier, CallbackInfo info) {
         if (entity instanceof LivingEntity livingEntity && entity.isInPowderSnow && entity.canFreeze()) {
             livingEntity.addEffect(new MobEffectInstance(LaLMobEffects.FREEZING));
         } else if (entity instanceof LivingEntity livingEntity && entity.wasInPowderSnow && !entity.isFreezing()) {

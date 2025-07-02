@@ -9,16 +9,12 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import java.util.function.Predicate;
-
 @Mixin(Player.class)
-public abstract class PlayerMixin {
+public class PlayerMixin {
 
     @Inject(method = "actuallyHurt", at = @At(value = "TAIL"))
-    private void cancelTabletUse(ServerLevel level, DamageSource damageSource, float amount, CallbackInfo ci) {
+    private void cancelTabletUse(ServerLevel level, DamageSource damageSource, float amount, CallbackInfo info) {
         Player player = Player.class.cast(this);
-        if (player.getUseItem().getTags().anyMatch(Predicate.isEqual(LaLItemTags.TABLETS))) {
-            player.stopUsingItem();
-        }
+        if (player.getUseItem().is(LaLItemTags.TABLETS)) player.stopUsingItem();
     }
 }
