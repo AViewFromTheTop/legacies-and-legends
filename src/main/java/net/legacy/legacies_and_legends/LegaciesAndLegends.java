@@ -13,6 +13,7 @@ import net.legacy.legacies_and_legends.registry.*;
 import net.legacy.legacies_and_legends.sound.LaLJukeboxSongs;
 import net.legacy.legacies_and_legends.sound.LaLMusic;
 import net.legacy.legacies_and_legends.sound.LaLSounds;
+import net.legacy.legacies_and_legends.worldgen.LaLFeatures;
 import net.minecraft.network.chat.Component;
 
 import java.util.Optional;
@@ -47,6 +48,7 @@ public class LegaciesAndLegends implements ModInitializer {
 		LaLMusic.insertMusic();
 		LaLMapDecorationTypes.init();
 		LaLDataComponents.init();
+		LaLFeatures.init();
 
 		ResourceManagerHelper.registerBuiltinResourcePack(
 				LaLConstants.id("asset_overrides"), modContainer.get(),

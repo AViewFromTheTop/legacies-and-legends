@@ -17,6 +17,7 @@ public final class LaLDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(LaLRegistryProvider::new);
 		pack.addProvider(LaLItemTagProvider::new);
 		pack.addProvider(LaLBlockTagProvider::new);
+		pack.addProvider(LaLBlockLootProvider::new);
 	}
 
 	public void buildRegistry(RegistrySetBuilder registrySetBuilder) {
