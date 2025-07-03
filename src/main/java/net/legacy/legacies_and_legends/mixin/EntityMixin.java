@@ -6,9 +6,11 @@ import net.legacy.legacies_and_legends.registry.LaLBlocks;
 import net.minecraft.core.GlobalPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.portal.TeleportTransition;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -17,7 +19,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import java.util.Optional;
 
 @Mixin(Entity.class)
-public class EntityMixin {
+public abstract class EntityMixin {
+
+	@Shadow public abstract boolean addTag(String tag);
 
 	@Inject(
 			method = "teleport",
@@ -39,6 +43,10 @@ public class EntityMixin {
 		GlobalPos lastPlatformPos = globalPos.get();
 		if (!lastPlatformPos.dimension().equals(level.dimension())) return;
 		level.scheduleTick(lastPlatformPos.pos(), LaLBlocks.SAPPHIRE_PLATFORM, 5);
+
+		if (Entity.class.cast(this) instanceof Player player) {
+			player.removeTag("legacies_and_legends:wand_platform_summoned");
+		}
 	}
 
 	@Inject(method = "remove", at = @At("HEAD"))
@@ -52,6 +60,10 @@ public class EntityMixin {
 		Level level = Entity.class.cast(this).level();
 		if (!lastPlatformPos.dimension().equals(level.dimension())) return;
 		level.scheduleTick(lastPlatformPos.pos(), LaLBlocks.SAPPHIRE_PLATFORM, 5);
+
+		if (Entity.class.cast(this) instanceof Player player) {
+			player.removeTag("legacies_and_legends:wand_platform_summoned");
+		}
 	}
 
 }

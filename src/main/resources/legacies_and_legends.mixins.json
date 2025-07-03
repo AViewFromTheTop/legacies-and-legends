@@ -5,6 +5,7 @@
   "mixins": [
     "AxeItemMixin",
     "EntityMixin",
+    "ItemEntityMixin",
     "PlayerMixin",
     "PowderSnowBlockMixin"
   ],

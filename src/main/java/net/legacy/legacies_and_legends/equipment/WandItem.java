@@ -5,14 +5,18 @@ import net.legacy.legacies_and_legends.entity.impl.LalPlayerPlatformInterface;
 import net.legacy.legacies_and_legends.registry.LaLBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.GlobalPos;
-import net.minecraft.core.component.DataComponentExactPredicate;
-import net.minecraft.core.component.DataComponentMap;
+import net.minecraft.core.component.DataComponentPatch;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.component.DataComponents;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -22,6 +26,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.SlabType;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.Optional;
@@ -47,7 +52,7 @@ public class WandItem extends Item {
             newPlatformPos = newPlatformPos.below();
         }
 
-        if ((useBottomSlab || level.getBlockState(newPlatformPos).isAir()) && player.getTags().contains("legacies_and_legends:wand_charged")) {
+        if ((useBottomSlab || level.getBlockState(newPlatformPos).isAir()) && !player.getTags().contains("legacies_and_legends:wand_platform_summoned") && !player.onGround()) {
             platformInterface.lal$setLastPlatformPos(level, newPlatformPos);
             level.setBlock(
                     newPlatformPos,
@@ -55,11 +60,7 @@ public class WandItem extends Item {
                     Block.UPDATE_ALL
             );
 
-            player.removeTag("legacies_and_legends:wand_charged");
-            stack.applyComponents(DataComponentMap.builder()
-                    .set(DataComponents.CUSTOM_MODEL_DATA, new CustomModelData(List.of(), List.of(false), List.of(), List.of()))
-                    .build()
-            );
+            player.addTag("legacies_and_legends:wand_platform_summoned");
 
             stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(hand));
 
@@ -73,11 +74,7 @@ public class WandItem extends Item {
                 BlockPos lastPlatformBlockPos = lastPlatformPos.pos();
                 if (!player.onGround() || player.getOnPos() != lastPlatformBlockPos) {
 
-                    player.addTag("legacies_and_legends:wand_charged");
-                    stack.applyComponents(DataComponentMap.builder()
-                            .set(DataComponents.CUSTOM_MODEL_DATA, new CustomModelData(List.of(), List.of(true), List.of(), List.of()))
-                            .build()
-                    );
+                    player.removeTag("legacies_and_legends:wand_platform_summoned");
 
                     level.scheduleTick(lastPlatformBlockPos, LaLBlocks.SAPPHIRE_PLATFORM, 5);
                     return InteractionResult.SUCCESS;
@@ -88,6 +85,21 @@ public class WandItem extends Item {
         }
 
         return InteractionResult.FAIL;
+    }
+
+    @Override
+    public void inventoryTick(ItemStack stack, ServerLevel level, Entity entity, @Nullable EquipmentSlot slot) {
+        if (entity instanceof Player player && !player.getTags().contains("legacies_and_legends:wand_platform_summoned")) {
+            stack.applyComponents(DataComponentPatch.builder()
+                    .set(DataComponents.CUSTOM_MODEL_DATA, new CustomModelData(List.of(), List.of(true), List.of(), List.of()))
+                    .build()
+            );
+        } else {
+            stack.applyComponents(DataComponentPatch.builder()
+                    .set(DataComponents.CUSTOM_MODEL_DATA, new CustomModelData(List.of(), List.of(false), List.of(), List.of()))
+                    .build()
+            );
+        }
     }
 
 }

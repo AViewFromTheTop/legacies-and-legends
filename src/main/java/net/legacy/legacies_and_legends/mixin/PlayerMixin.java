@@ -2,25 +2,33 @@ package net.legacy.legacies_and_legends.mixin;
 
 import net.legacy.legacies_and_legends.entity.impl.LalPlayerPlatformInterface;
 import net.legacy.legacies_and_legends.registry.LaLBlocks;
+import net.legacy.legacies_and_legends.registry.LaLItems;
 import net.legacy.legacies_and_legends.tag.LaLItemTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.GlobalPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.Optional;
 
 @Mixin(Player.class)
-public class PlayerMixin implements LalPlayerPlatformInterface {
+public abstract class PlayerMixin implements LalPlayerPlatformInterface {
+
+    @Shadow public abstract Inventory getInventory();
 
     @Unique
     private Optional<GlobalPos> lastPlatformPos = Optional.empty();
@@ -41,6 +49,22 @@ public class PlayerMixin implements LalPlayerPlatformInterface {
 
         BlockPos pos = globalPos.pos();
         player.level().scheduleTick(pos, LaLBlocks.SAPPHIRE_PLATFORM, 5);
+
+        player.removeTag("legacies_and_legends:wand_platform_summoned");
+    }
+
+    @Inject(method = "drop", at = @At("HEAD"))
+    public void destroyPlatformOnDrop(ItemStack itemStack, boolean includeThrowerName, CallbackInfoReturnable<ItemEntity> cir) {
+        if (this.lastPlatformPos.isEmpty() || this.getInventory().contains(LaLItems.WAND.getDefaultInstance())) return;
+
+        Player player = Player.class.cast(this);
+        GlobalPos globalPos = this.lastPlatformPos.get();
+        if (!globalPos.dimension().equals(player.level().dimension())) return;
+
+        BlockPos pos = globalPos.pos();
+        player.level().scheduleTick(pos, LaLBlocks.SAPPHIRE_PLATFORM, 5);
+
+        player.removeTag("legacies_and_legends:wand_platform_summoned");
     }
 
     @Override
