@@ -5,8 +5,11 @@ import net.legacy.legacies_and_legends.entity.impl.LalPlayerPlatformInterface;
 import net.legacy.legacies_and_legends.registry.LaLBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.GlobalPos;
+import net.minecraft.core.component.DataComponentExactPredicate;
 import net.minecraft.core.component.DataComponentMap;
+import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
@@ -35,19 +38,6 @@ public class WandItem extends Item {
 
         ItemStack stack = player.getItemInHand(hand);
 
-        Optional<GlobalPos> optionalLastPlatformPos = platformInterface.lal$getLastPlatformPos();
-        if (optionalLastPlatformPos.isPresent()) {
-            GlobalPos lastPlatformPos = optionalLastPlatformPos.get();
-            if (lastPlatformPos.dimension().equals(level.dimension())) {
-                BlockPos lastPlatformBlockPos = lastPlatformPos.pos();
-                if (!player.onGround() || player.getOnPos() != lastPlatformBlockPos) {
-                    level.scheduleTick(lastPlatformBlockPos, LaLBlocks.SAPPHIRE_PLATFORM, 5);
-                } else {
-                    return InteractionResult.FAIL;
-                }
-            }
-        }
-
         Vec3 playerPos = player.position();
         BlockPos newPlatformPos = player.blockPosition();
         boolean useBottomSlab = false;
@@ -57,7 +47,7 @@ public class WandItem extends Item {
             newPlatformPos = newPlatformPos.below();
         }
 
-        if (useBottomSlab || level.getBlockState(newPlatformPos).isAir()) {
+        if ((useBottomSlab || level.getBlockState(newPlatformPos).isAir()) && player.getTags().contains("legacies_and_legends:wand_charged")) {
             platformInterface.lal$setLastPlatformPos(level, newPlatformPos);
             level.setBlock(
                     newPlatformPos,
@@ -65,15 +55,36 @@ public class WandItem extends Item {
                     Block.UPDATE_ALL
             );
 
-            stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(hand));
-
-            // what is this lol
+            player.removeTag("legacies_and_legends:wand_charged");
             stack.applyComponents(DataComponentMap.builder()
                     .set(DataComponents.CUSTOM_MODEL_DATA, new CustomModelData(List.of(), List.of(false), List.of(), List.of()))
                     .build()
             );
 
+            stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(hand));
+
             return InteractionResult.SUCCESS;
+        }
+
+        Optional<GlobalPos> optionalLastPlatformPos = platformInterface.lal$getLastPlatformPos();
+        if (optionalLastPlatformPos.isPresent()) {
+            GlobalPos lastPlatformPos = optionalLastPlatformPos.get();
+            if (lastPlatformPos.dimension().equals(level.dimension())) {
+                BlockPos lastPlatformBlockPos = lastPlatformPos.pos();
+                if (!player.onGround() || player.getOnPos() != lastPlatformBlockPos) {
+
+                    player.addTag("legacies_and_legends:wand_charged");
+                    stack.applyComponents(DataComponentMap.builder()
+                            .set(DataComponents.CUSTOM_MODEL_DATA, new CustomModelData(List.of(), List.of(true), List.of(), List.of()))
+                            .build()
+                    );
+
+                    level.scheduleTick(lastPlatformBlockPos, LaLBlocks.SAPPHIRE_PLATFORM, 5);
+                    return InteractionResult.SUCCESS;
+                } else {
+                    return InteractionResult.FAIL;
+                }
+            }
         }
 
         return InteractionResult.FAIL;

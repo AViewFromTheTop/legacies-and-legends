@@ -1,4 +1,5 @@
 // 1.21.5	-999999999-01-01T00:00:00	Legacies and Legends/Tags for minecraft:item
+c5bebf15186621fd55de5916bba98c344da6b24b data/frozenlib/tags/item/always_save_cooldowns.json
 4132ae09e40a14c7f2a6aa10b89e84926e8388bc data/legacies_and_legends/tags/item/boomerang_repair_materials.json
 4132ae09e40a14c7f2a6aa10b89e84926e8388bc data/legacies_and_legends/tags/item/cleaving_tool_materials.json
 7dc63a002352d8a97398b8ae8eba4166e9734fc4 data/legacies_and_legends/tags/item/has_breed_effect.json

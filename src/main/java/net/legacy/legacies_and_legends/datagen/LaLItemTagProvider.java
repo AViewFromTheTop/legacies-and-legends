@@ -2,6 +2,7 @@ package net.legacy.legacies_and_legends.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.frozenblock.lib.tag.api.FrozenItemTags;
 import net.legacy.legacies_and_legends.registry.LaLEquipmentItems;
 import net.legacy.legacies_and_legends.registry.LaLItems;
 import net.legacy.legacies_and_legends.tag.LaLItemTags;
@@ -117,5 +118,9 @@ public class LaLItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         this.getOrCreateTagBuilder(ItemTags.TRIM_MATERIALS)
                 .add(Items.ECHO_SHARD);
+
+        this.getOrCreateTagBuilder(FrozenItemTags.ALWAYS_SAVE_COOLDOWNS)
+                .addTag(LaLItemTags.TABLETS)
+                .add(LaLItems.WAND);
     }
 }
