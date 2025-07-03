@@ -10,7 +10,6 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
@@ -120,6 +119,7 @@ public class LaLItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(Items.ECHO_SHARD);
 
         this.getOrCreateTagBuilder(FrozenItemTags.ALWAYS_SAVE_COOLDOWNS)
+                .add(Items.SHIELD)
                 .addTag(LaLItemTags.TABLETS)
                 .add(LaLItems.WAND);
     }

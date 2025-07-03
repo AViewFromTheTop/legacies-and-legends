@@ -1,6 +1,6 @@
 package net.legacy.legacies_and_legends.mixin;
 
-import net.legacy.legacies_and_legends.entity.impl.LalPlayerPlatformInterface;
+import net.legacy.legacies_and_legends.entity.impl.LaLPlayerPlatformInterface;
 import net.legacy.legacies_and_legends.registry.LaLBlocks;
 import net.legacy.legacies_and_legends.registry.LaLItems;
 import net.legacy.legacies_and_legends.tag.LaLItemTags;
@@ -26,7 +26,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import java.util.Optional;
 
 @Mixin(Player.class)
-public abstract class PlayerMixin implements LalPlayerPlatformInterface {
+public abstract class PlayerMixin implements LaLPlayerPlatformInterface {
 
     @Shadow public abstract Inventory getInventory();
 

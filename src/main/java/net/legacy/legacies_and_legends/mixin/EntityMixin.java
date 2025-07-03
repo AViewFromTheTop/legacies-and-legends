@@ -1,7 +1,7 @@
 package net.legacy.legacies_and_legends.mixin;
 
 import com.llamalad7.mixinextras.sugar.Local;
-import net.legacy.legacies_and_legends.entity.impl.LalPlayerPlatformInterface;
+import net.legacy.legacies_and_legends.entity.impl.LaLPlayerPlatformInterface;
 import net.legacy.legacies_and_legends.registry.LaLBlocks;
 import net.minecraft.core.GlobalPos;
 import net.minecraft.server.level.ServerLevel;
@@ -35,7 +35,7 @@ public abstract class EntityMixin {
 			CallbackInfoReturnable<Entity> info,
 			@Local(ordinal = 0) ServerLevel level
 	) {
-		if (!(Entity.class.cast(this) instanceof LalPlayerPlatformInterface platformInterface)) return;
+		if (!(Entity.class.cast(this) instanceof LaLPlayerPlatformInterface platformInterface)) return;
 
 		Optional<GlobalPos> globalPos = platformInterface.lal$getLastPlatformPos();
 		if (globalPos.isEmpty()) return;
@@ -51,7 +51,7 @@ public abstract class EntityMixin {
 
 	@Inject(method = "remove", at = @At("HEAD"))
 	public void removePlatformOnRemove(Entity.RemovalReason reason, CallbackInfo info) {
-		if (!(Entity.class.cast(this) instanceof LalPlayerPlatformInterface platformInterface)) return;
+		if (!(Entity.class.cast(this) instanceof LaLPlayerPlatformInterface platformInterface)) return;
 
 		Optional<GlobalPos> globalPos = platformInterface.lal$getLastPlatformPos();
 		if (globalPos.isEmpty()) return;

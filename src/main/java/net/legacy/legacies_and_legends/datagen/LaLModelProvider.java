@@ -37,6 +37,9 @@ public final class LaLModelProvider extends FabricModelProvider {
 	public void generateBlockStateModels(@NotNull BlockModelGenerators generator) {
 		createSapphirePlatform(generator);
 		generator.createLantern(LaLBlocks.SAPPHIRE_LANTERN);
+		generator.createTrivialCube(LaLBlocks.SAPPHIRE_BLOCK);
+		generator.createTrivialCube(LaLBlocks.SAPPHIRE_ORE);
+		generator.createTrivialCube(LaLBlocks.DEEPSLATE_SAPPHIRE_ORE);
 	}
 
 	@Override
@@ -46,7 +49,7 @@ public final class LaLModelProvider extends FabricModelProvider {
 		generator.generateTrimmableItem(LaLItems.WANDERER_BOOTS, LaLEquipmentAssets.WANDERER, ResourceLocation.withDefaultNamespace("trims/items/boots_trim"), false);
 
 		generator.generateFlatItem(LaLItems.BOOMERANG, ModelTemplates.FLAT_HANDHELD_ITEM);
-		generator.generateFlatItem(LaLItems.WAND, ModelTemplates.FLAT_ITEM);
+		generator.generateFlatItem(LaLItems.WAND, ModelTemplates.FLAT_HANDHELD_ITEM); // placeholder, items json & models will be manually done later
 		generator.generateFlatItem(LaLEquipmentItems.KNIFE, ModelTemplates.FLAT_HANDHELD_ITEM);
 		generator.generateFlatItem(LaLEquipmentItems.HOOK, ModelTemplates.FLAT_HANDHELD_ITEM);
 
@@ -63,6 +66,7 @@ public final class LaLModelProvider extends FabricModelProvider {
 		generator.generateFlatItem(LaLItems.AMULET_OF_EVASION, ModelTemplates.FLAT_ITEM);
 		generator.generateFlatItem(LaLItems.AMULET_OF_SYNTHESIS, ModelTemplates.FLAT_ITEM);
 
+		generator.generateFlatItem(LaLItems.SAPPHIRE, ModelTemplates.FLAT_ITEM);
 		generator.generateFlatItem(LaLItems.METAL_CHUNK, ModelTemplates.FLAT_ITEM);
 		generator.generateFlatItem(LaLItems.TRIDENT_SHARD, ModelTemplates.FLAT_ITEM);
 		generator.generateFlatItem(LaLItems.DISC_FRAGMENT_FAR_LANDS, ModelTemplates.FLAT_ITEM);

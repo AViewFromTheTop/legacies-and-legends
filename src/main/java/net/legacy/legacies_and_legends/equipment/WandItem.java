@@ -1,22 +1,18 @@
 package net.legacy.legacies_and_legends.equipment;
 
 import net.legacy.legacies_and_legends.block.SapphirePlatformBlock;
-import net.legacy.legacies_and_legends.entity.impl.LalPlayerPlatformInterface;
+import net.legacy.legacies_and_legends.entity.impl.LaLPlayerPlatformInterface;
 import net.legacy.legacies_and_legends.registry.LaLBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.GlobalPos;
 import net.minecraft.core.component.DataComponentPatch;
-import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -39,7 +35,7 @@ public class WandItem extends Item {
 
     @Override
     public @NotNull InteractionResult use(@NotNull Level level, @NotNull Player player, InteractionHand hand) {
-        if (!(player instanceof LalPlayerPlatformInterface platformInterface)) return InteractionResult.PASS;
+        if (!(player instanceof LaLPlayerPlatformInterface platformInterface)) return InteractionResult.PASS;
 
         ItemStack stack = player.getItemInHand(hand);
 
@@ -65,21 +61,21 @@ public class WandItem extends Item {
             stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(hand));
 
             return InteractionResult.SUCCESS;
-        }
+        } else {
+            Optional<GlobalPos> optionalLastPlatformPos = platformInterface.lal$getLastPlatformPos();
+            if (optionalLastPlatformPos.isPresent()) {
+                GlobalPos lastPlatformPos = optionalLastPlatformPos.get();
+                if (lastPlatformPos.dimension().equals(level.dimension())) {
+                    BlockPos lastPlatformBlockPos = lastPlatformPos.pos();
+                    if (!player.onGround() || player.getOnPos() != lastPlatformBlockPos) {
 
-        Optional<GlobalPos> optionalLastPlatformPos = platformInterface.lal$getLastPlatformPos();
-        if (optionalLastPlatformPos.isPresent()) {
-            GlobalPos lastPlatformPos = optionalLastPlatformPos.get();
-            if (lastPlatformPos.dimension().equals(level.dimension())) {
-                BlockPos lastPlatformBlockPos = lastPlatformPos.pos();
-                if (!player.onGround() || player.getOnPos() != lastPlatformBlockPos) {
+                        player.removeTag("legacies_and_legends:wand_platform_summoned");
 
-                    player.removeTag("legacies_and_legends:wand_platform_summoned");
-
-                    level.scheduleTick(lastPlatformBlockPos, LaLBlocks.SAPPHIRE_PLATFORM, 5);
-                    return InteractionResult.SUCCESS;
-                } else {
-                    return InteractionResult.FAIL;
+                        level.scheduleTick(lastPlatformBlockPos, LaLBlocks.SAPPHIRE_PLATFORM, 5);
+                        return InteractionResult.SUCCESS;
+                    } else {
+                        return InteractionResult.FAIL;
+                    }
                 }
             }
         }

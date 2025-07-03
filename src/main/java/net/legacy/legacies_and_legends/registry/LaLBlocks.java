@@ -9,6 +9,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -31,14 +32,39 @@ public class LaLBlocks {
                     .noOcclusion()
                     .pushReaction(PushReaction.DESTROY)
     );
+    public static final Block SAPPHIRE_BLOCK = register("sapphire_block",
+            Block::new,
+            BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_BLUE)
+                    .forceSolidOn()
+                    .strength(5F, 6F)
+                    .sound(SoundType.AMETHYST)
+                    .requiresCorrectToolForDrops()
+    );
+    public static final DropExperienceBlock SAPPHIRE_ORE = register("sapphire_ore", (properties) -> new DropExperienceBlock(UniformInt.of(2, 5), properties),
+            Properties.of()
+                    .mapColor(MapColor.STONE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(3.0F, 3.0F)
+                    .sound(SoundType.STONE)
+    );
+    public static final DropExperienceBlock DEEPSLATE_SAPPHIRE_ORE = register("deepslate_sapphire_ore", (properties) -> new DropExperienceBlock(UniformInt.of(2, 5), properties),
+            Properties.of()
+                    .mapColor(MapColor.DEEPSLATE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(4.5F, 3.0F)
+                    .sound(SoundType.DEEPSLATE)
+    );
 
     public static final SapphirePlatformBlock SAPPHIRE_PLATFORM = register("sapphire_platform",
             SapphirePlatformBlock::new,
             BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_BLUE)
                     .forceSolidOn()
-                    .strength(7F)
-                    .sound(SoundType.LANTERN)
+                    .strength(5F, 6F)
+                    .sound(SoundType.WOOD)
                     .pushReaction(PushReaction.DESTROY)
     );
 
@@ -65,28 +91,5 @@ public class LaLBlocks {
 
     private static <T extends Block> T makeBlock(@NotNull Function<Properties, T> function, @NotNull Properties properties, ResourceLocation id) {
         return function.apply(properties.setId(ResourceKey.create(Registries.BLOCK, id)));
-    }
-
-    public static BlockBehaviour.Properties logProperties(MapColor sideColor, MapColor topColor, SoundType sound) {
-        return BlockBehaviour.Properties.of()
-                .mapColor(blockState -> blockState.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? sideColor : topColor)
-                .instrument(NoteBlockInstrument.BASS)
-                .strength(2.0F)
-                .sound(sound)
-                .ignitedByLava();
-    }
-
-    private static BlockBehaviour.Properties wallVariant(Block baseBlock, boolean overrideDescription) {
-        BlockBehaviour.Properties properties = baseBlock.properties();
-        BlockBehaviour.Properties properties2 = BlockBehaviour.Properties.of().overrideLootTable(baseBlock.getLootTable());
-        if (overrideDescription) {
-            properties2 = properties2.overrideDescription(baseBlock.getDescriptionId());
-        }
-
-        return properties2;
-    }
-
-    public static BlockBehaviour.Properties buttonProperties() {
-        return BlockBehaviour.Properties.of().noCollission().strength(0.5F).pushReaction(PushReaction.DESTROY);
     }
 }

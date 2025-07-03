@@ -89,7 +89,7 @@ public final class LaLItems {
                     .enchantable(15)
                     .rarity(Rarity.RARE)
                     .component(DataComponents.WEAPON, new Weapon(1))
-                    .useCooldown((float) 0.5)
+                    .useCooldown(1)
     );
 
     // Misc Items
@@ -120,6 +120,11 @@ public final class LaLItems {
                     .stacksTo(16)
     );
     public static final Item TRIDENT_SHARD = register("trident_shard",
+            Item::new,
+            new Properties()
+                    .stacksTo(64)
+    );
+    public static final Item SAPPHIRE = register("sapphire",
             Item::new,
             new Properties()
                     .stacksTo(64)

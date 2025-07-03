@@ -6,7 +6,7 @@ import net.minecraft.world.level.Level;
 
 import java.util.Optional;
 
-public interface LalPlayerPlatformInterface {
+public interface LaLPlayerPlatformInterface {
     void lal$setLastPlatformPos(Level level, BlockPos pos);
     void lal$eraseLastPlatformPos();
     Optional<GlobalPos> lal$getLastPlatformPos();
