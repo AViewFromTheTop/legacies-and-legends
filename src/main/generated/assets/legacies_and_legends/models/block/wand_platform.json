@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "legacies_and_legends:block/wand_platform",
+    "side": "legacies_and_legends:block/wand_platform",
+    "top": "legacies_and_legends:block/wand_platform"
+  }
+}

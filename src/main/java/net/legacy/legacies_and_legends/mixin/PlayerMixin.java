@@ -48,7 +48,7 @@ public abstract class PlayerMixin implements LaLPlayerPlatformInterface {
         if (!globalPos.dimension().equals(player.level().dimension())) return;
 
         BlockPos pos = globalPos.pos();
-        player.level().scheduleTick(pos, LaLBlocks.SAPPHIRE_PLATFORM, 5);
+        player.level().scheduleTick(pos, LaLBlocks.WAND_PLATFORM, 5);
 
         player.removeTag("legacies_and_legends:wand_platform_summoned");
     }
@@ -62,7 +62,7 @@ public abstract class PlayerMixin implements LaLPlayerPlatformInterface {
         if (!globalPos.dimension().equals(player.level().dimension())) return;
 
         BlockPos pos = globalPos.pos();
-        player.level().scheduleTick(pos, LaLBlocks.SAPPHIRE_PLATFORM, 5);
+        player.level().scheduleTick(pos, LaLBlocks.WAND_PLATFORM, 5);
 
         player.removeTag("legacies_and_legends:wand_platform_summoned");
     }

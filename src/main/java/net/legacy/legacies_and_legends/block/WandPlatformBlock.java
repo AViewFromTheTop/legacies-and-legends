@@ -8,9 +8,9 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
-public class SapphirePlatformBlock extends TransparentSlabBlock {
+public class WandPlatformBlock extends TransparentSlabBlock {
 
-    public SapphirePlatformBlock(Properties properties) {
+    public WandPlatformBlock(Properties properties) {
         super(properties);
     }
 

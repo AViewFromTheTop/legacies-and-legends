@@ -2,8 +2,7 @@ package net.legacy.legacies_and_legends.registry;
 import java.util.function.Function;
 
 import net.legacy.legacies_and_legends.LaLConstants;
-import net.legacy.legacies_and_legends.block.SapphirePlatformBlock;
-import net.minecraft.core.Direction;
+import net.legacy.legacies_and_legends.block.WandPlatformBlock;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -58,8 +57,8 @@ public class LaLBlocks {
                     .sound(SoundType.DEEPSLATE)
     );
 
-    public static final SapphirePlatformBlock SAPPHIRE_PLATFORM = register("sapphire_platform",
-            SapphirePlatformBlock::new,
+    public static final WandPlatformBlock WAND_PLATFORM = register("wand_platform",
+            WandPlatformBlock::new,
             BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_BLUE)
                     .forceSolidOn()

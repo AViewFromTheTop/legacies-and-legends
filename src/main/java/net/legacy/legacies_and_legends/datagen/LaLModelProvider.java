@@ -35,7 +35,7 @@ public final class LaLModelProvider extends FabricModelProvider {
 
 	@Override
 	public void generateBlockStateModels(@NotNull BlockModelGenerators generator) {
-		createSapphirePlatform(generator);
+		createWandPlatform(generator);
 		generator.createLantern(LaLBlocks.SAPPHIRE_LANTERN);
 		generator.createTrivialCube(LaLBlocks.SAPPHIRE_BLOCK);
 		generator.createTrivialCube(LaLBlocks.SAPPHIRE_ORE);
@@ -150,8 +150,8 @@ public final class LaLModelProvider extends FabricModelProvider {
 		}
 	}
 
-	private static void createSapphirePlatform(BlockModelGenerators generator) {
-		Block block = LaLBlocks.SAPPHIRE_PLATFORM;
+	private static void createWandPlatform(BlockModelGenerators generator) {
+		Block block = LaLBlocks.WAND_PLATFORM;
 		MultiVariant full = BlockModelGenerators.plainVariant(ModelLocationUtils.getModelLocation(block));
 		TextureMapping textureMapping = TextureMapping.cube(block);
 		MultiVariant bottom = BlockModelGenerators.plainVariant(ModelTemplates.SLAB_BOTTOM.create(block, textureMapping, generator.modelOutput));

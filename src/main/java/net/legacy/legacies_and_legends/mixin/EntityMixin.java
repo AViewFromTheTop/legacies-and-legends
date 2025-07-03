@@ -42,7 +42,7 @@ public abstract class EntityMixin {
 
 		GlobalPos lastPlatformPos = globalPos.get();
 		if (!lastPlatformPos.dimension().equals(level.dimension())) return;
-		level.scheduleTick(lastPlatformPos.pos(), LaLBlocks.SAPPHIRE_PLATFORM, 5);
+		level.scheduleTick(lastPlatformPos.pos(), LaLBlocks.WAND_PLATFORM, 5);
 
 		if (Entity.class.cast(this) instanceof Player player) {
 			player.removeTag("legacies_and_legends:wand_platform_summoned");
@@ -59,7 +59,7 @@ public abstract class EntityMixin {
 		GlobalPos lastPlatformPos = globalPos.get();
 		Level level = Entity.class.cast(this).level();
 		if (!lastPlatformPos.dimension().equals(level.dimension())) return;
-		level.scheduleTick(lastPlatformPos.pos(), LaLBlocks.SAPPHIRE_PLATFORM, 5);
+		level.scheduleTick(lastPlatformPos.pos(), LaLBlocks.WAND_PLATFORM, 5);
 
 		if (Entity.class.cast(this) instanceof Player player) {
 			player.removeTag("legacies_and_legends:wand_platform_summoned");

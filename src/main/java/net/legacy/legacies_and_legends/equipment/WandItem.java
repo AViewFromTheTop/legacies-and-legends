@@ -1,6 +1,6 @@
 package net.legacy.legacies_and_legends.equipment;
 
-import net.legacy.legacies_and_legends.block.SapphirePlatformBlock;
+import net.legacy.legacies_and_legends.block.WandPlatformBlock;
 import net.legacy.legacies_and_legends.entity.impl.LaLPlayerPlatformInterface;
 import net.legacy.legacies_and_legends.registry.LaLBlocks;
 import net.minecraft.core.BlockPos;
@@ -52,7 +52,7 @@ public class WandItem extends Item {
             platformInterface.lal$setLastPlatformPos(level, newPlatformPos);
             level.setBlock(
                     newPlatformPos,
-                    LaLBlocks.SAPPHIRE_PLATFORM.defaultBlockState().setValue(SapphirePlatformBlock.TYPE, useBottomSlab ? SlabType.BOTTOM : SlabType.TOP),
+                    LaLBlocks.WAND_PLATFORM.defaultBlockState().setValue(WandPlatformBlock.TYPE, useBottomSlab ? SlabType.BOTTOM : SlabType.TOP),
                     Block.UPDATE_ALL
             );
 
@@ -71,7 +71,7 @@ public class WandItem extends Item {
 
                         player.removeTag("legacies_and_legends:wand_platform_summoned");
 
-                        level.scheduleTick(lastPlatformBlockPos, LaLBlocks.SAPPHIRE_PLATFORM, 5);
+                        level.scheduleTick(lastPlatformBlockPos, LaLBlocks.WAND_PLATFORM, 5);
                         return InteractionResult.SUCCESS;
                     } else {
                         return InteractionResult.FAIL;
