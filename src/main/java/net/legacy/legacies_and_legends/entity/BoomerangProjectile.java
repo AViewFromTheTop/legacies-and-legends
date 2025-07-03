@@ -40,9 +40,9 @@ public class BoomerangProjectile extends AbstractArrow {
     private boolean dealtDamage;
     private boolean hitEntity;
     public int loopTick = 3;
-    public float spinTick = 0;
-    public float fBoost = 0;
-    public double gravity = 0;
+    public float spinTick = 0F;
+    public float fBoost = 0F;
+    public double gravity = 0D;
     public int s = 0;
     public int d = 0;
 
@@ -88,11 +88,10 @@ public class BoomerangProjectile extends AbstractArrow {
 
     @Override
     public void shoot(double x, double y, double z, float speed, float divergence) {
-        if (this.entityData.get(ID_FEATHERWEIGHT) / 10 >= 1){
+        if (this.entityData.get(ID_FEATHERWEIGHT) / 10 >= 1) {
             this.s = this.entityData.get(ID_FEATHERWEIGHT) / 10;
             this.d = this.entityData.get(ID_FEATHERWEIGHT) * 10;
-        }
-        else {
+        } else {
             this.s = 1;
             this.d = 1;
         }
@@ -101,18 +100,16 @@ public class BoomerangProjectile extends AbstractArrow {
 
     @Override
     protected double getDefaultGravity() {
-        if (this.isInWater() || this.isInPowderSnow || this.isInLava()){
-            this.gravity = 0.1;
-        }
-        else if (this.wasTouchingWater || this.isInWaterOrRain()){
-            this.gravity = 0.02;
-        }
-        else {
-            this.gravity = 0.01;
+        if (this.isInWater() || this.isInPowderSnow || this.isInLava()) {
+            this.gravity = 0.1D;
+        } else if (this.wasTouchingWater || this.isInWaterOrRain()) {
+            this.gravity = 0.02D;
+        } else {
+            this.gravity = 0.01D;
         }
 
         if (this.entityData.get(ID_FEATHERWEIGHT) / 10 >= 1) {
-            this.gravity = this.gravity / this.entityData.get(ID_FEATHERWEIGHT) * 10;
+            this.gravity = this.gravity / this.entityData.get(ID_FEATHERWEIGHT) * 10D;
         }
 
         return this.gravity;
@@ -132,21 +129,17 @@ public class BoomerangProjectile extends AbstractArrow {
         if (this.inGroundTime <= 0 && !this.isInWater() && !this.isInPowderSnow && !this.isInLava()) {
             this.spinTick = this.spinTick + 1;
             this.loopTick = this.loopTick + 1;
-            if (this.loopTick >= 4){
-                if (!this.isInWater() && !this.isInPowderSnow) {
-                    this.playSound(LaLSounds.BOOMERANG_WOOSH);
-                }
+            if (this.loopTick >= 4) {
+                this.playSound(LaLSounds.BOOMERANG_WOOSH);
                 this.loopTick = 0;
             }
         }
 
-        if (this.inGroundTime > 4) {
-            this.dealtDamage = true;
-        }
+        if (this.inGroundTime > 4) this.dealtDamage = true;
 
         Entity entity = this.getOwner();
-        int i = this.entityData.get(ID_REBOUND);
-        if (i > 0 && (this.dealtDamage || this.isNoPhysics()) && entity != null && this.hitEntity) {
+        int rebound = this.entityData.get(ID_REBOUND);
+        if (rebound > 0 && (this.dealtDamage || this.isNoPhysics()) && entity != null && this.hitEntity) {
             if (!this.isAcceptibleReturnOwner()) {
                 if (this.level() instanceof ServerLevel serverLevel && this.pickup == AbstractArrow.Pickup.ALLOWED) {
                     this.spawnAtLocation(serverLevel, this.getPickupItem(), 0.1F);
@@ -154,19 +147,18 @@ public class BoomerangProjectile extends AbstractArrow {
 
                 this.discard();
             } else {
-                if (!(entity instanceof Player) && this.position().distanceTo(entity.getEyePosition()) < (double)entity.getBbWidth() + 1.0) {
+                if (!(entity instanceof Player) && this.position().distanceTo(entity.getEyePosition()) < (double)entity.getBbWidth() + 1D) {
                     this.discard();
                     return;
                 }
 
                 this.setNoPhysics(true);
                 Vec3 vec3 = entity.getEyePosition().subtract(this.position());
-                this.setPosRaw(this.getX(), this.getY() + vec3.y * 0.015 * (double)i, this.getZ());
-                double d = 0.05 * (double)i;
-                this.setDeltaMovement(this.getDeltaMovement().scale(0.95).add(vec3.normalize().scale(d)));
-                if (this.clientSideReturnBoomerangTickCount == 0) {
-                    this.playSound(LaLSounds.BOOMERANG_RETURN, 10.0F, 1.0F);
-                }
+                this.setPosRaw(this.getX(), this.getY() + vec3.y * 0.015 * (double)rebound, this.getZ());
+                double movementScale = 0.05D * (double)rebound;
+                this.setDeltaMovement(this.getDeltaMovement().scale(0.95).add(vec3.normalize().scale(movementScale)));
+
+                if (this.clientSideReturnBoomerangTickCount == 0) this.playSound(LaLSounds.BOOMERANG_RETURN, 10F, 1F);
 
                 this.clientSideReturnBoomerangTickCount++;
             }
@@ -183,9 +175,7 @@ public class BoomerangProjectile extends AbstractArrow {
     }
 
     public void setAngles(@NotNull Vec3 deltaPos) {
-        if (deltaPos.horizontalDistance() > 0.01D) {
-            this.lookRot = -((float) Mth.atan2(deltaPos.x, deltaPos.z)) * Mth.RAD_TO_DEG;
-        }
+        if (deltaPos.horizontalDistance() > 0.01D) this.lookRot = -((float) Mth.atan2(deltaPos.x, deltaPos.z)) * Mth.RAD_TO_DEG;
         float yRot = this.getYRot();
         this.setYRot(yRot + ((this.lookRot - yRot) * 0.25F));
 
@@ -334,9 +324,7 @@ public class BoomerangProjectile extends AbstractArrow {
     @Override
     public void tickDespawn() {
         int i = this.entityData.get(ID_REBOUND);
-        if (this.pickup != AbstractArrow.Pickup.ALLOWED || i <= 0) {
-            super.tickDespawn();
-        }
+        if (this.pickup != AbstractArrow.Pickup.ALLOWED || i <= 0) super.tickDespawn();
     }
 
     @Override

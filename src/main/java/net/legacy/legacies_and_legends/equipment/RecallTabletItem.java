@@ -1,7 +1,6 @@
 package net.legacy.legacies_and_legends.equipment;
 
 import net.legacy.legacies_and_legends.sound.LaLSounds;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.LivingEntity;
@@ -9,29 +8,23 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.portal.TeleportTransition;
+import org.jetbrains.annotations.NotNull;
 
 public class RecallTabletItem extends Item {
-    public RecallTabletItem(Settings settings) {
-        super((Properties) settings);
+
+    public RecallTabletItem(Properties properties) {
+        super(properties);
     }
 
     @Override
-    public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity player) {
-        if (!(level instanceof ServerLevel)) {
-            return stack;
-        }
+    public @NotNull ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entity) {
+        if (!(entity instanceof ServerPlayer player)) return stack;
 
-        ServerPlayer serverPlayer = (ServerPlayer) player;
+        player.teleport(player.findRespawnPositionAndUseSpawnBlock(false, TeleportTransition.DO_NOTHING));
+        level.playSound(null, player.blockPosition(), LaLSounds.TABLET_TELEPORT, SoundSource.PLAYERS, 0.6F, 1F);
 
-        serverPlayer.teleport(serverPlayer.findRespawnPositionAndUseSpawnBlock(false, TeleportTransition.DO_NOTHING));
-        level.playSound(null, serverPlayer.blockPosition(), LaLSounds.TABLET_TELEPORT, SoundSource.PLAYERS, 0.6f, 1f);
-
-        if (serverPlayer.gameMode.getGameModeForPlayer().isCreative()) {
-            return stack;
-        }
-        else {
-            return ItemStack.EMPTY;
-        }
+        if (player.gameMode.getGameModeForPlayer().isCreative()) return stack;
+        return ItemStack.EMPTY;
     }
     
 }

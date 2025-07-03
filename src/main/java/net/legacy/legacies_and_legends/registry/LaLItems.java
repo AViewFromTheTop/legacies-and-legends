@@ -262,7 +262,7 @@ public final class LaLItems {
             new Properties()
                     .stacksTo(16)
                     .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_RECALL)
-                    .useCooldown(300f)
+                    .useCooldown(300F)
                     .rarity(Rarity.UNCOMMON)
     );
     public static final Item TABLET_OF_HASTE = register("tablet_of_haste",
@@ -270,7 +270,7 @@ public final class LaLItems {
             new Properties()
                     .stacksTo(16)
                     .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_HASTE)
-                    .useCooldown(60f)
+                    .useCooldown(60F)
                     .rarity(Rarity.UNCOMMON)
     );
     public static final Item TABLET_OF_LEVITATION = register("tablet_of_levitation",
@@ -278,7 +278,7 @@ public final class LaLItems {
             new Properties()
                     .stacksTo(16)
                     .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_LEVITATION)
-                    .useCooldown(30f)
+                    .useCooldown(30F)
                     .rarity(Rarity.RARE)
     );
     public static final Item TABLET_OF_CHANNELING = register("tablet_of_channeling",
@@ -286,7 +286,7 @@ public final class LaLItems {
             new Properties()
                     .stacksTo(16)
                     .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_CHANNELING)
-                    .useCooldown(300f)
+                    .useCooldown(300F)
                     .rarity(Rarity.RARE)
     );
     public static final Item TABLET_OF_DEAFENING = register("tablet_of_deafening",
@@ -294,7 +294,7 @@ public final class LaLItems {
             new Properties()
                     .stacksTo(16)
                     .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_DEAFENING)
-                    .useCooldown(60f)
+                    .useCooldown(60F)
                     .rarity(Rarity.RARE)
     );
     public static final Item TABLET_OF_REVEALING = register("tablet_of_revealing",
@@ -302,7 +302,7 @@ public final class LaLItems {
             new Properties()
                     .stacksTo(16)
                     .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_REVEALING)
-                    .useCooldown(60f)
+                    .useCooldown(60F)
                     .rarity(Rarity.UNCOMMON)
     );
 

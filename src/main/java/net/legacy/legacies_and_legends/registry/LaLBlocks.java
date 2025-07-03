@@ -39,6 +39,7 @@ public class LaLBlocks {
                     .forceSolidOn()
                     .strength(7F)
                     .sound(SoundType.LANTERN)
+                    .pushReaction(PushReaction.DESTROY)
     );
 
     public static void init() {

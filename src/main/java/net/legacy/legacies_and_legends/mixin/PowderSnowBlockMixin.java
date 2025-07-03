@@ -10,23 +10,18 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.PowderSnowBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(PowderSnowBlock.class)
 public class PowderSnowBlockMixin {
-    @Unique
-    boolean wasFrozen = false;
 
     @Inject(method = "entityInside", at = @At(value = "TAIL"))
-    private void frozenInPowderSnow(BlockState state, Level level, BlockPos pos, Entity entity, InsideBlockEffectApplier effectApplier, CallbackInfo ci) {
+    private void frozenInPowderSnow(BlockState state, Level level, BlockPos pos, Entity entity, InsideBlockEffectApplier effectApplier, CallbackInfo info) {
         if (entity instanceof LivingEntity livingEntity && entity.isInPowderSnow && entity.canFreeze()) {
             livingEntity.addEffect(new MobEffectInstance(LaLMobEffects.FREEZING));
-            this.wasFrozen = true;
-        }
-        else if (entity instanceof LivingEntity livingEntity && this.wasFrozen && !entity.isFreezing()){
+        } else if (entity instanceof LivingEntity livingEntity && entity.wasInPowderSnow && !entity.isFreezing()) {
             livingEntity.removeEffect(LaLMobEffects.FREEZING);
         }
     }
