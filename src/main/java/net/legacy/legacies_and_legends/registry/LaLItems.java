@@ -84,11 +84,10 @@ public final class LaLItems {
             WandItem::new,
             new Properties()
                     .stacksTo(1)
-                    .repairable(LaLItemTags.BOOMERANG_REPAIR_MATERIALS)
-                    .durability(386)
-                    .enchantable(15)
+                    .repairable(LaLItemTags.WAND_REPAIR_MATERIALS)
+                    .durability(256)
+                    .enchantable(20)
                     .rarity(Rarity.RARE)
-                    .component(DataComponents.WEAPON, new Weapon(1))
                     .useCooldown(1)
     );
 
@@ -128,6 +127,7 @@ public final class LaLItems {
             Item::new,
             new Properties()
                     .stacksTo(64)
+                    .trimMaterial(LaLTrimMaterials.SAPPHIRE)
     );
 
     // Discs

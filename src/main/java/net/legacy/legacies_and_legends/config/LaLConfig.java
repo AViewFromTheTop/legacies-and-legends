@@ -32,6 +32,9 @@ public class LaLConfig implements ConfigData {
 	public final StructuresConfig structures = new StructuresConfig();
 
 	@CollapsibleObject
+	public final WorldgenConfig worldgen = new WorldgenConfig();
+
+	@CollapsibleObject
 	public LootConfig loot = new LootConfig();
 
 	@CollapsibleObject
@@ -63,6 +66,12 @@ public class LaLConfig implements ConfigData {
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
 		public boolean new_structures = true;
+	}
+
+	public static class WorldgenConfig {
+		@ConfigEntry.Category("config")
+		@ConfigEntry.Gui.Tooltip
+		public boolean sapphire = true;
 	}
 
 	public static class LootConfig {

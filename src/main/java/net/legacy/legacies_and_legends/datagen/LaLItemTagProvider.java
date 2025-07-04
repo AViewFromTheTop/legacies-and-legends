@@ -69,6 +69,8 @@ public class LaLItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         this.getOrCreateTagBuilder(LaLItemTags.BOOMERANG_REPAIR_MATERIALS)
                 .add(LaLItems.METAL_CHUNK);
+        this.getOrCreateTagBuilder(LaLItemTags.WAND_REPAIR_MATERIALS)
+                .add(LaLItems.SAPPHIRE);
         this.getOrCreateTagBuilder(LaLItemTags.HOOK_REPAIR_MATERIALS)
                 .add(LaLItems.METAL_CHUNK);
         this.getOrCreateTagBuilder(LaLItemTags.KNIFE_REPAIR_MATERIALS)
@@ -112,15 +114,17 @@ public class LaLItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         this.getOrCreateTagBuilder(ItemTags.DURABILITY_ENCHANTABLE)
                 .add(LaLItems.BOOMERANG)
+                .add(LaLItems.WAND)
                 .add(LaLEquipmentItems.HOOK)
                 .add(LaLEquipmentItems.KNIFE);
 
         this.getOrCreateTagBuilder(ItemTags.TRIM_MATERIALS)
-                .add(Items.ECHO_SHARD);
+                .add(Items.ECHO_SHARD)
+                .add(LaLItems.SAPPHIRE);
 
         this.getOrCreateTagBuilder(FrozenItemTags.ALWAYS_SAVE_COOLDOWNS)
                 .add(Items.SHIELD)
-                .addTag(LaLItemTags.TABLETS)
-                .add(LaLItems.WAND);
+                .add(LaLItems.WAND)
+                .addTag(LaLItemTags.TABLETS);
     }
 }

@@ -1,27 +1,36 @@
 {
+  "item.legacies_and_legends.enchanted_beetroot": "Enchanted Beetroot",
+  "item.legacies_and_legends.enchanted_beetroot_soup": "Enchanted Beetroot Soup",
+  "item.legacies_and_legends.metal_chunk": "Metal Chunk",
+  "item.legacies_and_legends.trident_shard": "Trident Shard",
+  "item.legacies_and_legends.wooden_bucket": "Wooden Bucket",
+  "item.legacies_and_legends.coal_bucket": "Coal Bucket",
+  "item.legacies_and_legends.charcoal_bucket": "Charcoal Bucket",
+  "item.legacies_and_legends.boomerang": "Boomerang",
+  "item.legacies_and_legends.hook": "Hook",
+  "item.legacies_and_legends.knife": "Knife",
+
   "item.legacies_and_legends.music_disc_shulker": "Music Disc",
   "item.legacies_and_legends.music_disc_tundra": "Music Disc",
   "item.legacies_and_legends.music_disc_far_lands": "Music Disc",
-  "item.legacies_and_legends.enchanted_beetroot": "Enchanted Beetroot",
-  "item.legacies_and_legends.metal_chunk": "Metal Chunk",
-  "item.legacies_and_legends.trident_shard": "Trident Shard",
-  "item.legacies_and_legends.enchanted_beetroot_soup": "Enchanted Beetroot Soup",
-  "item.legacies_and_legends.wooden_bucket": "Wooden Bucket",
-  "item.legacies_and_legends.coal_bucket": "Coal Bucket",
-  "item.legacies_and_legends.boomerang": "Boomerang",
-  "item.legacies_and_legends.hook": "Hook",
   "item.legacies_and_legends.music_disc_svall": "Music Disc",
   "item.legacies_and_legends.music_disc_castles": "Music Disc",
   "item.legacies_and_legends.music_disc_taswell": "Music Disc",
-  "item.legacies_and_legends.disc_fragment_far_lands": "Disc Fragment",
-  "item.legacies_and_legends.disc_fragment_far_lands.desc": "Music Disc - Far Lands",
-  "item.legacies_and_legends.knife": "Knife",
-  "item.legacies_and_legends.charcoal_bucket": "Charcoal Bucket",
   "item.legacies_and_legends.music_disc_infinite_spooky_amethyst": "Music Disc",
+  "item.legacies_and_legends.disc_fragment_far_lands": "Disc Fragment",
+
   "item.legacies_and_legends.dusk_pottery_sherd": "Dusk Pottery Sherd",
   "item.legacies_and_legends.harvest_pottery_sherd": "Harvest Pottery Sherd",
   "item.legacies_and_legends.verdant_pottery_sherd": "Verdant Pottery Sherd",
   "item.legacies_and_legends.forager_pottery_sherd": "Forager Pottery Sherd",
+
+  "item.legacies_and_legends.sapphire": "Sapphire",
+  "item.legacies_and_legends.wand": "Wand",
+
+  "block.legacies_and_legends.sapphire_ore": "Sapphire Ore",
+  "block.legacies_and_legends.deepslate_sapphire_ore": "Deepslate Sapphire Ore",
+  "block.legacies_and_legends.sapphire_block": "Block of Sapphire",
+  "block.legacies_and_legends.wand_platform": "Wand Platform",
 
   "item.legacies_and_legends.reinforced_chestplate": "Reinforced Chestplate",
   "item.legacies_and_legends.travelling_strides": "Travelling Strides",
@@ -52,6 +61,7 @@
   "jukebox_song.legacies_and_legends.music_disc_infinite_spooky_amethyst": "Jukio Kallio - Infinite Spooky Amethyst",
 
   "trim_material.legacies_and_legends.echo_shard": "Echo Material",
+  "trim_material.legacies_and_legends.sapphire": "Sapphire Material",
 
   "enchantment.legacies_and_legends.shatter": "Shatter",
   "enchantment.legacies_and_legends.shatter.desc": "Applies Freezing to hit entities. Landing attacks on a Freezing entity causes them to Shatter, dealing bonus damage",
@@ -109,6 +119,10 @@
   "text.autoconfig.legacies_and_legends.option.structures.buried_treasure_rework.@Tooltip": "Reworks Buried Treasure to contain exposed dig sites and buried barrels.",
   "text.autoconfig.legacies_and_legends.option.structures.new_structures": "New Structures",
   "text.autoconfig.legacies_and_legends.option.structures.new_structures.@Tooltip": "Whether to include the plethora of new structures added by Legacies and Legends.",
+
+  "text.autoconfig.legacies_and_legends.option.worldgen": "World Generation",
+  "text.autoconfig.legacies_and_legends.option.worldgen.sapphire": "Sapphire",
+  "text.autoconfig.legacies_and_legends.option.worldgen.sapphire.@Tooltip": "Whether Sapphire should be obtainable and generate within the world. Disabling this will also make Wands unobtainable.",
 
   "text.autoconfig.legacies_and_legends.option.loot": "Loot",
   "text.autoconfig.legacies_and_legends.option.loot.enchanted_beetroot": "Enchanted Beetroot",

@@ -19,12 +19,14 @@ import java.util.List;
 import java.util.Map;
 
 public class LaLTrimMaterials {
-    public static final List<String> TRIM_MATERIALS = List.of("echo_shard");
+    public static final List<String> TRIM_MATERIALS = List.of("echo_shard", "sapphire");
 
     public static final ResourceKey<TrimMaterial> ECHO = register("echo_shard");
+    public static final ResourceKey<TrimMaterial> SAPPHIRE = register("sapphire");
 
     public static void bootstrap(BootstrapContext<TrimMaterial> context) {
         TrimMaterials.register(context, ECHO, Style.EMPTY.withColor(675936), LaLModelProvider.ECHO_SHARD);
+        TrimMaterials.register(context, SAPPHIRE, Style.EMPTY.withColor(34303), LaLModelProvider.SAPPHIRE);
     }
 
     private static ResourceKey<TrimMaterial> register(String name) {

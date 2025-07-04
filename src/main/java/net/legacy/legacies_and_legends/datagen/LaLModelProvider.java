@@ -24,9 +24,11 @@ import org.jetbrains.annotations.NotNull;
 
 public final class LaLModelProvider extends FabricModelProvider {
 	public static final MaterialAssetGroup ECHO_SHARD = MaterialAssetGroup.create("echo_shard");
+	public static final MaterialAssetGroup SAPPHIRE = MaterialAssetGroup.create("sapphire");
 
 	private static final List<ItemModelGenerators.TrimMaterialData> TRIM_MATERIALS = List.of(
-			new ItemModelGenerators.TrimMaterialData(ECHO_SHARD, LaLTrimMaterials.ECHO)
+			new ItemModelGenerators.TrimMaterialData(ECHO_SHARD, LaLTrimMaterials.ECHO),
+			new ItemModelGenerators.TrimMaterialData(SAPPHIRE, LaLTrimMaterials.SAPPHIRE)
 	);
 
 	public LaLModelProvider(FabricDataOutput output) {

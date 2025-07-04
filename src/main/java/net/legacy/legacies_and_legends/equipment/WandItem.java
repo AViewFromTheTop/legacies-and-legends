@@ -17,6 +17,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.CustomModelData;
+import net.minecraft.world.item.component.UseCooldown;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.SlabType;
@@ -60,21 +61,28 @@ public class WandItem extends Item {
 
             stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(hand));
 
+            stack.applyComponents(DataComponentPatch.builder()
+                    .set(DataComponents.USE_COOLDOWN, new UseCooldown(1F))
+                    .build()
+            );
             return InteractionResult.SUCCESS;
         } else {
             Optional<GlobalPos> optionalLastPlatformPos = platformInterface.lal$getLastPlatformPos();
-            if (optionalLastPlatformPos.isPresent()) {
+            if (optionalLastPlatformPos.isPresent() && player.getTags().contains("legacies_and_legends:wand_platform_summoned")) {
                 GlobalPos lastPlatformPos = optionalLastPlatformPos.get();
                 if (lastPlatformPos.dimension().equals(level.dimension())) {
                     BlockPos lastPlatformBlockPos = lastPlatformPos.pos();
                     if (!player.onGround() || player.getOnPos() != lastPlatformBlockPos) {
-
                         player.removeTag("legacies_and_legends:wand_platform_summoned");
 
                         level.scheduleTick(lastPlatformBlockPos, LaLBlocks.WAND_PLATFORM, 5);
+
+                        stack.applyComponents(DataComponentPatch.builder()
+                                .set(DataComponents.USE_COOLDOWN, new UseCooldown(0.5F))
+                                .build()
+                        );
+
                         return InteractionResult.SUCCESS;
-                    } else {
-                        return InteractionResult.FAIL;
                     }
                 }
             }

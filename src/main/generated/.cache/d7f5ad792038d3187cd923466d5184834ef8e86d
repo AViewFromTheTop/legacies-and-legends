@@ -17,11 +17,12 @@ e9c06034333adf428947a3fcbc822efb2d5162d3 data/legacies_and_legends/tags/item/has
 09c958fac06841ce4dbfd923b85e52054e158867 data/legacies_and_legends/tags/item/tablets.json
 52b6d749cf2e83645436d44defce43c6bf3ac2f7 data/legacies_and_legends/tags/item/trident_repair_materials.json
 20f24a0bd2ad8811b7b205b44d6aa29383d077bd data/legacies_and_legends/tags/item/verdant_tool_materials.json
+06e1a802d349eabc62ca4139ae7356f069c2af1b data/legacies_and_legends/tags/item/wand_repair_materials.json
 f9ef47a782cc8ff167eb9aec22b0fc78f96cff8e data/legacies_and_legends/tags/item/withered_tool_materials.json
 83231557cc6f3fe102db5b0fce75dca07ebf5459 data/minecraft/tags/item/axes.json
 bfa160b33f16cb32a60afa6b4648793baab561d9 data/minecraft/tags/item/chest_armor.json
 c7c2d564b8048578767988869f6b0068266bfac4 data/minecraft/tags/item/decorated_pot_sherds.json
-471e27139c24a19e5f861f63cc57ed8a73d3867e data/minecraft/tags/item/enchantable/durability.json
+a4cb0de116d2eb11b0c8affac439c894eb29b240 data/minecraft/tags/item/enchantable/durability.json
 46f8eac9aaf3fbe9d6b1f1ea8d8a491685390b66 data/minecraft/tags/item/enchantable/weapon.json
 96d196afe99d2bfaeec48170e8c5f2cdcf9d5a2c data/minecraft/tags/item/foot_armor.json
 d02225eec6f386a27631ce78fdc899aea4e8019e data/minecraft/tags/item/hoes.json
@@ -29,4 +30,4 @@ abe224953b116621f5f6d35fa39030b29f6b1fdb data/minecraft/tags/item/leg_armor.json
 8b15c4208812c436a4d858e28422f6ca206ae011 data/minecraft/tags/item/pickaxes.json
 23eb54c19b3c435e3d5c53ed874c9c3281a21949 data/minecraft/tags/item/shovels.json
 b66a61d0f76c2ba5e40a9924f99a0201d1225071 data/minecraft/tags/item/swords.json
-3c136ad71b9cc1a962b06ab779e09369ea8e25a9 data/minecraft/tags/item/trim_materials.json
+3a79418f92408fbc528af533dbbbdf074ff09dce data/minecraft/tags/item/trim_materials.json

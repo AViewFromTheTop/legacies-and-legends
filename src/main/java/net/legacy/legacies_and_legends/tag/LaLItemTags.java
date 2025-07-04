@@ -8,6 +8,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class LaLItemTags {
     public static final TagKey<Item> BOOMERANG_REPAIR_MATERIALS = bind("boomerang_repair_materials");
+    public static final TagKey<Item> WAND_REPAIR_MATERIALS = bind("wand_repair_materials");
     public static final TagKey<Item> HOOK_REPAIR_MATERIALS = bind("hook_repair_materials");
     public static final TagKey<Item> KNIFE_REPAIR_MATERIALS = bind("knife_repair_materials");
 

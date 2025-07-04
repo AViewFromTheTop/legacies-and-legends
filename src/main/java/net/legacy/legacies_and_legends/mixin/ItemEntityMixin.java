@@ -29,7 +29,7 @@ public abstract class ItemEntityMixin extends Entity {
 
     @Inject(at = @At("HEAD"), method = "tick()V")
     private void dropWand(CallbackInfo ci) {
-        if (getItem().is(LaLItems.WAND)) {
+        if (this.getItem().is(LaLItems.WAND)) {
             this.getItem().applyComponents(DataComponentPatch.builder()
                     .set(DataComponents.CUSTOM_MODEL_DATA, new CustomModelData(List.of(), List.of(true), List.of(), List.of()))
                     .build()
