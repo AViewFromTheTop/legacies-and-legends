@@ -1,4 +1,4 @@
-package net.legacy.legacies_and_legends.equipment;
+package net.legacy.legacies_and_legends.item;
 
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;

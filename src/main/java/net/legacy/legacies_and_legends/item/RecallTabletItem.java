@@ -1,4 +1,4 @@
-package net.legacy.legacies_and_legends.equipment;
+package net.legacy.legacies_and_legends.item;
 
 import net.legacy.legacies_and_legends.sound.LaLSounds;
 import net.minecraft.server.level.ServerPlayer;

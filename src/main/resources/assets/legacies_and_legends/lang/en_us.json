@@ -103,6 +103,7 @@
   "pack.legacies_and_legends.no_new_structures": "No New Structures",
   "pack.legacies_and_legends.lore_books": "Lore Books",
   "pack.legacies_and_legends.no_improved_loot": "No Improved Loot",
+  "pack.legacies_and_legends.trinkets": "Trinkets",
   "pack.legacies_and_legends.new_trim_materials": "New Trim Materials",
   "pack.legacies_and_legends.wandering_trader_trades": "Wandering Trader Trades",
   "pack.legacies_and_legends.no_end_portal_music": "No End Portal Music",
@@ -190,6 +191,8 @@
   "text.autoconfig.legacies_and_legends.option.music.music_and_melody.@Tooltip": "Enables Legacies and Legends' overhaul to the vanilla soundtrack.",
 
   "text.autoconfig.legacies_and_legends.option.misc": "Miscellaneous",
+  "text.autoconfig.legacies_and_legends.option.misc.trinkets": "Trinkets",
+  "text.autoconfig.legacies_and_legends.option.misc.trinkets.@Tooltip": "Whether the Accessory slot should be enabled in the inventory.",
   "text.autoconfig.legacies_and_legends.option.misc.new_trim_materials": "New Trim Materials",
   "text.autoconfig.legacies_and_legends.option.misc.new_trim_materials.@Tooltip": "Whether to include new trimmable materials added by Legacies and Legends. Currently includes Echo Shards.",
   "text.autoconfig.legacies_and_legends.option.misc.wandering_trader_trades": "Wandering Trader Trades",

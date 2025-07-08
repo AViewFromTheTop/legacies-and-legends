@@ -1,6 +1,6 @@
 package net.legacy.legacies_and_legends.entity;
 
-import net.legacy.legacies_and_legends.equipment.BoomerangItem;
+import net.legacy.legacies_and_legends.item.BoomerangItem;
 import net.legacy.legacies_and_legends.registry.LaLEntityTypes;
 import net.legacy.legacies_and_legends.registry.LaLItems;
 import net.legacy.legacies_and_legends.sound.LaLSounds;

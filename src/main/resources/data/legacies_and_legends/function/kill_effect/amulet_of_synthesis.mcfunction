@@ -1,1 +1,0 @@
-effect give @s saturation 4 0

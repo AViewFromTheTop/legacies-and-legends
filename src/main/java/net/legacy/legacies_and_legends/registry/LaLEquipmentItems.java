@@ -1,7 +1,7 @@
 package net.legacy.legacies_and_legends.registry;
 
 import net.legacy.legacies_and_legends.LaLConstants;
-import net.legacy.legacies_and_legends.equipment.*;
+import net.legacy.legacies_and_legends.item.*;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;

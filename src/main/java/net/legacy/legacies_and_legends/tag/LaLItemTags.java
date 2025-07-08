@@ -2,6 +2,7 @@ package net.legacy.legacies_and_legends.tag;
 
 import net.legacy.legacies_and_legends.LaLConstants;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import org.jetbrains.annotations.NotNull;
@@ -25,6 +26,10 @@ public class LaLItemTags {
     public static final TagKey<Item> REPAIRS_REINFORCED_ARMOR = bind("repairs_reinforced_armor");
 
     public static final TagKey<Item> TABLETS = bind("tablets");
+    public static final TagKey<Item> AMULETS = bind("amulets");
+    public static final TagKey<Item> TOTEMS = bind("totems");
+
+    public static final TagKey<Item> ACCESSORIES = bind("accessories");
 
     public static final TagKey<Item> HAS_ITEM_EFFECT = bind("has_item_effect");
     public static final TagKey<Item> HAS_BREED_EFFECT = bind("has_breed_effect");

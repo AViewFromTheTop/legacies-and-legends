@@ -44,6 +44,21 @@ public class LaLItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(LaLItems.TABLET_OF_CHANNELING)
                 .add(LaLItems.TABLET_OF_REVEALING);
 
+        this.getOrCreateTagBuilder(LaLItemTags.AMULETS)
+                .add(LaLItems.AMULET_OF_ALLURE)
+                .add(LaLItems.AMULET_OF_EVASION)
+                .add(LaLItems.AMULET_OF_SYNTHESIS);
+
+        this.getOrCreateTagBuilder(LaLItemTags.TOTEMS)
+                .add(Items.TOTEM_OF_UNDYING)
+                .add(LaLItems.TOTEM_OF_TELEPORTATION)
+                .add(LaLItems.TOTEM_OF_VENGEANCE)
+                .addOptionalTag(ResourceLocation.fromNamespaceAndPath("trinkets","charm/charm"));
+
+        this.getOrCreateTagBuilder(LaLItemTags.ACCESSORIES)
+                .addTag(LaLItemTags.AMULETS)
+                .addTag(LaLItemTags.TOTEMS);
+
         this.getOrCreateTagBuilder(LaLItemTags.HAS_ITEM_EFFECT)
                 .add(LaLItems.AMULET_OF_ALLURE)
                 .add(LaLItems.AMULET_OF_SYNTHESIS)

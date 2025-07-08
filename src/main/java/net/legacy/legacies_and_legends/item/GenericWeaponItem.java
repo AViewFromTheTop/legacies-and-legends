@@ -1,4 +1,4 @@
-package net.legacy.legacies_and_legends.equipment;
+package net.legacy.legacies_and_legends.item;
 
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ToolMaterial;

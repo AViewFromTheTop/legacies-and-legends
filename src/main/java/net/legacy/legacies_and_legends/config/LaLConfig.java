@@ -195,6 +195,9 @@ public class LaLConfig implements ConfigData {
 	public static class MiscConfig {
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
+		public boolean trinkets = true;
+		@ConfigEntry.Category("config")
+		@ConfigEntry.Gui.Tooltip
 		public boolean new_trim_materials = true;
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip

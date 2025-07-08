@@ -2,9 +2,10 @@ package net.legacy.legacies_and_legends.registry;
 
 import net.frozenblock.lib.item.api.sherd.SherdRegistry;
 import net.legacy.legacies_and_legends.LaLConstants;
-import net.legacy.legacies_and_legends.equipment.BoomerangItem;
-import net.legacy.legacies_and_legends.equipment.RecallTabletItem;
-import net.legacy.legacies_and_legends.equipment.WandItem;
+import net.legacy.legacies_and_legends.item.AccessoryItem;
+import net.legacy.legacies_and_legends.item.BoomerangItem;
+import net.legacy.legacies_and_legends.item.RecallTabletItem;
+import net.legacy.legacies_and_legends.item.WandItem;
 import net.legacy.legacies_and_legends.sound.LaLJukeboxSongs;
 import net.legacy.legacies_and_legends.tag.LaLItemTags;
 import net.minecraft.core.component.DataComponents;
@@ -42,13 +43,6 @@ public final class LaLItems {
     public static final ResourceLocation KNOCKBACK_RESISTANCE_CHESTPLATE_ID = LaLConstants.id("knockback_resistance_chestplate");
     public static final ResourceLocation MOVEMENT_SPEED_LEGGINGS_ID = LaLConstants.id("movement_speed_leggings");
     public static final ResourceLocation STEP_HEIGHT_BOOTS_ID = LaLConstants.id("step_height_boots");
-
-    public static final ResourceLocation TEMPT_RANGE_ID = LaLConstants.id("tempt_range");
-
-    private static final ItemAttributeModifiers createAmuletOfAllureAttributes = ItemAttributeModifiers.builder()
-            .add(Attributes.TEMPT_RANGE, new AttributeModifier(TEMPT_RANGE_ID, 10, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
-            .add(Attributes.TEMPT_RANGE, new AttributeModifier(TEMPT_RANGE_ID, 10, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.OFFHAND)
-            .build();
 
     private static final ItemAttributeModifiers createReinforcedChestplateAttributes = ItemAttributeModifiers.builder()
             .add(Attributes.ARMOR, new AttributeModifier(ARMOR_CHESTPLATE_ID, 7, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.CHEST)
@@ -311,21 +305,20 @@ public final class LaLItems {
                     .rarity(Rarity.UNCOMMON)
     );
 
-    public static final Item AMULET_OF_ALLURE = register("amulet_of_allure",
-            Item::new,
-            new Properties()
-                    .stacksTo(1)
-                    .attributes(createAmuletOfAllureAttributes)
-                    .rarity(Rarity.UNCOMMON)
-    );
-    public static final Item AMULET_OF_SYNTHESIS = register("amulet_of_synthesis",
-            Item::new,
+    public static final AccessoryItem AMULET_OF_ALLURE = register("amulet_of_allure",
+            AccessoryItem::new,
             new Properties()
                     .stacksTo(1)
                     .rarity(Rarity.UNCOMMON)
     );
-    public static final Item AMULET_OF_EVASION = register("amulet_of_evasion",
-            Item::new,
+    public static final AccessoryItem AMULET_OF_SYNTHESIS = register("amulet_of_synthesis",
+            AccessoryItem::new,
+            new Properties()
+                    .stacksTo(1)
+                    .rarity(Rarity.UNCOMMON)
+    );
+    public static final AccessoryItem AMULET_OF_EVASION = register("amulet_of_evasion",
+            AccessoryItem::new,
             new Properties()
                     .stacksTo(1)
                     .rarity(Rarity.RARE)

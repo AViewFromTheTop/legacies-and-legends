@@ -1,4 +1,4 @@
-package net.legacy.legacies_and_legends.equipment;
+package net.legacy.legacies_and_legends.item;
 
 import net.legacy.legacies_and_legends.block.WandPlatformBlock;
 import net.legacy.legacies_and_legends.entity.impl.LaLPlayerPlatformInterface;

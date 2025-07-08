@@ -29,7 +29,7 @@ public class LegaciesAndLegends implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		Optional<ModContainer> modContainer = FabricLoader.getInstance().getModContainer("legacies_and_legends");
+		Optional<ModContainer> modContainer = FabricLoader.getInstance().getModContainer(LaLConstants.MOD_ID);
 
 		LaLItems.init();
 		LaLBlocks.init();
@@ -50,25 +50,6 @@ public class LegaciesAndLegends implements ModInitializer {
 		LaLDataComponents.init();
 		LaLFeatures.init();
 
-		ResourceManagerHelper.registerBuiltinResourcePack(
-				LaLConstants.id("asset_overrides"), modContainer.get(),
-				Component.translatable("pack.legacies_and_legends.asset_overrides"),
-				ResourcePackActivationType.ALWAYS_ENABLED
-		);
-		if (LaLConfig.get.music.music_and_melody) {
-			ResourceManagerHelper.registerBuiltinResourcePack(
-					LaLConstants.id("music_and_melody"), modContainer.get(),
-					Component.translatable("pack.legacies_and_legends.music_and_melody"),
-					ResourcePackActivationType.ALWAYS_ENABLED
-			);
-		}
-		if (!LaLConfig.get.music.end_portal_music) {
-			ResourceManagerHelper.registerBuiltinResourcePack(
-					LaLConstants.id("no_end_portal_music"), modContainer.get(),
-					Component.translatable("pack.legacies_and_legends.no_end_portal_music"),
-					ResourcePackActivationType.ALWAYS_ENABLED
-			);
-		}
 		if (LaLConfig.get.loot.lore_books) {
 			ResourceManagerHelper.registerBuiltinResourcePack(
 					LaLConstants.id("lore_books"), modContainer.get(),
@@ -101,6 +82,13 @@ public class LegaciesAndLegends implements ModInitializer {
 			ResourceManagerHelper.registerBuiltinResourcePack(
 					LaLConstants.id("buried_treasure_rework"), modContainer.get(),
 					Component.translatable("pack.legacies_and_legends.reworked_buried_treasure"),
+					ResourcePackActivationType.ALWAYS_ENABLED
+			);
+		}
+		if (LaLConfig.get.misc.trinkets) {
+			ResourceManagerHelper.registerBuiltinResourcePack(
+					LaLConstants.id("trinkets"), modContainer.get(),
+					Component.translatable("pack.legacies_and_legends.trinkets"),
 					ResourcePackActivationType.ALWAYS_ENABLED
 			);
 		}

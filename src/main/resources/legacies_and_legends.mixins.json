@@ -7,7 +7,8 @@
     "EntityMixin",
     "ItemEntityMixin",
     "PlayerMixin",
-    "PowderSnowBlockMixin"
+    "PowderSnowBlockMixin",
+    "TrinketMixin"
   ],
   "injectors": {
     "defaultRequire": 1

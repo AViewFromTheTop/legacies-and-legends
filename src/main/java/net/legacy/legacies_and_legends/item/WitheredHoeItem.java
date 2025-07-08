@@ -1,4 +1,4 @@
-package net.legacy.legacies_and_legends.equipment;
+package net.legacy.legacies_and_legends.item;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
