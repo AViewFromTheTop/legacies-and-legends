@@ -53,6 +53,9 @@ public class LaLConfig implements ConfigData {
 	public MiscConfig misc = new MiscConfig();
 
 	@CollapsibleObject
+	public MixinsConfig mixins = new MixinsConfig();
+
+	@CollapsibleObject
 	public IntegrationsConfig integrations = new IntegrationsConfig();
 
 	public static class StructuresConfig {
@@ -213,6 +216,13 @@ public class LaLConfig implements ConfigData {
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
 		public boolean no_creeper_discs = false;
+	}
+
+	public static class MixinsConfig {
+		@ConfigEntry.Category("config")
+		public boolean powdered_snow = true;
+		@ConfigEntry.Category("config")
+		public boolean friendsandfoes = true;
 	}
 
 	public static class IntegrationsConfig {

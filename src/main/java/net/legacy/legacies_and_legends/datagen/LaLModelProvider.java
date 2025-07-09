@@ -37,7 +37,6 @@ public final class LaLModelProvider extends FabricModelProvider {
 
 	@Override
 	public void generateBlockStateModels(@NotNull BlockModelGenerators generator) {
-		//createWandPlatform(generator);
 		generator.createLantern(LaLBlocks.SAPPHIRE_LANTERN);
 		generator.createTrivialCube(LaLBlocks.SAPPHIRE_BLOCK);
 		generator.createTrivialCube(LaLBlocks.SAPPHIRE_ORE);
@@ -51,7 +50,6 @@ public final class LaLModelProvider extends FabricModelProvider {
 		generator.generateTrimmableItem(LaLItems.WANDERER_BOOTS, LaLEquipmentAssets.WANDERER, ResourceLocation.withDefaultNamespace("trims/items/boots_trim"), false);
 
 		generator.generateFlatItem(LaLItems.BOOMERANG, ModelTemplates.FLAT_HANDHELD_ITEM);
-		generator.generateFlatItem(LaLItems.WAND, ModelTemplates.FLAT_HANDHELD_ITEM); // placeholder, items json & models will be manually done later
 		generator.generateFlatItem(LaLEquipmentItems.KNIFE, ModelTemplates.FLAT_HANDHELD_ITEM);
 		generator.generateFlatItem(LaLEquipmentItems.HOOK, ModelTemplates.FLAT_HANDHELD_ITEM);
 
@@ -70,6 +68,7 @@ public final class LaLModelProvider extends FabricModelProvider {
 
 		generator.generateFlatItem(LaLItems.SAPPHIRE, ModelTemplates.FLAT_ITEM);
 		generator.generateFlatItem(LaLItems.METAL_CHUNK, ModelTemplates.FLAT_ITEM);
+		generator.generateFlatItem(LaLItems.TABLET, ModelTemplates.FLAT_ITEM);
 		generator.generateFlatItem(LaLItems.TRIDENT_SHARD, ModelTemplates.FLAT_ITEM);
 		generator.generateFlatItem(LaLItems.DISC_FRAGMENT_FAR_LANDS, ModelTemplates.FLAT_ITEM);
 
@@ -122,11 +121,6 @@ public final class LaLModelProvider extends FabricModelProvider {
 
 	}
 
-	@Contract("_, _ -> new")
-	private static @NotNull ModelTemplate createItem(String string, TextureSlot... textureSlots) {
-		return new ModelTemplate(Optional.of(net.legacy.legacies_and_legends.LaLConstants.id("item/" + string)), Optional.empty(), textureSlots);
-	}
-
 	private void uploadArmor2(ItemModelGenerators generator, ResourceLocation id, ResourceLocation layer0, ResourceLocation layer1) {
 		ModelTemplates.TWO_LAYERED_ITEM.create(id, TextureMapping.layered(layer0, layer1), generator.modelOutput);
 	}
@@ -150,14 +144,5 @@ public final class LaLModelProvider extends FabricModelProvider {
 				this.uploadArmor2(generator, trimmedModelId, armorTextures, trimTextureId);
 			}
 		}
-	}
-
-	private static void createWandPlatform(BlockModelGenerators generator) {
-		Block block = LaLBlocks.WAND_PLATFORM;
-		MultiVariant full = BlockModelGenerators.plainVariant(ModelLocationUtils.getModelLocation(block));
-		TextureMapping textureMapping = TextureMapping.cube(block);
-		MultiVariant bottom = BlockModelGenerators.plainVariant(ModelTemplates.SLAB_BOTTOM.create(block, textureMapping, generator.modelOutput));
-		MultiVariant top = BlockModelGenerators.plainVariant(ModelTemplates.SLAB_TOP.create(block, textureMapping, generator.modelOutput));
-		generator.blockStateOutput.accept(generator.createSlab(block, bottom, top, full));
 	}
 }

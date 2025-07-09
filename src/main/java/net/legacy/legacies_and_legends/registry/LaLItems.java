@@ -258,6 +258,11 @@ public final class LaLItems {
                     ))
     );
 
+    public static final Item TABLET = register("tablet",
+            Item::new,
+            new Properties()
+                    .stacksTo(64)
+    );
     public static final RecallTabletItem TABLET_OF_RECALL = register("tablet_of_recall",
             RecallTabletItem::new,
             new Properties()

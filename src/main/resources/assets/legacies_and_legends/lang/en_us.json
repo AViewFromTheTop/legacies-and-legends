@@ -30,6 +30,7 @@
   "block.legacies_and_legends.sapphire_ore": "Sapphire Ore",
   "block.legacies_and_legends.deepslate_sapphire_ore": "Deepslate Sapphire Ore",
   "block.legacies_and_legends.sapphire_block": "Block of Sapphire",
+  "block.legacies_and_legends.sapphire_lantern": "Sapphire Lantern",
   "block.legacies_and_legends.wand_platform": "Wand Platform",
 
   "item.legacies_and_legends.reinforced_chestplate": "Reinforced Chestplate",
@@ -45,6 +46,7 @@
   "item.legacies_and_legends.amulet_of_allure": "Amulet of Allure",
   "item.legacies_and_legends.amulet_of_evasion": "Amulet of Evasion",
   "item.legacies_and_legends.amulet_of_synthesis": "Amulet of Synthesis",
+  "item.legacies_and_legends.tablet": "Tablet",
   "item.legacies_and_legends.tablet_of_recall": "Tablet of Recall",
   "item.legacies_and_legends.tablet_of_haste": "Tablet of Haste",
   "item.legacies_and_legends.tablet_of_levitation": "Tablet of Levitation",
@@ -103,7 +105,7 @@
   "pack.legacies_and_legends.no_new_structures": "No New Structures",
   "pack.legacies_and_legends.lore_books": "Lore Books",
   "pack.legacies_and_legends.no_improved_loot": "No Improved Loot",
-  "pack.legacies_and_legends.trinkets": "Trinkets",
+  "pack.legacies_and_legends.accessory_slot": "Accessory Slot",
   "pack.legacies_and_legends.new_trim_materials": "New Trim Materials",
   "pack.legacies_and_legends.wandering_trader_trades": "Wandering Trader Trades",
   "pack.legacies_and_legends.no_end_portal_music": "No End Portal Music",
@@ -203,6 +205,10 @@
   "text.autoconfig.legacies_and_legends.option.misc.wandering_trader_trades.@Tooltip": "Whether Wandering Traders should have improved trades and be able to sell Legacies and Legends' items. Requires Villager Config.",
   "text.autoconfig.legacies_and_legends.option.misc.no_creeper_discs": "Disable Creeper Discs",
   "text.autoconfig.legacies_and_legends.option.misc.no_creeper_discs.@Tooltip": "Set to True to disable Creepers dropping C418 music discs, meaning they can only be found from their respective structures. Disabled by default.",
+
+  "text.autoconfig.legacies_and_legends.option.mixins": "Mixins",
+  "text.autoconfig.legacies_and_legends.option.mixins.powdered_snow": "Powdered Snow",
+  "text.autoconfig.legacies_and_legends.option.mixins.friendsandfoes": "Friends&Foes",
 
   "text.autoconfig.legacies_and_legends.option.integrations": "Mod Integration",
   "text.autoconfig.legacies_and_legends.option.integrations.wilder_wild": "Wilder Wild",

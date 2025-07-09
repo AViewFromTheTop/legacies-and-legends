@@ -59,14 +59,8 @@ public class LaLItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .addTag(LaLItemTags.AMULETS)
                 .addTag(LaLItemTags.TOTEMS);
 
-        this.getOrCreateTagBuilder(LaLItemTags.HAS_ITEM_EFFECT)
-                .add(LaLItems.AMULET_OF_ALLURE)
-                .add(LaLItems.AMULET_OF_SYNTHESIS)
-                .add(LaLItems.AMULET_OF_EVASION);
         this.getOrCreateTagBuilder(LaLItemTags.HAS_BREED_EFFECT)
                 .add(LaLItems.AMULET_OF_ALLURE);
-        this.getOrCreateTagBuilder(LaLItemTags.HAS_KILL_EFFECT)
-                .add(LaLItems.AMULET_OF_SYNTHESIS);
         this.getOrCreateTagBuilder(LaLItemTags.HAS_USE_EFFECT)
                 .add(LaLItems.TABLET_OF_CHANNELING)
                 .add(LaLItems.TABLET_OF_DEAFENING)

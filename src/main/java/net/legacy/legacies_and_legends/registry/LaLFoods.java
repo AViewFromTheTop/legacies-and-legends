@@ -10,7 +10,15 @@ public class LaLFoods {
     }
 
     static {
-        ENCHANTED_BEETROOT = (new FoodProperties.Builder()).nutrition(3).saturationModifier(1.2F).alwaysEdible().build();
-        ENCHANTED_BEETROOT_SOUP = (new FoodProperties.Builder()).nutrition(9).saturationModifier(1.2F).alwaysEdible().build();
+        ENCHANTED_BEETROOT = (new FoodProperties.Builder())
+                .nutrition(3)
+                .saturationModifier(1.2F)
+                .alwaysEdible()
+                .build();
+        ENCHANTED_BEETROOT_SOUP = (new FoodProperties.Builder())
+                .nutrition(9)
+                .saturationModifier(1.2F)
+                .alwaysEdible()
+                .build();
     }
 }

@@ -31,9 +31,7 @@ public class LaLItemTags {
 
     public static final TagKey<Item> ACCESSORIES = bind("accessories");
 
-    public static final TagKey<Item> HAS_ITEM_EFFECT = bind("has_item_effect");
     public static final TagKey<Item> HAS_BREED_EFFECT = bind("has_breed_effect");
-    public static final TagKey<Item> HAS_KILL_EFFECT = bind("has_kill_effect");
     public static final TagKey<Item> HAS_USE_EFFECT = bind("has_use_effect");
 
     public static final TagKey<Item> PROSPECTING = bind("prospecting");
