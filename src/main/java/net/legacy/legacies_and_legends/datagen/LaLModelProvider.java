@@ -37,7 +37,7 @@ public final class LaLModelProvider extends FabricModelProvider {
 
 	@Override
 	public void generateBlockStateModels(@NotNull BlockModelGenerators generator) {
-		createWandPlatform(generator);
+		//createWandPlatform(generator);
 		generator.createLantern(LaLBlocks.SAPPHIRE_LANTERN);
 		generator.createTrivialCube(LaLBlocks.SAPPHIRE_BLOCK);
 		generator.createTrivialCube(LaLBlocks.SAPPHIRE_ORE);

@@ -40,7 +40,7 @@ public class LegaciesAndLegends implements ModInitializer {
 		LaLFuelRegistry.registerFuels();
 		LaLTrimItemModels.init();
 		LaLEntityTypes.init();
-		LaLConfig.initClient();
+		LaLConfig.init();
 		LaLEnchantmentEffects.register();
 		LaLMobEffects.init();
 		LaLLootTables.init();

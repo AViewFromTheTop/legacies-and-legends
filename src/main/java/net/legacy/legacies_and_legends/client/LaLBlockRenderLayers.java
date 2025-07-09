@@ -13,6 +13,7 @@ public final class LaLBlockRenderLayers {
 		BlockRenderLayerMap renderLayerRegistry = BlockRenderLayerMap.INSTANCE;
 
 		renderLayerRegistry.putBlock(LaLBlocks.SAPPHIRE_LANTERN, RenderType.cutout());
+		renderLayerRegistry.putBlock(LaLBlocks.WAND_PLATFORM, RenderType.translucent());
 
 	}
 }

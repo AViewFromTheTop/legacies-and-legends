@@ -23,7 +23,7 @@ public class LaLConfig implements ConfigData {
 
 	public static LaLConfig get;
 
-	public static void initClient() {
+	public static void init() {
 		AutoConfig.register(LaLConfig.class, JanksonConfigSerializer::new);
 		get = AutoConfig.getConfigHolder(LaLConfig.class).getConfig();
 	}

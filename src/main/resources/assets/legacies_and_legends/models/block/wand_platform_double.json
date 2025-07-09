@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "bottom": "legacies_and_legends:block/wand_platform_bottom",
+    "front": "legacies_and_legends:block/wand_platform_double_side",
+    "side": "legacies_and_legends:block/wand_platform_double_side",
+    "top": "legacies_and_legends:block/wand_platform_top"
+  }
+}

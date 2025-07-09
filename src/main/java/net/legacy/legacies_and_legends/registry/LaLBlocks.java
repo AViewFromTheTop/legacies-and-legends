@@ -61,7 +61,10 @@ public class LaLBlocks {
             WandPlatformBlock::new,
             BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_BLUE)
-                    .forceSolidOn()
+                    .noOcclusion()
+                    .isViewBlocking(Blocks::never)
+                    .noLootTable()
+                    .isValidSpawn(Blocks::never)
                     .strength(5F, 6F)
                     .sound(SoundType.WOOD)
                     .pushReaction(PushReaction.DESTROY)
