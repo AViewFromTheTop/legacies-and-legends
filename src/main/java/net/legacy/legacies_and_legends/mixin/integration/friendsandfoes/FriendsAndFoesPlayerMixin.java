@@ -4,7 +4,6 @@ import com.faboslav.friendsandfoes.common.init.FriendsAndFoesItems;
 import com.faboslav.friendsandfoes.common.init.FriendsAndFoesParticleTypes;
 import dev.emi.trinkets.api.TrinketsApi;
 import net.legacy.legacies_and_legends.integration.FriendsAndFoesTotemUtil;
-import net.legacy.legacies_and_legends.item.impl.TotemUtil;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.player.Player;
