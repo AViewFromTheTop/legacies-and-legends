@@ -16,6 +16,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import java.util.Objects;
+
 @Mixin(Trinket.class)
 public interface TrinketMixin {
 
@@ -50,9 +52,9 @@ public interface TrinketMixin {
                 player.removeTag("equipped_amulet_of_allure");
             }
             else if (stack.is(LaLItems.AMULET_OF_EVASION)) {
-                if (player.getEffect(MobEffects.INVISIBILITY).getDuration() == MobEffectInstance.INFINITE_DURATION) player.removeEffect(MobEffects.INVISIBILITY);
-                if (player.getEffect(MobEffects.WEAKNESS).getDuration() == MobEffectInstance.INFINITE_DURATION) player.removeEffect(MobEffects.WEAKNESS);
-                if (player.getEffect(MobEffects.DARKNESS).getDuration() == MobEffectInstance.INFINITE_DURATION) player.removeEffect(MobEffects.DARKNESS);
+                if (Objects.requireNonNull(player.getEffect(MobEffects.INVISIBILITY)).getDuration() == MobEffectInstance.INFINITE_DURATION) player.removeEffect(MobEffects.INVISIBILITY);
+                if (Objects.requireNonNull(player.getEffect(MobEffects.WEAKNESS)).getDuration() == MobEffectInstance.INFINITE_DURATION) player.removeEffect(MobEffects.WEAKNESS);
+                if (Objects.requireNonNull(player.getEffect(MobEffects.DARKNESS)).getDuration() == MobEffectInstance.INFINITE_DURATION) player.removeEffect(MobEffects.DARKNESS);
             }
         }
     }

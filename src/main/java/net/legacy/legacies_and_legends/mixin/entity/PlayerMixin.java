@@ -8,6 +8,7 @@ import net.legacy.legacies_and_legends.registry.LaLItems;
 import net.legacy.legacies_and_legends.tag.LaLItemTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.GlobalPos;
+import net.minecraft.core.component.DataComponentPatch;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
@@ -20,6 +21,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.component.CustomModelData;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
@@ -30,6 +32,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+import java.util.List;
 import java.util.Optional;
 
 @Mixin(Player.class)
@@ -91,7 +94,7 @@ public abstract class PlayerMixin implements LaLPlayerPlatformInterface {
         BlockPos pos = globalPos.pos();
         player.level().scheduleTick(pos, LaLBlocks.WAND_PLATFORM, 5);
 
-        player.removeTag("legacies_and_legends:wand_platform_summoned");
+        player.removeTag("wand_platform_summoned");
     }
 
     @Inject(method = "drop", at = @At("HEAD"))
@@ -105,7 +108,7 @@ public abstract class PlayerMixin implements LaLPlayerPlatformInterface {
         BlockPos pos = globalPos.pos();
         player.level().scheduleTick(pos, LaLBlocks.WAND_PLATFORM, 5);
 
-        player.removeTag("legacies_and_legends:wand_platform_summoned");
+        player.removeTag("wand_platform_summoned");
     }
 
     @Override

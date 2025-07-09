@@ -10,8 +10,8 @@
     "entity.PlayerMixin",
     "item.AxeItemMixin",
     "item.TrinketMixin",
-    "integration.friendsandfoes.FriendsAndFoesTrinketMixin",
-    "integration.friendsandfoes.FriendsAndFoesPlayerMixin"
+    "integration.friendsandfoes.FriendsAndFoesPlayerMixin",
+    "integration.friendsandfoes.FriendsAndFoesTrinketMixin"
   ],
   "injectors": {
     "defaultRequire": 1

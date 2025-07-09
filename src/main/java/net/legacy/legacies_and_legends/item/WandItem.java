@@ -49,7 +49,7 @@ public class WandItem extends Item {
             newPlatformPos = newPlatformPos.below();
         }
 
-        if ((useBottomSlab || level.getBlockState(newPlatformPos).isAir()) && !player.getTags().contains("legacies_and_legends:wand_platform_summoned") && !player.onGround()) {
+        if ((useBottomSlab || level.getBlockState(newPlatformPos).isAir()) && !player.getTags().contains("wand_platform_summoned") && !player.onGround()) {
             platformInterface.lal$setLastPlatformPos(level, newPlatformPos);
             level.setBlock(
                     newPlatformPos,
@@ -57,7 +57,7 @@ public class WandItem extends Item {
                     Block.UPDATE_ALL
             );
 
-            player.addTag("legacies_and_legends:wand_platform_summoned");
+            player.addTag("wand_platform_summoned");
 
             stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(hand));
 
@@ -65,15 +65,16 @@ public class WandItem extends Item {
                     .set(DataComponents.USE_COOLDOWN, new UseCooldown(1F))
                     .build()
             );
+
             return InteractionResult.SUCCESS;
         } else {
             Optional<GlobalPos> optionalLastPlatformPos = platformInterface.lal$getLastPlatformPos();
-            if (optionalLastPlatformPos.isPresent() && player.getTags().contains("legacies_and_legends:wand_platform_summoned")) {
+            if (optionalLastPlatformPos.isPresent() && player.getTags().contains("wand_platform_summoned")) {
                 GlobalPos lastPlatformPos = optionalLastPlatformPos.get();
                 if (lastPlatformPos.dimension().equals(level.dimension())) {
                     BlockPos lastPlatformBlockPos = lastPlatformPos.pos();
                     if (!player.onGround() || player.getOnPos() != lastPlatformBlockPos) {
-                        player.removeTag("legacies_and_legends:wand_platform_summoned");
+                        player.removeTag("wand_platform_summoned");
 
                         level.scheduleTick(lastPlatformBlockPos, LaLBlocks.WAND_PLATFORM, 5);
 
@@ -93,7 +94,7 @@ public class WandItem extends Item {
 
     @Override
     public void inventoryTick(ItemStack stack, ServerLevel level, Entity entity, @Nullable EquipmentSlot slot) {
-        if (entity instanceof Player player && !player.getTags().contains("legacies_and_legends:wand_platform_summoned")) {
+        if (entity instanceof Player player && !player.getTags().contains("wand_platform_summoned")) {
             stack.applyComponents(DataComponentPatch.builder()
                     .set(DataComponents.CUSTOM_MODEL_DATA, new CustomModelData(List.of(), List.of(true), List.of(), List.of()))
                     .build()
@@ -105,5 +106,4 @@ public class WandItem extends Item {
             );
         }
     }
-
 }

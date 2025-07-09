@@ -45,7 +45,7 @@ public abstract class EntityMixin {
 		level.scheduleTick(lastPlatformPos.pos(), LaLBlocks.WAND_PLATFORM, 5);
 
 		if (Entity.class.cast(this) instanceof Player player) {
-			player.removeTag("legacies_and_legends:wand_platform_summoned");
+			player.removeTag("wand_platform_summoned");
 		}
 	}
 
@@ -62,7 +62,7 @@ public abstract class EntityMixin {
 		level.scheduleTick(lastPlatformPos.pos(), LaLBlocks.WAND_PLATFORM, 5);
 
 		if (Entity.class.cast(this) instanceof Player player) {
-			player.removeTag("legacies_and_legends:wand_platform_summoned");
+			player.removeTag("wand_platform_summoned");
 		}
 	}
 
