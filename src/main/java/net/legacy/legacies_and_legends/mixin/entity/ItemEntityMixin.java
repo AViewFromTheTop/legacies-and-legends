@@ -1,4 +1,4 @@
-package net.legacy.legacies_and_legends.mixin;
+package net.legacy.legacies_and_legends.mixin.entity;
 
 import net.legacy.legacies_and_legends.registry.LaLItems;
 import net.minecraft.core.component.DataComponentPatch;

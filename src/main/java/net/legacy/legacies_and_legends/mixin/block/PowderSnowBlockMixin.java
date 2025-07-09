@@ -1,4 +1,4 @@
-package net.legacy.legacies_and_legends.mixin;
+package net.legacy.legacies_and_legends.mixin.block;
 
 import net.legacy.legacies_and_legends.registry.LaLMobEffects;
 import net.minecraft.core.BlockPos;

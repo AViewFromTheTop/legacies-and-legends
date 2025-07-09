@@ -45,6 +45,9 @@ dependencies {
 	}
 
 	modImplementation("maven.modrinth:modmenu:$modmenu_version")
+	modImplementation("maven.modrinth:friends-and-foes:$friendsandfoes_version")
+	modImplementation("maven.modrinth:resourceful-lib:$resourceful_version")
+	modImplementation("maven.modrinth:yacl:$yacl_version")
 
 }
 

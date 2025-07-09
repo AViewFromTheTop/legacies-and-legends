@@ -41,6 +41,9 @@ public class LaLConfig implements ConfigData {
 	public ArtifactsConfig artifacts = new ArtifactsConfig();
 
 	@CollapsibleObject
+	public TrinketsConfig trinkets = new TrinketsConfig();
+
+	@CollapsibleObject
 	public EnchantmentsConfig enchantments = new EnchantmentsConfig();
 
 	@CollapsibleObject
@@ -145,7 +148,15 @@ public class LaLConfig implements ConfigData {
 		public boolean tablet_of_deafening = true;
 		@ConfigEntry.Category("config")
 		public boolean tablet_of_revealing = true;
+	}
 
+	public static class TrinketsConfig {
+		@ConfigEntry.Category("config")
+		@ConfigEntry.Gui.Tooltip
+		public boolean accessory_slot = true;
+		@ConfigEntry.Category("config")
+		@ConfigEntry.Gui.Tooltip
+		public boolean trinket_of_undying = true;
 		@ConfigEntry.Category("config")
 		public boolean amulet_of_allure = true;
 		@ConfigEntry.Category("config")
@@ -193,9 +204,6 @@ public class LaLConfig implements ConfigData {
 	}
 
 	public static class MiscConfig {
-		@ConfigEntry.Category("config")
-		@ConfigEntry.Gui.Tooltip
-		public boolean trinkets = true;
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
 		public boolean new_trim_materials = true;

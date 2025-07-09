@@ -1,4 +1,4 @@
-package net.legacy.legacies_and_legends.mixin;
+package net.legacy.legacies_and_legends.mixin.item;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.sugar.Local;

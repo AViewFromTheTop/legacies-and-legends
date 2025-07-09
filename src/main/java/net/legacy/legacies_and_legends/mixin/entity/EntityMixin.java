@@ -1,4 +1,4 @@
-package net.legacy.legacies_and_legends.mixin;
+package net.legacy.legacies_and_legends.mixin.entity;
 
 import com.llamalad7.mixinextras.sugar.Local;
 import net.legacy.legacies_and_legends.entity.impl.LaLPlayerPlatformInterface;

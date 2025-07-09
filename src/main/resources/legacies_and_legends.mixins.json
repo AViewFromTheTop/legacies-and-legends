@@ -2,13 +2,16 @@
   "required": true,
   "package": "net.legacy.legacies_and_legends.mixin",
   "compatibilityLevel": "JAVA_21",
+  "plugin": "net.legacy.legacies_and_legends.mixin.LaLMixinPlugin",
   "mixins": [
-    "AxeItemMixin",
-    "EntityMixin",
-    "ItemEntityMixin",
-    "PlayerMixin",
-    "PowderSnowBlockMixin",
-    "TrinketMixin"
+    "block.PowderSnowBlockMixin",
+    "entity.EntityMixin",
+    "entity.ItemEntityMixin",
+    "entity.PlayerMixin",
+    "item.AxeItemMixin",
+    "item.TrinketMixin",
+    "integration.friendsandfoes.FriendsAndFoesTrinketMixin",
+    "integration.friendsandfoes.FriendsAndFoesPlayerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

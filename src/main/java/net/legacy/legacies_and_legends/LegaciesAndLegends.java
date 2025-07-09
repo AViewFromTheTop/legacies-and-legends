@@ -85,10 +85,10 @@ public class LegaciesAndLegends implements ModInitializer {
 					ResourcePackActivationType.ALWAYS_ENABLED
 			);
 		}
-		if (LaLConfig.get.misc.trinkets) {
+		if (LaLConfig.get.trinkets.accessory_slot) {
 			ResourceManagerHelper.registerBuiltinResourcePack(
-					LaLConstants.id("trinkets"), modContainer.get(),
-					Component.translatable("pack.legacies_and_legends.trinkets"),
+					LaLConstants.id("accessory_slot"), modContainer.get(),
+					Component.translatable("pack.legacies_and_legends.accessory_slot"),
 					ResourcePackActivationType.ALWAYS_ENABLED
 			);
 		}

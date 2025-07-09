@@ -203,27 +203,27 @@ public class LaLLootTables {
 
 			// ARTIFACTS - Amulets
 
-			if (LaLLootTables.RUINED_AETHER_PORTAL.equals(id) && LaLConfig.get.artifacts.amulet_of_allure) {
+			if (LaLLootTables.RUINED_AETHER_PORTAL.equals(id) && LaLConfig.get.trinkets.amulet_of_allure) {
 				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 						.add(EmptyLootItem.emptyItem().setWeight(2))
 						.add(LootItem.lootTableItem(LaLItems.AMULET_OF_ALLURE).setWeight(1));
 				tableBuilder.withPool(pool);
 			}
 
-			if (LaLLootTables.SWAMP_HUT.equals(id) && LaLConfig.get.artifacts.amulet_of_evasion) {
+			if (LaLLootTables.SWAMP_HUT.equals(id) && LaLConfig.get.trinkets.amulet_of_evasion) {
 				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 						.add(EmptyLootItem.emptyItem().setWeight(5))
 						.add(LootItem.lootTableItem(LaLItems.AMULET_OF_EVASION).setWeight(1));
 				tableBuilder.withPool(pool);
 			}
 
-			if (LaLLootTables.DUNGEON_CHEST_DEEP.equals(id) && LaLConfig.get.artifacts.amulet_of_synthesis) {
+			if (LaLLootTables.DUNGEON_CHEST_DEEP.equals(id) && LaLConfig.get.trinkets.amulet_of_synthesis) {
 				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 						.add(EmptyLootItem.emptyItem().setWeight(29))
 						.add(LootItem.lootTableItem(LaLItems.AMULET_OF_SYNTHESIS).setWeight(1));
 				tableBuilder.withPool(pool);
 			}
-			if (BuiltInLootTables.SIMPLE_DUNGEON.equals(id) && LaLConfig.get.artifacts.amulet_of_synthesis) {
+			if (BuiltInLootTables.SIMPLE_DUNGEON.equals(id) && LaLConfig.get.trinkets.amulet_of_synthesis) {
 				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 						.add(EmptyLootItem.emptyItem().setWeight(29))
 						.add(LootItem.lootTableItem(LaLItems.AMULET_OF_SYNTHESIS).setWeight(1));

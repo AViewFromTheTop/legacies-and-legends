@@ -53,7 +53,7 @@ public class LaLItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(Items.TOTEM_OF_UNDYING)
                 .add(LaLItems.TOTEM_OF_TELEPORTATION)
                 .add(LaLItems.TOTEM_OF_VENGEANCE)
-                .addOptionalTag(ResourceLocation.fromNamespaceAndPath("trinkets","charm/charm"));
+                .addOptionalTag(ResourceLocation.fromNamespaceAndPath("friendsandfoes","totems"));
 
         this.getOrCreateTagBuilder(LaLItemTags.ACCESSORIES)
                 .addTag(LaLItemTags.AMULETS)

@@ -4,7 +4,7 @@
     "legacies_and_legends:totem_of_teleportation",
     "legacies_and_legends:totem_of_vengeance",
     {
-      "id": "#trinkets:charm/charm",
+      "id": "#friendsandfoes:totems",
       "required": false
     }
   ]
