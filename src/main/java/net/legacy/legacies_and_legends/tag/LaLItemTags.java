@@ -26,12 +26,14 @@ public class LaLItemTags {
     public static final TagKey<Item> REPAIRS_REINFORCED_ARMOR = bind("repairs_reinforced_armor");
 
     public static final TagKey<Item> TABLETS = bind("tablets");
+
+    public static final TagKey<Item> RINGS = bind("rings");
+    public static final TagKey<Item> NECKLACES = bind("necklaces");
     public static final TagKey<Item> AMULETS = bind("amulets");
     public static final TagKey<Item> TOTEMS = bind("totems");
 
     public static final TagKey<Item> ACCESSORIES = bind("accessories");
 
-    public static final TagKey<Item> HAS_BREED_EFFECT = bind("has_breed_effect");
     public static final TagKey<Item> HAS_USE_EFFECT = bind("has_use_effect");
 
     public static final TagKey<Item> PROSPECTING = bind("prospecting");

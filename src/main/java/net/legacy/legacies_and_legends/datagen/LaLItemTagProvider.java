@@ -44,23 +44,39 @@ public class LaLItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(LaLItems.TABLET_OF_CHANNELING)
                 .add(LaLItems.TABLET_OF_REVEALING);
 
+        this.getOrCreateTagBuilder(LaLItemTags.RINGS)
+                .add(LaLItems.RING_OF_EVASION)
+                .add(LaLItems.RING_OF_SATURATION)
+                .add(LaLItems.RING_OF_LEAPING)
+                .add(LaLItems.RING_OF_REACHING)
+                .add(LaLItems.RING_OF_RESTORATION)
+                .add(LaLItems.RING_OF_STRIKING);
+
+        this.getOrCreateTagBuilder(LaLItemTags.NECKLACES)
+                .add(LaLItems.NECKLACE_OF_ISOLATION)
+                .add(LaLItems.NECKLACE_OF_BARTERING)
+                .add(LaLItems.NECKLACE_OF_FORESIGHT)
+                .add(LaLItems.NECKLACE_OF_PROTECTION)
+                .add(LaLItems.NECKLACE_OF_PURITY)
+                .add(LaLItems.NECKLACE_OF_REGENERATION);
+
         this.getOrCreateTagBuilder(LaLItemTags.AMULETS)
-                .add(LaLItems.AMULET_OF_ALLURE)
-                .add(LaLItems.AMULET_OF_EVASION)
-                .add(LaLItems.AMULET_OF_SYNTHESIS);
+                .add(LaLItems.AMULET_OF_ABSORPTION)
+                .add(LaLItems.AMULET_OF_OBSIDIAN)
+                .add(LaLItems.AMULET_OF_DEFLECTION);
 
         this.getOrCreateTagBuilder(LaLItemTags.TOTEMS)
                 .add(Items.TOTEM_OF_UNDYING)
                 .add(LaLItems.TOTEM_OF_TELEPORTATION)
-                .add(LaLItems.TOTEM_OF_VENGEANCE)
+                .add(LaLItems.TOTEM_OF_RESURRECTION)
                 .addOptionalTag(ResourceLocation.fromNamespaceAndPath("friendsandfoes","totems"));
 
         this.getOrCreateTagBuilder(LaLItemTags.ACCESSORIES)
+                .addTag(LaLItemTags.RINGS)
+                .addTag(LaLItemTags.NECKLACES)
                 .addTag(LaLItemTags.AMULETS)
                 .addTag(LaLItemTags.TOTEMS);
 
-        this.getOrCreateTagBuilder(LaLItemTags.HAS_BREED_EFFECT)
-                .add(LaLItems.AMULET_OF_ALLURE);
         this.getOrCreateTagBuilder(LaLItemTags.HAS_USE_EFFECT)
                 .add(LaLItems.TABLET_OF_CHANNELING)
                 .add(LaLItems.TABLET_OF_DEAFENING)

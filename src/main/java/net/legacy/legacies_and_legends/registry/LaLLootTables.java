@@ -173,10 +173,10 @@ public class LaLLootTables {
 
 			// ARTIFACTS - Totems
 
-			if (LaLLootTables.DUNGEON_CHEST_DEEP.equals(id) && LaLConfig.get.artifacts.totem_of_vengeance) {
+			if (LaLLootTables.DUNGEON_CHEST_DEEP.equals(id) && LaLConfig.get.artifacts.totem_of_resurrection) {
 				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 						.add(EmptyLootItem.emptyItem().setWeight(14))
-						.add(LootItem.lootTableItem(LaLItems.TOTEM_OF_VENGEANCE).setWeight(1));
+						.add(LootItem.lootTableItem(LaLItems.TOTEM_OF_RESURRECTION).setWeight(1));
 				tableBuilder.withPool(pool);
 			}
 
@@ -203,7 +203,7 @@ public class LaLLootTables {
 
 			// ARTIFACTS - Amulets
 
-			if (LaLLootTables.RUINED_AETHER_PORTAL.equals(id) && LaLConfig.get.trinkets.amulet_of_allure) {
+/*			if (LaLLootTables.RUINED_AETHER_PORTAL.equals(id) && LaLConfig.get.trinkets.amulet_of_allure) {
 				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 						.add(EmptyLootItem.emptyItem().setWeight(2))
 						.add(LootItem.lootTableItem(LaLItems.AMULET_OF_ALLURE).setWeight(1));
@@ -228,7 +228,7 @@ public class LaLLootTables {
 						.add(EmptyLootItem.emptyItem().setWeight(29))
 						.add(LootItem.lootTableItem(LaLItems.AMULET_OF_SYNTHESIS).setWeight(1));
 				tableBuilder.withPool(pool);
-			}
+			}*/
 
 			// ARTIFACTS - Tablets
 

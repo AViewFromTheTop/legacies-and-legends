@@ -12,15 +12,11 @@ import java.util.List;
 import java.util.Set;
 
 public final class LegaciesAndLegendsMixinPlugin implements IMixinConfigPlugin {
-    private boolean mixinsConfigPowderedSnow;
-    private boolean mixinsConfigFriendsAndFoes;
 
     private boolean hasFriendsAndFoes;
 
     @Override
     public void onLoad(String mixinPackage) {
-        this.mixinsConfigPowderedSnow = LaLConfig.get.mixins.powdered_snow;
-        this.mixinsConfigFriendsAndFoes = LaLConfig.get.mixins.friendsandfoes;
         this.hasFriendsAndFoes = FabricLoader.getInstance().isModLoaded("friendsandfoes");
     }
 
@@ -33,10 +29,7 @@ public final class LegaciesAndLegendsMixinPlugin implements IMixinConfigPlugin {
     @Override
     public boolean shouldApplyMixin(String targetClassName, @NotNull String mixinClassName) {
 
-        if (mixinClassName.contains("block.PowderSnowBlockMixin")) return this.mixinsConfigPowderedSnow;
-
-        if (mixinClassName.contains("integration.friendsandfoes.") && this.hasFriendsAndFoes) return this.mixinsConfigFriendsAndFoes;
-        if (mixinClassName.contains("integration.friendsandfoes.")) return false;
+        if (mixinClassName.contains("integration.friendsandfoes.")) return this.hasFriendsAndFoes;
 
         return true;
     }

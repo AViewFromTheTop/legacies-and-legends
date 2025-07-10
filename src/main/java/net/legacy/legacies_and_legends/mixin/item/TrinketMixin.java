@@ -22,39 +22,11 @@ import java.util.Objects;
 public interface TrinketMixin {
 
     @Inject(at = @At("HEAD"), method = "tick")
-    private void tick(ItemStack stack, SlotReference slot, LivingEntity livingEntity, CallbackInfo ci) {
+    private void removeTotem(ItemStack stack, SlotReference slot, LivingEntity livingEntity, CallbackInfo ci) {
         if (livingEntity instanceof Player player && TrinketsApi.getTrinketComponent(livingEntity).isPresent()) {
-            if (player.getTags().contains("used_totem") && (TrinketsApi.getTrinketComponent(livingEntity).get().isEquipped(LaLItems.TOTEM_OF_TELEPORTATION) || TrinketsApi.getTrinketComponent(livingEntity).get().isEquipped(LaLItems.TOTEM_OF_VENGEANCE) || TrinketsApi.getTrinketComponent(livingEntity).get().isEquipped(Items.TOTEM_OF_UNDYING))) {
+            if (player.getTags().contains("used_totem") && (TrinketsApi.getTrinketComponent(livingEntity).get().isEquipped(LaLItems.TOTEM_OF_TELEPORTATION) || TrinketsApi.getTrinketComponent(livingEntity).get().isEquipped(LaLItems.TOTEM_OF_RESURRECTION) || TrinketsApi.getTrinketComponent(livingEntity).get().isEquipped(Items.TOTEM_OF_UNDYING))) {
                 player.removeTag("used_totem");
                 slot.inventory().removeItem(slot.index(), 1);
-            }
-            if (TrinketsApi.getTrinketComponent(livingEntity).get().isEquipped(LaLItems.AMULET_OF_EVASION)) {
-                if (!player.hasEffect(MobEffects.INVISIBILITY)) player.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, MobEffectInstance.INFINITE_DURATION));
-                if (!player.hasEffect(MobEffects.WEAKNESS)) player.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, MobEffectInstance.INFINITE_DURATION));
-                if (!player.hasEffect(MobEffects.DARKNESS)) player.addEffect(new MobEffectInstance(MobEffects.DARKNESS, MobEffectInstance.INFINITE_DURATION));
-            }
-        }
-    }
-
-    @Inject(at = @At("HEAD"), method = "onEquip")
-    private void addOnEquip(ItemStack stack, SlotReference slot, LivingEntity livingEntity, CallbackInfo ci) {
-        if (livingEntity instanceof Player player && stack.is(LaLItemTags.ACCESSORIES)) {
-            if (stack.is(LaLItems.AMULET_OF_ALLURE)) {
-                player.addTag("equipped_amulet_of_allure");
-            }
-        }
-    }
-
-    @Inject(at = @At("HEAD"), method = "onUnequip")
-    private void removeOnUnequip(ItemStack stack, SlotReference slot, LivingEntity livingEntity, CallbackInfo ci) {
-        if (livingEntity instanceof Player player && stack.is(LaLItemTags.ACCESSORIES)) {
-            if (stack.is(LaLItems.AMULET_OF_ALLURE)) {
-                player.removeTag("equipped_amulet_of_allure");
-            }
-            else if (stack.is(LaLItems.AMULET_OF_EVASION)) {
-                if (Objects.requireNonNull(player.getEffect(MobEffects.INVISIBILITY)).getDuration() == MobEffectInstance.INFINITE_DURATION) player.removeEffect(MobEffects.INVISIBILITY);
-                if (Objects.requireNonNull(player.getEffect(MobEffects.WEAKNESS)).getDuration() == MobEffectInstance.INFINITE_DURATION) player.removeEffect(MobEffects.WEAKNESS);
-                if (Objects.requireNonNull(player.getEffect(MobEffects.DARKNESS)).getDuration() == MobEffectInstance.INFINITE_DURATION) player.removeEffect(MobEffects.DARKNESS);
             }
         }
     }

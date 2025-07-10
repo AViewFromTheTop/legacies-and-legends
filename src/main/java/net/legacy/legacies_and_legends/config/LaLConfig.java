@@ -53,9 +53,6 @@ public class LaLConfig implements ConfigData {
 	public MiscConfig misc = new MiscConfig();
 
 	@CollapsibleObject
-	public MixinsConfig mixins = new MixinsConfig();
-
-	@CollapsibleObject
 	public IntegrationsConfig integrations = new IntegrationsConfig();
 
 	public static class StructuresConfig {
@@ -135,11 +132,6 @@ public class LaLConfig implements ConfigData {
 		public boolean withered_hoe = true;
 
 		@ConfigEntry.Category("config")
-		public boolean totem_of_vengeance = true;
-		@ConfigEntry.Category("config")
-		public boolean totem_of_teleportation = true;
-
-		@ConfigEntry.Category("config")
 		public boolean tablet_of_recall = true;
 		@ConfigEntry.Category("config")
 		public boolean tablet_of_haste = true;
@@ -151,6 +143,11 @@ public class LaLConfig implements ConfigData {
 		public boolean tablet_of_deafening = true;
 		@ConfigEntry.Category("config")
 		public boolean tablet_of_revealing = true;
+
+		@ConfigEntry.Category("config")
+		public boolean totem_of_resurrection = true;
+		@ConfigEntry.Category("config")
+		public boolean totem_of_teleportation = true;
 	}
 
 	public static class TrinketsConfig {
@@ -161,11 +158,35 @@ public class LaLConfig implements ConfigData {
 		@ConfigEntry.Gui.Tooltip
 		public boolean trinket_of_undying = true;
 		@ConfigEntry.Category("config")
-		public boolean amulet_of_allure = true;
+		public boolean ring_of_evasion = true;
 		@ConfigEntry.Category("config")
-		public boolean amulet_of_synthesis = true;
+		public boolean ring_of_striking = true;
 		@ConfigEntry.Category("config")
-		public boolean amulet_of_evasion = true;
+		public boolean ring_of_leaping = true;
+		@ConfigEntry.Category("config")
+		public boolean ring_of_saturation = true;
+		@ConfigEntry.Category("config")
+		public boolean ring_of_reaching = true;
+		@ConfigEntry.Category("config")
+		public boolean ring_of_restoration = true;
+		@ConfigEntry.Category("config")
+		public boolean necklace_of_purity = true;
+		@ConfigEntry.Category("config")
+		public boolean necklace_of_foresight = true;
+		@ConfigEntry.Category("config")
+		public boolean necklace_of_protection = true;
+		@ConfigEntry.Category("config")
+		public boolean necklace_of_regeneration = true;
+		@ConfigEntry.Category("config")
+		public boolean necklace_of_bartering = true;
+		@ConfigEntry.Category("config")
+		public boolean necklace_of_isolation = true;
+		@ConfigEntry.Category("config")
+		public boolean amulet_of_absorption = true;
+		@ConfigEntry.Category("config")
+		public boolean amulet_of_obsidian = true;
+		@ConfigEntry.Category("config")
+		public boolean amulet_of_deflection = true;
 	}
 
 	public static class EnchantmentsConfig {
@@ -216,13 +237,6 @@ public class LaLConfig implements ConfigData {
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
 		public boolean no_creeper_discs = false;
-	}
-
-	public static class MixinsConfig {
-		@ConfigEntry.Category("config")
-		public boolean powdered_snow = true;
-		@ConfigEntry.Category("config")
-		public boolean friendsandfoes = true;
 	}
 
 	public static class IntegrationsConfig {

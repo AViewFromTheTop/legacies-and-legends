@@ -32,7 +32,7 @@ public abstract class ItemStackMixin {
     @Inject(at = @At("HEAD"), method = "finishUsingItem")
     private void useTablet(Level level, LivingEntity livingEntity, CallbackInfoReturnable<ItemStack> cir) {
         if (this.is(LaLItemTags.TABLETS)) {
-            if (Random.from(RandomGenerator.getDefault()).nextInt(1,5) >= 2) {
+            if (new Random().nextInt(5) >= 1) {
                 this.applyComponents(DataComponentMap.builder()
                         .set(DataComponents.USE_REMAINDER, new UseRemainder(new ItemStack(LaLItems.TABLET)))
                         .build()

@@ -217,24 +217,11 @@ public final class LaLItems {
     );
 
     // Artifacts
-    public static final Item TOTEM_OF_VENGEANCE = register("totem_of_vengeance",
+    public static final Item TOTEM_OF_RESURRECTION = register("totem_of_resurrection",
             Item::new,
             new Properties()
                     .stacksTo(1)
-                    .rarity(Rarity.UNCOMMON)
-                    .component(DataComponents.DEATH_PROTECTION, new DeathProtection(
-                            List.of(
-                                    new ClearAllStatusEffectsConsumeEffect(),
-                                    new ApplyStatusEffectsConsumeEffect(
-                                            List.of(
-                                                    new MobEffectInstance(MobEffects.REGENERATION, 300, 4),
-                                                    new MobEffectInstance(MobEffects.STRENGTH, 1200, 1),
-                                                    new MobEffectInstance(MobEffects.RESISTANCE, 1200, 1),
-                                                    new MobEffectInstance(MobEffects.WITHER, 6000, 2)
-                                            )
-                                    )
-                            )
-                    ))
+                    .rarity(Rarity.EPIC)
     );
     public static final Item TOTEM_OF_TELEPORTATION = register("totem_of_teleportation",
             Item::new,
@@ -310,25 +297,6 @@ public final class LaLItems {
                     .rarity(Rarity.UNCOMMON)
     );
 
-    public static final AllureTrinketItem AMULET_OF_ALLURE = register("amulet_of_allure",
-            AllureTrinketItem::new,
-            new Properties()
-                    .stacksTo(1)
-                    .rarity(Rarity.UNCOMMON)
-    );
-    public static final TrinketItem AMULET_OF_SYNTHESIS = register("amulet_of_synthesis",
-            TrinketItem::new,
-            new Properties()
-                    .stacksTo(1)
-                    .rarity(Rarity.UNCOMMON)
-    );
-    public static final AllureTrinketItem AMULET_OF_EVASION = register("amulet_of_evasion",
-            EvasionTrinketItem::new,
-            new Properties()
-                    .stacksTo(1)
-                    .rarity(Rarity.RARE)
-    );
-
     public static final Item REINFORCED_CHESTPLATE = register("reinforced_chestplate",
             Item::new,
             new Properties()
@@ -360,6 +328,116 @@ public final class LaLItems {
                     .enchantable(12)
                     .attributes(createWandererBootsAttributes)
                     .rarity(Rarity.UNCOMMON)
+    );
+
+    // Trinkets
+
+    public static final AccessoryItem RING_OF_SATURATION = register("ring_of_saturation",
+            AccessoryItem::new,
+            new Properties()
+                    .stacksTo(1)
+                    .durability(145)
+                    .rarity(Rarity.RARE)
+    );
+    public static final EvasionAccessoryItem RING_OF_EVASION = register("ring_of_evasion",
+            EvasionAccessoryItem::new,
+            new Properties()
+                    .stacksTo(1)
+                    .durability(326)
+                    .rarity(Rarity.EPIC)
+    );
+    public static final AccessoryItem RING_OF_REACHING = register("ring_of_reaching",
+            AccessoryItem::new,
+            new Properties()
+                    .stacksTo(1)
+                    .durability(588)
+                    .rarity(Rarity.UNCOMMON)
+    );
+    public static final AccessoryItem RING_OF_STRIKING = register("ring_of_striking",
+            AccessoryItem::new,
+            new Properties()
+                    .stacksTo(1)
+                    .durability(152)
+                    .rarity(Rarity.UNCOMMON)
+    );
+    public static final AccessoryItem RING_OF_LEAPING = register("ring_of_leaping",
+            AccessoryItem::new,
+            new Properties()
+                    .stacksTo(1)
+                    .durability(212)
+                    .rarity(Rarity.UNCOMMON)
+    );
+    public static final AccessoryItem RING_OF_RESTORATION = register("ring_of_restoration",
+            AccessoryItem::new,
+            new Properties()
+                    .stacksTo(1)
+                    .durability(512)
+                    .rarity(Rarity.RARE)
+    );
+
+    public static final AccessoryItem NECKLACE_OF_ISOLATION = register("necklace_of_isolation",
+            AccessoryItem::new,
+            new Properties()
+                    .stacksTo(1)
+                    .durability(408)
+                    .rarity(Rarity.UNCOMMON)
+    );
+    public static final AccessoryItem NECKLACE_OF_PURITY = register("necklace_of_purity",
+            AccessoryItem::new,
+            new Properties()
+                    .stacksTo(1)
+                    .durability(173)
+                    .rarity(Rarity.RARE)
+    );
+    public static final AccessoryItem NECKLACE_OF_FORESIGHT = register("necklace_of_foresight",
+            AccessoryItem::new,
+            new Properties()
+                    .stacksTo(1)
+                    .durability(162)
+                    .rarity(Rarity.RARE)
+    );
+    public static final AccessoryItem NECKLACE_OF_PROTECTION = register("necklace_of_protection",
+            AccessoryItem::new,
+            new Properties()
+                    .stacksTo(1)
+                    .durability(232)
+                    .rarity(Rarity.RARE)
+    );
+    public static final AccessoryItem NECKLACE_OF_REGENERATION = register("necklace_of_regeneration",
+            AccessoryItem::new,
+            new Properties()
+                    .stacksTo(1)
+                    .durability(284)
+                    .rarity(Rarity.EPIC)
+    );
+    public static final AccessoryItem NECKLACE_OF_BARTERING = register("necklace_of_bartering",
+            AccessoryItem::new,
+            new Properties()
+                    .stacksTo(1)
+                    .durability(351)
+                    .rarity(Rarity.UNCOMMON)
+    );
+
+    public static final AccessoryItem AMULET_OF_OBSIDIAN = register("amulet_of_obsidian",
+            AccessoryItem::new,
+            new Properties()
+                    .stacksTo(1)
+                    .durability(100)
+                    .rarity(Rarity.EPIC)
+    );
+    public static final AccessoryItem AMULET_OF_ABSORPTION = register("amulet_of_absorption",
+            AccessoryItem::new,
+            new Properties()
+                    .stacksTo(1)
+                    .durability(100)
+                    .rarity(Rarity.RARE)
+    );
+    public static final AccessoryItem AMULET_OF_DEFLECTION = register("amulet_of_deflection",
+            AccessoryItem::new,
+            new Properties()
+                    .stacksTo(1)
+                    .durability(100)
+                    .rarity(Rarity.RARE)
     );
 
     public static void init() {

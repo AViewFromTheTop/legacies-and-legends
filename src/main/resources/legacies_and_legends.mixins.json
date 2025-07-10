@@ -5,8 +5,10 @@
   "plugin": "net.legacy.legacies_and_legends.mixin.LegaciesAndLegendsMixinPlugin",
   "mixins": [
     "block.PowderSnowBlockMixin",
+    "entity.EnderManMixin",
     "entity.EntityMixin",
     "entity.ItemEntityMixin",
+    "entity.PiglinAiMixin",
     "entity.PlayerMixin",
     "integration.friendsandfoes.FriendsAndFoesPlayerMixin",
     "integration.friendsandfoes.FriendsAndFoesTrinketMixin",
@@ -16,5 +18,5 @@
   ],
   "injectors": {
     "defaultRequire": 1
-	}
+  }
 }

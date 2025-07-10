@@ -1,20 +1,31 @@
 package net.legacy.legacies_and_legends.mixin.entity;
 
+import com.faboslav.friendsandfoes.common.init.FriendsAndFoesItems;
+import com.faboslav.friendsandfoes.common.init.FriendsAndFoesParticleTypes;
+import com.faboslav.friendsandfoes.common.network.packet.TotemEffectPacket;
+import com.faboslav.friendsandfoes.common.tag.FriendsAndFoesTags;
 import dev.emi.trinkets.api.TrinketsApi;
 import net.legacy.legacies_and_legends.entity.impl.LaLPlayerPlatformInterface;
+import net.legacy.legacies_and_legends.integration.friendsandfoes.FriendsAndFoesTotemUtil;
 import net.legacy.legacies_and_legends.item.impl.TotemUtil;
 import net.legacy.legacies_and_legends.registry.LaLBlocks;
 import net.legacy.legacies_and_legends.registry.LaLItems;
+import net.legacy.legacies_and_legends.sound.LaLSounds;
 import net.legacy.legacies_and_legends.tag.LaLItemTags;
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.GlobalPos;
 import net.minecraft.core.component.DataComponentPatch;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.stats.Stats;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Inventory;
@@ -23,6 +34,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.component.CustomModelData;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.portal.TeleportTransition;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -57,19 +69,55 @@ public abstract class PlayerMixin implements LaLPlayerPlatformInterface {
                 player.setHealth(1.0F);
                 LaLItems.TOTEM_OF_TELEPORTATION.getDefaultInstance().get(DataComponents.DEATH_PROTECTION).applyEffects(LaLItems.TOTEM_OF_TELEPORTATION.getDefaultInstance(), player);
                 TotemUtil.playTotemAnimation(LaLItems.TOTEM_OF_TELEPORTATION.getDefaultInstance(), player);
+                player.awardStat(Stats.ITEM_USED.get(LaLItems.TOTEM_OF_TELEPORTATION));
+                CriteriaTriggers.USED_TOTEM.trigger((ServerPlayer) player, LaLItems.TOTEM_OF_TELEPORTATION.getDefaultInstance());
                 player.addTag("used_totem");
             }
-            if (TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.TOTEM_OF_VENGEANCE) && amount >= player.getHealth()) {
+            if (TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.TOTEM_OF_RESURRECTION) && amount >= player.getHealth()) {
                 player.setHealth(1.0F);
-                LaLItems.TOTEM_OF_VENGEANCE.getDefaultInstance().get(DataComponents.DEATH_PROTECTION).applyEffects(LaLItems.TOTEM_OF_VENGEANCE.getDefaultInstance(), player);
-                TotemUtil.playTotemAnimation(LaLItems.TOTEM_OF_VENGEANCE.getDefaultInstance(), player);
+                player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100));
+                TotemUtil.playTotemAnimation(LaLItems.TOTEM_OF_RESURRECTION.getDefaultInstance(), player);
+                player.awardStat(Stats.ITEM_USED.get(LaLItems.TOTEM_OF_RESURRECTION));
+                CriteriaTriggers.USED_TOTEM.trigger((ServerPlayer) player, LaLItems.TOTEM_OF_RESURRECTION.getDefaultInstance());
+                if (player instanceof ServerPlayer serverPlayer) {
+                    player.teleport(serverPlayer.findRespawnPositionAndUseSpawnBlock(false, TeleportTransition.DO_NOTHING));
+                    level.playSound(null, player.blockPosition(), LaLSounds.TABLET_TELEPORT, SoundSource.PLAYERS, 0.6F, 1F);
+                }
                 player.addTag("used_totem");
             }
             if (TrinketsApi.getTrinketComponent(player).get().isEquipped(Items.TOTEM_OF_UNDYING) && amount >= player.getHealth()) {
                 player.setHealth(1.0F);
                 Items.TOTEM_OF_UNDYING.getDefaultInstance().get(DataComponents.DEATH_PROTECTION).applyEffects(Items.TOTEM_OF_UNDYING.getDefaultInstance(), player);
                 TotemUtil.playTotemAnimation(Items.TOTEM_OF_UNDYING.getDefaultInstance(), player);
+                player.awardStat(Stats.ITEM_USED.get(Items.TOTEM_OF_UNDYING));
+                CriteriaTriggers.USED_TOTEM.trigger((ServerPlayer) player, Items.TOTEM_OF_UNDYING.getDefaultInstance());
                 player.addTag("used_totem");
+            }
+        }
+        if ((player.getMainHandItem().is(LaLItems.TOTEM_OF_RESURRECTION) || player.getOffhandItem().is(LaLItems.TOTEM_OF_RESURRECTION)) && amount >= player.getHealth()) {
+            if (player.getMainHandItem().is(LaLItems.TOTEM_OF_RESURRECTION)) {
+                player.setHealth(1.0F);
+                player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100));
+                TotemUtil.playTotemAnimation(LaLItems.TOTEM_OF_RESURRECTION.getDefaultInstance(), player);
+                player.awardStat(Stats.ITEM_USED.get(LaLItems.TOTEM_OF_RESURRECTION));
+                CriteriaTriggers.USED_TOTEM.trigger((ServerPlayer) player, LaLItems.TOTEM_OF_RESURRECTION.getDefaultInstance());
+                if (player instanceof ServerPlayer serverPlayer) {
+                    player.teleport(serverPlayer.findRespawnPositionAndUseSpawnBlock(false, TeleportTransition.DO_NOTHING));
+                    level.playSound(null, player.blockPosition(), LaLSounds.TABLET_TELEPORT, SoundSource.PLAYERS, 0.6F, 1F);
+                }
+                player.getItemBySlot(EquipmentSlot.MAINHAND).copyAndClear();
+            }
+            else if (player.getOffhandItem().is(LaLItems.TOTEM_OF_RESURRECTION)) {
+                player.setHealth(1.0F);
+                player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100));
+                TotemUtil.playTotemAnimation(LaLItems.TOTEM_OF_RESURRECTION.getDefaultInstance(), player);
+                player.awardStat(Stats.ITEM_USED.get(LaLItems.TOTEM_OF_RESURRECTION));
+                CriteriaTriggers.USED_TOTEM.trigger((ServerPlayer) player, LaLItems.TOTEM_OF_RESURRECTION.getDefaultInstance());
+                if (player instanceof ServerPlayer serverPlayer) {
+                    player.teleport(serverPlayer.findRespawnPositionAndUseSpawnBlock(false, TeleportTransition.DO_NOTHING));
+                    level.playSound(null, player.blockPosition(), LaLSounds.TABLET_TELEPORT, SoundSource.PLAYERS, 0.6F, 1F);
+                }
+                player.getItemBySlot(EquipmentSlot.OFFHAND).copyAndClear();
             }
         }
     }
@@ -78,7 +126,7 @@ public abstract class PlayerMixin implements LaLPlayerPlatformInterface {
     private void killedEntityEffects(ServerLevel level, LivingEntity entity, CallbackInfoReturnable<Boolean> cir) {
         Player player = (Player) level.players();
         if (TrinketsApi.getTrinketComponent(player).isPresent()) {
-            if (TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.AMULET_OF_SYNTHESIS))
+            if (TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.RING_OF_SATURATION))
                 player.addEffect(new MobEffectInstance(MobEffects.SATURATION, 4));
         }
     }

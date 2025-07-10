@@ -25,9 +25,9 @@ public class LaLCreativeInventorySorting {
 		addAfterInToolsAndUtilities(LaLEquipmentItems.MOLTEN_PICKAXE, LaLEquipmentItems.CLEAVING_BATTLEAXE);
 		addAfterInToolsAndUtilities(LaLEquipmentItems.CLEAVING_BATTLEAXE, LaLEquipmentItems.WITHERED_HOE);
 
-		addAfterInToolsAndUtilities(Items.FLINT_AND_STEEL, LaLItems.AMULET_OF_ALLURE);
+/*		addAfterInToolsAndUtilities(Items.FLINT_AND_STEEL, LaLItems.AMULET_OF_ALLURE);
 		addAfterInToolsAndUtilities(LaLItems.AMULET_OF_ALLURE, LaLItems.AMULET_OF_EVASION);
-		addAfterInToolsAndUtilities(LaLItems.AMULET_OF_EVASION, LaLItems.AMULET_OF_SYNTHESIS);
+		addAfterInToolsAndUtilities(LaLItems.AMULET_OF_EVASION, LaLItems.AMULET_OF_SYNTHESIS);*/
 
 		addAfterInToolsAndUtilities(Items.PINK_BUNDLE, LaLItems.TABLET_OF_RECALL);
 		addAfterInToolsAndUtilities(LaLItems.TABLET_OF_RECALL, LaLItems.TABLET_OF_HASTE);
@@ -59,8 +59,8 @@ public class LaLCreativeInventorySorting {
 		addAfterInCombat(LaLItems.REINFORCED_CHESTPLATE, LaLItems.TRAVELLING_STRIDES);
 		addAfterInCombat(LaLItems.TRAVELLING_STRIDES, LaLItems.WANDERER_BOOTS);
 
-		addAfterInCombat(Items.TOTEM_OF_UNDYING, LaLItems.TOTEM_OF_VENGEANCE);
-		addAfterInCombat(LaLItems.TOTEM_OF_VENGEANCE, LaLItems.TOTEM_OF_TELEPORTATION);
+		addAfterInCombat(Items.TOTEM_OF_UNDYING, LaLItems.TOTEM_OF_RESURRECTION);
+		addAfterInCombat(LaLItems.TOTEM_OF_RESURRECTION, LaLItems.TOTEM_OF_TELEPORTATION);
 
 	}
 

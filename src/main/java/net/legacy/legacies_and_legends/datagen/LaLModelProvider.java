@@ -60,11 +60,25 @@ public final class LaLModelProvider extends FabricModelProvider {
 		generator.generateFlatItem(LaLEquipmentItems.WITHERED_HOE, ModelTemplates.FLAT_HANDHELD_ITEM);
 
 		generator.generateFlatItem(LaLItems.TOTEM_OF_TELEPORTATION, ModelTemplates.FLAT_ITEM);
-		generator.generateFlatItem(LaLItems.TOTEM_OF_VENGEANCE, ModelTemplates.FLAT_ITEM);
+		generator.generateFlatItem(LaLItems.TOTEM_OF_RESURRECTION, ModelTemplates.FLAT_ITEM);
 
-		generator.generateFlatItem(LaLItems.AMULET_OF_ALLURE, ModelTemplates.FLAT_ITEM);
-		generator.generateFlatItem(LaLItems.AMULET_OF_EVASION, ModelTemplates.FLAT_ITEM);
-		generator.generateFlatItem(LaLItems.AMULET_OF_SYNTHESIS, ModelTemplates.FLAT_ITEM);
+		generator.generateFlatItem(LaLItems.RING_OF_EVASION, ModelTemplates.FLAT_ITEM);
+		generator.generateFlatItem(LaLItems.RING_OF_REACHING, ModelTemplates.FLAT_ITEM);
+		generator.generateFlatItem(LaLItems.RING_OF_STRIKING, ModelTemplates.FLAT_ITEM);
+		generator.generateFlatItem(LaLItems.RING_OF_LEAPING, ModelTemplates.FLAT_ITEM);
+		generator.generateFlatItem(LaLItems.RING_OF_RESTORATION, ModelTemplates.FLAT_ITEM);
+		generator.generateFlatItem(LaLItems.RING_OF_SATURATION, ModelTemplates.FLAT_ITEM);
+
+		generator.generateFlatItem(LaLItems.NECKLACE_OF_PROTECTION, ModelTemplates.FLAT_ITEM);
+		generator.generateFlatItem(LaLItems.NECKLACE_OF_BARTERING, ModelTemplates.FLAT_ITEM);
+		generator.generateFlatItem(LaLItems.NECKLACE_OF_ISOLATION, ModelTemplates.FLAT_ITEM);
+		generator.generateFlatItem(LaLItems.NECKLACE_OF_REGENERATION, ModelTemplates.FLAT_ITEM);
+		generator.generateFlatItem(LaLItems.NECKLACE_OF_FORESIGHT, ModelTemplates.FLAT_ITEM);
+		generator.generateFlatItem(LaLItems.NECKLACE_OF_PURITY, ModelTemplates.FLAT_ITEM);
+
+		generator.generateFlatItem(LaLItems.AMULET_OF_ABSORPTION, ModelTemplates.FLAT_ITEM);
+		generator.generateFlatItem(LaLItems.AMULET_OF_OBSIDIAN, ModelTemplates.FLAT_ITEM);
+		generator.generateFlatItem(LaLItems.AMULET_OF_DEFLECTION, ModelTemplates.FLAT_ITEM);
 
 		generator.generateFlatItem(LaLItems.SAPPHIRE, ModelTemplates.FLAT_ITEM);
 		generator.generateFlatItem(LaLItems.METAL_CHUNK, ModelTemplates.FLAT_ITEM);
