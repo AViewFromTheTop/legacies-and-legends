@@ -1,4 +1,4 @@
-package net.legacy.legacies_and_legends.integration;
+package net.legacy.legacies_and_legends.integration.friendsandfoes;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;

@@ -1,11 +1,9 @@
 package net.legacy.legacies_and_legends.registry;
 
+import dev.emi.trinkets.api.TrinketItem;
 import net.frozenblock.lib.item.api.sherd.SherdRegistry;
 import net.legacy.legacies_and_legends.LaLConstants;
-import net.legacy.legacies_and_legends.item.AccessoryItem;
-import net.legacy.legacies_and_legends.item.BoomerangItem;
-import net.legacy.legacies_and_legends.item.RecallTabletItem;
-import net.legacy.legacies_and_legends.item.WandItem;
+import net.legacy.legacies_and_legends.item.*;
 import net.legacy.legacies_and_legends.sound.LaLJukeboxSongs;
 import net.legacy.legacies_and_legends.tag.LaLItemTags;
 import net.minecraft.core.component.DataComponents;
@@ -312,20 +310,20 @@ public final class LaLItems {
                     .rarity(Rarity.UNCOMMON)
     );
 
-    public static final AccessoryItem AMULET_OF_ALLURE = register("amulet_of_allure",
-            AccessoryItem::new,
+    public static final AllureTrinketItem AMULET_OF_ALLURE = register("amulet_of_allure",
+            AllureTrinketItem::new,
             new Properties()
                     .stacksTo(1)
                     .rarity(Rarity.UNCOMMON)
     );
-    public static final AccessoryItem AMULET_OF_SYNTHESIS = register("amulet_of_synthesis",
-            AccessoryItem::new,
+    public static final TrinketItem AMULET_OF_SYNTHESIS = register("amulet_of_synthesis",
+            TrinketItem::new,
             new Properties()
                     .stacksTo(1)
                     .rarity(Rarity.UNCOMMON)
     );
-    public static final AccessoryItem AMULET_OF_EVASION = register("amulet_of_evasion",
-            AccessoryItem::new,
+    public static final AllureTrinketItem AMULET_OF_EVASION = register("amulet_of_evasion",
+            EvasionTrinketItem::new,
             new Properties()
                     .stacksTo(1)
                     .rarity(Rarity.RARE)

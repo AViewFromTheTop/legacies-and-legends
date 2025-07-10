@@ -1,7 +1,9 @@
 package net.legacy.legacies_and_legends.item;
 
 import com.google.common.collect.Multimap;
-import dev.emi.trinkets.api.*;
+import dev.emi.trinkets.api.SlotReference;
+import dev.emi.trinkets.api.TrinketItem;
+import dev.emi.trinkets.api.TrinketsApi;
 import net.legacy.legacies_and_legends.LaLConstants;
 import net.legacy.legacies_and_legends.registry.LaLItems;
 import net.minecraft.core.Holder;
@@ -18,19 +20,10 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.Nullable;
 
-public class AccessoryItem extends TrinketItem {
+public class EvasionTrinketItem extends TrinketItem {
 
-  public AccessoryItem(Properties settings) {
+  public EvasionTrinketItem(Properties settings) {
     super(settings);
-  }
-  public static final ResourceLocation TEMPT_RANGE_ID = LaLConstants.id("tempt_range");
-
-  public Multimap<Holder<Attribute>, AttributeModifier> getModifiers(ItemStack stack, SlotReference slot, LivingEntity entity, ResourceLocation resourceLocation) {
-    var modifiers = super.getModifiers(stack, slot, entity, resourceLocation);
-    if (stack.getItem() == LaLItems.AMULET_OF_ALLURE) {
-      modifiers.put(Attributes.TEMPT_RANGE, new AttributeModifier(TEMPT_RANGE_ID, 10, AttributeModifier.Operation.ADD_VALUE));
-    }
-    return modifiers;
   }
 
   @Override
@@ -43,5 +36,4 @@ public class AccessoryItem extends TrinketItem {
       }
     }
   }
-
 }
