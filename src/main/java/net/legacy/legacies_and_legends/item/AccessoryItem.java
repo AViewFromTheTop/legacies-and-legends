@@ -3,23 +3,16 @@ package net.legacy.legacies_and_legends.item;
 import dev.emi.trinkets.api.SlotReference;
 import dev.emi.trinkets.api.Trinket;
 import dev.emi.trinkets.api.TrinketItem;
-import net.legacy.legacies_and_legends.LaLConstants;
+import dev.emi.trinkets.api.TrinketsApi;
 import net.minecraft.ChatFormatting;
-import net.minecraft.Util;
 import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.core.component.DataComponentPatch;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.Style;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.TooltipDisplay;
-import net.minecraft.world.item.component.UseCooldown;
 
-import java.util.List;
 import java.util.function.Consumer;
 
 public class AccessoryItem extends TrinketItem implements Trinket {
@@ -37,28 +30,29 @@ public class AccessoryItem extends TrinketItem implements Trinket {
         if (secondTicks >= 20) {
             secondTicks = 0;
             everySecond(stack, slot, entity);
-
         }
 
+        if (entity instanceof Player player && player.getTags().contains("damaged_accessory")) {
+            damageAccessory(stack, slot, player, 1);
+            player.removeTag("damaged_accessory");
+        }
     }
 
     public void everyTick(ItemStack stack, SlotReference slot, LivingEntity entity) {}
 
     public void everySecond(ItemStack stack, SlotReference slot, LivingEntity entity) {}
 
-/*    public static final ResourceLocation TEMPT_RANGE_ID = LaLConstants.id("tempt_range");
-
-    public Multimap<Holder<Attribute>, AttributeModifier> getModifiers(ItemStack stack, SlotReference slot, LivingEntity entity, ResourceLocation resourceLocation) {
-        var modifiers = super.getModifiers(stack, slot, entity, resourceLocation);
-        if (stack.getItem() == LaLItems.AMULET_OF_ALLURE) {
-            modifiers.put(Attributes.TEMPT_RANGE, new AttributeModifier(TEMPT_RANGE_ID, 10, AttributeModifier.Operation.ADD_VALUE));
-        }
-        return modifiers;
-    }*/
-
-    @Override
-    public void appendHoverText(ItemStack itemStack, TooltipContext tooltipContext, TooltipDisplay tooltipDisplay, Consumer<Component> consumer, TooltipFlag tooltipFlag) {
-        super.appendHoverText(itemStack, tooltipContext, tooltipDisplay, consumer, tooltipFlag);
-        if (Screen.hasShiftDown()) consumer.accept(Component.translatable(itemStack.getItemName().getString() + ".desc").withStyle(ChatFormatting.DARK_GRAY));
+    public static void damageAccessory(ItemStack stack, SlotReference slot, Player player, int amount) {
+        if (player.isCreative()) return;
+        ItemStack accessoryItem = getAccessory(stack, slot, player);
+        accessoryItem.setDamageValue(accessoryItem.getDamageValue() + amount);
+        if (accessoryItem.getDamageValue() >= accessoryItem.getMaxDamage())
+            slot.inventory().removeItem(slot.index(), amount);
     }
+
+    public static ItemStack getAccessory(ItemStack stack, SlotReference slot, Player player) {
+        ItemStack accessoryItem = TrinketsApi.getTrinketComponent(player).get().getEquipped(stack.getItem()).get(slot.index()).getB();
+        return accessoryItem;
+    }
+
 }

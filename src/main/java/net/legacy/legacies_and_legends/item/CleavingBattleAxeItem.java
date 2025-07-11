@@ -24,10 +24,4 @@ public class CleavingBattleAxeItem extends AxeItem {
         target.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 100, 0), attacker);
     }
 
-    @Override
-    public void appendHoverText(ItemStack itemStack, Item.TooltipContext tooltipContext, TooltipDisplay tooltipDisplay, Consumer<Component> consumer, TooltipFlag tooltipFlag) {
-        super.appendHoverText(itemStack, tooltipContext, tooltipDisplay, consumer, tooltipFlag);
-        if (Screen.hasShiftDown()) consumer.accept(Component.translatable(itemStack.getItemName().getString() + ".desc").withStyle(ChatFormatting.DARK_GRAY));
-    }
-
 }

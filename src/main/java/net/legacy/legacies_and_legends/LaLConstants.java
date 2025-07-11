@@ -1,10 +1,13 @@
 package net.legacy.legacies_and_legends;
 
+import dev.emi.trinkets.api.TrinketsApi;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.ModContainer;
+import net.legacy.legacies_and_legends.registry.LaLItems;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.player.Player;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,6 +19,17 @@ public class LaLConstants {
 	public static final String MOD_ID = "legacies_and_legends";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 	public static final ModContainer MOD_CONTAINER = FabricLoader.getInstance().getModContainer(MOD_ID).orElseThrow();
+
+	public static boolean isNecklace(Player player) {
+		return (TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.NECKLACE_OF_BARTERING) ||
+				TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.NECKLACE_OF_ISOLATION)||
+				TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.NECKLACE_OF_LEAPING)||
+				TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.NECKLACE_OF_PROTECTION)||
+				TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.NECKLACE_OF_PURITY)||
+				TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.NECKLACE_OF_REGENERATION)
+		);
+	}
+
 	/**
 	 * Used for datafixers.
 	 * <p>

@@ -25,10 +25,4 @@ public class VerdantSwordItem extends Item {
         target.addEffect(new MobEffectInstance(MobEffects.POISON, 100, 0), attacker);
     }
 
-    @Override
-    public void appendHoverText(ItemStack itemStack, Item.TooltipContext tooltipContext, TooltipDisplay tooltipDisplay, Consumer<Component> consumer, TooltipFlag tooltipFlag) {
-        super.appendHoverText(itemStack, tooltipContext, tooltipDisplay, consumer, tooltipFlag);
-        if (Screen.hasShiftDown()) consumer.accept(Component.translatable(itemStack.getItemName().getString() + ".desc").withStyle(ChatFormatting.DARK_GRAY));
-    }
-
 }

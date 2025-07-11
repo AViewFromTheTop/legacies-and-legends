@@ -4,10 +4,7 @@
       "total_exp_required": 0,
       "groups": [
         {
-          "num_to_select": {
-            "min": 0,
-            "max": 1
-          },
+          "num_to_select": 1,
           "trades": [
             {
               "cost_a": {
@@ -26,13 +23,292 @@
                 "functions": [
                   {
                     "function": "minecraft:exploration_map",
-                    "destination": "legacies_and_legends:on_dungeon_maps",
-                    "decoration": "legacies_and_legends:dungeon"
+                    "destination": "legacies_and_legends:on_simple_dungeon_maps",
+                    "decoration": "legacies_and_legends:simple_dungeon"
                   },
                   {
                     "function": "minecraft:set_name",
                     "name": {
-                      "translate": "filled_map.legacies_and_legends.dungeon"
+                      "translate": "filled_map.legacies_and_legends.simple_dungeon"
+                    },
+                    "target": "item_name"
+                  }
+                ]
+              },
+              "trader_experience": 0
+            },
+            {
+              "cost_a": {
+                "type": "minecraft:item",
+                "name": "minecraft:emerald",
+                "functions": [
+                  {
+                    "function": "minecraft:set_count",
+                    "count": 8
+                  }
+                ]
+              },
+              "result": {
+                "type": "minecraft:item",
+                "name": "minecraft:map",
+                "functions": [
+                  {
+                    "function": "minecraft:exploration_map",
+                    "destination": "legacies_and_legends:on_simple_dungeon_maps",
+                    "decoration": "legacies_and_legends:simple_dungeon"
+                  },
+                  {
+                    "function": "minecraft:set_name",
+                    "name": {
+                      "translate": "filled_map.legacies_and_legends.simple_dungeon"
+                    },
+                    "target": "item_name"
+                  }
+                ]
+              },
+              "trader_experience": 0
+            },
+            {
+              "cost_a": {
+                "type": "minecraft:item",
+                "name": "minecraft:emerald",
+                "functions": [
+                  {
+                    "function": "minecraft:set_count",
+                    "count": 8
+                  }
+                ]
+              },
+              "result": {
+                "type": "minecraft:item",
+                "name": "minecraft:map",
+                "functions": [
+                  {
+                    "function": "minecraft:exploration_map",
+                    "destination": "legacies_and_legends:on_simple_dungeon_maps",
+                    "decoration": "legacies_and_legends:simple_dungeon"
+                  },
+                  {
+                    "function": "minecraft:set_name",
+                    "name": {
+                      "translate": "filled_map.legacies_and_legends.simple_dungeon"
+                    },
+                    "target": "item_name"
+                  }
+                ]
+              },
+              "trader_experience": 0
+            },
+            {
+              "cost_a": {
+                "type": "minecraft:item",
+                "name": "minecraft:emerald",
+                "functions": [
+                  {
+                    "function": "minecraft:set_count",
+                    "count": 8
+                  }
+                ]
+              },
+              "result": {
+                "type": "minecraft:item",
+                "name": "minecraft:map",
+                "functions": [
+                  {
+                    "function": "minecraft:exploration_map",
+                    "destination": "legacies_and_legends:on_deep_dungeon_maps",
+                    "decoration": "legacies_and_legends:deep_dungeon"
+                  },
+                  {
+                    "function": "minecraft:set_name",
+                    "name": {
+                      "translate": "filled_map.legacies_and_legends.deep_dungeon"
+                    },
+                    "target": "item_name"
+                  }
+                ]
+              },
+              "trader_experience": 0
+            },
+            {
+              "cost_a": {
+                "type": "minecraft:item",
+                "name": "minecraft:emerald",
+                "functions": [
+                  {
+                    "function": "minecraft:set_count",
+                    "count": 8
+                  }
+                ]
+              },
+              "result": {
+                "type": "minecraft:item",
+                "name": "minecraft:map",
+                "functions": [
+                  {
+                    "function": "minecraft:exploration_map",
+                    "destination": "legacies_and_legends:on_deep_dungeon_maps",
+                    "decoration": "legacies_and_legends:deep_dungeon"
+                  },
+                  {
+                    "function": "minecraft:set_name",
+                    "name": {
+                      "translate": "filled_map.legacies_and_legends.deep_dungeon"
+                    },
+                    "target": "item_name"
+                  }
+                ]
+              },
+              "trader_experience": 0
+            },
+            {
+              "cost_a": {
+                "type": "minecraft:item",
+                "name": "minecraft:emerald",
+                "functions": [
+                  {
+                    "function": "minecraft:set_count",
+                    "count": 8
+                  }
+                ]
+              },
+              "result": {
+                "type": "minecraft:item",
+                "name": "minecraft:map",
+                "functions": [
+                  {
+                    "function": "minecraft:exploration_map",
+                    "destination": "legacies_and_legends:on_deep_dungeon_maps",
+                    "decoration": "legacies_and_legends:deep_dungeon"
+                  },
+                  {
+                    "function": "minecraft:set_name",
+                    "name": {
+                      "translate": "filled_map.legacies_and_legends.deep_dungeon"
+                    },
+                    "target": "item_name"
+                  }
+                ]
+              },
+              "trader_experience": 0
+            },
+            {
+              "cost_a": {
+                "type": "minecraft:item",
+                "name": "minecraft:emerald",
+                "functions": [
+                  {
+                    "function": "minecraft:set_count",
+                    "count": 8
+                  }
+                ]
+              },
+              "result": {
+                "type": "minecraft:item",
+                "name": "minecraft:map",
+                "functions": [
+                  {
+                    "function": "minecraft:exploration_map",
+                    "destination": "legacies_and_legends:on_arid_dungeon_maps",
+                    "decoration": "legacies_and_legends:arid_dungeon"
+                  },
+                  {
+                    "function": "minecraft:set_name",
+                    "name": {
+                      "translate": "filled_map.legacies_and_legends.arid_dungeon"
+                    },
+                    "target": "item_name"
+                  }
+                ]
+              },
+              "trader_experience": 0
+            },
+            {
+              "cost_a": {
+                "type": "minecraft:item",
+                "name": "minecraft:emerald",
+                "functions": [
+                  {
+                    "function": "minecraft:set_count",
+                    "count": 8
+                  }
+                ]
+              },
+              "result": {
+                "type": "minecraft:item",
+                "name": "minecraft:map",
+                "functions": [
+                  {
+                    "function": "minecraft:exploration_map",
+                    "destination": "legacies_and_legends:on_arid_dungeon_maps",
+                    "decoration": "legacies_and_legends:arid_dungeon"
+                  },
+                  {
+                    "function": "minecraft:set_name",
+                    "name": {
+                      "translate": "filled_map.legacies_and_legends.arid_dungeon"
+                    },
+                    "target": "item_name"
+                  }
+                ]
+              },
+              "trader_experience": 0
+            },
+            {
+              "cost_a": {
+                "type": "minecraft:item",
+                "name": "minecraft:emerald",
+                "functions": [
+                  {
+                    "function": "minecraft:set_count",
+                    "count": 8
+                  }
+                ]
+              },
+              "result": {
+                "type": "minecraft:item",
+                "name": "minecraft:map",
+                "functions": [
+                  {
+                    "function": "minecraft:exploration_map",
+                    "destination": "legacies_and_legends:on_frozen_dungeon_maps",
+                    "decoration": "legacies_and_legends:frozen_dungeon"
+                  },
+                  {
+                    "function": "minecraft:set_name",
+                    "name": {
+                      "translate": "filled_map.legacies_and_legends.frozen_dungeon"
+                    },
+                    "target": "item_name"
+                  }
+                ]
+              },
+              "trader_experience": 0
+            },
+            {
+              "cost_a": {
+                "type": "minecraft:item",
+                "name": "minecraft:emerald",
+                "functions": [
+                  {
+                    "function": "minecraft:set_count",
+                    "count": 8
+                  }
+                ]
+              },
+              "result": {
+                "type": "minecraft:item",
+                "name": "minecraft:map",
+                "functions": [
+                  {
+                    "function": "minecraft:exploration_map",
+                    "destination": "legacies_and_legends:on_frozen_dungeon_maps",
+                    "decoration": "legacies_and_legends:frozen_dungeon"
+                  },
+                  {
+                    "function": "minecraft:set_name",
+                    "name": {
+                      "translate": "filled_map.legacies_and_legends.frozen_dungeon"
                     },
                     "target": "item_name"
                   }

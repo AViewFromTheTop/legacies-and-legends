@@ -10,9 +10,49 @@ import net.minecraft.world.level.saveddata.maps.MapDecorationType;
 import org.jetbrains.annotations.NotNull;
 
 public class LaLMapDecorationTypes {
-	public static final Holder<MapDecorationType> DUNGEONS = register(
-			"dungeon",
-			"dungeon",
+	public static final Holder<MapDecorationType> SIMPLE_DUNGEON = register(
+			"simple_dungeon",
+			"simple_dungeon",
+			true,
+			6450790,
+			false,
+			true
+	);
+	public static final Holder<MapDecorationType> ARID_DUNGEON = register(
+			"arid_dungeon",
+			"arid_dungeon",
+			true,
+			6450790,
+			false,
+			true
+	);
+	public static final Holder<MapDecorationType> FROZEN_DUNGEON = register(
+			"frozen_dungeon",
+			"frozen_dungeon",
+			true,
+			6450790,
+			false,
+			true
+	);
+	public static final Holder<MapDecorationType> DEEP_DUNGEON = register(
+			"deep_dungeon",
+			"deep_dungeon",
+			true,
+			6450790,
+			false,
+			true
+	);
+	public static final Holder<MapDecorationType> VERDANT_DUNGEON = register(
+			"verdant_dungeon",
+			"verdant_dungeon",
+			true,
+			6450790,
+			false,
+			true
+	);
+	public static final Holder<MapDecorationType> INFERNAL_DUNGEON = register(
+			"infernal_dungeon",
+			"infernal_dungeon",
 			true,
 			6450790,
 			false,

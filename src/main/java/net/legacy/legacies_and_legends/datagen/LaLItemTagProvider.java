@@ -3,6 +3,7 @@ package net.legacy.legacies_and_legends.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.frozenblock.lib.tag.api.FrozenItemTags;
+import net.legacy.item_tooltips.registry.ITItemTags;
 import net.legacy.legacies_and_legends.registry.LaLEquipmentItems;
 import net.legacy.legacies_and_legends.registry.LaLItems;
 import net.legacy.legacies_and_legends.tag.LaLItemTags;
@@ -47,15 +48,15 @@ public class LaLItemTagProvider extends FabricTagProvider.ItemTagProvider {
         this.getOrCreateTagBuilder(LaLItemTags.RINGS)
                 .add(LaLItems.RING_OF_EVASION)
                 .add(LaLItems.RING_OF_SATURATION)
-                .add(LaLItems.RING_OF_LEAPING)
-                .add(LaLItems.RING_OF_REACHING)
+                .add(LaLItems.RING_OF_EXCAVATION)
+                .add(LaLItems.RING_OF_CONSTRUCTION)
                 .add(LaLItems.RING_OF_RESTORATION)
                 .add(LaLItems.RING_OF_STRIKING);
 
         this.getOrCreateTagBuilder(LaLItemTags.NECKLACES)
                 .add(LaLItems.NECKLACE_OF_ISOLATION)
                 .add(LaLItems.NECKLACE_OF_BARTERING)
-                .add(LaLItems.NECKLACE_OF_FORESIGHT)
+                .add(LaLItems.NECKLACE_OF_LEAPING)
                 .add(LaLItems.NECKLACE_OF_PROTECTION)
                 .add(LaLItems.NECKLACE_OF_PURITY)
                 .add(LaLItems.NECKLACE_OF_REGENERATION);
@@ -71,11 +72,30 @@ public class LaLItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(LaLItems.TOTEM_OF_RESURRECTION)
                 .addOptionalTag(ResourceLocation.fromNamespaceAndPath("friendsandfoes","totems"));
 
+        this.getOrCreateTagBuilder(LaLItemTags.ARTIFACTS)
+                .add(LaLItems.REINFORCED_CHESTPLATE)
+                .add(LaLItems.TRAVELLING_STRIDES)
+                .add(LaLItems.WANDERER_BOOTS)
+                .add(LaLEquipmentItems.VERDANT_SWORD)
+                .add(LaLEquipmentItems.CLEAVING_BATTLEAXE)
+                .add(LaLEquipmentItems.MOLTEN_PICKAXE)
+                .add(LaLEquipmentItems.PROSPECTOR_SHOVEL)
+                .add(LaLEquipmentItems.WITHERED_HOE)
+                .addTag(LaLItemTags.TABLETS)
+                .addTag(LaLItemTags.TOTEMS);
+
         this.getOrCreateTagBuilder(LaLItemTags.ACCESSORIES)
                 .addTag(LaLItemTags.RINGS)
                 .addTag(LaLItemTags.NECKLACES)
                 .addTag(LaLItemTags.AMULETS)
                 .addTag(LaLItemTags.TOTEMS);
+
+        this.getOrCreateTagBuilder(LaLItemTags.HAS_DESCRIPTION)
+                .addTag(LaLItemTags.ARTIFACTS)
+                .addTag(LaLItemTags.ACCESSORIES);
+
+        this.getOrCreateTagBuilder(ITItemTags.HAS_DESCRIPTION)
+                .addTag(LaLItemTags.HAS_DESCRIPTION);
 
         this.getOrCreateTagBuilder(LaLItemTags.HAS_USE_EFFECT)
                 .add(LaLItems.TABLET_OF_CHANNELING)

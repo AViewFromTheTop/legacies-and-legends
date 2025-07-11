@@ -19,10 +19,8 @@ public class PowderSnowBlockMixin {
 
     @Inject(method = "entityInside", at = @At(value = "TAIL"))
     private void frozenInPowderSnow(BlockState state, Level level, BlockPos pos, Entity entity, InsideBlockEffectApplier effectApplier, CallbackInfo info) {
-        if (entity instanceof LivingEntity livingEntity && entity.isInPowderSnow && entity.canFreeze()) {
+        if (entity instanceof LivingEntity livingEntity && livingEntity.canFreeze()) {
             livingEntity.addEffect(new MobEffectInstance(LaLMobEffects.FREEZING));
-        } else if (entity instanceof LivingEntity livingEntity && entity.wasInPowderSnow && !entity.isFreezing()) {
-            livingEntity.removeEffect(LaLMobEffects.FREEZING);
         }
     }
 }

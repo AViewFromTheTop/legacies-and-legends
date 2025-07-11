@@ -1,8 +1,8 @@
-package net.legacy.legacies_and_legends.item;
+package net.legacy.legacies_and_legends.item.accessory;
 
 import dev.emi.trinkets.api.SlotReference;
-import dev.emi.trinkets.api.Trinket;
 import dev.emi.trinkets.api.TrinketsApi;
+import net.legacy.legacies_and_legends.item.AccessoryItem;
 import net.legacy.legacies_and_legends.registry.LaLItems;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -10,14 +10,11 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 
-import java.util.Objects;
 import java.util.Random;
 
-public class EvasionAccessoryItem extends AccessoryItem implements Trinket {
+public class EvasionRingItem extends AccessoryItem {
 
-    public int secondsElapsed = 0;
-
-    public EvasionAccessoryItem(Properties settings) {
+    public EvasionRingItem(Properties settings) {
         super(settings);
     }
 
@@ -31,7 +28,7 @@ public class EvasionAccessoryItem extends AccessoryItem implements Trinket {
 
     @Override
     public void everyTick(ItemStack stack, SlotReference slot, LivingEntity entity) {
-        if (entity instanceof Player player && TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.RING_OF_EVASION)) {
+        if (entity instanceof Player player && TrinketsApi.getTrinketComponent(player).isPresent()) {
             if (player.isShiftKeyDown() && !player.hasEffect(MobEffects.INVISIBILITY)) {
                 player.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, MobEffectInstance.INFINITE_DURATION));
                 player.addTag("infinite_invisibility");
@@ -54,14 +51,11 @@ public class EvasionAccessoryItem extends AccessoryItem implements Trinket {
     @Override
     public void everySecond(ItemStack stack, SlotReference slot, LivingEntity entity) {
         if (entity instanceof Player player) {
-            ItemStack trinketStack = TrinketsApi.getTrinketComponent(player).get().getEquipped(LaLItems.RING_OF_EVASION).get(slot.index()).getB();
             if (player.isShiftKeyDown() && new Random().nextInt(10) >= 9 && (player.getTags().contains("infinite_invisibility") || player.getTags().contains("infinite_speed"))) {
-                if (trinketStack.is(LaLItems.RING_OF_EVASION)) {
-                    trinketStack.setDamageValue(trinketStack.getDamageValue() + 1);
+                if (getAccessory(stack, slot, player).is(LaLItems.RING_OF_EVASION)) {
+                    AccessoryItem.damageAccessory(stack, slot, player, 1);
                 }
             }
-            if (trinketStack.getDamageValue() >= trinketStack.getMaxDamage())
-                slot.inventory().removeItem(slot.index(), 1);
         }
     }
 }

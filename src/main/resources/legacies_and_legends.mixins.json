@@ -5,6 +5,7 @@
   "plugin": "net.legacy.legacies_and_legends.mixin.LegaciesAndLegendsMixinPlugin",
   "mixins": [
     "block.PowderSnowBlockMixin",
+    "client.MultiPlayerGameModeMixin",
     "entity.EnderManMixin",
     "entity.EntityMixin",
     "entity.ItemEntityMixin",
@@ -14,11 +15,13 @@
     "integration.friendsandfoes.FriendsAndFoesTotemItemMixin",
     "integration.friendsandfoes.FriendsAndFoesTrinketMixin",
     "item.AxeItemMixin",
-    "item.ItemMixin",
     "item.ItemStackMixin",
     "item.TrinketMixin"
   ],
   "injectors": {
     "defaultRequire": 1
-  }
+  },
+  "client": [
+    "client.MinecraftMixin"
+  ]
 }

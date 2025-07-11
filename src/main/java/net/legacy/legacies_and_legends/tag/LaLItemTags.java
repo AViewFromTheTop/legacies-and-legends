@@ -33,6 +33,9 @@ public class LaLItemTags {
     public static final TagKey<Item> TOTEMS = bind("totems");
 
     public static final TagKey<Item> ACCESSORIES = bind("accessories");
+    public static final TagKey<Item> ARTIFACTS = bind("artifacts");
+
+    public static final TagKey<Item> HAS_DESCRIPTION = bind("has_description");
 
     public static final TagKey<Item> HAS_USE_EFFECT = bind("has_use_effect");
 

@@ -63,9 +63,9 @@ public final class LaLModelProvider extends FabricModelProvider {
 		generator.generateFlatItem(LaLItems.TOTEM_OF_RESURRECTION, ModelTemplates.FLAT_ITEM);
 
 		generator.generateFlatItem(LaLItems.RING_OF_EVASION, ModelTemplates.FLAT_ITEM);
-		generator.generateFlatItem(LaLItems.RING_OF_REACHING, ModelTemplates.FLAT_ITEM);
+		generator.generateFlatItem(LaLItems.RING_OF_CONSTRUCTION, ModelTemplates.FLAT_ITEM);
 		generator.generateFlatItem(LaLItems.RING_OF_STRIKING, ModelTemplates.FLAT_ITEM);
-		generator.generateFlatItem(LaLItems.RING_OF_LEAPING, ModelTemplates.FLAT_ITEM);
+		generator.generateFlatItem(LaLItems.RING_OF_EXCAVATION, ModelTemplates.FLAT_ITEM);
 		generator.generateFlatItem(LaLItems.RING_OF_RESTORATION, ModelTemplates.FLAT_ITEM);
 		generator.generateFlatItem(LaLItems.RING_OF_SATURATION, ModelTemplates.FLAT_ITEM);
 
@@ -73,7 +73,7 @@ public final class LaLModelProvider extends FabricModelProvider {
 		generator.generateFlatItem(LaLItems.NECKLACE_OF_BARTERING, ModelTemplates.FLAT_ITEM);
 		generator.generateFlatItem(LaLItems.NECKLACE_OF_ISOLATION, ModelTemplates.FLAT_ITEM);
 		generator.generateFlatItem(LaLItems.NECKLACE_OF_REGENERATION, ModelTemplates.FLAT_ITEM);
-		generator.generateFlatItem(LaLItems.NECKLACE_OF_FORESIGHT, ModelTemplates.FLAT_ITEM);
+		generator.generateFlatItem(LaLItems.NECKLACE_OF_LEAPING, ModelTemplates.FLAT_ITEM);
 		generator.generateFlatItem(LaLItems.NECKLACE_OF_PURITY, ModelTemplates.FLAT_ITEM);
 
 		generator.generateFlatItem(LaLItems.AMULET_OF_ABSORPTION, ModelTemplates.FLAT_ITEM);

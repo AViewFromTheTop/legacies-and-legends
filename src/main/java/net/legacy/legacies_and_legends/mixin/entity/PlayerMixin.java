@@ -1,12 +1,8 @@
 package net.legacy.legacies_and_legends.mixin.entity;
 
-import com.faboslav.friendsandfoes.common.init.FriendsAndFoesItems;
-import com.faboslav.friendsandfoes.common.init.FriendsAndFoesParticleTypes;
-import com.faboslav.friendsandfoes.common.network.packet.TotemEffectPacket;
-import com.faboslav.friendsandfoes.common.tag.FriendsAndFoesTags;
 import dev.emi.trinkets.api.TrinketsApi;
+import net.legacy.legacies_and_legends.LaLConstants;
 import net.legacy.legacies_and_legends.entity.impl.LaLPlayerPlatformInterface;
-import net.legacy.legacies_and_legends.integration.friendsandfoes.FriendsAndFoesTotemUtil;
 import net.legacy.legacies_and_legends.item.impl.TotemUtil;
 import net.legacy.legacies_and_legends.registry.LaLBlocks;
 import net.legacy.legacies_and_legends.registry.LaLItems;
@@ -15,13 +11,13 @@ import net.legacy.legacies_and_legends.tag.LaLItemTags;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.GlobalPos;
-import net.minecraft.core.component.DataComponentPatch;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -32,7 +28,6 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.component.CustomModelData;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.portal.TeleportTransition;
 import org.jetbrains.annotations.NotNull;
@@ -44,7 +39,6 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import java.util.List;
 import java.util.Optional;
 
 @Mixin(Player.class)
@@ -59,6 +53,12 @@ public abstract class PlayerMixin implements LaLPlayerPlatformInterface {
     private void cancelTabletUse(ServerLevel level, DamageSource damageSource, float amount, CallbackInfo info) {
         Player player = Player.class.cast(this);
         if (player.getUseItem().is(LaLItemTags.TABLETS)) player.stopUsingItem();
+    }
+
+    @Inject(method = "actuallyHurt", at = @At(value = "HEAD"))
+    private void damageNecklace(ServerLevel level, DamageSource damageSource, float amount, CallbackInfo info) {
+        Player player = Player.class.cast(this);
+        if (TrinketsApi.getTrinketComponent(player).isPresent() && LaLConstants.isNecklace(player) && !damageSource.is(DamageTypeTags.BYPASSES_ARMOR)) player.addTag("damaged_accessory");
     }
 
     @Inject(method = "actuallyHurt", at = @At(value = "TAIL"))
