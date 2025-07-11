@@ -11,8 +11,10 @@
     "entity.PiglinAiMixin",
     "entity.PlayerMixin",
     "integration.friendsandfoes.FriendsAndFoesPlayerMixin",
+    "integration.friendsandfoes.FriendsAndFoesTotemItemMixin",
     "integration.friendsandfoes.FriendsAndFoesTrinketMixin",
     "item.AxeItemMixin",
+    "item.ItemMixin",
     "item.ItemStackMixin",
     "item.TrinketMixin"
   ],

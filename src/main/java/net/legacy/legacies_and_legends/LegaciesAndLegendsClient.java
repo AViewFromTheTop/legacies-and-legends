@@ -3,7 +3,6 @@ package net.legacy.legacies_and_legends;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
@@ -13,9 +12,7 @@ import net.legacy.legacies_and_legends.client.LaLEntityRenderers;
 import net.legacy.legacies_and_legends.client.LaLModelLayers;
 import net.legacy.legacies_and_legends.config.LaLConfig;
 import net.minecraft.network.chat.Component;
-import org.lwjgl.glfw.GLFW;
 
-import javax.swing.text.JTextComponent;
 import java.util.Optional;
 
 @Environment(EnvType.CLIENT)

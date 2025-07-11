@@ -4,13 +4,12 @@ import net.legacy.legacies_and_legends.sound.LaLSounds;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.portal.TeleportTransition;
 import org.jetbrains.annotations.NotNull;
 
-public class RecallTabletItem extends Item {
+public class RecallTabletItem extends ArtifactItem {
 
     public RecallTabletItem(Properties properties) {
         super(properties);

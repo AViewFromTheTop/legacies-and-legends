@@ -217,14 +217,14 @@ public final class LaLItems {
     );
 
     // Artifacts
-    public static final Item TOTEM_OF_RESURRECTION = register("totem_of_resurrection",
-            Item::new,
+    public static final ArtifactItem TOTEM_OF_RESURRECTION = register("totem_of_resurrection",
+            ArtifactItem::new,
             new Properties()
                     .stacksTo(1)
                     .rarity(Rarity.EPIC)
     );
-    public static final Item TOTEM_OF_TELEPORTATION = register("totem_of_teleportation",
-            Item::new,
+    public static final ArtifactItem TOTEM_OF_TELEPORTATION = register("totem_of_teleportation",
+            ArtifactItem::new,
             new Properties()
                     .stacksTo(1)
                     .rarity(Rarity.RARE)
@@ -256,40 +256,40 @@ public final class LaLItems {
                     .useCooldown(300F)
                     .rarity(Rarity.UNCOMMON)
     );
-    public static final Item TABLET_OF_HASTE = register("tablet_of_haste",
-            Item::new,
+    public static final ArtifactItem TABLET_OF_HASTE = register("tablet_of_haste",
+            ArtifactItem::new,
             new Properties()
                     .stacksTo(16)
                     .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_HASTE)
                     .useCooldown(60F)
                     .rarity(Rarity.UNCOMMON)
     );
-    public static final Item TABLET_OF_LEVITATION = register("tablet_of_levitation",
-            Item::new,
+    public static final ArtifactItem TABLET_OF_LEVITATION = register("tablet_of_levitation",
+            ArtifactItem::new,
             new Properties()
                     .stacksTo(16)
                     .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_LEVITATION)
                     .useCooldown(30F)
                     .rarity(Rarity.RARE)
     );
-    public static final Item TABLET_OF_CHANNELING = register("tablet_of_channeling",
-            Item::new,
+    public static final ArtifactItem TABLET_OF_CHANNELING = register("tablet_of_channeling",
+            ArtifactItem::new,
             new Properties()
                     .stacksTo(16)
                     .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_CHANNELING)
                     .useCooldown(300F)
                     .rarity(Rarity.RARE)
     );
-    public static final Item TABLET_OF_DEAFENING = register("tablet_of_deafening",
-            Item::new,
+    public static final ArtifactItem TABLET_OF_DEAFENING = register("tablet_of_deafening",
+            ArtifactItem::new,
             new Properties()
                     .stacksTo(16)
                     .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_DEAFENING)
                     .useCooldown(60F)
                     .rarity(Rarity.RARE)
     );
-    public static final Item TABLET_OF_REVEALING = register("tablet_of_revealing",
-            Item::new,
+    public static final ArtifactItem TABLET_OF_REVEALING = register("tablet_of_revealing",
+            ArtifactItem::new,
             new Properties()
                     .stacksTo(16)
                     .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_REVEALING)
@@ -297,8 +297,8 @@ public final class LaLItems {
                     .rarity(Rarity.UNCOMMON)
     );
 
-    public static final Item REINFORCED_CHESTPLATE = register("reinforced_chestplate",
-            Item::new,
+    public static final ArtifactItem REINFORCED_CHESTPLATE = register("reinforced_chestplate",
+            ArtifactItem::new,
             new Properties()
                     .stacksTo(1)
                     .durability(731)
@@ -308,8 +308,8 @@ public final class LaLItems {
                     .attributes(createReinforcedChestplateAttributes)
                     .rarity(Rarity.RARE)
     );
-    public static final Item TRAVELLING_STRIDES = register("travelling_strides",
-            Item::new,
+    public static final ArtifactItem TRAVELLING_STRIDES = register("travelling_strides",
+            ArtifactItem::new,
             new Properties()
                     .stacksTo(1)
                     .durability(165)
@@ -318,8 +318,8 @@ public final class LaLItems {
                     .enchantable(15)
                     .attributes(createTravellingStridesAttributes)
     );
-    public static final Item WANDERER_BOOTS = register("wanderer_boots",
-            Item::new,
+    public static final ArtifactItem WANDERER_BOOTS = register("wanderer_boots",
+            ArtifactItem::new,
             new Properties()
                     .stacksTo(1)
                     .durability(386)
@@ -328,6 +328,7 @@ public final class LaLItems {
                     .enchantable(12)
                     .attributes(createWandererBootsAttributes)
                     .rarity(Rarity.UNCOMMON)
+                    .useItemDescriptionPrefix()
     );
 
     // Trinkets
