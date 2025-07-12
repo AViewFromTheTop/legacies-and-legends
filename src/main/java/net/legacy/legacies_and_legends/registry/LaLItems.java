@@ -333,7 +333,7 @@ public final class LaLItems {
 
     // Trinkets
 
-    public static final AccessoryItem RING_OF_SATURATION = register("ring_of_saturation",
+    public static final AccessoryItem RING_OF_HUNTING = register("ring_of_hunting",
             AccessoryItem::new,
             new Properties()
                     .stacksTo(1)
@@ -354,8 +354,8 @@ public final class LaLItems {
                     .durability(1024)
                     .rarity(Rarity.UNCOMMON)
     );
-    public static final AccessoryItem RING_OF_STRIKING = register("ring_of_striking",
-            AccessoryItem::new,
+    public static final StrikingRingItem RING_OF_STRIKING = register("ring_of_striking",
+            StrikingRingItem::new,
             new Properties()
                     .stacksTo(1)
                     .durability(152)
@@ -419,22 +419,22 @@ public final class LaLItems {
                     .rarity(Rarity.UNCOMMON)
     );
 
-    public static final AccessoryItem AMULET_OF_OBSIDIAN = register("amulet_of_obsidian",
-            AccessoryItem::new,
+    public static final ObsidianAmuletItem AMULET_OF_OBSIDIAN = register("amulet_of_obsidian",
+            ObsidianAmuletItem::new,
             new Properties()
                     .stacksTo(1)
                     .durability(100)
                     .rarity(Rarity.EPIC)
     );
-    public static final AccessoryItem AMULET_OF_ABSORPTION = register("amulet_of_absorption",
-            AccessoryItem::new,
+    public static final AmuletItem AMULET_OF_ABSORPTION = register("amulet_of_absorption",
+            AmuletItem::new,
             new Properties()
                     .stacksTo(1)
                     .durability(100)
                     .rarity(Rarity.RARE)
     );
-    public static final AccessoryItem AMULET_OF_DEFLECTION = register("amulet_of_deflection",
-            AccessoryItem::new,
+    public static final AmuletItem AMULET_OF_DEFLECTION = register("amulet_of_deflection",
+            AmuletItem::new,
             new Properties()
                     .stacksTo(1)
                     .durability(100)

@@ -67,7 +67,7 @@ public final class LaLModelProvider extends FabricModelProvider {
 		generator.generateFlatItem(LaLItems.RING_OF_STRIKING, ModelTemplates.FLAT_ITEM);
 		generator.generateFlatItem(LaLItems.RING_OF_EXCAVATION, ModelTemplates.FLAT_ITEM);
 		generator.generateFlatItem(LaLItems.RING_OF_RESTORATION, ModelTemplates.FLAT_ITEM);
-		generator.generateFlatItem(LaLItems.RING_OF_SATURATION, ModelTemplates.FLAT_ITEM);
+		generator.generateFlatItem(LaLItems.RING_OF_HUNTING, ModelTemplates.FLAT_ITEM);
 
 		generator.generateFlatItem(LaLItems.NECKLACE_OF_PROTECTION, ModelTemplates.FLAT_ITEM);
 		generator.generateFlatItem(LaLItems.NECKLACE_OF_BARTERING, ModelTemplates.FLAT_ITEM);

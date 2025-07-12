@@ -8,6 +8,7 @@
     "client.MultiPlayerGameModeMixin",
     "entity.EnderManMixin",
     "entity.EntityMixin",
+    "entity.ExperienceOrbMixin",
     "entity.ItemEntityMixin",
     "entity.PiglinAiMixin",
     "entity.PlayerMixin",

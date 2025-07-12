@@ -53,7 +53,7 @@ public class EvasionRingItem extends AccessoryItem {
         if (entity instanceof Player player) {
             if (player.isShiftKeyDown() && new Random().nextInt(10) >= 9 && (player.getTags().contains("infinite_invisibility") || player.getTags().contains("infinite_speed"))) {
                 if (getAccessory(stack, slot, player).is(LaLItems.RING_OF_EVASION)) {
-                    AccessoryItem.damageAccessory(stack, slot, player, 1);
+                    damageAccessory(stack, slot, player, 1);
                 }
             }
         }

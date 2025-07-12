@@ -47,7 +47,7 @@ public class LaLItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         this.getOrCreateTagBuilder(LaLItemTags.RINGS)
                 .add(LaLItems.RING_OF_EVASION)
-                .add(LaLItems.RING_OF_SATURATION)
+                .add(LaLItems.RING_OF_HUNTING)
                 .add(LaLItems.RING_OF_EXCAVATION)
                 .add(LaLItems.RING_OF_CONSTRUCTION)
                 .add(LaLItems.RING_OF_RESTORATION)

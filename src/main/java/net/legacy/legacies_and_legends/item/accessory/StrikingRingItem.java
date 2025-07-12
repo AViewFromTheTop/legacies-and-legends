@@ -12,15 +12,15 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ItemStack;
 
-public class ProtectionNecklaceItem extends AccessoryItem {
+public class StrikingRingItem extends AccessoryItem {
 
-    public ProtectionNecklaceItem(Properties settings) {
+    public StrikingRingItem(Properties settings) {
         super(settings);
     }
 
     public Multimap<Holder<Attribute>, AttributeModifier> getModifiers(ItemStack stack, SlotReference slot, LivingEntity entity, ResourceLocation resourceLocation) {
         var modifiers = super.getModifiers(stack, slot, entity, resourceLocation);
-            modifiers.put(Attributes.ARMOR, new AttributeModifier(LaLConstants.id("armor"), 2, AttributeModifier.Operation.ADD_VALUE));
+            modifiers.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(LaLConstants.id("attack_damage"), 1, AttributeModifier.Operation.ADD_VALUE));
         return modifiers;
     }
 }

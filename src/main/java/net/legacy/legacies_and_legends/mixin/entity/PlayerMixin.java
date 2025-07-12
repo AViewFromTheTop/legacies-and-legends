@@ -3,6 +3,7 @@ package net.legacy.legacies_and_legends.mixin.entity;
 import dev.emi.trinkets.api.TrinketsApi;
 import net.legacy.legacies_and_legends.LaLConstants;
 import net.legacy.legacies_and_legends.entity.impl.LaLPlayerPlatformInterface;
+import net.legacy.legacies_and_legends.item.accessory.ObsidianAmuletItem;
 import net.legacy.legacies_and_legends.item.impl.TotemUtil;
 import net.legacy.legacies_and_legends.registry.LaLBlocks;
 import net.legacy.legacies_and_legends.registry.LaLItems;
@@ -15,12 +16,15 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -46,6 +50,8 @@ public abstract class PlayerMixin implements LaLPlayerPlatformInterface {
 
     @Shadow public abstract Inventory getInventory();
 
+    @Shadow protected abstract void internalSetAbsorptionAmount(float absorptionAmount);
+
     @Unique
     private Optional<GlobalPos> lastPlatformPos = Optional.empty();
 
@@ -55,10 +61,38 @@ public abstract class PlayerMixin implements LaLPlayerPlatformInterface {
         if (player.getUseItem().is(LaLItemTags.TABLETS)) player.stopUsingItem();
     }
 
-    @Inject(method = "actuallyHurt", at = @At(value = "HEAD"))
+    @Inject(method = "actuallyHurt", at = @At(value = "TAIL"))
     private void damageNecklace(ServerLevel level, DamageSource damageSource, float amount, CallbackInfo info) {
         Player player = Player.class.cast(this);
         if (TrinketsApi.getTrinketComponent(player).isPresent() && LaLConstants.isNecklace(player) && !damageSource.is(DamageTypeTags.BYPASSES_ARMOR)) player.addTag("damaged_accessory");
+    }
+
+    @Inject(method = "actuallyHurt", at = @At(value = "HEAD"))
+    private void necklaceOfRegeneration(ServerLevel level, DamageSource damageSource, float amount, CallbackInfo info) {
+        Player player = Player.class.cast(this);
+        if (TrinketsApi.getTrinketComponent(player).isPresent() && TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.NECKLACE_OF_REGENERATION) && !player.hasEffect(MobEffects.REGENERATION)) player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 3));
+    }
+
+    @Inject(method = "attack", at = @At(value = "HEAD"))
+    private void ringOfStriking(Entity target, CallbackInfo ci) {
+        Player player = Player.class.cast(this);
+        if (TrinketsApi.getTrinketComponent(player).isPresent() && TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.RING_OF_STRIKING)) player.addTag("damaged_accessory");
+    }
+
+    @Inject(method = "actuallyHurt", at = @At(value = "HEAD"))
+    private void amuletOfObsidian(ServerLevel level, DamageSource damageSource, float amount, CallbackInfo ci) {
+        Player player = Player.class.cast(this);
+        if (TrinketsApi.getTrinketComponent(player).isPresent() && TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.AMULET_OF_OBSIDIAN) && damageSource.is(DamageTypeTags.IS_FIRE)) this.internalSetAbsorptionAmount(amount);
+    }
+
+    @Inject(method = "killedEntity", at = @At(value = "HEAD"))
+    private void ringOfHunting(ServerLevel level, LivingEntity entity, CallbackInfoReturnable<Boolean> cir) {
+        Player player = Player.class.cast(this);
+        if (TrinketsApi.getTrinketComponent(player).isPresent() && TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.RING_OF_HUNTING)) {
+            player.getFoodData().setFoodLevel(player.getFoodData().getFoodLevel() + 2);
+            level.playSound(player, player.blockPosition(), SoundEvents.PLAYER_BURP, SoundSource.PLAYERS, 1F, 1F);
+            player.addTag("damaged_accessory");
+        }
     }
 
     @Inject(method = "actuallyHurt", at = @At(value = "TAIL"))
@@ -126,7 +160,7 @@ public abstract class PlayerMixin implements LaLPlayerPlatformInterface {
     private void killedEntityEffects(ServerLevel level, LivingEntity entity, CallbackInfoReturnable<Boolean> cir) {
         Player player = (Player) level.players();
         if (TrinketsApi.getTrinketComponent(player).isPresent()) {
-            if (TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.RING_OF_SATURATION))
+            if (TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.RING_OF_HUNTING))
                 player.addEffect(new MobEffectInstance(MobEffects.SATURATION, 4));
         }
     }

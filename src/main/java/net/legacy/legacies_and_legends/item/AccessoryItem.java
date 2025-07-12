@@ -42,17 +42,35 @@ public class AccessoryItem extends TrinketItem implements Trinket {
 
     public void everySecond(ItemStack stack, SlotReference slot, LivingEntity entity) {}
 
-    public static void damageAccessory(ItemStack stack, SlotReference slot, Player player, int amount) {
+    public void damageAccessory(ItemStack stack, SlotReference slot, Player player, int amount) {
         if (player.isCreative()) return;
         ItemStack accessoryItem = getAccessory(stack, slot, player);
         accessoryItem.setDamageValue(accessoryItem.getDamageValue() + amount);
-        if (accessoryItem.getDamageValue() >= accessoryItem.getMaxDamage())
+        if (accessoryItem.getDamageValue() >= accessoryItem.getMaxDamage()) {
+            resetData(player);
             slot.inventory().removeItem(slot.index(), amount);
+        }
     }
+
+    public static void repairAccessory(ItemStack stack, SlotReference slot, Player player, int amount) {
+        ItemStack accessoryItem = getAccessory(stack, slot, player);
+        accessoryItem.setDamageValue(accessoryItem.getDamageValue() - amount);
+        if (accessoryItem.getDamageValue() <= 0) accessoryItem.setDamageValue(0);
+    }
+
+    @Override
+    public void onBreak(ItemStack stack, SlotReference slot, LivingEntity entity) {
+        resetData(entity);
+    }
+
+    @Override
+    public void onUnequip(ItemStack stack, SlotReference slot, LivingEntity entity) {
+        resetData(entity);
+    }
+
+    public void resetData(LivingEntity entity) {}
 
     public static ItemStack getAccessory(ItemStack stack, SlotReference slot, Player player) {
-        ItemStack accessoryItem = TrinketsApi.getTrinketComponent(player).get().getEquipped(stack.getItem()).get(slot.index()).getB();
-        return accessoryItem;
+        return TrinketsApi.getTrinketComponent(player).get().getEquipped(stack.getItem()).get(slot.index()).getB();
     }
-
 }
