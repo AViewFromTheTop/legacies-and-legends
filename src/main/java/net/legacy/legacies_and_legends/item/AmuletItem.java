@@ -13,6 +13,7 @@ import org.jetbrains.annotations.Nullable;
 public class AmuletItem extends AccessoryItem implements Trinket {
 
     public int repairTicks = 0;
+    public int inventoryRepairTicks = 0;
     public int repairTicksFrequency() {
         return 20;
     }
@@ -45,9 +46,9 @@ public class AmuletItem extends AccessoryItem implements Trinket {
     @Override
     public void inventoryTick(ItemStack stack, ServerLevel level, Entity entity, @Nullable EquipmentSlot slot) {
         amuletInventoryTick(stack, level, entity, slot);
-        repairTicks = repairTicks + 1;
-        if (repairTicks >= repairTicksFrequency()) {
-            repairTicks = 0;
+        inventoryRepairTicks = inventoryRepairTicks + 1;
+        if (inventoryRepairTicks >= repairTicksFrequency()) {
+            inventoryRepairTicks = 0;
             stack.setDamageValue(stack.getDamageValue() - 1);
             if (stack.getDamageValue() <= 0) stack.setDamageValue(0);
         }
