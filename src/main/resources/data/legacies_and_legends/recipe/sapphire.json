@@ -5,7 +5,7 @@
     "#"
   ],
   "key": {
-    "S": "legacies_and_legends:sapphire_block"
+    "#": "legacies_and_legends:sapphire_block"
   },
   "result": {
     "id": "legacies_and_legends:sapphire",
