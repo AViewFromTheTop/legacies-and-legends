@@ -3,6 +3,8 @@ package net.legacy.legacies_and_legends.mixin.entity;
 import dev.emi.trinkets.api.TrinketsApi;
 import net.legacy.legacies_and_legends.registry.LaLItems;
 import net.legacy.legacies_and_legends.sound.LaLSounds;
+import net.legacy.legacies_and_legends.tag.LaLEntityTags;
+import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
@@ -27,6 +29,7 @@ public abstract class ProjectileMixin {
 
     @Inject(method = "hitTargetOrDeflectSelf", at = @At(value = "HEAD"), cancellable = true)
     public void amuletOfDeflection(HitResult hitResult, CallbackInfoReturnable<ProjectileDeflection> cir) {
+        Projectile projectile = Projectile.class.cast(this);
         if (hitResult.getType() == HitResult.Type.ENTITY) {
             EntityHitResult entityHitResult = (EntityHitResult) hitResult;
             Entity entity = entityHitResult.getEntity();
@@ -35,9 +38,11 @@ public abstract class ProjectileMixin {
                 if (entity != this.lastDeflectedBy && this.deflect(projectileDeflection, entity, this.getOwner(), false)) {
                     this.lastDeflectedBy = entity;
                 }
-                player.addTag("damaged_amulet_of_deflection");
-                player.addTag("amulet_repair_cooldown");
-                player.playSound(LaLSounds.BOOMERANG_RETURN);
+                if (!projectile.getType().is(LaLEntityTags.DAMAGELESS_PROJECTILES)) {
+                    player.addTag("damaged_amulet_of_deflection");
+                    player.addTag("amulet_repair_cooldown");
+                    player.playSound(LaLSounds.BOOMERANG_RETURN);
+                }
                 cir.setReturnValue(projectileDeflection);
             }
         }

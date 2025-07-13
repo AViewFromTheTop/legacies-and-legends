@@ -165,6 +165,15 @@
       }
     ]
   },
+  "music_disc.113": {
+    "sounds": [
+      {
+        "name": "legacies_and_legends:music/disc/113",
+        "stream": true,
+        "volume": 0.7
+      }
+    ]
+  },
   "music.the_end.main_island": {
     "sounds": [
       {

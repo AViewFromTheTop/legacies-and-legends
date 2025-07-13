@@ -552,6 +552,13 @@ public class LaLLootTables {
 				tableBuilder.withPool(pool);
 			}
 
+			if (LaLLootTables.END_RUINS.equals(id) && LaLConfig.get.loot.new_music_discs) {
+				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+						.add(EmptyLootItem.emptyItem().setWeight(2))
+						.add(LootItem.lootTableItem(LaLItems.MUSIC_DISC_113).setWeight(1));
+				tableBuilder.withPool(pool);
+			}
+
 			if (BuiltInLootTables.IGLOO_CHEST.equals(id) && LaLConfig.get.loot.new_music_discs && !LaLConfig.get.structures.dungeon_overhaul) {
 				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 						.add(EmptyLootItem.emptyItem().setWeight(2))

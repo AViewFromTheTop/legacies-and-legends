@@ -174,6 +174,13 @@ public final class LaLItems {
                     .rarity(Rarity.RARE)
                     .jukeboxPlayable(LaLJukeboxSongs.INFINITE_SPOOKY_AMETHYST)
     );
+    public static final Item MUSIC_DISC_113 = register("music_disc_113",
+            Item::new,
+            new Properties()
+                    .stacksTo(1)
+                    .rarity(Rarity.UNCOMMON)
+                    .jukeboxPlayable(LaLJukeboxSongs.INFINITE_SPOOKY_AMETHYST)
+    );
 
     // Sherds
     public static final Item DUSK_POTTERY_SHERD = registerSherd("dusk_pottery_sherd",

@@ -14,7 +14,8 @@ public class LaLSounds {
 	public static final Holder.Reference<SoundEvent> MUSIC_DISC_SHULKER = registerForHolder("music_disc.shulker");
 	public static final Holder.Reference<SoundEvent> MUSIC_DISC_TUNDRA = registerForHolder("music_disc.tundra");
 	public static final Holder.Reference<SoundEvent> MUSIC_DISC_FAR_LANDS = registerForHolder("music_disc.far_lands");
-	public static final Holder.Reference<SoundEvent> INFINITE_SPOOKY_AMETHYST = registerForHolder("music_disc.infinite_spooky_amethyst");
+	public static final Holder.Reference<SoundEvent> MUSIC_DISC_INFINITE_SPOOKY_AMETHYST = registerForHolder("music_disc.infinite_spooky_amethyst");
+	public static final Holder.Reference<SoundEvent> MUSIC_DISC_113 = registerForHolder("music_disc.113");
 
 	public static final Holder.Reference<SoundEvent> TABLET_USE = registerForHolder("tablet.use");
 	public static final Holder.Reference<SoundEvent> TABLET_BREAK = registerForHolder("tablet.break");

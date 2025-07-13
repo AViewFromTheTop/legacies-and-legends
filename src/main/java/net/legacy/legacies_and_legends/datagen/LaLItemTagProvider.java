@@ -169,6 +169,7 @@ public class LaLItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         this.getOrCreateTagBuilder(FrozenItemTags.ALWAYS_SAVE_COOLDOWNS)
                 .add(Items.SHIELD)
+                .add(LaLItems.BOOMERANG)
                 .add(LaLItems.WAND)
                 .addTag(LaLItemTags.TABLETS);
     }

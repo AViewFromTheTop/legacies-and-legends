@@ -19,6 +19,7 @@ public class LaLJukeboxSongs {
 	public static final ResourceKey<JukeboxSong> TUNDRA = create("tundra");
 	public static final ResourceKey<JukeboxSong> FAR_LANDS = create("far_lands");
 	public static final ResourceKey<JukeboxSong> INFINITE_SPOOKY_AMETHYST = create("infinite_spooky_amethyst");
+	public static final ResourceKey<JukeboxSong> MUSIC_DISC_113 = create("113");
 
 	public static void init() {
 	}
@@ -47,6 +48,7 @@ public class LaLJukeboxSongs {
 		register(context, SHULKER, LaLSounds.MUSIC_DISC_SHULKER, 128, 13);
 		register(context, TUNDRA, LaLSounds.MUSIC_DISC_TUNDRA, 118, 5);
 		register(context, FAR_LANDS, LaLSounds.MUSIC_DISC_FAR_LANDS, 266, 15);
-		register(context, INFINITE_SPOOKY_AMETHYST, LaLSounds.INFINITE_SPOOKY_AMETHYST, 292, 11);
+		register(context, INFINITE_SPOOKY_AMETHYST, LaLSounds.MUSIC_DISC_INFINITE_SPOOKY_AMETHYST, 292, 11);
+		register(context, MUSIC_DISC_113, LaLSounds.MUSIC_DISC_113, 197, 8);
 	}
 }
