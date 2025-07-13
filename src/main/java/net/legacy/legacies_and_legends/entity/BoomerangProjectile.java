@@ -11,17 +11,20 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Relative;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.ProjectileDeflection;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.portal.TeleportTransition;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
@@ -31,6 +34,7 @@ import org.jetbrains.annotations.Nullable;
 public class BoomerangProjectile extends AbstractArrow {
     private static final EntityDataAccessor<Byte> ID_REBOUND = SynchedEntityData.defineId(BoomerangProjectile.class, EntityDataSerializers.BYTE);
     private static final EntityDataAccessor<Byte> ID_FEATHERWEIGHT = SynchedEntityData.defineId(BoomerangProjectile.class, EntityDataSerializers.BYTE);
+    private static final EntityDataAccessor<Byte> ID_SHADOWSTEP = SynchedEntityData.defineId(BoomerangProjectile.class, EntityDataSerializers.BYTE);
     private static final EntityDataAccessor<Boolean> ID_FOIL = SynchedEntityData.defineId(BoomerangProjectile.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Boolean> WOBBLING = SynchedEntityData.defineId(BoomerangProjectile.class, EntityDataSerializers.BOOLEAN);
     private static final float WATER_INERTIA = 0.1F;
@@ -41,6 +45,7 @@ public class BoomerangProjectile extends AbstractArrow {
     private boolean hitEntity;
     public int loopTick = 3;
     public float spinTick = 0F;
+    public boolean hasTeleported = false;
     public float fBoost = 0F;
     public double gravity = 0D;
     public int s = 0;
@@ -58,14 +63,20 @@ public class BoomerangProjectile extends AbstractArrow {
                 : 0;
     }
 
-    public boolean isFoil() {
-        return this.entityData.get(ID_FOIL);
-    }
-
-    private byte getFeatherweightSpeedFromItem(ItemStack stack) {
+    private byte getFeatherweightFromItem(ItemStack stack) {
         return this.level() instanceof ServerLevel serverLevel
                 ? (byte)Mth.clamp(EnchantmentHelper.getFishingTimeReduction(serverLevel, stack, this), 0, 127)
                 : 0;
+    }
+
+    private byte getShadowstepFromItem(ItemStack stack) {
+        return this.level() instanceof ServerLevel serverLevel
+                ? (byte)Mth.clamp(EnchantmentHelper.getTridentSpinAttackStrength(stack, (LivingEntity) this.getOwner()), 0, 127)
+                : 0;
+    }
+
+    public boolean isFoil() {
+        return this.entityData.get(ID_FOIL);
     }
 
     public BoomerangProjectile(EntityType<? extends BoomerangProjectile> entityEntityType, Level level) {
@@ -75,14 +86,16 @@ public class BoomerangProjectile extends AbstractArrow {
     public BoomerangProjectile(Level level, LivingEntity shooter, ItemStack pickupItemStack) {
         super(LaLEntityTypes.BOOMERANG, shooter, level, pickupItemStack, null);
         this.entityData.set(ID_REBOUND, this.getReboundFromItem(pickupItemStack));
-        this.entityData.set(ID_FEATHERWEIGHT, this.getFeatherweightSpeedFromItem(pickupItemStack));
+        this.entityData.set(ID_SHADOWSTEP, this.getShadowstepFromItem(pickupItemStack));
+        this.entityData.set(ID_FEATHERWEIGHT, this.getFeatherweightFromItem(pickupItemStack));
         this.entityData.set(ID_FOIL, pickupItemStack.hasFoil());
     }
 
     public BoomerangProjectile(Level level, double x, double y, double z, ItemStack pickupItemStack) {
         super(LaLEntityTypes.BOOMERANG, x, y, z, level, pickupItemStack, pickupItemStack);
         this.entityData.set(ID_REBOUND, this.getReboundFromItem(pickupItemStack));
-        this.entityData.set(ID_FEATHERWEIGHT, this.getFeatherweightSpeedFromItem(pickupItemStack));
+        this.entityData.set(ID_SHADOWSTEP, this.getShadowstepFromItem(pickupItemStack));
+        this.entityData.set(ID_FEATHERWEIGHT, this.getFeatherweightFromItem(pickupItemStack));
         this.entityData.set(ID_FOIL, pickupItemStack.hasFoil());
     }
 
@@ -120,6 +133,7 @@ public class BoomerangProjectile extends AbstractArrow {
         super.defineSynchedData(builder);
         builder.define(WOBBLING, false);
         builder.define(ID_REBOUND, (byte)0);
+        builder.define(ID_SHADOWSTEP, (byte)0);
         builder.define(ID_FEATHERWEIGHT, (byte)0);
         builder.define(ID_FOIL, false);
     }
@@ -139,7 +153,8 @@ public class BoomerangProjectile extends AbstractArrow {
 
         Entity entity = this.getOwner();
         int rebound = this.entityData.get(ID_REBOUND);
-        if (rebound > 0 && (this.dealtDamage || this.isNoPhysics()) && entity != null && this.hitEntity) {
+        int shadowstep = this.entityData.get(ID_SHADOWSTEP);
+        if (entity instanceof Player player && rebound > 0 && (this.dealtDamage || this.isNoPhysics())) {
             if (!this.isAcceptibleReturnOwner()) {
                 if (this.level() instanceof ServerLevel serverLevel && this.pickup == AbstractArrow.Pickup.ALLOWED) {
                     this.spawnAtLocation(serverLevel, this.getPickupItem(), 0.1F);
@@ -147,10 +162,12 @@ public class BoomerangProjectile extends AbstractArrow {
 
                 this.discard();
             } else {
-                if (!(entity instanceof Player) && this.position().distanceTo(entity.getEyePosition()) < (double)entity.getBbWidth() + 1D) {
+                if (!(this.position().distanceTo(entity.getEyePosition()) < (double)entity.getBbWidth() + 1D)) {
                     this.discard();
                     return;
                 }
+
+                if (!this.hitEntity) player.getCooldowns().addCooldown(this.getPickupItemStackOrigin(), 600);
 
                 this.setNoPhysics(true);
                 Vec3 vec3 = entity.getEyePosition().subtract(this.position());
@@ -163,6 +180,15 @@ public class BoomerangProjectile extends AbstractArrow {
                 this.clientSideReturnBoomerangTickCount++;
             }
         }
+        else if (entity instanceof ServerPlayer player && shadowstep > 0 && (this.dealtDamage || this.isNoPhysics())) {
+            if (!this.hasTeleported) {
+            player.teleport(new TeleportTransition((ServerLevel) this.level(), this.position(), Vec3.ZERO, 0.0F, 0.0F, Relative.union(Relative.ROTATION, Relative.DELTA), TeleportTransition.DO_NOTHING));
+                player.level().playSound(null, player.blockPosition(), LaLSounds.TABLET_TELEPORT, SoundSource.PLAYERS, 0.6F, 1F);
+                this.hasTeleported = true;
+                player.getCooldowns().addCooldown(this.getPickupItemStackOrigin(), 1200);;
+            }
+            this.setNoPhysics(true);
+        }
 
         super.tick();
         Vec3 deltaPos = this.getDeltaPos();
@@ -171,7 +197,7 @@ public class BoomerangProjectile extends AbstractArrow {
 
     private boolean isAcceptibleReturnOwner() {
         Entity entity = this.getOwner();
-        return entity == null || !entity.isAlive() ? false : !(entity instanceof ServerPlayer) || !entity.isSpectator();
+        return entity != null && entity.isAlive() && (!(entity instanceof ServerPlayer) || !entity.isSpectator());
     }
 
     public void setAngles(@NotNull Vec3 deltaPos) {
@@ -301,6 +327,7 @@ public class BoomerangProjectile extends AbstractArrow {
 
     @Override
     public void playerTouch(Player player) {
+        this.hasTeleported = false;
         if (this.ownedBy(player) || this.getOwner() == null) {
             super.playerTouch(player);
         }

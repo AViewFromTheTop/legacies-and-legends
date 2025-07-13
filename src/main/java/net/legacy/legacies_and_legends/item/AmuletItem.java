@@ -2,12 +2,16 @@ package net.legacy.legacies_and_legends.item;
 
 import dev.emi.trinkets.api.SlotReference;
 import dev.emi.trinkets.api.Trinket;
+import dev.emi.trinkets.api.TrinketEnums;
+import dev.emi.trinkets.api.TrinketsApi;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import org.jetbrains.annotations.Nullable;
 
 public class AmuletItem extends AccessoryItem implements Trinket {
@@ -16,6 +20,10 @@ public class AmuletItem extends AccessoryItem implements Trinket {
     public int inventoryRepairTicks = 0;
     public int repairTicksFrequency() {
         return 20;
+    }
+    public int repairCooldownTicks = 0;
+    public int repairCooldownTicksFrequency() {
+        return 100;
     }
 
     public AmuletItem(Properties settings) {
@@ -32,12 +40,20 @@ public class AmuletItem extends AccessoryItem implements Trinket {
         }
 
         if (entity instanceof Player player) {
-            if (player.getTags().contains("should_damage_amulet")) shouldDamageAmulet(stack, slot, entity);
+            if (getAccessory(stack, slot, player).getDamageValue() == 0) player.addTag("repaired_amulet");
+            else player.removeTag("repaired_amulet");
+            if (player.getTags().contains("amulet_repair_cooldown")) {
+                repairCooldownTicks = repairCooldownTicks + 1;
+                if (repairCooldownTicks >= repairCooldownTicksFrequency()) {
+                    repairCooldownTicks = 0;
+                    player.removeTag("amulet_repair_cooldown");
+                }
+            }
             else {
                 repairTicks = repairTicks + 1;
                 if (repairTicks >= repairTicksFrequency()) {
                     repairTicks = 0;
-                    repairAccessory(stack, slot, player, 1);
+                    repairAccessory(stack, 1);
                 }
             }
         }
@@ -46,17 +62,21 @@ public class AmuletItem extends AccessoryItem implements Trinket {
     @Override
     public void inventoryTick(ItemStack stack, ServerLevel level, Entity entity, @Nullable EquipmentSlot slot) {
         amuletInventoryTick(stack, level, entity, slot);
-        inventoryRepairTicks = inventoryRepairTicks + 1;
-        if (inventoryRepairTicks >= repairTicksFrequency()) {
-            inventoryRepairTicks = 0;
-            stack.setDamageValue(stack.getDamageValue() - 1);
-            if (stack.getDamageValue() <= 0) stack.setDamageValue(0);
+        if (entity instanceof Player player && (!TrinketsApi.getTrinketComponent(player).get().isEquipped(getItem()) ||  player.getTags().contains("repaired_amulet"))) {
+            inventoryRepairTicks = inventoryRepairTicks + 1;
+            if (inventoryRepairTicks >= repairTicksFrequency()) {
+                inventoryRepairTicks = 0;
+                stack.setDamageValue(stack.getDamageValue() - 1);
+                if (stack.getDamageValue() <= 0) stack.setDamageValue(0);
+            }
         }
+        else inventoryRepairTicks = 0;
     }
 
     public void amuletInventoryTick(ItemStack stack, ServerLevel level, Entity entity, @Nullable EquipmentSlot slot) {}
 
-    public void shouldDamageAmulet(ItemStack stack, SlotReference slot, LivingEntity entity) {
-        repairTicks = 0;
+    @Override
+    public TrinketEnums.DropRule getDropRule(ItemStack stack, SlotReference slot, LivingEntity entity) {
+        return TrinketEnums.DropRule.DESTROY;
     }
 }

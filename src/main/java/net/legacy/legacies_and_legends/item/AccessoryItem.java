@@ -4,18 +4,18 @@ import dev.emi.trinkets.api.SlotReference;
 import dev.emi.trinkets.api.Trinket;
 import dev.emi.trinkets.api.TrinketItem;
 import dev.emi.trinkets.api.TrinketsApi;
-import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.network.chat.Component;
+import net.legacy.legacies_and_legends.mixin.entity.PlayerMixin;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.component.TooltipDisplay;
-
-import java.util.function.Consumer;
+import net.minecraft.world.item.Items;
 
 public class AccessoryItem extends TrinketItem implements Trinket {
+
+    public Item getItem() {
+        return Items.AIR;
+    }
 
     public int secondTicks = 0;
 
@@ -44,18 +44,17 @@ public class AccessoryItem extends TrinketItem implements Trinket {
 
     public void damageAccessory(ItemStack stack, SlotReference slot, Player player, int amount) {
         if (player.isCreative()) return;
-        ItemStack accessoryItem = getAccessory(stack, slot, player);
-        accessoryItem.setDamageValue(accessoryItem.getDamageValue() + amount);
-        if (accessoryItem.getDamageValue() >= accessoryItem.getMaxDamage()) {
+        stack.setDamageValue(stack.getDamageValue() + amount);
+        if (stack.getDamageValue() >= stack.getMaxDamage()) {
             resetData(player);
             slot.inventory().removeItem(slot.index(), amount);
         }
     }
 
-    public static void repairAccessory(ItemStack stack, SlotReference slot, Player player, int amount) {
-        ItemStack accessoryItem = getAccessory(stack, slot, player);
-        accessoryItem.setDamageValue(accessoryItem.getDamageValue() - amount);
-        if (accessoryItem.getDamageValue() <= 0) accessoryItem.setDamageValue(0);
+    public void repairAccessory(ItemStack stack, int amount) {
+        resetOnRepair();
+        stack.setDamageValue(stack.getDamageValue() - amount);
+        if (stack.getDamageValue() <= 0) stack.setDamageValue(0);
     }
 
     @Override
@@ -69,6 +68,8 @@ public class AccessoryItem extends TrinketItem implements Trinket {
     }
 
     public void resetData(LivingEntity entity) {}
+
+    public void resetOnRepair() {}
 
     public static ItemStack getAccessory(ItemStack stack, SlotReference slot, Player player) {
         return TrinketsApi.getTrinketComponent(player).get().getEquipped(stack.getItem()).get(slot.index()).getB();

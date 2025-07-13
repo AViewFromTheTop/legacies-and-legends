@@ -1,4 +1,4 @@
-package net.legacy.legacies_and_legends.item.impl;
+package net.legacy.legacies_and_legends.item.util;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;

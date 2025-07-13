@@ -3,8 +3,8 @@ package net.legacy.legacies_and_legends.mixin.entity;
 import dev.emi.trinkets.api.TrinketsApi;
 import net.legacy.legacies_and_legends.LaLConstants;
 import net.legacy.legacies_and_legends.entity.impl.LaLPlayerPlatformInterface;
-import net.legacy.legacies_and_legends.item.accessory.ObsidianAmuletItem;
-import net.legacy.legacies_and_legends.item.impl.TotemUtil;
+import net.legacy.legacies_and_legends.entity.impl.LaLPlayerDamageInterface;
+import net.legacy.legacies_and_legends.item.util.TotemUtil;
 import net.legacy.legacies_and_legends.registry.LaLBlocks;
 import net.legacy.legacies_and_legends.registry.LaLItems;
 import net.legacy.legacies_and_legends.sound.LaLSounds;
@@ -16,7 +16,6 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
@@ -46,14 +45,17 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import java.util.Optional;
 
 @Mixin(Player.class)
-public abstract class PlayerMixin implements LaLPlayerPlatformInterface {
+public abstract class PlayerMixin implements LaLPlayerPlatformInterface, LaLPlayerDamageInterface {
 
     @Shadow public abstract Inventory getInventory();
 
-    @Shadow protected abstract void internalSetAbsorptionAmount(float absorptionAmount);
+    @Shadow public abstract boolean isInvulnerableTo(ServerLevel level, DamageSource damageSource);
 
     @Unique
     private Optional<GlobalPos> lastPlatformPos = Optional.empty();
+
+    @Unique
+    private int damageTaken = 0;
 
     @Inject(method = "actuallyHurt", at = @At(value = "TAIL"))
     private void cancelTabletUse(ServerLevel level, DamageSource damageSource, float amount, CallbackInfo info) {
@@ -73,19 +75,34 @@ public abstract class PlayerMixin implements LaLPlayerPlatformInterface {
         if (TrinketsApi.getTrinketComponent(player).isPresent() && TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.NECKLACE_OF_REGENERATION) && !player.hasEffect(MobEffects.REGENERATION)) player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 3));
     }
 
-    @Inject(method = "attack", at = @At(value = "HEAD"))
+    @Inject(method = "attack", at = @At(value = "TAIL"))
     private void ringOfStriking(Entity target, CallbackInfo ci) {
         Player player = Player.class.cast(this);
         if (TrinketsApi.getTrinketComponent(player).isPresent() && TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.RING_OF_STRIKING)) player.addTag("damaged_accessory");
     }
 
-    @Inject(method = "actuallyHurt", at = @At(value = "HEAD"))
-    private void amuletOfObsidian(ServerLevel level, DamageSource damageSource, float amount, CallbackInfo ci) {
+    @Inject(method = "hurtServer", at = @At(value = "HEAD"), cancellable = true)
+    private void amuletOfObsidian(ServerLevel level, DamageSource damageSource, float amount, CallbackInfoReturnable<Boolean> cir) {
         Player player = Player.class.cast(this);
-        if (TrinketsApi.getTrinketComponent(player).isPresent() && TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.AMULET_OF_OBSIDIAN) && damageSource.is(DamageTypeTags.IS_FIRE)) this.internalSetAbsorptionAmount(amount);
+        if (TrinketsApi.getTrinketComponent(player).isPresent() && TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.AMULET_OF_OBSIDIAN) && damageSource.is(DamageTypeTags.IS_FIRE) && !this.isInvulnerableTo(level, damageSource) && !player.hasEffect(MobEffects.FIRE_RESISTANCE) && !player.fireImmune()) {
+            if (player.getRemainingFireTicks() > 1) player.setRemainingFireTicks(1);
+            player.addTag("amulet_repair_cooldown");
+            player.addTag("damaged_amulet_of_obsidian");
+            cir.setReturnValue(false);
+        }
     }
 
-    @Inject(method = "killedEntity", at = @At(value = "HEAD"))
+    @Inject(method = "actuallyHurt", at = @At(value = "HEAD"))
+    private void amuletOfAbsorption(ServerLevel level, DamageSource damageSource, float amount, CallbackInfo ci) {
+        Player player = Player.class.cast(this);
+        if (TrinketsApi.getTrinketComponent(player).isPresent() && TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.AMULET_OF_ABSORPTION)) {
+            this.damageTaken = (int) amount;
+            player.addTag("amulet_repair_cooldown");
+            player.addTag("damaged_amulet_of_absorption");
+        }
+    }
+
+    @Inject(method = "killedEntity", at = @At(value = "TAIL"))
     private void ringOfHunting(ServerLevel level, LivingEntity entity, CallbackInfoReturnable<Boolean> cir) {
         Player player = Player.class.cast(this);
         if (TrinketsApi.getTrinketComponent(player).isPresent() && TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.RING_OF_HUNTING)) {
@@ -156,15 +173,6 @@ public abstract class PlayerMixin implements LaLPlayerPlatformInterface {
         }
     }
 
-    @Inject(method = "killedEntity", at = @At(value = "TAIL"))
-    private void killedEntityEffects(ServerLevel level, LivingEntity entity, CallbackInfoReturnable<Boolean> cir) {
-        Player player = (Player) level.players();
-        if (TrinketsApi.getTrinketComponent(player).isPresent()) {
-            if (TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.RING_OF_HUNTING))
-                player.addEffect(new MobEffectInstance(MobEffects.SATURATION, 4));
-        }
-    }
-
     @Inject(method = "die", at = @At("HEAD"))
     public void destroyPlatformOnDeath(DamageSource damageSource, CallbackInfo info) {
         if (this.lastPlatformPos.isEmpty()) return;
@@ -206,6 +214,11 @@ public abstract class PlayerMixin implements LaLPlayerPlatformInterface {
     @Override
     public Optional<GlobalPos> lal$getLastPlatformPos() {
         return this.lastPlatformPos;
+    }
+
+    @Override
+    public int lal$getDamageTaken() {
+        return this.damageTaken;
     }
 
     @Inject(method = "readAdditionalSaveData", at = @At("TAIL"))

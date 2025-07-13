@@ -735,10 +735,35 @@ public class LaLLootTables {
 						.add(LootItem.lootTableItem(Items.ENCHANTED_BOOK).setWeight(1)).apply((new SetEnchantmentsFunction.Builder()).withEnchantment(registries.lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(LaLEnchantments.DECAY), UniformGenerator.between(1.0F, 1.0F)));
 				tableBuilder.withPool(pool);
 			}
-			if (LaLLootTables.DUNGEON_CHEST_DEEP.equals(id) && LaLConfig.get.enchantments.decay && !LegaciesAndLegends.isVariantsAndVenturesLoaded) {
+			if (LaLLootTables.DUNGEON_CHEST_SIMPLE.equals(id) && LaLConfig.get.enchantments.decay && !LegaciesAndLegends.isVariantsAndVenturesLoaded) {
+				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+						.add(EmptyLootItem.emptyItem().setWeight(11))
+						.add(LootItem.lootTableItem(Items.ENCHANTED_BOOK).setWeight(1)).apply((new SetEnchantmentsFunction.Builder()).withEnchantment(registries.lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(LaLEnchantments.DECAY), UniformGenerator.between(1.0F, 1.0F)));
+				tableBuilder.withPool(pool);
+			}
+			if (LaLLootTables.DUNGEON_LIBRARY_SIMPLE.equals(id) && LaLConfig.get.enchantments.decay && !LegaciesAndLegends.isVariantsAndVenturesLoaded) {
 				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 						.add(EmptyLootItem.emptyItem().setWeight(5))
 						.add(LootItem.lootTableItem(Items.ENCHANTED_BOOK).setWeight(1)).apply((new SetEnchantmentsFunction.Builder()).withEnchantment(registries.lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(LaLEnchantments.DECAY), UniformGenerator.between(1.0F, 1.0F)));
+				tableBuilder.withPool(pool);
+			}
+
+			if (BuiltInLootTables.SIMPLE_DUNGEON.equals(id) && LaLConfig.get.enchantments.shadowstep) {
+				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+						.add(EmptyLootItem.emptyItem().setWeight(11))
+						.add(LootItem.lootTableItem(Items.ENCHANTED_BOOK).setWeight(1)).apply((new SetEnchantmentsFunction.Builder()).withEnchantment(registries.lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(LaLEnchantments.REJUVENATE), UniformGenerator.between(1.0F, 1.0F)));
+				tableBuilder.withPool(pool);
+			}
+			if (LaLLootTables.DUNGEON_CHEST_DEEP.equals(id) && LaLConfig.get.enchantments.shadowstep) {
+				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+						.add(EmptyLootItem.emptyItem().setWeight(11))
+						.add(LootItem.lootTableItem(Items.ENCHANTED_BOOK).setWeight(1)).apply((new SetEnchantmentsFunction.Builder()).withEnchantment(registries.lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(LaLEnchantments.SHADOWSTEP), UniformGenerator.between(1.0F, 1.0F)));
+				tableBuilder.withPool(pool);
+			}
+			if (LaLLootTables.DUNGEON_LIBRARY_DEEP.equals(id) && LaLConfig.get.enchantments.shadowstep) {
+				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+						.add(EmptyLootItem.emptyItem().setWeight(5))
+						.add(LootItem.lootTableItem(Items.ENCHANTED_BOOK).setWeight(1)).apply((new SetEnchantmentsFunction.Builder()).withEnchantment(registries.lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(LaLEnchantments.SHADOWSTEP), UniformGenerator.between(1.0F, 1.0F)));
 				tableBuilder.withPool(pool);
 			}
 
@@ -819,7 +844,6 @@ public class LaLLootTables {
 						)
 				);
 			}
-
 		});
 	}
 

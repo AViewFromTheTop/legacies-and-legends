@@ -426,15 +426,15 @@ public final class LaLItems {
                     .durability(100)
                     .rarity(Rarity.EPIC)
     );
-    public static final AmuletItem AMULET_OF_ABSORPTION = register("amulet_of_absorption",
-            AmuletItem::new,
+    public static final AbsorptionAmuletItem AMULET_OF_ABSORPTION = register("amulet_of_absorption",
+            AbsorptionAmuletItem::new,
             new Properties()
                     .stacksTo(1)
                     .durability(100)
                     .rarity(Rarity.RARE)
     );
-    public static final AmuletItem AMULET_OF_DEFLECTION = register("amulet_of_deflection",
-            AmuletItem::new,
+    public static final DeflectionAmuletItem AMULET_OF_DEFLECTION = register("amulet_of_deflection",
+            DeflectionAmuletItem::new,
             new Properties()
                     .stacksTo(1)
                     .durability(100)

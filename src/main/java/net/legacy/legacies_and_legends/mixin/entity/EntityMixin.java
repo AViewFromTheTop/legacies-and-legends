@@ -1,16 +1,22 @@
 package net.legacy.legacies_and_legends.mixin.entity;
 
 import com.llamalad7.mixinextras.sugar.Local;
+import dev.emi.trinkets.api.TrinketsApi;
 import net.legacy.legacies_and_legends.entity.impl.LaLPlayerPlatformInterface;
 import net.legacy.legacies_and_legends.registry.LaLBlocks;
+import net.legacy.legacies_and_legends.registry.LaLItems;
 import net.minecraft.core.GlobalPos;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.EntityTypeTags;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.entity.projectile.ProjectileDeflection;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.portal.TeleportTransition;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -20,8 +26,6 @@ import java.util.Optional;
 
 @Mixin(Entity.class)
 public abstract class EntityMixin {
-
-	@Shadow public abstract boolean addTag(String tag);
 
 	@Inject(
 			method = "teleport",

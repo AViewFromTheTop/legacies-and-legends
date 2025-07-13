@@ -113,6 +113,16 @@
         "volume": 0.4
       },
       {
+        "name": "music/game/below_and_above",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
+        "name": "music/game/broken_clocks",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
         "name": "music/game/clark",
         "stream": true
       },
@@ -131,6 +141,11 @@
       },
       {
         "name": "music/game/featherfall",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
+        "name": "music/game/fireflies",
         "stream": true,
         "volume": 0.4
       },
@@ -158,6 +173,11 @@
         "volume": 0.4
       },
       {
+        "name": "music/game/lilypad",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
         "name": "music/game/living_mice",
         "stream": true
       },
@@ -171,6 +191,11 @@
       },
       {
         "name": "music/game/one_more_day",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
+        "name": "music/game/os_piano",
         "stream": true,
         "volume": 0.4
       },
@@ -213,78 +238,56 @@
       {
         "name": "legacy:music/creative/stolen_grid",
         "stream": true,
-        "volume": 0.7,
-        "weight": 2
-      },
-      {
-        "name": "music/game/deeper",
-        "stream": true,
-        "volume": 0.4
-      },
-      {
-        "name": "music/game/eld_unknown",
-        "stream": true,
-        "volume": 0.4
-      },
-      {
-        "name": "music/game/endless",
-        "stream": true,
-        "volume": 0.4
-      },
-      {
-        "name": "music/game/featherfall",
-        "stream": true,
-        "volume": 0.4
-      },
-      {
-        "name": "music/game/komorebi",
-        "stream": true,
-        "volume": 0.8
-      },
-      {
-        "name": "music/game/pokopoko",
-        "stream": true,
-        "volume": 0.8
-      },
-      {
-        "name": "music/game/puzzlebox",
-        "stream": true,
-        "volume": 0.4
-      },
-      {
-        "name": "music/game/watcher",
-        "stream": true,
-        "volume": 0.4
-      },
-      {
-        "name": "music/game/yakusoku",
-        "stream": true,
-        "volume": 0.8
-      },
-      {
-        "name": "music/menu/beginning_2",
-        "stream": true,
-        "weight": 4
-      },
-      {
-        "name": "music/menu/floating_trees",
-        "stream": true,
-        "weight": 4
-      },
-      {
-        "name": "music/menu/moog_city_2",
-        "stream": true,
-        "weight": 4
-      },
-      {
-        "name": "music/menu/mutation",
-        "stream": true,
-        "weight": 4
+        "volume": 0.7
       },
       {
         "name": "music/game/infinite_amethyst",
         "stream": true,
-        "volume": 0.4,
+        "volume": 0.4
+      },
+      {
+        "name": "music/game/below_and_above",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
+        "name": "music/game/broken_clocks",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
+        "name": "music/game/fireflies",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
+        "name": "music/game/lilypad",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
+        "name": "music/game/os_piano",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
+        "name": "music/menu/beginning_2",
+        "stream": true,
+        "weight": 2
+      },
+      {
+        "name": "music/menu/floating_trees",
+        "stream": true,
+        "weight": 2
+      },
+      {
+        "name": "music/menu/moog_city_2",
+        "stream": true,
+        "weight": 2
+      },
+      {
+        "name": "music/menu/mutation",
+        "stream": true,
         "weight": 2
       }
     ]
@@ -533,15 +536,14 @@
       {
         "name": "music/game/bromeliad",
         "stream": true,
-        "volume": 0.4,
-        "weight": 1
+        "volume": 0.4
       },
       {
-        "name": "music/game/subwoofer_lullaby",
+        "name": "music/game/danny",
         "stream": true
       },
       {
-        "name": "music/game/living_mice",
+        "name": "music/game/dry_hands",
         "stream": true
       },
       {
@@ -549,7 +551,7 @@
         "stream": true
       },
       {
-        "name": "music/game/danny",
+        "name": "music/game/key",
         "stream": true
       },
       {
@@ -558,7 +560,11 @@
         "volume": 0.4
       },
       {
-        "name": "music/game/key",
+        "name": "music/game/living_mice",
+        "stream": true
+      },
+      {
+        "name": "music/game/mice_on_venus",
         "stream": true
       },
       {
@@ -566,15 +572,11 @@
         "stream": true
       },
       {
-        "name": "music/game/dry_hands",
+        "name": "music/game/subwoofer_lullaby",
         "stream": true
       },
       {
         "name": "music/game/wet_hands",
-        "stream": true
-      },
-      {
-        "name": "music/game/mice_on_venus",
         "stream": true
       }
     ]
@@ -587,33 +589,42 @@
         "stream": true
       },
       {
-        "name": "music/game/bromeliad",
+        "name": "music/game/below_and_above",
         "stream": true,
         "volume": 0.4,
-        "weight": 1
+        "weight": 2
       },
       {
-        "name": "music/game/minecraft",
-        "stream": true
+        "name": "music/game/bromeliad",
+        "stream": true,
+        "volume": 0.4
       },
       {
         "name": "music/game/clark",
         "stream": true
       },
       {
-        "name": "music/game/sweden",
-        "stream": true
-      },
-      {
         "name": "music/game/echo_in_the_wind",
         "stream": true,
-        "volume": 0.4,
-        "weight": 1
+        "volume": 0.4
+      },
+      {
+        "name": "music/game/featherfall",
+        "stream": true,
+        "volume": 0.4
       },
       {
         "name": "music/game/left_to_bloom",
         "stream": true,
         "volume": 0.4
+      },
+      {
+        "name": "music/game/minecraft",
+        "stream": true
+      },
+      {
+        "name": "music/game/sweden",
+        "stream": true
       }
     ]
   },
@@ -647,12 +658,17 @@
       {
         "name": "music/game/crescent_dunes",
         "stream": true,
-        "volume": 0.4,
-        "weight": 2
+        "volume": 0.4
       },
       {
         "name": "music/game/danny",
         "stream": true
+      },
+      {
+        "name": "music/game/fireflies",
+        "stream": true,
+        "volume": 0.4,
+        "weight": 2
       },
       {
         "name": "music/game/haggstrom",
@@ -700,14 +716,12 @@
       {
         "name": "music/game/eld_unknown",
         "stream": true,
-        "volume": 0.4,
-        "weight": 1
+        "volume": 0.4
       },
       {
         "name": "music/game/endless",
         "stream": true,
-        "volume": 0.4,
-        "weight": 1
+        "volume": 0.4
       },
       {
         "name": "music/game/infinite_amethyst",
@@ -725,8 +739,7 @@
       {
         "name": "music/game/pokopoko",
         "stream": true,
-        "volume": 0.8,
-        "weight": 1
+        "volume": 0.8
       },
       {
         "name": "music/game/subwoofer_lullaby",
@@ -817,6 +830,12 @@
         "name": "legacy:music/overworld/ravine",
         "stream": true,
         "volume": 0.5
+      },
+      {
+        "name": "music/game/broken_clocks",
+        "stream": true,
+        "volume": 0.4,
+        "weight": 2
       },
       {
         "name": "music/game/bromeliad",
@@ -921,6 +940,11 @@
         "weight": 2
       },
       {
+        "name": "music/game/one_more_day",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
         "name": "music/game/danny",
         "stream": true
       },
@@ -931,6 +955,11 @@
       {
         "name": "music/game/haggstrom",
         "stream": true
+      },
+      {
+        "name": "music/game/lilypad",
+        "stream": true,
+        "volume": 0.4
       },
       {
         "name": "music/game/living_mice",
@@ -953,11 +982,6 @@
       {
         "name": "music/game/wet_hands",
         "stream": true
-      },
-      {
-        "name": "music/game/one_more_day",
-        "stream": true,
-        "volume": 0.4
       }
     ]
   },
@@ -999,6 +1023,12 @@
         "stream": true
       },
       {
+        "name": "music/game/lilypad",
+        "stream": true,
+        "volume": 0.4,
+        "weight": 2
+      },
+      {
         "name": "music/game/mice_on_venus",
         "stream": true
       },
@@ -1031,12 +1061,12 @@
     "sounds": [
       {
         "name": "legacy:music/overworld/814",
-        "stream": true
+        "stream": true,
+        "weight" : 2
       },
       {
         "name": "legacy:music/overworld/fall",
-        "stream": true,
-        "weight" : 2
+        "stream": true
       },
       {
         "name": "legacy:music/overworld/kall",
@@ -1117,8 +1147,7 @@
       {
         "name": "music/game/bromeliad",
         "stream": true,
-        "volume": 0.4,
-        "weight": 1
+        "volume": 0.4
       },
       {
         "name": "music/game/danny",
@@ -1160,80 +1189,6 @@
       {
         "name": "music/game/wet_hands",
         "stream": true
-      }
-    ]
-  },
-  "music.overworld.lush_caves": {
-    "replace": true,
-    "sounds": [
-      {
-        "name": "music/game/an_ordinary_day",
-        "stream": true,
-        "weight": 2
-      },
-      {
-        "name": "music/game/clark",
-        "stream": true,
-        "weight": 2
-      },
-      {
-        "name": "music/game/echo_in_the_wind",
-        "stream": true,
-        "volume": 0.4,
-        "weight": 2
-      },
-      {
-        "name": "music/game/featherfall",
-        "stream": true,
-        "volume": 0.4,
-        "weight": 2
-      },
-      {
-        "name": "music/game/floating_dream",
-        "stream": true,
-        "weight": 2
-      },
-      {
-        "name": "music/game/left_to_bloom",
-        "stream": true,
-        "volume": 0.4,
-        "weight": 4
-      },
-      {
-        "name": "music/game/mice_on_venus",
-        "stream": true,
-        "weight": 2
-      },
-      {
-        "name": "music/game/minecraft",
-        "stream": true,
-        "weight": 2
-      },
-      {
-        "name": "music/game/one_more_day",
-        "stream": true,
-        "volume": 0.4,
-        "weight": 2
-      },
-      {
-        "name": "music/game/swamp/aerie",
-        "stream": true,
-        "volume": 0.4
-      },
-      {
-        "name": "music/game/swamp/firebugs",
-        "stream": true,
-        "volume": 0.4
-      },
-      {
-        "name": "music/game/swamp/labyrinthine",
-        "stream": true,
-        "volume": 0.4
-      },
-      {
-        "name": "music/game/sweden",
-        "stream": true,
-        "weight": 2
       }
     ]
   },
@@ -1284,11 +1239,6 @@
         "name": "legacy:music/overworld/mosaic",
         "stream": true,
         "weight": 9
-      },
-      {
-        "name": "legacy:music/overworld/cliff_hanger",
-        "stream": true,
-        "weight": 3
       },
       {
         "name": "music/game/clark",
@@ -1456,8 +1406,7 @@
       {
         "name": "music/game/bromeliad",
         "stream": true,
-        "volume": 0.4,
-        "weight": 1
+        "volume": 0.4
       },
       {
         "name": "music/game/danny",

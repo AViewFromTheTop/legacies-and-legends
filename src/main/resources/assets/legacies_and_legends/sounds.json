@@ -303,7 +303,13 @@
       },
       {
         "name": "legacy:music/overworld/fall",
-        "stream": true
+        "stream": true,
+        "weight" : 2
+      },
+      {
+        "name": "music/game/lilypad",
+        "stream": true,
+        "volume": 0.4
       },
       {
         "name": "music/game/stand_tall",
@@ -409,6 +415,12 @@
     {
       "name": "legacy:music/overworld/alpha",
       "stream": true
+    },
+    {
+      "name": "music/game/fireflies",
+      "stream": true,
+      "volume": 0.4,
+      "weight": 2
     },
     {
       "name": "music/game/echo_in_the_wind",

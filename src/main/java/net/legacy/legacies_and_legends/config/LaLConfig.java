@@ -199,6 +199,8 @@ public class LaLConfig implements ConfigData {
 		@ConfigEntry.Category("config")
 		public boolean featherweight = true;
 		@ConfigEntry.Category("config")
+		public boolean shadowstep = true;
+		@ConfigEntry.Category("config")
 		public boolean rejuvenate = true;
 		@ConfigEntry.Category("config")
 		public boolean decay = true;
@@ -249,5 +251,4 @@ public class LaLConfig implements ConfigData {
 		@ConfigEntry.Category("config")
 		public boolean enderscape = true;
 	}
-
 }

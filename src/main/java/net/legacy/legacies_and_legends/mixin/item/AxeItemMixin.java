@@ -6,6 +6,7 @@ import net.legacy.legacies_and_legends.registry.LaLToolMaterial;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ShieldItem;
 import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.component.Weapon;
 import org.spongepowered.asm.mixin.Mixin;
@@ -28,5 +29,4 @@ public class AxeItemMixin {
         if (material == LaLToolMaterial.CLEAVING) original = original.component(DataComponents.WEAPON, new Weapon(2, 10F));
         return original;
     }
-
 }

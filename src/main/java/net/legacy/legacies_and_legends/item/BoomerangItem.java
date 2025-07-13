@@ -9,6 +9,8 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -21,6 +23,7 @@ import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.component.Tool;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -54,6 +57,14 @@ public class BoomerangItem extends Item implements ProjectileItem {
     public int getUseDuration(ItemStack stack, LivingEntity entity) {
         return 72000;
     }
+
+/*    @Override
+    public void inventoryTick(ItemStack stack, ServerLevel level, Entity entity, @Nullable EquipmentSlot slot) {
+        if (entity instanceof Player player && player.getTags().contains("boomerang_cooldown")) {
+            player.getCooldowns().addCooldown(stack, 20);
+            player.removeTag("boomerang_cooldown");
+        }
+    }*/
 
     @Override
     public boolean releaseUsing(ItemStack stack, Level level, LivingEntity entity, int timeLeft) {
