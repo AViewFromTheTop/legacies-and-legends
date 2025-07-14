@@ -34,7 +34,8 @@ public class LaLCreativeInventorySorting {
 		addAfterInToolsAndUtilities(LaLItems.TABLET_OF_HASTE, LaLItems.TABLET_OF_REVEALING);
 		addAfterInToolsAndUtilities(LaLItems.TABLET_OF_REVEALING, LaLItems.TABLET_OF_CHANNELING);
 		addAfterInToolsAndUtilities(LaLItems.TABLET_OF_CHANNELING, LaLItems.TABLET_OF_DEAFENING);
-		addAfterInToolsAndUtilities(LaLItems.TABLET_OF_DEAFENING, LaLItems.TABLET_OF_LEVITATION);
+		addAfterInToolsAndUtilities(LaLItems.TABLET_OF_DEAFENING, LaLItems.TABLET_OF_INSTABILITY);
+		addAfterInToolsAndUtilities(LaLItems.TABLET_OF_INSTABILITY, LaLItems.TABLET_OF_WARPING);
 
 		addBeforeInIngredients(Items.HEART_OF_THE_SEA, LaLItems.TRIDENT_SHARD);
 		addAfterInIngredients(Items.HEART_OF_THE_SEA, LaLItems.METAL_CHUNK);

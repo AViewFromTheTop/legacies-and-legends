@@ -29,7 +29,7 @@ public class LaLConfig implements ConfigData {
 	}
 
 	@CollapsibleObject
-	public final StructuresConfig structures = new StructuresConfig();
+	public final StructureConfig structures = new StructureConfig();
 
 	@CollapsibleObject
 	public final WorldgenConfig worldgen = new WorldgenConfig();
@@ -38,13 +38,13 @@ public class LaLConfig implements ConfigData {
 	public LootConfig loot = new LootConfig();
 
 	@CollapsibleObject
-	public ArtifactsConfig artifacts = new ArtifactsConfig();
+	public ArtifactConfig artifacts = new ArtifactConfig();
 
 	@CollapsibleObject
-	public TrinketsConfig trinkets = new TrinketsConfig();
+	public AccessoryConfig accessories = new AccessoryConfig();
 
 	@CollapsibleObject
-	public EnchantmentsConfig enchantments = new EnchantmentsConfig();
+	public EnchantmentConfig enchantments = new EnchantmentConfig();
 
 	@CollapsibleObject
 	public MusicConfig music = new MusicConfig();
@@ -53,9 +53,9 @@ public class LaLConfig implements ConfigData {
 	public MiscConfig misc = new MiscConfig();
 
 	@CollapsibleObject
-	public IntegrationsConfig integrations = new IntegrationsConfig();
+	public IntegrationConfig integrations = new IntegrationConfig();
 
-	public static class StructuresConfig {
+	public static class StructureConfig {
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
 		public boolean dungeon_overhaul = true;
@@ -112,7 +112,7 @@ public class LaLConfig implements ConfigData {
 		public boolean improved_loot = true;
 	}
 
-	public static class ArtifactsConfig {
+	public static class ArtifactConfig {
 		@ConfigEntry.Category("config")
 		public boolean reinforced_chestplate = true;
 		@ConfigEntry.Category("config")
@@ -150,13 +150,7 @@ public class LaLConfig implements ConfigData {
 		public boolean totem_of_teleportation = true;
 	}
 
-	public static class TrinketsConfig {
-		@ConfigEntry.Category("config")
-		@ConfigEntry.Gui.Tooltip
-		public boolean accessory_slot = true;
-		@ConfigEntry.Category("config")
-		@ConfigEntry.Gui.Tooltip
-		public boolean trinket_of_undying = true;
+	public static class AccessoryConfig {
 		@ConfigEntry.Category("config")
 		public boolean ring_of_evasion = true;
 		@ConfigEntry.Category("config")
@@ -189,7 +183,7 @@ public class LaLConfig implements ConfigData {
 		public boolean amulet_of_deflection = true;
 	}
 
-	public static class EnchantmentsConfig {
+	public static class EnchantmentConfig {
 		@ConfigEntry.Category("config")
 		public boolean tangled = true;
 		@ConfigEntry.Category("config")
@@ -232,6 +226,12 @@ public class LaLConfig implements ConfigData {
 	public static class MiscConfig {
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
+		public boolean accessory_slot = true;
+		@ConfigEntry.Category("config")
+		@ConfigEntry.Gui.Tooltip
+		public boolean trinket_of_undying = true;
+		@ConfigEntry.Category("config")
+		@ConfigEntry.Gui.Tooltip
 		public boolean new_trim_materials = true;
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
@@ -241,7 +241,7 @@ public class LaLConfig implements ConfigData {
 		public boolean no_creeper_discs = false;
 	}
 
-	public static class IntegrationsConfig {
+	public static class IntegrationConfig {
 		@ConfigEntry.Category("config")
 		public boolean wilder_wild = true;
 		@ConfigEntry.Category("config")

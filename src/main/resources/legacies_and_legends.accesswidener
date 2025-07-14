@@ -11,8 +11,7 @@ accessible field net/minecraft/world/item/AxeItem STRIPPABLES Ljava/util/Map;
 accessible class net/minecraft/world/level/block/Block$ShapePairKey
 accessible field net/minecraft/world/level/block/Block$ShapePairKey first Lnet/minecraft/world/phys/shapes/VoxelShape;
 accessible field net/minecraft/world/level/block/Block$ShapePairKey second Lnet/minecraft/world/phys/shapes/VoxelShape;
-
-accessible method net/minecraft/world/item/BundleItem broadcastChangesOnContainerMenu (Lnet/minecraft/world/entity/player/Player;)V
-accessible method net/minecraft/world/item/BundleItem playInsertFailSound (Lnet/minecraft/world/entity/Entity;)V
-accessible method net/minecraft/world/item/BundleItem playInsertSound (Lnet/minecraft/world/entity/Entity;)V
-accessible method net/minecraft/world/item/BundleItem playRemoveOneSound (Lnet/minecraft/world/entity/Entity;)V
+accessible field net/minecraft/world/entity/Entity level Lnet/minecraft/world/level/Level;
+accessible method net/minecraft/world/item/ProjectileWeaponItem createProjectile (Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemStack;Z)Lnet/minecraft/world/entity/projectile/Projectile;
+accessible method net/minecraft/world/item/BowItem shootProjectile (Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/projectile/Projectile;IFFFLnet/minecraft/world/entity/LivingEntity;)V
+accessible method net/minecraft/world/item/ProjectileWeaponItem getDurabilityUse (Lnet/minecraft/world/item/ItemStack;)I

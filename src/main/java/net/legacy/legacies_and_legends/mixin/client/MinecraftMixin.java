@@ -19,6 +19,6 @@ public class MinecraftMixin {
 
     @Inject(method = "startUseItem", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/InteractionHand;values()[Lnet/minecraft/world/InteractionHand;"))
     private void ringOfConstruction(CallbackInfo ci) {
-        if (TrinketsApi.getTrinketComponent(this.player).get().isEquipped(LaLItems.RING_OF_CONSTRUCTION)) this.rightClickDelay = 2;
+        if (TrinketsApi.getTrinketComponent(this.player).get().isEquipped(LaLItems.RING_OF_CONSTRUCTION)) this.rightClickDelay = 3;
     }
 }

@@ -5,6 +5,7 @@ import dev.emi.trinkets.api.TrinketsApi;
 import net.legacy.legacies_and_legends.entity.impl.LaLPlayerPlatformInterface;
 import net.legacy.legacies_and_legends.registry.LaLBlocks;
 import net.legacy.legacies_and_legends.registry.LaLItems;
+import net.legacy.legacies_and_legends.registry.LaLMobEffects;
 import net.minecraft.core.GlobalPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
@@ -26,6 +27,20 @@ import java.util.Optional;
 
 @Mixin(Entity.class)
 public abstract class EntityMixin {
+
+	@Inject(method = "canBeHitByProjectile", at = @At("HEAD"), cancellable = true)
+	public void instabilityProjectile(CallbackInfoReturnable<Boolean> cir) {
+		if (!(Entity.class.cast(this) instanceof Player player)) return;
+
+		if (player.hasEffect(LaLMobEffects.INSTABILITY)) cir.setReturnValue(false);
+	}
+
+	@Inject(method = "canBeCollidedWith", at = @At("HEAD"), cancellable = true)
+	public void instabilityCollision(CallbackInfoReturnable<Boolean> cir) {
+		if (!(Entity.class.cast(this) instanceof Player player)) return;
+
+		if (player.hasEffect(LaLMobEffects.INSTABILITY)) cir.setReturnValue(false);
+	}
 
 	@Inject(
 			method = "teleport",

@@ -18,6 +18,7 @@
     "integration.friendsandfoes.FriendsAndFoesTrinketMixin",
     "item.AxeItemMixin",
     "item.ItemStackMixin",
+    "item.ProjectileWeaponItemMixin",
     "item.TrinketMixin"
   ],
   "injectors": {

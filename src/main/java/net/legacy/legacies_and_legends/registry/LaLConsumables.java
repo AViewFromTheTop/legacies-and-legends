@@ -58,8 +58,8 @@ public class LaLConsumables {
                     )
             )
             .build();
-    public static final Consumable TABLET_OF_LEVITATION = Consumable.builder()
-            .consumeSeconds(0.8F)
+    public static final Consumable TABLET_OF_INSTABILITY = Consumable.builder()
+            .consumeSeconds(1.6F)
             .animation(ItemUseAnimation.BLOCK)
             .sound(LaLSounds.TABLET_USE)
             .soundAfterConsume(LaLSounds.TABLET_BREAK)
@@ -67,13 +67,27 @@ public class LaLConsumables {
             .onConsume(
                     new ApplyStatusEffectsConsumeEffect(
                             List.of(
-                                    new MobEffectInstance(MobEffects.LEVITATION, 80, 15)
+                                    new MobEffectInstance(LaLMobEffects.INSTABILITY, 3600)
+                            )
+                    )
+            )
+            .build();
+    public static final Consumable TABLET_OF_WARPING = Consumable.builder()
+            .consumeSeconds(1.6F)
+            .animation(ItemUseAnimation.BLOCK)
+            .sound(LaLSounds.TABLET_USE)
+            .soundAfterConsume(LaLSounds.TABLET_BREAK)
+            .hasConsumeParticles(false)
+            .onConsume(
+                    new ApplyStatusEffectsConsumeEffect(
+                            List.of(
+                                    new MobEffectInstance(LaLMobEffects.WARPING, 3600)
                             )
                     )
             )
             .build();
     public static final Consumable TABLET_OF_CHANNELING = Consumable.builder()
-            .consumeSeconds(12.8F)
+            .consumeSeconds(6.4F)
             .animation(ItemUseAnimation.BLOCK)
             .sound(LaLSounds.TABLET_USE)
             .soundAfterConsume(LaLSounds.TABLET_BREAK)
@@ -99,7 +113,7 @@ public class LaLConsumables {
             )
             .build();
     public static final Consumable TABLET_OF_REVEALING = Consumable.builder()
-            .consumeSeconds(1.6F)
+            .consumeSeconds(3.2F)
             .animation(ItemUseAnimation.BLOCK)
             .sound(LaLSounds.TABLET_USE)
             .soundAfterConsume(LaLSounds.TABLET_BREAK)

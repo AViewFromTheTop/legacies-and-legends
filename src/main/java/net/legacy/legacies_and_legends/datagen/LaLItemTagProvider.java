@@ -39,7 +39,8 @@ public class LaLItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         this.getOrCreateTagBuilder(LaLItemTags.TABLETS)
                 .add(LaLItems.TABLET_OF_HASTE)
-                .add(LaLItems.TABLET_OF_LEVITATION)
+                .add(LaLItems.TABLET_OF_INSTABILITY)
+                .add(LaLItems.TABLET_OF_WARPING)
                 .add(LaLItems.TABLET_OF_RECALL)
                 .add(LaLItems.TABLET_OF_DEAFENING)
                 .add(LaLItems.TABLET_OF_CHANNELING)

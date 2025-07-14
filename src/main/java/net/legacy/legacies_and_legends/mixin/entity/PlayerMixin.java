@@ -2,11 +2,12 @@ package net.legacy.legacies_and_legends.mixin.entity;
 
 import dev.emi.trinkets.api.TrinketsApi;
 import net.legacy.legacies_and_legends.LaLConstants;
-import net.legacy.legacies_and_legends.entity.impl.LaLPlayerPlatformInterface;
 import net.legacy.legacies_and_legends.entity.impl.LaLPlayerDamageInterface;
+import net.legacy.legacies_and_legends.entity.impl.LaLPlayerPlatformInterface;
 import net.legacy.legacies_and_legends.item.util.TotemUtil;
 import net.legacy.legacies_and_legends.registry.LaLBlocks;
 import net.legacy.legacies_and_legends.registry.LaLItems;
+import net.legacy.legacies_and_legends.registry.LaLMobEffects;
 import net.legacy.legacies_and_legends.sound.LaLSounds;
 import net.legacy.legacies_and_legends.tag.LaLItemTags;
 import net.minecraft.advancements.CriteriaTriggers;
@@ -20,6 +21,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.tags.DamageTypeTags;
+import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -32,7 +34,9 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.portal.TeleportTransition;
+import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -99,6 +103,45 @@ public abstract class PlayerMixin implements LaLPlayerPlatformInterface, LaLPlay
             this.damageTaken = (int) amount;
             player.addTag("amulet_repair_cooldown");
             player.addTag("damaged_amulet_of_absorption");
+        }
+    }
+
+    @Inject(
+            method = "actuallyHurt",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/world/entity/player/Player;setHealth(F)V"
+            ),
+            cancellable = true)
+    private void necklaceOfResilience(ServerLevel level, DamageSource damageSource, float amount, CallbackInfo ci) {
+        Player player = Player.class.cast(this);
+        if (TrinketsApi.getTrinketComponent(player).isPresent() && TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.NECKLACE_OF_RESILIENCE)) {
+            if (player.getHealth() > 6 && amount > player.getHealth() - 1) amount = player.getHealth() - 1;
+            player.setHealth(player.getHealth() - amount);
+            if (amount < 3.4028235E37F) {
+                player.awardStat(Stats.DAMAGE_TAKEN, Math.round(amount * 10.0F));
+            }
+            player.gameEvent(GameEvent.ENTITY_DAMAGE);
+
+            ci.cancel();
+        }
+    }
+
+    @Inject(method = "actuallyHurt", at = @At(value = "HEAD"))
+    private void warpingDamageTeleport(ServerLevel level, DamageSource damageSource, float amount, CallbackInfo ci) {
+        Player player = Player.class.cast(this);
+        if (player.hasEffect(LaLMobEffects.WARPING) && damageSource.isDirect()) {
+            double d = player.getX() + (player.getRandom().nextDouble() - 0.5) * (double) 16F;
+            double e = Mth.clamp(player.getY() + (player.getRandom().nextDouble() - 0.5) * (double) 16F, player.level.getMinY(), (player.level.getMinY() + ((ServerLevel) player.level).getLogicalHeight() - 1));
+            double f = player.getZ() + (player.getRandom().nextDouble() - 0.5) * (double) 16F;
+            if (player.isPassenger()) {
+                player.stopRiding();
+            }
+
+            Vec3 vec3 = player.position();
+            if (player.randomTeleport(d, e, f, true)) {
+                player.level.gameEvent(GameEvent.TELEPORT, vec3, GameEvent.Context.of(player));
+            }
         }
     }
 

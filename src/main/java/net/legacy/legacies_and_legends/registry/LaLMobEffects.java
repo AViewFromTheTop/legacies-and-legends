@@ -14,15 +14,17 @@ public class LaLMobEffects {
             "freezing",
             new MobEffect(MobEffectCategory.HARMFUL, 7720931)
     );
-    public static final Holder<MobEffect> AMPLIFYING = register(
-            "amplifying", (
-            new MobEffect(MobEffectCategory.BENEFICIAL, 7720931))
-                    .addAttributeModifier(Attributes.JUMP_STRENGTH, LaLConstants.id("effect.jump_boost"), 1.0F, AttributeModifier.Operation.ADD_VALUE)
+    public static final Holder<MobEffect> INSTABILITY = register(
+            "instability", (
+                    new MobEffect(MobEffectCategory.NEUTRAL, 7901340)
+                            .addAttributeModifier(Attributes.MAX_ABSORPTION, ResourceLocation.withDefaultNamespace("effect.absorption"), 2.0, AttributeModifier.Operation.ADD_VALUE)
+                            .addAttributeModifier(Attributes.ATTACK_DAMAGE, ResourceLocation.withDefaultNamespace("effect.weakness"), -2.0, AttributeModifier.Operation.ADD_VALUE)
+                            .addAttributeModifier(Attributes.GRAVITY, LaLConstants.id("effect.gravity"), 0.08, AttributeModifier.Operation.ADD_VALUE)
+            )
     );
-    public static final Holder<MobEffect> DESTABILIZING = register(
-            "destabilizing", (
-                    new MobEffect(MobEffectCategory.NEUTRAL, 12624973))
-                    .addAttributeModifier(Attributes.GRAVITY, LaLConstants.id("effect.gravity"), 0.08F, AttributeModifier.Operation.ADD_VALUE)
+    public static final Holder<MobEffect> WARPING = register(
+            "warping",
+                    new MobEffect(MobEffectCategory.NEUTRAL, 9337599)
     );
 
     public static void init() {

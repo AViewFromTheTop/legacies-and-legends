@@ -380,20 +380,20 @@ public class LaLLootTables {
 			if (BuiltInLootTables.END_CITY_TREASURE.equals(id) && LaLConfig.get.artifacts.tablet_of_levitation) {
 				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 						.add(EmptyLootItem.emptyItem().setWeight(14))
-						.add(LootItem.lootTableItem(LaLItems.TABLET_OF_LEVITATION).setWeight(1));
+						.add(LootItem.lootTableItem(LaLItems.TABLET_OF_WARPING).setWeight(1));
 				tableBuilder.withPool(pool);
 			}
 			if (LaLConfig.get.integrations.enderscape) {
 				if (LaLLootTables.END_CITY_VAULT.equals(id) && LaLConfig.get.artifacts.tablet_of_levitation) {
 					pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 							.add(EmptyLootItem.emptyItem().setWeight(14))
-							.add(LootItem.lootTableItem(LaLItems.TABLET_OF_LEVITATION).setWeight(1));
+							.add(LootItem.lootTableItem(LaLItems.TABLET_OF_WARPING).setWeight(1));
 					tableBuilder.withPool(pool);
 				}
 				if (LaLLootTables.END_CITY_ELYTRA_VAULT.equals(id) && LaLConfig.get.artifacts.tablet_of_levitation) {
 					pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 							.add(EmptyLootItem.emptyItem().setWeight(14))
-							.add(LootItem.lootTableItem(LaLItems.TABLET_OF_LEVITATION).setWeight(1));
+							.add(LootItem.lootTableItem(LaLItems.TABLET_OF_WARPING).setWeight(1));
 					tableBuilder.withPool(pool);
 				}
 			}

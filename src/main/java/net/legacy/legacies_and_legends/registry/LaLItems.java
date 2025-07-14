@@ -261,22 +261,30 @@ public final class LaLItems {
                     .stacksTo(16)
                     .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_RECALL)
                     .useCooldown(300F)
-                    .rarity(Rarity.UNCOMMON)
+                    .rarity(Rarity.RARE)
     );
     public static final Item TABLET_OF_HASTE = register("tablet_of_haste",
             Item::new,
             new Properties()
                     .stacksTo(16)
                     .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_HASTE)
-                    .useCooldown(60F)
+                    .useCooldown(180F)
                     .rarity(Rarity.UNCOMMON)
     );
-    public static final Item TABLET_OF_LEVITATION = register("tablet_of_levitation",
+    public static final Item TABLET_OF_INSTABILITY = register("tablet_of_instability",
             Item::new,
             new Properties()
                     .stacksTo(16)
-                    .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_LEVITATION)
-                    .useCooldown(30F)
+                    .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_INSTABILITY)
+                    .useCooldown(180F)
+                    .rarity(Rarity.UNCOMMON)
+    );
+    public static final Item TABLET_OF_WARPING = register("tablet_of_warping",
+            Item::new,
+            new Properties()
+                    .stacksTo(16)
+                    .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_WARPING)
+                    .useCooldown(180F)
                     .rarity(Rarity.RARE)
     );
     public static final Item TABLET_OF_CHANNELING = register("tablet_of_channeling",
@@ -285,7 +293,7 @@ public final class LaLItems {
                     .stacksTo(16)
                     .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_CHANNELING)
                     .useCooldown(300F)
-                    .rarity(Rarity.RARE)
+                    .rarity(Rarity.EPIC)
     );
     public static final Item TABLET_OF_DEAFENING = register("tablet_of_deafening",
             Item::new,
@@ -368,6 +376,13 @@ public final class LaLItems {
                     .durability(152)
                     .rarity(Rarity.UNCOMMON)
     );
+    public static final AccessoryItem RING_OF_ARCHERY = register("ring_of_archery",
+            AccessoryItem::new,
+            new Properties()
+                    .stacksTo(1)
+                    .durability(279)
+                    .rarity(Rarity.UNCOMMON)
+    );
     public static final AccessoryItem RING_OF_EXCAVATION = register("ring_of_excavation",
             AccessoryItem::new,
             new Properties()
@@ -409,6 +424,13 @@ public final class LaLItems {
             new Properties()
                     .stacksTo(1)
                     .durability(232)
+                    .rarity(Rarity.RARE)
+    );
+    public static final AccessoryItem NECKLACE_OF_RESILIENCE = register("necklace_of_resilience",
+            AccessoryItem::new,
+            new Properties()
+                    .stacksTo(1)
+                    .durability(305)
                     .rarity(Rarity.RARE)
     );
     public static final AccessoryItem NECKLACE_OF_REGENERATION = register("necklace_of_regeneration",
