@@ -22,11 +22,12 @@ public class LaLConstants {
 
 	public static boolean isNecklace(Player player) {
 		return (TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.NECKLACE_OF_BARTERING) ||
-				TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.NECKLACE_OF_ISOLATION)||
-				TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.NECKLACE_OF_LEAPING)||
-				TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.NECKLACE_OF_PROTECTION)||
-				TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.NECKLACE_OF_PURITY)||
-				TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.NECKLACE_OF_REGENERATION)
+				TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.NECKLACE_OF_ISOLATION) ||
+				TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.NECKLACE_OF_LEAPING) ||
+				TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.NECKLACE_OF_PROTECTION) ||
+				TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.NECKLACE_OF_PURITY) ||
+				TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.NECKLACE_OF_REGENERATION) ||
+				TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.NECKLACE_OF_RESILIENCE)
 		);
 	}
 

@@ -52,7 +52,8 @@ public class LaLItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(LaLItems.RING_OF_EXCAVATION)
                 .add(LaLItems.RING_OF_CONSTRUCTION)
                 .add(LaLItems.RING_OF_RESTORATION)
-                .add(LaLItems.RING_OF_STRIKING);
+                .add(LaLItems.RING_OF_STRIKING)
+                .add(LaLItems.RING_OF_ARCHERY);
 
         this.getOrCreateTagBuilder(LaLItemTags.NECKLACES)
                 .add(LaLItems.NECKLACE_OF_ISOLATION)
@@ -60,7 +61,8 @@ public class LaLItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(LaLItems.NECKLACE_OF_LEAPING)
                 .add(LaLItems.NECKLACE_OF_PROTECTION)
                 .add(LaLItems.NECKLACE_OF_PURITY)
-                .add(LaLItems.NECKLACE_OF_REGENERATION);
+                .add(LaLItems.NECKLACE_OF_REGENERATION)
+                .add(LaLItems.NECKLACE_OF_RESILIENCE);
 
         this.getOrCreateTagBuilder(LaLItemTags.AMULETS)
                 .add(LaLItems.AMULET_OF_ABSORPTION)
