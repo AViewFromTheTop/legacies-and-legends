@@ -5,15 +5,12 @@ import net.legacy.legacies_and_legends.registry.LaLItems;
 import net.legacy.legacies_and_legends.registry.LaLMobEffects;
 import net.legacy.legacies_and_legends.sound.LaLSounds;
 import net.legacy.legacies_and_legends.tag.LaLEntityTags;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.tags.EntityTypeTags;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.ProjectileDeflection;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.consume_effects.TeleportRandomlyConsumeEffect;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
@@ -34,20 +31,26 @@ public abstract class ProjectileMixin {
 
     @Shadow public abstract boolean deflect(ProjectileDeflection deflection, @Nullable Entity entity, @Nullable Entity owner, boolean deflectedByPlayer);
 
+    @Shadow private boolean leftOwner;
+
     @Inject(method = "canHitEntity", at = @At(value = "HEAD"), cancellable = true)
     public void warpingTeleport(Entity target, CallbackInfoReturnable<Boolean> cir) {
-            if (target instanceof Player player && player.hasEffect(LaLMobEffects.WARPING)) {
+            if (target instanceof Player player && player.hasEffect(LaLMobEffects.WARPING) && this.getOwner() != target) {
+                if (!target.canBeHitByProjectile()) cir.setReturnValue(false);
                 double d = player.getX() + (player.getRandom().nextDouble() - 0.5) * (double) 16F;
-                double e = Mth.clamp(player.getY() + (player.getRandom().nextDouble() - 0.5) * (double) 16F, player.level.getMinY(), (player.level.getMinY() + ((ServerLevel) player.level).getLogicalHeight() - 1));
+                double e = Mth.clamp(player.getY() + (player.getRandom().nextDouble() - 0.5) * (double) 16F, player.level.getMinY(), (player.level.getMinY() + player.level.getHeight() - 1));
                 double f = player.getZ() + (player.getRandom().nextDouble() - 0.5) * (double) 16F;
                 if (player.isPassenger()) {
                     player.stopRiding();
                 }
 
+                player.randomTeleport(d, e, f, true);
+
                 Vec3 vec3 = player.position();
                 if (player.randomTeleport(d, e, f, true)) {
                     player.level.gameEvent(GameEvent.TELEPORT, vec3, GameEvent.Context.of(player));
                 }
+                player.level.playSound(null, player.blockPosition(), LaLSounds.TABLET_TELEPORT, SoundSource.PLAYERS, 0.6F, 1F);
                 cir.setReturnValue(false);
             }
     }

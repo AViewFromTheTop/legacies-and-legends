@@ -20,7 +20,8 @@ public class LeapingNecklaceItem extends AccessoryItem {
 
     public Multimap<Holder<Attribute>, AttributeModifier> getModifiers(ItemStack stack, SlotReference slot, LivingEntity entity, ResourceLocation resourceLocation) {
         var modifiers = super.getModifiers(stack, slot, entity, resourceLocation);
-            modifiers.put(Attributes.JUMP_STRENGTH, new AttributeModifier(LaLConstants.id("jump_strength"), 0.2, AttributeModifier.Operation.ADD_VALUE));
+        modifiers.put(Attributes.JUMP_STRENGTH, new AttributeModifier(LaLConstants.id("jump_strength"), 0.15, AttributeModifier.Operation.ADD_VALUE));
+        modifiers.put(Attributes.SAFE_FALL_DISTANCE, new AttributeModifier(LaLConstants.id("safe_fall_distance"), 1, AttributeModifier.Operation.ADD_VALUE));
         return modifiers;
     }
 }

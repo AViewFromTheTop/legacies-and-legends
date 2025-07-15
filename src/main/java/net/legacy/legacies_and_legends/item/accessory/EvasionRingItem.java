@@ -27,16 +27,15 @@ public class EvasionRingItem extends AccessoryItem {
 
     @Override
     public void everyTick(ItemStack stack, SlotReference slot, LivingEntity entity) {
+        getModifiers(stack, slot, entity, ResourceLocation.parse(LaLConstants.MOD_ID));
         if (entity instanceof Player player && TrinketsApi.getTrinketComponent(player).isPresent()) {
             if (player.isShiftKeyDown() && !player.hasEffect(MobEffects.INVISIBILITY)) {
                 player.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, MobEffectInstance.INFINITE_DURATION));
                 player.addTag("infinite_invisibility");
-                player.addTag("evasion_crouching");
             }
             else if (!player.isShiftKeyDown() && player.getTags().contains("infinite_invisibility")) {
                 player.removeEffect(MobEffects.INVISIBILITY);
                 player.removeTag("infinite_invisibility");
-                player.removeTag("evasion_crouching");
             }
         }
     }
@@ -45,7 +44,6 @@ public class EvasionRingItem extends AccessoryItem {
     public void resetData(LivingEntity entity) {
         if (entity instanceof Player player) {
             player.removeTag("infinite_invisibility");
-            player.removeTag("evasion_crouching");
         }
     }
 
@@ -64,9 +62,7 @@ public class EvasionRingItem extends AccessoryItem {
     public Multimap<Holder<Attribute>, AttributeModifier> getModifiers(ItemStack stack, SlotReference slot, LivingEntity entity, ResourceLocation resourceLocation) {
         var modifiers = super.getModifiers(stack, slot, entity, resourceLocation);
 
-        if (entity instanceof Player player && player.getTags().contains("evasion_crouching")) {
-            modifiers.put(Attributes.SNEAKING_SPEED, new AttributeModifier(LaLConstants.id("sneaking_speed"), 0.7, AttributeModifier.Operation.ADD_VALUE));
-        }
+            modifiers.put(Attributes.SNEAKING_SPEED, new AttributeModifier(LaLConstants.id("sneaking_speed"), 0.3, AttributeModifier.Operation.ADD_VALUE));
         return modifiers;
     }
 }

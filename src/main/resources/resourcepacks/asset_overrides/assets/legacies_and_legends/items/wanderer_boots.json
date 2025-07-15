@@ -120,6 +120,20 @@
           "model": "legacies_and_legends:item/wanderer_boots_featherzeal_ingot_trim"
         },
         "when": "end_reborn:featherzeal_ingot"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "legacies_and_legends:item/wanderer_boots_nebulite_trim"
+        },
+        "when": "enderscape:nebulite"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "legacies_and_legends:item/wanderer_boots_shadoline_trim"
+        },
+        "when": "enderscape:shadoline"
       }
     ],
     "fallback": {

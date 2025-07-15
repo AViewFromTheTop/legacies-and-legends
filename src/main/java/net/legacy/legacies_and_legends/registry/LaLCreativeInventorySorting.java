@@ -25,17 +25,33 @@ public class LaLCreativeInventorySorting {
 		addAfterInToolsAndUtilities(LaLEquipmentItems.MOLTEN_PICKAXE, LaLEquipmentItems.CLEAVING_BATTLEAXE);
 		addAfterInToolsAndUtilities(LaLEquipmentItems.CLEAVING_BATTLEAXE, LaLEquipmentItems.WITHERED_HOE);
 
-/*		addAfterInToolsAndUtilities(Items.FLINT_AND_STEEL, LaLItems.AMULET_OF_ALLURE);
-		addAfterInToolsAndUtilities(LaLItems.AMULET_OF_ALLURE, LaLItems.AMULET_OF_EVASION);
-		addAfterInToolsAndUtilities(LaLItems.AMULET_OF_EVASION, LaLItems.AMULET_OF_SYNTHESIS);*/
-
-		addAfterInToolsAndUtilities(Items.PINK_BUNDLE, LaLItems.TABLET_OF_RECALL);
+		addAfterInToolsAndUtilities(LaLEquipmentItems.WITHERED_HOE, LaLItems.TABLET_OF_RECALL);
 		addAfterInToolsAndUtilities(LaLItems.TABLET_OF_RECALL, LaLItems.TABLET_OF_HASTE);
 		addAfterInToolsAndUtilities(LaLItems.TABLET_OF_HASTE, LaLItems.TABLET_OF_REVEALING);
 		addAfterInToolsAndUtilities(LaLItems.TABLET_OF_REVEALING, LaLItems.TABLET_OF_CHANNELING);
 		addAfterInToolsAndUtilities(LaLItems.TABLET_OF_CHANNELING, LaLItems.TABLET_OF_DEAFENING);
 		addAfterInToolsAndUtilities(LaLItems.TABLET_OF_DEAFENING, LaLItems.TABLET_OF_INSTABILITY);
 		addAfterInToolsAndUtilities(LaLItems.TABLET_OF_INSTABILITY, LaLItems.TABLET_OF_WARPING);
+
+		addAfterInToolsAndUtilities(LaLItems.TABLET_OF_WARPING, LaLItems.AMULET_OF_ABSORPTION);
+		addAfterInToolsAndUtilities(LaLItems.AMULET_OF_ABSORPTION, LaLItems.AMULET_OF_DEFLECTION);
+		addAfterInToolsAndUtilities(LaLItems.AMULET_OF_DEFLECTION, LaLItems.AMULET_OF_OBSIDIAN);
+
+		addAfterInToolsAndUtilities(LaLItems.AMULET_OF_OBSIDIAN, LaLItems.RING_OF_ARCHERY);
+		addAfterInToolsAndUtilities(LaLItems.RING_OF_ARCHERY, LaLItems.RING_OF_EXCAVATION);
+		addAfterInToolsAndUtilities(LaLItems.RING_OF_EXCAVATION, LaLItems.RING_OF_CONSTRUCTION);
+		addAfterInToolsAndUtilities(LaLItems.RING_OF_CONSTRUCTION, LaLItems.RING_OF_RESTORATION);
+		addAfterInToolsAndUtilities(LaLItems.RING_OF_RESTORATION, LaLItems.RING_OF_STRIKING);
+		addAfterInToolsAndUtilities(LaLItems.RING_OF_STRIKING, LaLItems.RING_OF_EVASION);
+		addAfterInToolsAndUtilities(LaLItems.RING_OF_EVASION, LaLItems.RING_OF_HUNTING);
+
+		addAfterInToolsAndUtilities(LaLItems.RING_OF_HUNTING, LaLItems.NECKLACE_OF_RESILIENCE);
+		addAfterInToolsAndUtilities(LaLItems.NECKLACE_OF_RESILIENCE, LaLItems.NECKLACE_OF_LEAPING);
+		addAfterInToolsAndUtilities(LaLItems.NECKLACE_OF_LEAPING, LaLItems.NECKLACE_OF_PURITY);
+		addAfterInToolsAndUtilities(LaLItems.NECKLACE_OF_PURITY, LaLItems.NECKLACE_OF_REGENERATION);
+		addAfterInToolsAndUtilities(LaLItems.NECKLACE_OF_REGENERATION, LaLItems.NECKLACE_OF_ISOLATION);
+		addAfterInToolsAndUtilities(LaLItems.NECKLACE_OF_ISOLATION, LaLItems.NECKLACE_OF_BARTERING);
+		addAfterInToolsAndUtilities(LaLItems.NECKLACE_OF_BARTERING, LaLItems.NECKLACE_OF_PROTECTION);
 
 		addBeforeInIngredients(Items.HEART_OF_THE_SEA, LaLItems.TRIDENT_SHARD);
 		addAfterInIngredients(Items.HEART_OF_THE_SEA, LaLItems.METAL_CHUNK);

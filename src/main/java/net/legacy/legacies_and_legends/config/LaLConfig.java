@@ -152,6 +152,12 @@ public class LaLConfig implements ConfigData {
 
 	public static class AccessoryConfig {
 		@ConfigEntry.Category("config")
+		public boolean amulet_of_absorption = true;
+		@ConfigEntry.Category("config")
+		public boolean amulet_of_obsidian = true;
+		@ConfigEntry.Category("config")
+		public boolean amulet_of_deflection = true;
+		@ConfigEntry.Category("config")
 		public boolean ring_of_evasion = true;
 		@ConfigEntry.Category("config")
 		public boolean ring_of_striking = true;
@@ -161,6 +167,8 @@ public class LaLConfig implements ConfigData {
 		public boolean ring_of_saturation = true;
 		@ConfigEntry.Category("config")
 		public boolean ring_of_reaching = true;
+		@ConfigEntry.Category("config")
+		public boolean ring_of_archery = true;
 		@ConfigEntry.Category("config")
 		public boolean ring_of_restoration = true;
 		@ConfigEntry.Category("config")
@@ -172,15 +180,11 @@ public class LaLConfig implements ConfigData {
 		@ConfigEntry.Category("config")
 		public boolean necklace_of_regeneration = true;
 		@ConfigEntry.Category("config")
+		public boolean necklace_of_resilience = true;
+		@ConfigEntry.Category("config")
 		public boolean necklace_of_bartering = true;
 		@ConfigEntry.Category("config")
 		public boolean necklace_of_isolation = true;
-		@ConfigEntry.Category("config")
-		public boolean amulet_of_absorption = true;
-		@ConfigEntry.Category("config")
-		public boolean amulet_of_obsidian = true;
-		@ConfigEntry.Category("config")
-		public boolean amulet_of_deflection = true;
 	}
 
 	public static class EnchantmentConfig {

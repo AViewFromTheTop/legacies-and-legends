@@ -19,7 +19,8 @@ public class LaLMobEffects {
                     new MobEffect(MobEffectCategory.NEUTRAL, 7901340)
                             .addAttributeModifier(Attributes.MAX_ABSORPTION, ResourceLocation.withDefaultNamespace("effect.absorption"), 2.0, AttributeModifier.Operation.ADD_VALUE)
                             .addAttributeModifier(Attributes.ATTACK_DAMAGE, ResourceLocation.withDefaultNamespace("effect.weakness"), -2.0, AttributeModifier.Operation.ADD_VALUE)
-                            .addAttributeModifier(Attributes.GRAVITY, LaLConstants.id("effect.gravity"), 0.08, AttributeModifier.Operation.ADD_VALUE)
+                            .addAttributeModifier(Attributes.GRAVITY, LaLConstants.id("effect.gravity"), -0.04, AttributeModifier.Operation.ADD_VALUE)
+                            .addAttributeModifier(Attributes.SAFE_FALL_DISTANCE, LaLConstants.id("effect.safe_fall_distance"), 2, AttributeModifier.Operation.ADD_VALUE)
             )
     );
     public static final Holder<MobEffect> WARPING = register(

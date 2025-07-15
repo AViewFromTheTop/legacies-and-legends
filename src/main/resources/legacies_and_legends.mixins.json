@@ -4,6 +4,7 @@
   "compatibilityLevel": "JAVA_21",
   "plugin": "net.legacy.legacies_and_legends.mixin.LegaciesAndLegendsMixinPlugin",
   "mixins": [
+    "block.BlockMixin",
     "block.PowderSnowBlockMixin",
     "client.MultiPlayerGameModeMixin",
     "entity.EnderManMixin",
