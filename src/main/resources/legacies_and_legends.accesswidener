@@ -15,3 +15,4 @@ accessible field net/minecraft/world/entity/Entity level Lnet/minecraft/world/le
 accessible method net/minecraft/world/item/ProjectileWeaponItem createProjectile (Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemStack;Z)Lnet/minecraft/world/entity/projectile/Projectile;
 accessible method net/minecraft/world/item/BowItem shootProjectile (Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/projectile/Projectile;IFFFLnet/minecraft/world/entity/LivingEntity;)V
 accessible method net/minecraft/world/item/ProjectileWeaponItem getDurabilityUse (Lnet/minecraft/world/item/ItemStack;)I
+accessible method net/minecraft/world/item/CrossbowItem shootProjectile (Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/projectile/Projectile;IFFFLnet/minecraft/world/entity/LivingEntity;)V

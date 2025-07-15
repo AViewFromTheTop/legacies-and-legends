@@ -53,7 +53,7 @@ public class LaLConsumables {
             .onConsume(
                     new ApplyStatusEffectsConsumeEffect(
                             List.of(
-                                    new MobEffectInstance(MobEffects.HASTE, 1800, 0)
+                                    new MobEffectInstance(MobEffects.HASTE, 3600, 0)
                             )
                     )
             )

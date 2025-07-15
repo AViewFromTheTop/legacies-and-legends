@@ -36,7 +36,8 @@ public abstract class ProjectileWeaponItemMixin {
                     i = -i;
                     int l = j;
                     Projectile.spawnProjectile(item.createProjectile(level, shooter, weapon, itemStack, isCrit), level, itemStack, (projectile) -> {
-                        ((BowItem) item).shootProjectile(shooter, projectile, l, velocity, inaccuracy / 2, k, target);
+                        if (item instanceof BowItem bowItem) bowItem.shootProjectile(shooter, projectile, l, velocity, inaccuracy / 2, k, target);
+                        else if (item instanceof CrossbowItem crossbowItem) crossbowItem.shootProjectile(shooter, projectile, l, velocity, inaccuracy / 2, k, target);
                     });
                     weapon.hurtAndBreak(item.getDurabilityUse(itemStack), shooter, LivingEntity.getSlotForHand(hand));
                     if (weapon.isEmpty()) {
