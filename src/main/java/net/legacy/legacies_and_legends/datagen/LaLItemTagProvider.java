@@ -76,6 +76,7 @@ public class LaLItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .addOptionalTag(ResourceLocation.fromNamespaceAndPath("friendsandfoes","totems"));
 
         this.getOrCreateTagBuilder(LaLItemTags.ARTIFACTS)
+                .add(Items.TURTLE_HELMET)
                 .add(LaLItems.REINFORCED_CHESTPLATE)
                 .add(LaLItems.TRAVELLING_STRIDES)
                 .add(LaLItems.WANDERER_BOOTS)

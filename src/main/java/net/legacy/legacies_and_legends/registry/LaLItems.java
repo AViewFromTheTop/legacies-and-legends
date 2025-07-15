@@ -346,8 +346,7 @@ public final class LaLItems {
                     .useItemDescriptionPrefix()
     );
 
-    // Trinkets
-
+    // Accessories
     public static final AccessoryItem RING_OF_HUNTING = register("ring_of_hunting",
             AccessoryItem::new,
             new Properties()
@@ -360,7 +359,7 @@ public final class LaLItems {
             new Properties()
                     .stacksTo(1)
                     .durability(326)
-                    .rarity(Rarity.EPIC)
+                    .rarity(Rarity.RARE)
     );
     public static final ConstructionRingItem RING_OF_CONSTRUCTION = register("ring_of_construction",
             ConstructionRingItem::new,
@@ -380,7 +379,7 @@ public final class LaLItems {
             AccessoryItem::new,
             new Properties()
                     .stacksTo(1)
-                    .durability(279)
+                    .durability(249)
                     .rarity(Rarity.UNCOMMON)
     );
     public static final AccessoryItem RING_OF_EXCAVATION = register("ring_of_excavation",
@@ -394,8 +393,8 @@ public final class LaLItems {
             AccessoryItem::new,
             new Properties()
                     .stacksTo(1)
-                    .durability(433)
-                    .rarity(Rarity.RARE)
+                    .durability(330)
+                    .rarity(Rarity.EPIC)
     );
 
     public static final AccessoryItem NECKLACE_OF_ISOLATION = register("necklace_of_isolation",
@@ -409,7 +408,7 @@ public final class LaLItems {
             PurityNecklaceItem::new,
             new Properties()
                     .stacksTo(1)
-                    .durability(73)
+                    .durability(173)
                     .rarity(Rarity.RARE)
     );
     public static final LeapingNecklaceItem NECKLACE_OF_LEAPING = register("necklace_of_leaping",
@@ -423,14 +422,14 @@ public final class LaLItems {
             ProtectionNecklaceItem::new,
             new Properties()
                     .stacksTo(1)
-                    .durability(232)
-                    .rarity(Rarity.RARE)
+                    .durability(237)
+                    .rarity(Rarity.UNCOMMON)
     );
     public static final AccessoryItem NECKLACE_OF_RESILIENCE = register("necklace_of_resilience",
             AccessoryItem::new,
             new Properties()
                     .stacksTo(1)
-                    .durability(305)
+                    .durability(255)
                     .rarity(Rarity.RARE)
     );
     public static final AccessoryItem NECKLACE_OF_REGENERATION = register("necklace_of_regeneration",

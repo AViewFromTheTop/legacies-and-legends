@@ -4,6 +4,7 @@ import net.frozenblock.lib.item.api.FrozenCreativeTabs;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Blocks;
 
 public class LaLCreativeInventorySorting {
 
@@ -53,6 +54,8 @@ public class LaLCreativeInventorySorting {
 		addAfterInToolsAndUtilities(LaLItems.NECKLACE_OF_ISOLATION, LaLItems.NECKLACE_OF_BARTERING);
 		addAfterInToolsAndUtilities(LaLItems.NECKLACE_OF_BARTERING, LaLItems.NECKLACE_OF_PROTECTION);
 
+		addAfterInToolsAndUtilities(Items.FISHING_ROD, LaLItems.WAND);
+
 		addBeforeInIngredients(Items.HEART_OF_THE_SEA, LaLItems.TRIDENT_SHARD);
 		addAfterInIngredients(Items.HEART_OF_THE_SEA, LaLItems.METAL_CHUNK);
 		addAfterInIngredients(LaLItems.METAL_CHUNK, LaLItems.DISC_FRAGMENT_FAR_LANDS);
@@ -61,6 +64,8 @@ public class LaLCreativeInventorySorting {
 		addAfterInIngredients(Items.FLOW_POTTERY_SHERD, LaLItems.FORAGER_POTTERY_SHERD);
 		addAfterInIngredients(Items.HEARTBREAK_POTTERY_SHERD, LaLItems.HARVEST_POTTERY_SHERD);
 		addAfterInIngredients(Items.SNORT_POTTERY_SHERD, LaLItems.VERDANT_POTTERY_SHERD);
+
+		addAfterInToolsAndUtilities(Items.LAPIS_LAZULI, LaLItems.SAPPHIRE);
 
 		addAfterInFoodAndDrinks(Items.BEETROOT, LaLItems.ENCHANTED_BEETROOT);
 		addAfterInFoodAndDrinks(Items.BEETROOT_SOUP, LaLItems.ENCHANTED_BEETROOT_SOUP);
@@ -79,6 +84,11 @@ public class LaLCreativeInventorySorting {
 		addAfterInCombat(Items.TOTEM_OF_UNDYING, LaLItems.TOTEM_OF_RESURRECTION);
 		addAfterInCombat(LaLItems.TOTEM_OF_RESURRECTION, LaLItems.TOTEM_OF_TELEPORTATION);
 
+		addAfterInNaturalBlocks(Blocks.DEEPSLATE_LAPIS_ORE, LaLBlocks.SAPPHIRE_ORE);
+		addAfterInNaturalBlocks(LaLBlocks.SAPPHIRE_ORE, LaLBlocks.DEEPSLATE_SAPPHIRE_ORE);
+
+		addAfterInBuildingBlocks(Blocks.LAPIS_BLOCK, LaLBlocks.SAPPHIRE_BLOCK);
+		addAfterInFunctionalBlocks(Blocks.LANTERN, LaLBlocks.SAPPHIRE_LANTERN);
 	}
 
 	private static void addAfterInNaturalBlocks(ItemLike comparedItem, ItemLike item) {
