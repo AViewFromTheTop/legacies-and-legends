@@ -26,6 +26,30 @@ public class LaLSounds {
 	public static final SoundEvent BOOMERANG_RETURN = register("boomerang.return");
 	public static final SoundEvent BOOMERANG_WOOSH = register("boomerang.woosh");
 
+	public static final SoundEvent WAND_SUMMON = register("wand.summon");
+	public static final SoundEvent WAND_RECALL = register("wand.recall");
+
+	public static final SoundEvent TOTEM_EQUIP = register("accessory.totem_equip");
+	public static final SoundEvent AMULET_EQUIP = register("accessory.amulet_equip");
+	public static final SoundEvent RING_EQUIP = register("accessory.ring_equip");
+	public static final SoundEvent NECKLACE_EQUIP = register("accessory.necklace_equip");
+
+	public static final SoundEvent AMULET_BREAK = register("accessory.amulet_break");
+	public static final SoundEvent RING_BREAK = register("accessory.ring_break");
+	public static final SoundEvent NECKLACE_BREAK = register("accessory.necklace_break");
+
+	public static final SoundEvent SAPPHIRE_BLOCK_BREAK = register("block.sapphire_block.break");
+	public static final SoundEvent SAPPHIRE_BLOCK_STEP = register("block.sapphire_block.step");
+	public static final SoundEvent SAPPHIRE_BLOCK_PLACE = register("block.sapphire_block.place");
+	public static final SoundEvent SAPPHIRE_BLOCK_HIT = register("block.sapphire_block.hit");
+	public static final SoundEvent SAPPHIRE_BLOCK_FALL = register("block.sapphire_block.fall");
+
+	public static final SoundEvent WAND_PLATFORM_BREAK = register("block.wand_platform.break");
+	public static final SoundEvent WAND_PLATFORM_STEP = register("block.wand_platform.step");
+	public static final SoundEvent WAND_PLATFORM_PLACE = register("block.wand_platform.place");
+	public static final SoundEvent WAND_PLATFORM_HIT = register("block.wand_platform.hit");
+	public static final SoundEvent WAND_PLATFORM_FALL = register("block.wand_platform.fall");
+
 	public static final SoundEvent SHATTER = register("enchantment.shatter");
 
 	public static final Holder.Reference<SoundEvent> SNOWY_MUSIC = registerForHolder("music.overworld.snowy");

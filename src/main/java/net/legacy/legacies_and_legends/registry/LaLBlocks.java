@@ -37,7 +37,7 @@ public class LaLBlocks {
                     .mapColor(MapColor.COLOR_BLUE)
                     .forceSolidOn()
                     .strength(5F, 6F)
-                    .sound(SoundType.AMETHYST)
+                    .sound(SoundType.METAL)
                     .requiresCorrectToolForDrops()
     );
     public static final DropExperienceBlock SAPPHIRE_ORE = register("sapphire_ore", (properties) -> new DropExperienceBlock(UniformInt.of(2, 5), properties),
@@ -66,7 +66,7 @@ public class LaLBlocks {
                     .noLootTable()
                     .isValidSpawn(Blocks::never)
                     .strength(5F, 6F)
-                    .sound(SoundType.WOOD)
+                    .sound(SoundType.AMETHYST)
                     .pushReaction(PushReaction.DESTROY)
     );
 

@@ -11,6 +11,7 @@ import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
@@ -63,6 +64,7 @@ public class WandItem extends Item {
             );
 
             player.addTag("wand_platform_summoned");
+            player.playSound(SoundEvents.AMETHYST_BLOCK_BREAK);
 
             stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(hand));
 

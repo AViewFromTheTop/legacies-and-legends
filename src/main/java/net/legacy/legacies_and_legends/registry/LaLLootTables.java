@@ -48,6 +48,12 @@ public class LaLLootTables {
 
 	public static final ResourceKey<LootTable> OBELISK_ARCHAEOLOGY = register("archaeology/obelisk");
 
+	public static final ResourceKey<LootTable> UNDERGROUND_CABIN = register("chests/cabin/underground");
+	public static final ResourceKey<LootTable> DEEP_CABIN = register("chests/cabin/deep");
+
+	public static final ResourceKey<LootTable> SPIRE = register("chests/spire");
+	public static final ResourceKey<LootTable> SPIRE_BASE = register("chests/spire_base");
+
 	public static final ResourceKey<LootTable> DUNGEON_CHEST = register("chests/dungeon/chest");
 	public static final ResourceKey<LootTable> DUNGEON_BARREL = register("chests/dungeon/barrel");
 	public static final ResourceKey<LootTable> DUNGEON_LIBRARY = register("chests/dungeon/library");
