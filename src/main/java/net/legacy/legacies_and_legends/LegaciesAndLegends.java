@@ -127,6 +127,13 @@ public class LegaciesAndLegends implements ModInitializer {
 					ResourcePackActivationType.ALWAYS_ENABLED
 			);
 		}
+		if (!LaLConfig.get.worldgen.sapphire) {
+			ResourceManagerHelper.registerBuiltinResourcePack(
+					LaLConstants.id("no_sapphire"), modContainer.get(),
+					Component.translatable("pack.legacies_and_legends.no_sapphire"),
+					ResourcePackActivationType.ALWAYS_ENABLED
+			);
+		}
 		if (LaLConfig.get.misc.no_creeper_discs) {
 			ResourceManagerHelper.registerBuiltinResourcePack(
 					LaLConstants.id("no_creeper_discs"), modContainer.get(),

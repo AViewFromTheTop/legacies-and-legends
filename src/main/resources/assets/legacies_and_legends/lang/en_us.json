@@ -102,6 +102,7 @@
   "pack.legacies_and_legends.no_travelling_strides": "No Travelling Strides",
   "pack.legacies_and_legends.no_withered_hoe": "No Withered Hoe",
   "pack.legacies_and_legends.no_trident_shard": "No Trident Shard",
+  "pack.legacies_and_legends.no_sapphire": "No Sapphire",
   "pack.legacies_and_legends.no_extraction_enchant": "No Extraction Enchant",
   "pack.legacies_and_legends.no_new_structures": "No New Structures",
   "pack.legacies_and_legends.lore_books": "Lore Books",
@@ -203,10 +204,6 @@
   "text.autoconfig.legacies_and_legends.option.misc.wandering_trader_trades.@Tooltip": "Whether Wandering Traders should have improved trades and be able to sell Legacies and Legends' items. Requires Villager Config.",
   "text.autoconfig.legacies_and_legends.option.misc.no_creeper_discs": "Disable Creeper Discs",
   "text.autoconfig.legacies_and_legends.option.misc.no_creeper_discs.@Tooltip": "Set to True to disable Creepers dropping C418 music discs, meaning they can only be found from their respective structures. Disabled by default.",
-
-  "text.autoconfig.legacies_and_legends.option.mixins": "Mixins",
-  "text.autoconfig.legacies_and_legends.option.mixins.powdered_snow": "Powdered Snow",
-  "text.autoconfig.legacies_and_legends.option.mixins.friendsandfoes": "Friends&Foes",
 
   "text.autoconfig.legacies_and_legends.option.integrations": "Mod Integration",
   "text.autoconfig.legacies_and_legends.option.integrations.wilder_wild": "Wilder Wild",

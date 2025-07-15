@@ -15,6 +15,7 @@ import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.EmptyLootItem;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.entries.NestedLootTable;
 import net.minecraft.world.level.storage.loot.functions.EnchantRandomlyFunction;
 import net.minecraft.world.level.storage.loot.functions.SetEnchantmentsFunction;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
@@ -74,6 +75,8 @@ public class LaLLootTables {
 	public static final ResourceKey<LootTable> END_CITY_CHEST = registerEnderscape("end_city/chest");
 	public static final ResourceKey<LootTable> END_CITY_VAULT = registerEnderscape("end_city/vault");
 	public static final ResourceKey<LootTable> END_CITY_ELYTRA_VAULT = registerEnderscape("end_city/elytra_vault");
+
+						//.add(NestedLootTable.lootTableReference(LaLLootTables.DUNGEON_CHEST_ARID));
 
 	public static void init() {
 		LootTableEvents.MODIFY.register((id, tableBuilder, source, registries) -> {
