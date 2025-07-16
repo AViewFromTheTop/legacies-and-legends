@@ -160,6 +160,8 @@ public abstract class PlayerMixin implements LaLPlayerPlatformInterface, LaLPlay
 
     @Inject(method = "actuallyHurt", at = @At(value = "TAIL"))
     private void activateTotem(ServerLevel level, DamageSource damageSource, float amount, CallbackInfo info) {
+        int resurrectionRegenDuration = 600;
+
         Player player = Player.class.cast(this);
         if (TrinketsApi.getTrinketComponent(player).isPresent()) {
             if (TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.TOTEM_OF_TELEPORTATION) && amount >= player.getHealth()) {
@@ -172,7 +174,7 @@ public abstract class PlayerMixin implements LaLPlayerPlatformInterface, LaLPlay
             }
             if (TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.TOTEM_OF_RESURRECTION) && amount >= player.getHealth()) {
                 player.setHealth(1.0F);
-                player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100));
+                player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, resurrectionRegenDuration));
                 TotemUtil.playTotemAnimation(LaLItems.TOTEM_OF_RESURRECTION.getDefaultInstance(), player);
                 player.awardStat(Stats.ITEM_USED.get(LaLItems.TOTEM_OF_RESURRECTION));
                 CriteriaTriggers.USED_TOTEM.trigger((ServerPlayer) player, LaLItems.TOTEM_OF_RESURRECTION.getDefaultInstance());
@@ -194,7 +196,7 @@ public abstract class PlayerMixin implements LaLPlayerPlatformInterface, LaLPlay
         if ((player.getMainHandItem().is(LaLItems.TOTEM_OF_RESURRECTION) || player.getOffhandItem().is(LaLItems.TOTEM_OF_RESURRECTION)) && amount >= player.getHealth()) {
             if (player.getMainHandItem().is(LaLItems.TOTEM_OF_RESURRECTION)) {
                 player.setHealth(1.0F);
-                player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100));
+                player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, resurrectionRegenDuration));
                 TotemUtil.playTotemAnimation(LaLItems.TOTEM_OF_RESURRECTION.getDefaultInstance(), player);
                 player.awardStat(Stats.ITEM_USED.get(LaLItems.TOTEM_OF_RESURRECTION));
                 CriteriaTriggers.USED_TOTEM.trigger((ServerPlayer) player, LaLItems.TOTEM_OF_RESURRECTION.getDefaultInstance());
@@ -206,7 +208,7 @@ public abstract class PlayerMixin implements LaLPlayerPlatformInterface, LaLPlay
             }
             else if (player.getOffhandItem().is(LaLItems.TOTEM_OF_RESURRECTION)) {
                 player.setHealth(1.0F);
-                player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100));
+                player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, resurrectionRegenDuration));
                 TotemUtil.playTotemAnimation(LaLItems.TOTEM_OF_RESURRECTION.getDefaultInstance(), player);
                 player.awardStat(Stats.ITEM_USED.get(LaLItems.TOTEM_OF_RESURRECTION));
                 CriteriaTriggers.USED_TOTEM.trigger((ServerPlayer) player, LaLItems.TOTEM_OF_RESURRECTION.getDefaultInstance());

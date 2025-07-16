@@ -95,6 +95,7 @@ public class LaLItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .addTag(LaLItemTags.TOTEMS);
 
         this.getOrCreateTagBuilder(LaLItemTags.HAS_DESCRIPTION)
+                .add(LaLItems.WAND)
                 .addTag(LaLItemTags.ARTIFACTS)
                 .addTag(LaLItemTags.ACCESSORIES);
 
