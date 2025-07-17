@@ -51,7 +51,6 @@ dependencies {
 	}
 
 	modImplementation("maven.modrinth:modmenu:$modmenu_version")
-	modImplementation("maven.modrinth:trailier-tales:${project.trailier_version}")
 	modImplementation("maven.modrinth:rei:$rei_version")
 	modImplementation("maven.modrinth:architectury-api:$architectury_version")
 	modImplementation("maven.modrinth:friends-and-foes:$friendsandfoes_version")

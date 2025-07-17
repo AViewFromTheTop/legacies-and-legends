@@ -17,7 +17,6 @@
     "integration.friendsandfoes.FriendsAndFoesPlayerMixin",
     "integration.friendsandfoes.FriendsAndFoesTotemItemMixin",
     "integration.friendsandfoes.FriendsAndFoesTrinketMixin",
-    "integration.trailiertales.TTLootTablesMixin",
     "item.AxeItemMixin",
     "item.ItemStackMixin",
     "item.ProjectileWeaponItemMixin",

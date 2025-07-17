@@ -94,6 +94,8 @@ public class LaLLootTables {
 	public static final ResourceKey<LootTable> END_CITY_ACCESSORIES = register("accessories/end/end_city");
 	public static final ResourceKey<LootTable> END_RUINS_ACCESSORIES = register("accessories/end/ruins");
 
+	public static final ResourceKey<LootTable> REDIRECTED_TRAIL_RUINS_ARCHAEOLOGY_RARE = register("redirects/trailiertales/trail_ruins_rare");
+
 	public static final ResourceKey<LootTable> END_REMAINS = registerEndReborn("chests/end_remains");
 
 	public static final ResourceKey<LootTable> END_CITY_CHEST = registerEnderscape("end_city/chest");
@@ -983,16 +985,22 @@ public class LaLLootTables {
 
 			// Archaeology
 
-			if (!LegaciesAndLegends.isTrailierTalesLoaded) {
-				LootTableModificationApi.editTable(
-						BuiltInLootTables.TRAIL_RUINS_ARCHAEOLOGY_RARE, false,
-						(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
-								(lootPool) -> lootPool
-										.add(LaLItems.RING_OF_CONSTRUCTION, BooleanUtils.toInteger(LaLConfig.get.accessories.ring_of_construction), SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
-										.add(LaLEquipmentItems.KNIFE, BooleanUtils.toInteger(LaLConfig.get.loot.knife), SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
-						)
-				);
-			}
+			LootTableModificationApi.editTable(
+					BuiltInLootTables.TRAIL_RUINS_ARCHAEOLOGY_RARE, false,
+					(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
+							(lootPool) -> lootPool
+									.add(LaLItems.RING_OF_CONSTRUCTION, BooleanUtils.toInteger(LaLConfig.get.accessories.ring_of_construction), SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
+									.add(LaLEquipmentItems.KNIFE, BooleanUtils.toInteger(LaLConfig.get.loot.knife), SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
+					)
+			);
+			LootTableModificationApi.editTable(
+					LaLLootTables.REDIRECTED_TRAIL_RUINS_ARCHAEOLOGY_RARE, false,
+					(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
+							(lootPool) -> lootPool
+									.add(LaLItems.RING_OF_CONSTRUCTION, BooleanUtils.toInteger(LaLConfig.get.accessories.ring_of_construction), SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
+									.add(LaLEquipmentItems.KNIFE, BooleanUtils.toInteger(LaLConfig.get.loot.knife), SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
+					)
+			);
 			LootTableModificationApi.editTable(
 					LaLLootTables.OBELISK_ARCHAEOLOGY, false,
 					(itemId, mutableLootTable) -> mutableLootTable.modifyPools(

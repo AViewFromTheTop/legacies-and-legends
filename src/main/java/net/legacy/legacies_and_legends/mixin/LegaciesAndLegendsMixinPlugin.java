@@ -18,7 +18,6 @@ public final class LegaciesAndLegendsMixinPlugin implements IMixinConfigPlugin {
 
     @Override
     public void onLoad(String mixinPackage) {
-        this.hasTrailierTales = FabricLoader.getInstance().isModLoaded("trailiertales");
         this.hasFriendsAndFoes = FabricLoader.getInstance().isModLoaded("friendsandfoes");
     }
 
@@ -31,7 +30,6 @@ public final class LegaciesAndLegendsMixinPlugin implements IMixinConfigPlugin {
     @Override
     public boolean shouldApplyMixin(String targetClassName, @NotNull String mixinClassName) {
 
-        if (mixinClassName.contains("integration.trailiertales.")) return this.hasTrailierTales;
         if (mixinClassName.contains("integration.friendsandfoes.")) return this.hasFriendsAndFoes;
 
         return true;

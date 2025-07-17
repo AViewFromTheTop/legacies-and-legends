@@ -127,8 +127,31 @@ public abstract class PlayerMixin implements LaLPlayerPlatformInterface, LaLPlay
         }
     }
 
+    @Inject(method = "hurtServer", at = @At(value = "HEAD"), cancellable = true)
+    private void warpBeforeProjectile(ServerLevel level, DamageSource damageSource, float amount, CallbackInfoReturnable<Boolean> cir) {
+        Player player = Player.class.cast(this);
+        if (player.hasEffect(LaLMobEffects.WARPING) && damageSource.is(DamageTypeTags.IS_PROJECTILE)) {
+            double d = player.getX() + (player.getRandom().nextDouble() - 0.5) * (double) 16F;
+            double e = Mth.clamp(player.getY() + (player.getRandom().nextDouble() - 0.5) * (double) 16F, player.level.getMinY(), (player.level.getMinY() + player.level.getHeight() - 1));
+            double f = player.getZ() + (player.getRandom().nextDouble() - 0.5) * (double) 16F;
+            if (player.isPassenger()) {
+                player.stopRiding();
+            }
+
+
+            Vec3 vec3 = player.position();
+            if (player.randomTeleport(d, e, f, true)) {
+                player.level.gameEvent(GameEvent.TELEPORT, vec3, GameEvent.Context.of(player));
+            }
+            level.playSound(null, player.blockPosition(), LaLSounds.TABLET_TELEPORT, SoundSource.PLAYERS, 0.6F, 1F);
+            player.randomTeleport(d, e, f, true);
+
+            cir.setReturnValue(false);
+        }
+    }
+
     @Inject(method = "actuallyHurt", at = @At(value = "HEAD"))
-    private void warpingDamageTeleport(ServerLevel level, DamageSource damageSource, float amount, CallbackInfo ci) {
+    private void warpWhenHurt(ServerLevel level, DamageSource damageSource, float amount, CallbackInfo ci) {
         Player player = Player.class.cast(this);
         if (player.hasEffect(LaLMobEffects.WARPING) && damageSource.isDirect()) {
             double d = player.getX() + (player.getRandom().nextDouble() - 0.5) * (double) 16F;

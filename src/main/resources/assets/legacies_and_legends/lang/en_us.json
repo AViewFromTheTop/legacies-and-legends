@@ -67,6 +67,8 @@
   "item.legacies_and_legends.totem_of_resurrection.desc": "Protects the wearer from death by resurrecting them at their respawn point",
   "item.legacies_and_legends.totem_of_teleportation": "Totem of Teleportation",
   "item.legacies_and_legends.totem_of_teleportation.desc": "Protects the wearer from death by teleporting them a short difference and turning them invisible",
+  "item.friendsandfoes.totem_of_freezing.desc": "Protects the wearer when they fall below half health by freezing surrounding entities",
+  "item.friendsandfoes.totem_of_illusion.desc": "Protects the wearer when they fall below half health by summoning illusions",
 
   "item.legacies_and_legends.tablet": "Tablet",
   "item.legacies_and_legends.tablet_of_recall": "Tablet of Recall",
