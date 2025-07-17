@@ -1,8 +1,6 @@
 package net.legacy.legacies_and_legends.mixin.integration.trailiertales;
 
-import net.fabricmc.fabric.api.loot.v3.FabricLootTableBuilder;
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
-import net.frozenblock.trailiertales.config.TTEntityConfig;
 import net.frozenblock.trailiertales.registry.TTItems;
 import net.frozenblock.trailiertales.registry.TTLootTables;
 import net.frozenblock.trailiertales.registry.TTMapDecorationTypes;
@@ -11,7 +9,6 @@ import net.legacy.legacies_and_legends.config.LaLConfig;
 import net.legacy.legacies_and_legends.registry.LaLEquipmentItems;
 import net.legacy.legacies_and_legends.registry.LaLItems;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootPool;
@@ -19,9 +16,7 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ExplorationMapFunction;
 import net.minecraft.world.level.storage.loot.functions.SetNameFunction;
-import net.minecraft.world.level.storage.loot.functions.SetStewEffectFunction;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
-import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import org.apache.commons.lang3.BooleanUtils;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -31,7 +26,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(TTLootTables.class)
 public abstract class TTLootTablesMixin {
 
-    @Inject(method = "init", at = @At(value = "TAIL"), cancellable = true)
+    @Inject(method = "init", at = @At(value = "TAIL"))
     private static void injectLoot(CallbackInfo ci) {
         LootTableEvents.REPLACE.register((key, lootTable, source, registries) -> {
             if (BuiltInLootTables.TRAIL_RUINS_ARCHAEOLOGY_RARE.equals(key)) {
