@@ -140,6 +140,39 @@ public class LaLItemTagProvider extends FabricTagProvider.ItemTagProvider {
         this.getOrCreateTagBuilder(LaLItemTags.WITHERED_TOOL_MATERIALS)
                 .add(Blocks.BLACKSTONE.asItem());
 
+        this.getOrCreateTagBuilder(LaLItemTags.HUNTING_RING_MATERIALS)
+                .add(Items.QUARTZ);
+        this.getOrCreateTagBuilder(LaLItemTags.EVASION_RING_MATERIALS)
+                .add(LaLItems.SAPPHIRE);
+        this.getOrCreateTagBuilder(LaLItemTags.CONSTRUCTION_RING_MATERIALS)
+                .add(Items.IRON_INGOT);
+        this.getOrCreateTagBuilder(LaLItemTags.STRIKING_RING_MATERIALS)
+                .add(Items.COPPER_INGOT);
+        this.getOrCreateTagBuilder(LaLItemTags.ARCHERY_RING_MATERIALS)
+                .add(Items.DIAMOND);
+        this.getOrCreateTagBuilder(LaLItemTags.EXCAVATION_RING_MATERIALS)
+                .add(Items.EMERALD);
+        this.getOrCreateTagBuilder(LaLItemTags.RESTORATION_RING_MATERIALS)
+                .add(Items.REDSTONE);
+
+        this.getOrCreateTagBuilder(LaLItemTags.ISOLATION_NECKLACE_MATERIALS)
+                .add(Items.AMETHYST_SHARD);
+        this.getOrCreateTagBuilder(LaLItemTags.PURITY_NECKLACE_MATERIALS)
+                .add(Items.COPPER_INGOT);
+        this.getOrCreateTagBuilder(LaLItemTags.LEAPING_NECKLACE_MATERIALS)
+                .add(Items.IRON_INGOT);
+        this.getOrCreateTagBuilder(LaLItemTags.PROTECTION_NECKLACE_MATERIALS)
+                .add(Items.IRON_INGOT);
+        this.getOrCreateTagBuilder(LaLItemTags.RESILIENCE_NECKLACE_MATERIALS)
+                .add(Items.IRON_INGOT);
+        this.getOrCreateTagBuilder(LaLItemTags.REGENERATION_NECKLACE_MATERIALS)
+                .addOptional(ResourceLocation.fromNamespaceAndPath("progression_reborn", "rose_ingot"));
+        this.getOrCreateTagBuilder(LaLItemTags.REGENERATION_NECKLACE_MATERIALS_FALLBACK)
+                .addTag(LaLItemTags.REGENERATION_NECKLACE_MATERIALS)
+                .add(Items.COPPER_INGOT);
+        this.getOrCreateTagBuilder(LaLItemTags.BARTERING_NECKLACE_MATERIALS)
+                .add(Items.GOLD_INGOT);
+
         this.getOrCreateTagBuilder(ItemTags.CHEST_ARMOR)
                 .add(LaLItems.REINFORCED_CHESTPLATE);
         this.getOrCreateTagBuilder(ItemTags.LEG_ARMOR)

@@ -2,6 +2,8 @@ package net.legacy.legacies_and_legends.registry;
 
 import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
 import net.legacy.legacies_and_legends.LaLConstants;
+import net.legacy.legacies_and_legends.LegaciesAndLegends;
+import net.legacy.legacies_and_legends.config.LaLConfig;
 import net.legacy.legacies_and_legends.tag.LaLItemTags;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.Registry;
@@ -26,9 +28,17 @@ public class LaLDataComponents {
                 HolderGetter<Item> holderGetter = BuiltInRegistries.acquireBootstrapRegistrationLookup(BuiltInRegistries.ITEM);
                 builder.set(DataComponents.REPAIRABLE, new Repairable(holderGetter.getOrThrow(LaLItemTags.TRIDENT_REPAIR_MATERIALS)));
             });
-            context.modify(Items.ECHO_SHARD, builder -> {
-                builder.set(DataComponents.PROVIDES_TRIM_MATERIAL, new ProvidesTrimMaterial(LaLTrimMaterials.ECHO));
-            });
+            if (!LegaciesAndLegends.isProgressionRebornLoaded) {
+                context.modify(LaLItems.NECKLACE_OF_REGENERATION, builder -> {
+                    HolderGetter<Item> holderGetter = BuiltInRegistries.acquireBootstrapRegistrationLookup(BuiltInRegistries.ITEM);
+                    builder.set(DataComponents.REPAIRABLE, new Repairable(holderGetter.getOrThrow(LaLItemTags.REGENERATION_NECKLACE_MATERIALS_FALLBACK)));
+                });
+            }
+            if (LaLConfig.get.misc.new_trim_materials) {
+                context.modify(Items.ECHO_SHARD, builder -> {
+                    builder.set(DataComponents.PROVIDES_TRIM_MATERIAL, new ProvidesTrimMaterial(LaLTrimMaterials.ECHO));
+                });
+            }
         });
     }
 

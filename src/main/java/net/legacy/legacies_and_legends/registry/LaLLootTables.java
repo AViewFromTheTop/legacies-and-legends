@@ -582,6 +582,25 @@ public class LaLLootTables {
 				tableBuilder.withPool(pool);
 			}
 
+			if (LaLLootTables.DEEP_RUINS.equals(id) && LaLConfig.get.artifacts.tablet_of_instability) {
+				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+						.add(EmptyLootItem.emptyItem().setWeight(5))
+						.add(LootItem.lootTableItem(LaLItems.TABLET_OF_INSTABILITY).setWeight(1));
+				tableBuilder.withPool(pool);
+			}
+			if (LaLLootTables.SCULK_RUINS.equals(id) && LaLConfig.get.artifacts.tablet_of_instability) {
+				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+						.add(EmptyLootItem.emptyItem().setWeight(5))
+						.add(LootItem.lootTableItem(LaLItems.TABLET_OF_INSTABILITY).setWeight(1));
+				tableBuilder.withPool(pool);
+			}
+			if (LaLLootTables.DUNGEON_CHEST_DEEP.equals(id) && LaLConfig.get.artifacts.tablet_of_instability) {
+				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+						.add(EmptyLootItem.emptyItem().setWeight(11))
+						.add(LootItem.lootTableItem(LaLItems.TABLET_OF_INSTABILITY).setWeight(1));
+				tableBuilder.withPool(pool);
+			}
+
 			if (BuiltInLootTables.END_CITY_TREASURE.equals(id) && LaLConfig.get.artifacts.tablet_of_warping) {
 				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 						.add(EmptyLootItem.emptyItem().setWeight(14))

@@ -21,6 +21,7 @@ import java.util.Optional;
 public class LegaciesAndLegends implements ModInitializer {
 
 	public static boolean isVillagerConfigLoaded = false;
+	public static boolean isProgressionRebornLoaded = false;
 	public static boolean isWilderWildLoaded = false;
 	public static boolean isVariantsAndVenturesLoaded = false;
 	public static boolean isTrailierTalesLoaded = false;
@@ -143,6 +144,9 @@ public class LegaciesAndLegends implements ModInitializer {
 		}
 		if (FabricLoader.getInstance().isModLoaded("enchants_and_expeditions")) {
 			isEnchantsAndExpeditionsLoaded = true;
+		}
+		if (FabricLoader.getInstance().isModLoaded("progression_reborn")) {
+			isProgressionRebornLoaded = true;
 		}
 		if (isEnchantsAndExpeditionsLoaded || !LaLConfig.get.enchantments.extraction) {
 			ResourceManagerHelper.registerBuiltinResourcePack(

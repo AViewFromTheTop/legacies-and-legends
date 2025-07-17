@@ -2408,58 +2408,18 @@
                 "functions": [
                   {
                     "function": "minecraft:set_count",
-                    "count": 8,
+                    "count": 5,
                     "add": false
                   }
                 ]
               },
               "result": {
                 "type": "minecraft:item",
-                "name": "legacies_and_legends:tablet_of_recall"
+                "name": "legacies_and_legends:tablet"
               },
               "price_multiplier": 0.05,
               "trader_experience": 1,
-              "max_uses": 2
-            },
-            {
-              "cost_a": {
-                "type": "minecraft:item",
-                "name": "minecraft:emerald",
-                "functions": [
-                  {
-                    "function": "minecraft:set_count",
-                    "count": 8,
-                    "add": false
-                  }
-                ]
-              },
-              "result": {
-                "type": "minecraft:item",
-                "name": "legacies_and_legends:tablet_of_haste"
-              },
-              "price_multiplier": 0.05,
-              "trader_experience": 1,
-              "max_uses": 2
-            },
-            {
-              "cost_a": {
-                "type": "minecraft:item",
-                "name": "minecraft:emerald",
-                "functions": [
-                  {
-                    "function": "minecraft:set_count",
-                    "count": 8,
-                    "add": false
-                  }
-                ]
-              },
-              "result": {
-                "type": "minecraft:item",
-                "name": "legacies_and_legends:tablet_of_revealing"
-              },
-              "price_multiplier": 0.05,
-              "trader_experience": 1,
-              "max_uses": 2
+              "max_uses": 3
             }
           ]
         }
