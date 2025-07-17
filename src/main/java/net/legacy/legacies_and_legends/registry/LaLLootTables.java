@@ -718,15 +718,6 @@ public class LaLLootTables {
 					)
 			);
 
-			if (LaLConfig.get.loot.knife) {
-				LootTableModificationApi.editTable(
-						BuiltInLootTables.TRAIL_RUINS_ARCHAEOLOGY_RARE, false,
-						(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
-								(lootPool) -> lootPool.add(LaLEquipmentItems.KNIFE, 1, SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
-						)
-				);
-			}
-
 			// LOOT - Music Discs
 
 			if (BuiltInLootTables.ABANDONED_MINESHAFT.equals(id) && LaLConfig.get.loot.new_music_discs) {
@@ -989,6 +980,33 @@ public class LaLLootTables {
 						.add(LootItem.lootTableItem(Items.ENCHANTED_BOOK).setWeight(1)).apply((new SetEnchantmentsFunction.Builder()).withEnchantment(registries.lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(LaLEnchantments.SHADOWSTEP), UniformGenerator.between(1.0F, 1.0F)));
 				tableBuilder.withPool(pool);
 			}
+
+			// Archaeology
+
+			if (!LegaciesAndLegends.isTrailierTalesLoaded) {
+				LootTableModificationApi.editTable(
+						BuiltInLootTables.TRAIL_RUINS_ARCHAEOLOGY_RARE, false,
+						(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
+								(lootPool) -> lootPool
+										.add(LaLItems.RING_OF_CONSTRUCTION, BooleanUtils.toInteger(LaLConfig.get.accessories.ring_of_construction), SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
+										.add(LaLEquipmentItems.KNIFE, BooleanUtils.toInteger(LaLConfig.get.loot.knife), SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
+						)
+				);
+			}
+			LootTableModificationApi.editTable(
+					LaLLootTables.OBELISK_ARCHAEOLOGY, false,
+					(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
+							(lootPool) -> lootPool
+									.add(LaLItems.RING_OF_CONSTRUCTION, 1, SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
+					)
+			);
+			LootTableModificationApi.editTable(
+					LaLLootTables.OBELISK_ARCHAEOLOGY, false,
+					(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
+							(lootPool) -> lootPool
+									.add(LaLEquipmentItems.KNIFE, 1, SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
+					)
+			);
 		});
 	}
 
