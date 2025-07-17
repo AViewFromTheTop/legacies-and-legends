@@ -136,18 +136,15 @@ public class LaLConfig implements ConfigData {
 		@ConfigEntry.Category("config")
 		public boolean tablet_of_haste = true;
 		@ConfigEntry.Category("config")
-		public boolean tablet_of_levitation = true;
+		public boolean tablet_of_instability = true;
+		@ConfigEntry.Category("config")
+		public boolean tablet_of_warping = true;
 		@ConfigEntry.Category("config")
 		public boolean tablet_of_channeling = true;
 		@ConfigEntry.Category("config")
 		public boolean tablet_of_deafening = true;
 		@ConfigEntry.Category("config")
 		public boolean tablet_of_revealing = true;
-
-		@ConfigEntry.Category("config")
-		public boolean totem_of_resurrection = true;
-		@ConfigEntry.Category("config")
-		public boolean totem_of_teleportation = true;
 	}
 
 	public static class AccessoryConfig {
@@ -162,19 +159,19 @@ public class LaLConfig implements ConfigData {
 		@ConfigEntry.Category("config")
 		public boolean ring_of_striking = true;
 		@ConfigEntry.Category("config")
-		public boolean ring_of_leaping = true;
+		public boolean ring_of_hunting = true;
 		@ConfigEntry.Category("config")
-		public boolean ring_of_saturation = true;
-		@ConfigEntry.Category("config")
-		public boolean ring_of_reaching = true;
+		public boolean ring_of_construction = true;
 		@ConfigEntry.Category("config")
 		public boolean ring_of_archery = true;
+		@ConfigEntry.Category("config")
+		public boolean ring_of_excavation = true;
 		@ConfigEntry.Category("config")
 		public boolean ring_of_restoration = true;
 		@ConfigEntry.Category("config")
 		public boolean necklace_of_purity = true;
 		@ConfigEntry.Category("config")
-		public boolean necklace_of_foresight = true;
+		public boolean necklace_of_leaping = true;
 		@ConfigEntry.Category("config")
 		public boolean necklace_of_protection = true;
 		@ConfigEntry.Category("config")
@@ -185,6 +182,10 @@ public class LaLConfig implements ConfigData {
 		public boolean necklace_of_bartering = true;
 		@ConfigEntry.Category("config")
 		public boolean necklace_of_isolation = true;
+		@ConfigEntry.Category("config")
+		public boolean totem_of_resurrection = true;
+		@ConfigEntry.Category("config")
+		public boolean totem_of_teleportation = true;
 	}
 
 	public static class EnchantmentConfig {
@@ -233,7 +234,7 @@ public class LaLConfig implements ConfigData {
 		public boolean accessory_slot = true;
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
-		public boolean trinket_of_undying = true;
+		public boolean accessory_of_undying = true;
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
 		public boolean new_trim_materials = true;
