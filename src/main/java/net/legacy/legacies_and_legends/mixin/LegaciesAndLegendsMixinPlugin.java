@@ -13,11 +13,12 @@ import java.util.Set;
 
 public final class LegaciesAndLegendsMixinPlugin implements IMixinConfigPlugin {
 
-    private boolean hasTrailierTales;
+    private boolean hasEnchantsAndExpeditions;
     private boolean hasFriendsAndFoes;
 
     @Override
     public void onLoad(String mixinPackage) {
+        this.hasEnchantsAndExpeditions = FabricLoader.getInstance().isModLoaded("enchants_and_expeditions");
         this.hasFriendsAndFoes = FabricLoader.getInstance().isModLoaded("friendsandfoes");
     }
 
@@ -30,6 +31,7 @@ public final class LegaciesAndLegendsMixinPlugin implements IMixinConfigPlugin {
     @Override
     public boolean shouldApplyMixin(String targetClassName, @NotNull String mixinClassName) {
 
+        if (mixinClassName.contains("integration.enchants_and_expeditions.")) return this.hasEnchantsAndExpeditions;
         if (mixinClassName.contains("integration.friendsandfoes.")) return this.hasFriendsAndFoes;
 
         return true;

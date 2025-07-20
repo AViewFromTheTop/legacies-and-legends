@@ -14,6 +14,8 @@
     "entity.PiglinAiMixin",
     "entity.PlayerMixin",
     "entity.ProjectileMixin",
+    "integration.enchants_and_expeditions.EaEAccessoryItemMixin",
+    "integration.enchants_and_expeditions.EaEItemStackMixin",
     "integration.friendsandfoes.FriendsAndFoesPlayerMixin",
     "integration.friendsandfoes.FriendsAndFoesTotemItemMixin",
     "integration.friendsandfoes.FriendsAndFoesTrinketMixin",
