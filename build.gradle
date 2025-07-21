@@ -41,8 +41,7 @@ dependencies {
 
 	include modImplementation("maven.modrinth:frozenlib:${project.frozenlib_version}")
 	include modImplementation("com.github.ramixin:mixson-fabric:${project.mixson_version}")
-	//include modImplementation("maven.modrinth:item-tooltips:${project.tooltips_version}")
-	include modImplementation ("net.legacy.legacies_and_legends:item-tooltips-1.21.7-v1.2.0-fabric")
+	include modImplementation("maven.modrinth:item-tooltips:${project.tooltips_version}")
 	include modImplementation("maven.modrinth:trinkets-canary:${project.trinkets_version}")
 	include modImplementation ("org.ladysnake.cardinal-components-api:cardinal-components-base:${project.cca_version}")
 	include modImplementation ("org.ladysnake.cardinal-components-api:cardinal-components-entity:${project.cca_version}")
