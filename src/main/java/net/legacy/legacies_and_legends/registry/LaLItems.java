@@ -346,13 +346,13 @@ public final class LaLItems {
                     .useItemDescriptionPrefix()
     );
     public static final VerdantSwordItem VERDANT_SWORD = register("verdant_sword",
-            Item::new,
+            VerdantSwordItem::new,
             new Properties()
                     .rarity(Rarity.UNCOMMON)
                     .sword(LaLToolMaterial.VERDANT, 3F, -2.4F)
     );
     public static final CleavingBattleAxeItem CLEAVING_BATTLEAXE = register("cleaving_battleaxe",
-            Item::new,
+            CleavingBattleAxeItem::new,
             new Properties()
                     .rarity(Rarity.UNCOMMON)
     );
