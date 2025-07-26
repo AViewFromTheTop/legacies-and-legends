@@ -351,16 +351,16 @@ public final class LaLItems {
                     .rarity(Rarity.UNCOMMON)
                     .sword(LaLToolMaterial.VERDANT, 3F, -2.4F)
     );
-    public static final CleavingBattleAxeItem CLEAVING_BATTLEAXE = register("cleaving_battleaxe",
-            CleavingBattleAxeItem::new,
-            new Properties()
-                    .rarity(Rarity.UNCOMMON)
-    );
     public static final Item MOLTEN_PICKAXE = register("molten_pickaxe",
             Item::new,
             new Properties()
                     .rarity(Rarity.RARE)
                     .pickaxe(LaLToolMaterial.MOLTEN, 1F, -2.8F)
+    );
+    public static final CleavingBattleAxeItem CLEAVING_BATTLEAXE = register("cleaving_battleaxe",
+            CleavingBattleAxeItem::new,
+            new Properties()
+                    .rarity(Rarity.UNCOMMON)
     );
     public static final ShovelItem PROSPECTOR_SHOVEL = register("prospector_shovel",
             (properties) -> new ShovelItem(LaLToolMaterial.PROSPECTOR, 1.5F, -3F, properties), (
@@ -368,7 +368,7 @@ public final class LaLItems {
                             .rarity(Rarity.UNCOMMON)
             ));
     public static final WitheredHoeItem WITHERED_HOE = register("withered_hoe",
-            (properties) -> new HoeItem(LaLToolMaterial.WITHERED, -1F, -1F, properties), (
+            (properties) -> new WitheredHoeItem(LaLToolMaterial.WITHERED, -1F, -1F, properties), (
                     new Properties()
                             .rarity(Rarity.UNCOMMON)
             ));
