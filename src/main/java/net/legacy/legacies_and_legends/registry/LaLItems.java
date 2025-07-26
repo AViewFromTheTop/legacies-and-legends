@@ -368,7 +368,7 @@ public final class LaLItems {
                             .rarity(Rarity.UNCOMMON)
             ));
     public static final WitheredHoeItem WITHERED_HOE = register("withered_hoe",
-            (properties) -> new WitheredHoeItem(LaLToolMaterial.WITHERED, -1F, -1F, properties), (
+            (properties) -> new WitheredHoeItem(LaLToolMaterial.WITHERED, -2F, -1F, properties), (
                     new Properties()
                             .rarity(Rarity.UNCOMMON)
             ));

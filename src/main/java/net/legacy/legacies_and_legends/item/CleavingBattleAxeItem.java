@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
 public class CleavingBattleAxeItem extends AxeItem {
 
     public CleavingBattleAxeItem(Properties properties) {
-        super(LaLToolMaterial.CLEAVING, 10F, -3F, properties);
+        super(LaLToolMaterial.CLEAVING, 5F, -3F, properties);
     }
 
     @Override
