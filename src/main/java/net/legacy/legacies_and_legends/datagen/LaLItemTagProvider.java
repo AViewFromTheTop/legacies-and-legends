@@ -4,7 +4,6 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.frozenblock.lib.tag.api.FrozenItemTags;
 import net.legacy.item_tooltips.registry.ITItemTags;
-import net.legacy.legacies_and_legends.registry.LaLEquipmentItems;
 import net.legacy.legacies_and_legends.registry.LaLItems;
 import net.legacy.legacies_and_legends.tag.LaLItemTags;
 import net.minecraft.core.HolderLookup;
@@ -80,11 +79,11 @@ public class LaLItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(LaLItems.REINFORCED_CHESTPLATE)
                 .add(LaLItems.TRAVELLING_STRIDES)
                 .add(LaLItems.WANDERER_BOOTS)
-                .add(LaLEquipmentItems.VERDANT_SWORD)
-                .add(LaLEquipmentItems.CLEAVING_BATTLEAXE)
-                .add(LaLEquipmentItems.MOLTEN_PICKAXE)
-                .add(LaLEquipmentItems.PROSPECTOR_SHOVEL)
-                .add(LaLEquipmentItems.WITHERED_HOE)
+                .add(LaLItems.VERDANT_SWORD)
+                .add(LaLItems.CLEAVING_BATTLEAXE)
+                .add(LaLItems.MOLTEN_PICKAXE)
+                .add(LaLItems.PROSPECTOR_SHOVEL)
+                .add(LaLItems.WITHERED_HOE)
                 .addTag(LaLItemTags.TABLETS)
                 .addTag(LaLItemTags.TOTEMS);
 
@@ -108,7 +107,7 @@ public class LaLItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(LaLItems.TABLET_OF_REVEALING);
 
         this.getOrCreateTagBuilder(LaLItemTags.PROSPECTING)
-                .add(LaLEquipmentItems.PROSPECTOR_SHOVEL);
+                .add(LaLItems.PROSPECTOR_SHOVEL);
 
         this.getOrCreateTagBuilder(LaLItemTags.REPAIRS_REINFORCED_ARMOR)
                 .add(Items.ECHO_SHARD);
@@ -181,25 +180,25 @@ public class LaLItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(LaLItems.WANDERER_BOOTS);
 
         this.getOrCreateTagBuilder(ItemTags.SWORDS)
-                .add(LaLEquipmentItems.VERDANT_SWORD);
+                .add(LaLItems.VERDANT_SWORD);
         this.getOrCreateTagBuilder(ItemTags.AXES)
-                .add(LaLEquipmentItems.CLEAVING_BATTLEAXE);
+                .add(LaLItems.CLEAVING_BATTLEAXE);
         this.getOrCreateTagBuilder(ItemTags.PICKAXES)
-                .add(LaLEquipmentItems.MOLTEN_PICKAXE);
+                .add(LaLItems.MOLTEN_PICKAXE);
         this.getOrCreateTagBuilder(ItemTags.SHOVELS)
-                .add(LaLEquipmentItems.PROSPECTOR_SHOVEL);
+                .add(LaLItems.PROSPECTOR_SHOVEL);
         this.getOrCreateTagBuilder(ItemTags.HOES)
-                .add(LaLEquipmentItems.WITHERED_HOE);
+                .add(LaLItems.WITHERED_HOE);
 
         this.getOrCreateTagBuilder(ItemTags.WEAPON_ENCHANTABLE)
-                .add(LaLEquipmentItems.HOOK)
-                .add(LaLEquipmentItems.KNIFE);
+                .add(LaLItems.HOOK)
+                .add(LaLItems.KNIFE);
 
         this.getOrCreateTagBuilder(ItemTags.DURABILITY_ENCHANTABLE)
                 .add(LaLItems.BOOMERANG)
                 .add(LaLItems.WAND)
-                .add(LaLEquipmentItems.HOOK)
-                .add(LaLEquipmentItems.KNIFE);
+                .add(LaLItems.HOOK)
+                .add(LaLItems.KNIFE);
 
         this.getOrCreateTagBuilder(ItemTags.TRIM_MATERIALS)
                 .add(Items.ECHO_SHARD)

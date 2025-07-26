@@ -374,46 +374,46 @@ public class LaLLootTables {
 			if (LaLLootTables.DUNGEON_CHEST_VERDANT.equals(id) && LaLConfig.get.artifacts.verdant_sword) {
 				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 						.add(EmptyLootItem.emptyItem().setWeight(11))
-						.add(LootItem.lootTableItem(LaLEquipmentItems.VERDANT_SWORD).setWeight(1));
+						.add(LootItem.lootTableItem(LaLItems.VERDANT_SWORD).setWeight(1));
 				tableBuilder.withPool(pool);
 			}
 			if (BuiltInLootTables.JUNGLE_TEMPLE.equals(id) && LaLConfig.get.artifacts.verdant_sword) {
 				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 						.add(EmptyLootItem.emptyItem().setWeight(5))
-						.add(LootItem.lootTableItem(LaLEquipmentItems.VERDANT_SWORD).setWeight(1));
+						.add(LootItem.lootTableItem(LaLItems.VERDANT_SWORD).setWeight(1));
 				tableBuilder.withPool(pool);
 			}
 
 			if (LaLLootTables.DUNGEON_CHEST.equals(id) && LaLConfig.get.artifacts.cleaving_battleaxe) {
 				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 						.add(EmptyLootItem.emptyItem().setWeight(17))
-						.add(LootItem.lootTableItem(LaLEquipmentItems.CLEAVING_BATTLEAXE).setWeight(1));
+						.add(LootItem.lootTableItem(LaLItems.CLEAVING_BATTLEAXE).setWeight(1));
 				tableBuilder.withPool(pool);
 			}
 			if (BuiltInLootTables.SIMPLE_DUNGEON.equals(id) && LaLConfig.get.artifacts.cleaving_battleaxe) {
 				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 						.add(EmptyLootItem.emptyItem().setWeight(8))
-						.add(LootItem.lootTableItem(LaLEquipmentItems.CLEAVING_BATTLEAXE).setWeight(1));
+						.add(LootItem.lootTableItem(LaLItems.CLEAVING_BATTLEAXE).setWeight(1));
 				tableBuilder.withPool(pool);
 			}
 
 			if (BuiltInLootTables.NETHER_BRIDGE.equals(id) && LaLConfig.get.artifacts.molten_pickaxe) {
 				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 						.add(EmptyLootItem.emptyItem().setWeight(8))
-						.add(LootItem.lootTableItem(LaLEquipmentItems.MOLTEN_PICKAXE).setWeight(1));
+						.add(LootItem.lootTableItem(LaLItems.MOLTEN_PICKAXE).setWeight(1));
 				tableBuilder.withPool(pool);
 			}
 			if (LaLLootTables.SPIRE.equals(id) && LaLConfig.get.artifacts.molten_pickaxe) {
 				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 						.add(EmptyLootItem.emptyItem().setWeight(8))
-						.add(LootItem.lootTableItem(LaLEquipmentItems.MOLTEN_PICKAXE).setWeight(1));
+						.add(LootItem.lootTableItem(LaLItems.MOLTEN_PICKAXE).setWeight(1));
 				tableBuilder.withPool(pool);
 			}
 
 			if (BuiltInLootTables.BURIED_TREASURE.equals(id) && LaLConfig.get.artifacts.prospector_shovel) {
 				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 						.add(EmptyLootItem.emptyItem().setWeight(2))
-						.add(LootItem.lootTableItem(LaLEquipmentItems.PROSPECTOR_SHOVEL).setWeight(1));
+						.add(LootItem.lootTableItem(LaLItems.PROSPECTOR_SHOVEL).setWeight(1));
 				tableBuilder.withPool(pool);
 			}
 
@@ -675,7 +675,7 @@ public class LaLLootTables {
 						(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
 								MutableLootTable.has(Items.LILY_PAD),
 								(lootPool) -> lootPool
-										.add(LaLEquipmentItems.HOOK, BooleanUtils.toInteger(LaLConfig.get.loot.hook) * 2, SetItemDamageFunction.setDamage(UniformGenerator.between(0.0F, 0.9F)))
+										.add(LaLItems.HOOK, BooleanUtils.toInteger(LaLConfig.get.loot.hook) * 2, SetItemDamageFunction.setDamage(UniformGenerator.between(0.0F, 0.9F)))
 										.add(LaLItems.METAL_CHUNK, BooleanUtils.toInteger(LaLConfig.get.loot.metal_chunk) * 10, SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F)))
 										.add(LaLItems.WOODEN_BUCKET, BooleanUtils.toInteger(LaLConfig.get.loot.wooden_buckets) * 10, SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
 						)
@@ -720,7 +720,7 @@ public class LaLLootTables {
 						(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
 								MutableLootTable.has(Items.FISHING_ROD),
 								(lootPool) -> lootPool
-										.add(LaLEquipmentItems.HOOK, 1, EnchantRandomlyFunction.randomApplicableEnchantment(registries))
+										.add(LaLItems.HOOK, 1, EnchantRandomlyFunction.randomApplicableEnchantment(registries))
 						)
 				);
 			}
@@ -728,14 +728,14 @@ public class LaLLootTables {
 					BuiltInLootTables.UNDERWATER_RUIN_BIG, false,
 					(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
 							MutableLootTable.has(Items.FISHING_ROD),
-							(lootPool) -> lootPool.add(LaLEquipmentItems.HOOK, 3, EnchantRandomlyFunction.randomApplicableEnchantment(registries))
+							(lootPool) -> lootPool.add(LaLItems.HOOK, 3, EnchantRandomlyFunction.randomApplicableEnchantment(registries))
 					)
 			);
 			LootTableModificationApi.editTable(
 					BuiltInLootTables.UNDERWATER_RUIN_SMALL, false,
 					(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
 							MutableLootTable.has(Items.FISHING_ROD),
-							(lootPool) -> lootPool.add(LaLEquipmentItems.HOOK, 3, SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
+							(lootPool) -> lootPool.add(LaLItems.HOOK, 3, SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
 					)
 			);
 
@@ -1009,7 +1009,7 @@ public class LaLLootTables {
 					(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
 							(lootPool) -> lootPool
 									.add(LaLItems.RING_OF_CONSTRUCTION, BooleanUtils.toInteger(LaLConfig.get.accessories.ring_of_construction), SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
-									.add(LaLEquipmentItems.KNIFE, BooleanUtils.toInteger(LaLConfig.get.loot.knife), SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
+									.add(LaLItems.KNIFE, BooleanUtils.toInteger(LaLConfig.get.loot.knife), SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
 					)
 			);
 			LootTableModificationApi.editTable(
@@ -1017,7 +1017,7 @@ public class LaLLootTables {
 					(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
 							(lootPool) -> lootPool
 									.add(LaLItems.RING_OF_CONSTRUCTION, BooleanUtils.toInteger(LaLConfig.get.accessories.ring_of_construction), SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
-									.add(LaLEquipmentItems.KNIFE, BooleanUtils.toInteger(LaLConfig.get.loot.knife), SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
+									.add(LaLItems.KNIFE, BooleanUtils.toInteger(LaLConfig.get.loot.knife), SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
 					)
 			);
 			LootTableModificationApi.editTable(
@@ -1031,7 +1031,7 @@ public class LaLLootTables {
 					LaLLootTables.OBELISK_ARCHAEOLOGY, false,
 					(itemId, mutableLootTable) -> mutableLootTable.modifyPools(
 							(lootPool) -> lootPool
-									.add(LaLEquipmentItems.KNIFE, 1, SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
+									.add(LaLItems.KNIFE, 1, SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
 					)
 			);
 		});

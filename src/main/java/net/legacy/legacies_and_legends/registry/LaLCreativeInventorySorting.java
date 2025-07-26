@@ -21,12 +21,12 @@ public class LaLCreativeInventorySorting {
 		addAfterInToolsAndUtilities(LaLItems.WOODEN_BUCKET, LaLItems.COAL_BUCKET);
 		addAfterInToolsAndUtilities(LaLItems.COAL_BUCKET, LaLItems.CHARCOAL_BUCKET);
 
-		addAfterInToolsAndUtilities(Items.NETHERITE_HOE, LaLEquipmentItems.PROSPECTOR_SHOVEL);
-		addAfterInToolsAndUtilities(LaLEquipmentItems.PROSPECTOR_SHOVEL, LaLEquipmentItems.MOLTEN_PICKAXE);
-		addAfterInToolsAndUtilities(LaLEquipmentItems.MOLTEN_PICKAXE, LaLEquipmentItems.CLEAVING_BATTLEAXE);
-		addAfterInToolsAndUtilities(LaLEquipmentItems.CLEAVING_BATTLEAXE, LaLEquipmentItems.WITHERED_HOE);
+		addAfterInToolsAndUtilities(Items.NETHERITE_HOE, LaLItems.PROSPECTOR_SHOVEL);
+		addAfterInToolsAndUtilities(LaLItems.PROSPECTOR_SHOVEL, LaLItems.MOLTEN_PICKAXE);
+		addAfterInToolsAndUtilities(LaLItems.MOLTEN_PICKAXE, LaLItems.CLEAVING_BATTLEAXE);
+		addAfterInToolsAndUtilities(LaLItems.CLEAVING_BATTLEAXE, LaLItems.WITHERED_HOE);
 
-		addAfterInToolsAndUtilities(LaLEquipmentItems.WITHERED_HOE, LaLItems.TABLET_OF_RECALL);
+		addAfterInToolsAndUtilities(LaLItems.WITHERED_HOE, LaLItems.TABLET_OF_RECALL);
 		addAfterInToolsAndUtilities(LaLItems.TABLET_OF_RECALL, LaLItems.TABLET_OF_HASTE);
 		addAfterInToolsAndUtilities(LaLItems.TABLET_OF_HASTE, LaLItems.TABLET_OF_REVEALING);
 		addAfterInToolsAndUtilities(LaLItems.TABLET_OF_REVEALING, LaLItems.TABLET_OF_CHANNELING);
@@ -70,11 +70,11 @@ public class LaLCreativeInventorySorting {
 		addAfterInFoodAndDrinks(Items.BEETROOT, LaLItems.ENCHANTED_BEETROOT);
 		addAfterInFoodAndDrinks(Items.BEETROOT_SOUP, LaLItems.ENCHANTED_BEETROOT_SOUP);
 
-		addAfterInCombat(Items.NETHERITE_SWORD, LaLEquipmentItems.VERDANT_SWORD);
-		addAfterInCombat(Items.NETHERITE_AXE, LaLEquipmentItems.CLEAVING_BATTLEAXE);
+		addAfterInCombat(Items.NETHERITE_SWORD, LaLItems.VERDANT_SWORD);
+		addAfterInCombat(Items.NETHERITE_AXE, LaLItems.CLEAVING_BATTLEAXE);
 
-		addBeforeInCombat(Items.MACE, LaLEquipmentItems.KNIFE);
-		addBeforeInCombat(Items.TRIDENT, LaLEquipmentItems.HOOK);
+		addBeforeInCombat(Items.MACE, LaLItems.KNIFE);
+		addBeforeInCombat(Items.TRIDENT, LaLItems.HOOK);
 		addAfterInCombat(Items.CROSSBOW, LaLItems.BOOMERANG);
 
 		addAfterInCombat(Items.TURTLE_HELMET, LaLItems.REINFORCED_CHESTPLATE);

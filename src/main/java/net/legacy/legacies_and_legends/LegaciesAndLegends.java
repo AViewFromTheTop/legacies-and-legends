@@ -34,7 +34,6 @@ public class LegaciesAndLegends implements ModInitializer {
 
 		LaLItems.init();
 		LaLBlocks.init();
-		LaLEquipmentItems.init();
 		LaLCreativeInventorySorting.init();
 		LaLJukeboxSongs.init();
 		LaLSounds.init();

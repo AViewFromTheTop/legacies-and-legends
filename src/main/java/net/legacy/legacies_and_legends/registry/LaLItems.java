@@ -223,6 +223,24 @@ public final class LaLItems {
                     .usingConvertsTo(Items.BOWL)
     );
 
+    // Equipment
+    public static final GenericWeaponItem HOOK = register("hook",
+            (properties) -> new GenericWeaponItem(LaLToolMaterial.HOOK, 3F, -3.2F, properties), (
+                    new Properties()
+                            .stacksTo(1)
+                            .durability(750)
+                            .enchantable(15)
+                            .rarity(Rarity.UNCOMMON)
+            ));
+    public static final GenericWeaponItem KNIFE = register("knife",
+            (properties) -> new GenericWeaponItem(LaLToolMaterial.KNIFE, 2F, -1.4F, properties), (
+                    new Properties()
+                            .stacksTo(1)
+                            .durability(3048)
+                            .enchantable(15)
+                            .rarity(Rarity.RARE)
+            ));
+
     // Artifacts
     public static final Item TOTEM_OF_RESURRECTION = register("totem_of_resurrection",
             Item::new,
@@ -345,6 +363,38 @@ public final class LaLItems {
                     .rarity(Rarity.UNCOMMON)
                     .useItemDescriptionPrefix()
     );
+    public static final VerdantSwordItem VERDANT_SWORD = register("verdant_sword",
+            Item::new,
+            new Properties()
+                    .stacksTo(1)
+                    .rarity(Rarity.UNCOMMON)
+                    .sword(LaLToolMaterial.VERDANT, 3F, -2.4F)
+    );
+    public static final CleavingBattleAxeItem CLEAVING_BATTLEAXE = register("cleaving_battleaxe",
+            Item::new,
+            new Properties()
+                    .stacksTo(1)
+                    .rarity(Rarity.UNCOMMON)
+    );
+    public static final Item MOLTEN_PICKAXE = register("molten_pickaxe",
+            Item::new,
+            new Properties()
+                    .stacksTo(1)
+                    .rarity(Rarity.RARE)
+                    .pickaxe(LaLToolMaterial.MOLTEN, 1F, -2.8F)
+    );
+    public static final ShovelItem PROSPECTOR_SHOVEL = register("prospector_shovel",
+            (properties) -> new ShovelItem(LaLToolMaterial.PROSPECTOR, 1.5F, -3F, properties), (
+                    new Properties()
+                            .stacksTo(1)
+                            .rarity(Rarity.UNCOMMON)
+            ));
+    public static final WitheredHoeItem WITHERED_HOE = register("withered_hoe",
+            (properties) -> new HoeItem(LaLToolMaterial.WITHERED, -1F, -1F, properties), (
+                    new Properties()
+                            .stacksTo(1)
+                            .rarity(Rarity.UNCOMMON)
+            ));
 
     // Accessories
     public static final AccessoryItem RING_OF_HUNTING = register("ring_of_hunting",

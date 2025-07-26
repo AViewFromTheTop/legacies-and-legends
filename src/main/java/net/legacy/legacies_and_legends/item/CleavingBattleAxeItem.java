@@ -16,7 +16,7 @@ import java.util.function.Consumer;
 public class CleavingBattleAxeItem extends AxeItem {
 
     public CleavingBattleAxeItem(Properties properties) {
-        super(LaLToolMaterial.CLEAVING, -3F, 10F, properties);
+        super(LaLToolMaterial.CLEAVING, 10F, -3F, properties);
     }
 
     @Override

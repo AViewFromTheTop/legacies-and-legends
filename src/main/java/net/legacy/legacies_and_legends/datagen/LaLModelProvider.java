@@ -50,14 +50,14 @@ public final class LaLModelProvider extends FabricModelProvider {
 		generator.generateTrimmableItem(LaLItems.WANDERER_BOOTS, LaLEquipmentAssets.WANDERER, ResourceLocation.withDefaultNamespace("trims/items/boots_trim"), false);
 
 		generator.generateFlatItem(LaLItems.BOOMERANG, ModelTemplates.FLAT_HANDHELD_ITEM);
-		generator.generateFlatItem(LaLEquipmentItems.KNIFE, ModelTemplates.FLAT_HANDHELD_ITEM);
-		generator.generateFlatItem(LaLEquipmentItems.HOOK, ModelTemplates.FLAT_HANDHELD_ITEM);
+		generator.generateFlatItem(LaLItems.KNIFE, ModelTemplates.FLAT_HANDHELD_ITEM);
+		generator.generateFlatItem(LaLItems.HOOK, ModelTemplates.FLAT_HANDHELD_ITEM);
 
-		generator.generateFlatItem(LaLEquipmentItems.VERDANT_SWORD, ModelTemplates.FLAT_HANDHELD_ITEM);
-		generator.generateFlatItem(LaLEquipmentItems.CLEAVING_BATTLEAXE, ModelTemplates.FLAT_HANDHELD_ITEM);
-		generator.generateFlatItem(LaLEquipmentItems.MOLTEN_PICKAXE, ModelTemplates.FLAT_HANDHELD_ITEM);
-		generator.generateFlatItem(LaLEquipmentItems.PROSPECTOR_SHOVEL, ModelTemplates.FLAT_HANDHELD_ITEM);
-		generator.generateFlatItem(LaLEquipmentItems.WITHERED_HOE, ModelTemplates.FLAT_HANDHELD_ITEM);
+		generator.generateFlatItem(LaLItems.VERDANT_SWORD, ModelTemplates.FLAT_HANDHELD_ITEM);
+		generator.generateFlatItem(LaLItems.CLEAVING_BATTLEAXE, ModelTemplates.FLAT_HANDHELD_ITEM);
+		generator.generateFlatItem(LaLItems.MOLTEN_PICKAXE, ModelTemplates.FLAT_HANDHELD_ITEM);
+		generator.generateFlatItem(LaLItems.PROSPECTOR_SHOVEL, ModelTemplates.FLAT_HANDHELD_ITEM);
+		generator.generateFlatItem(LaLItems.WITHERED_HOE, ModelTemplates.FLAT_HANDHELD_ITEM);
 
 		generator.generateFlatItem(LaLItems.TOTEM_OF_TELEPORTATION, ModelTemplates.FLAT_ITEM);
 		generator.generateFlatItem(LaLItems.TOTEM_OF_RESURRECTION, ModelTemplates.FLAT_ITEM);
