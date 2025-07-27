@@ -7,19 +7,19 @@ import net.legacy.legacies_and_legends.item.accessory.*;
 import net.legacy.legacies_and_legends.sound.LaLJukeboxSongs;
 import net.legacy.legacies_and_legends.tag.LaLBlockTags;
 import net.legacy.legacies_and_legends.tag.LaLItemTags;
-import net.minecraft.core.HolderSet;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.Item.Properties;
 import net.minecraft.world.item.component.*;
 import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
 import net.minecraft.world.item.consume_effects.ClearAllStatusEffectsConsumeEffect;
@@ -27,9 +27,6 @@ import net.minecraft.world.item.consume_effects.TeleportRandomlyConsumeEffect;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.minecraft.world.item.equipment.Equippable;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.world.item.Item.Properties;
-import net.minecraft.world.level.block.Blocks;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -311,7 +308,7 @@ public final class LaLItems {
                     .stacksTo(16)
                     .component(DataComponents.CONSUMABLE, LaLConsumables.TABLET_OF_CHANNELING)
                     .useCooldown(300F)
-                    .rarity(Rarity.EPIC)
+                    .rarity(Rarity.RARE)
     );
     public static final Item TABLET_OF_DEAFENING = register("tablet_of_deafening",
             Item::new,
