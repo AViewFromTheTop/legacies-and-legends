@@ -81,7 +81,7 @@ public class LaLCreativeInventorySorting {
 		addAfterInCombat(LaLItems.REINFORCED_CHESTPLATE, LaLItems.TRAVELLING_STRIDES);
 		addAfterInCombat(LaLItems.TRAVELLING_STRIDES, LaLItems.WANDERER_BOOTS);
 
-		addAfterInCombat(Items., LaLItems.TOTEM_OF_RESURRECTION);
+		addAfterInCombat(Items.TOTEM_OF_UNDYING, LaLItems.TOTEM_OF_RESURRECTION);
 		addAfterInCombat(LaLItems.TOTEM_OF_RESURRECTION, LaLItems.TOTEM_OF_TELEPORTATION);
 
 		addAfterInNaturalBlocks(Blocks.DEEPSLATE_LAPIS_ORE, LaLBlocks.SAPPHIRE_ORE);
