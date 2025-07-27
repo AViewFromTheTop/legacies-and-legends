@@ -315,6 +315,37 @@
                 ]
               },
               "trader_experience": 0
+            },
+            {
+              "cost_a": {
+                "type": "minecraft:item",
+                "name": "minecraft:emerald",
+                "functions": [
+                  {
+                    "function": "minecraft:set_count",
+                    "count": 8
+                  }
+                ]
+              },
+              "result": {
+                "type": "minecraft:item",
+                "name": "minecraft:map",
+                "functions": [
+                  {
+                    "function": "minecraft:exploration_map",
+                    "destination": "legacies_and_legends:on_verdant_dungeon_maps",
+                    "decoration": "legacies_and_legends:verdant_dungeon"
+                  },
+                  {
+                    "function": "minecraft:set_name",
+                    "name": {
+                      "translate": "filled_map.legacies_and_legends.verdant_dungeon"
+                    },
+                    "target": "item_name"
+                  }
+                ]
+              },
+              "trader_experience": 0
             }
           ]
         },

@@ -168,8 +168,9 @@
   "pack.legacies_and_legends.music_and_melody": "Music and Melody",
   "pack.legacies_and_legends.wilder_wild_integration": "Wilder Wild Integration",
   "pack.legacies_and_legends.trailier_tales_integration": "Trailier Tales Integration",
-  "pack.legacies_and_legends.variants_and_ventures_integration": "Variants and Ventures Integration",
+  "pack.legacies_and_legends.farmers_delight_integration": "Farmer's Delight Integration",
   "pack.legacies_and_legends.enderscape_integration": "Enderscape Integration",
+  "pack.legacies_and_legends.variants_and_ventures_integration": "Variants and Ventures Integration",
   "pack.legacies_and_legends.no_travelling_strides": "No Travelling Strides",
   "pack.legacies_and_legends.no_withered_hoe": "No Withered Hoe",
   "pack.legacies_and_legends.no_trident_shard": "No Trident Shard",
@@ -297,6 +298,7 @@
   "text.autoconfig.legacies_and_legends.option.integrations": "Mod Integration",
   "text.autoconfig.legacies_and_legends.option.integrations.wilder_wild": "Wilder Wild",
   "text.autoconfig.legacies_and_legends.option.integrations.trailier_tales": "Trailier Tales",
-  "text.autoconfig.legacies_and_legends.option.integrations.variants_and_ventures": "Variants & Ventures",
-  "text.autoconfig.legacies_and_legends.option.integrations.enderscape": "Enderscape"
+  "text.autoconfig.legacies_and_legends.option.integrations.farmers_delight": "Farmer's Delight",
+  "text.autoconfig.legacies_and_legends.option.integrations.enderscape": "Enderscape",
+  "text.autoconfig.legacies_and_legends.option.integrations.variants_and_ventures": "Variants & Ventures"
 }

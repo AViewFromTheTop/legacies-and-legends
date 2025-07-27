@@ -2,6 +2,7 @@ package net.legacy.legacies_and_legends.mixin.entity;
 
 import dev.emi.trinkets.api.TrinketsApi;
 import net.legacy.legacies_and_legends.LaLConstants;
+import net.legacy.legacies_and_legends.config.LaLConfig;
 import net.legacy.legacies_and_legends.entity.impl.LaLPlayerDamageInterface;
 import net.legacy.legacies_and_legends.entity.impl.LaLPlayerPlatformInterface;
 import net.legacy.legacies_and_legends.item.util.TotemUtil;
@@ -67,7 +68,7 @@ public abstract class PlayerMixin implements LaLPlayerPlatformInterface, LaLPlay
         if (player.getUseItem().is(LaLItemTags.TABLETS)) player.stopUsingItem();
     }
 
-    @Inject(method = "actuallyHurt", at = @At(value = "TAIL"))
+    @Inject(method = "actuallyHurt", at = @At(value = "HEAD"))
     private void damageNecklace(ServerLevel level, DamageSource damageSource, float amount, CallbackInfo info) {
         Player player = Player.class.cast(this);
         if (TrinketsApi.getTrinketComponent(player).isPresent() && LaLConstants.isNecklace(player) && !damageSource.is(DamageTypeTags.BYPASSES_ARMOR)) player.addTag("damaged_accessory");
@@ -207,7 +208,7 @@ public abstract class PlayerMixin implements LaLPlayerPlatformInterface, LaLPlay
                 }
                 player.addTag("used_totem");
             }
-            if (TrinketsApi.getTrinketComponent(player).get().isEquipped(Items.TOTEM_OF_UNDYING) && amount >= player.getHealth()) {
+            if (LaLConfig.get.misc.accessory_of_undying && TrinketsApi.getTrinketComponent(player).get().isEquipped(Items.TOTEM_OF_UNDYING) && amount >= player.getHealth()) {
                 player.setHealth(1.0F);
                 Items.TOTEM_OF_UNDYING.getDefaultInstance().get(DataComponents.DEATH_PROTECTION).applyEffects(Items.TOTEM_OF_UNDYING.getDefaultInstance(), player);
                 TotemUtil.playTotemAnimation(Items.TOTEM_OF_UNDYING.getDefaultInstance(), player);

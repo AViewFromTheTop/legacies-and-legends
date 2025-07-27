@@ -252,8 +252,10 @@ public class LaLConfig implements ConfigData {
 		@ConfigEntry.Category("config")
 		public boolean trailier_tales = true;
 		@ConfigEntry.Category("config")
-		public boolean variants_and_ventures = true;
+		public boolean farmers_delight = true;
 		@ConfigEntry.Category("config")
 		public boolean enderscape = true;
+		@ConfigEntry.Category("config")
+		public boolean variants_and_ventures = true;
 	}
 }

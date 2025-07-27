@@ -5,21 +5,22 @@ import net.legacy.legacies_and_legends.LaLConstants;
 import net.legacy.legacies_and_legends.item.*;
 import net.legacy.legacies_and_legends.item.accessory.*;
 import net.legacy.legacies_and_legends.sound.LaLJukeboxSongs;
+import net.legacy.legacies_and_legends.tag.LaLBlockTags;
 import net.legacy.legacies_and_legends.tag.LaLItemTags;
+import net.minecraft.core.HolderSet;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.*;
-import net.minecraft.world.item.component.CustomModelData;
-import net.minecraft.world.item.component.DeathProtection;
-import net.minecraft.world.item.component.ItemAttributeModifiers;
-import net.minecraft.world.item.component.Weapon;
+import net.minecraft.world.item.component.*;
 import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
 import net.minecraft.world.item.consume_effects.ClearAllStatusEffectsConsumeEffect;
 import net.minecraft.world.item.consume_effects.TeleportRandomlyConsumeEffect;
@@ -28,6 +29,7 @@ import net.minecraft.world.item.equipment.Equippable;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.Item.Properties;
+import net.minecraft.world.level.block.Blocks;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -213,20 +215,33 @@ public final class LaLItems {
     );
 
     // Equipment
-    public static final GenericWeaponItem HOOK = register("hook",
-            (properties) -> new GenericWeaponItem(LaLToolMaterial.HOOK, 3F, -3.2F, properties), (
+    public static final HookItem HOOK = register("hook",
+            (properties) -> new HookItem(LaLToolMaterial.HOOK, 3F, -3.2F, properties), (
                     new Properties()
                             .durability(750)
                             .enchantable(15)
                             .rarity(Rarity.UNCOMMON)
             ));
-    public static final GenericWeaponItem KNIFE = register("knife",
-            (properties) -> new GenericWeaponItem(LaLToolMaterial.KNIFE, 2F, -1.4F, properties), (
-                    new Properties()
-                            .durability(3048)
-                            .enchantable(15)
-                            .rarity(Rarity.RARE)
-            ));
+    public static final KnifeItem KNIFE = register("knife",
+            KnifeItem::new,
+            new Properties()
+                    .durability(3048)
+                    .attributes(KnifeItem.createAttributes())
+                    .component(
+                            DataComponents.TOOL,
+                            new Tool(
+                                    List.of(
+                                            Tool.Rule.deniesDrops(BuiltInRegistries.acquireBootstrapRegistrationLookup(BuiltInRegistries.BLOCK).getOrThrow(LaLToolMaterial.KNIFE.incorrectBlocksForDrops())),
+                                            Tool.Rule.minesAndDrops(BuiltInRegistries.acquireBootstrapRegistrationLookup(BuiltInRegistries.BLOCK).getOrThrow(LaLBlockTags.MINEABLE_WITH_KNIFE), LaLToolMaterial.KNIFE.speed())
+                                    ),
+                                    1.0F,
+                                    2,
+                                    false
+                            )
+                    )
+                    .enchantable(15)
+                    .rarity(Rarity.RARE)
+    );
 
     // Artifacts
     public static final Item TOTEM_OF_RESURRECTION = register("totem_of_resurrection",

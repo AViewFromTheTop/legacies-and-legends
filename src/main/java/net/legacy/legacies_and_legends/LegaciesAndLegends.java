@@ -22,6 +22,7 @@ public class LegaciesAndLegends implements ModInitializer {
 
 	public static boolean isVillagerConfigLoaded = false;
 	public static boolean isProgressionRebornLoaded = false;
+	public static boolean isFarmersDelightLoaded = false;
 	public static boolean isWilderWildLoaded = false;
 	public static boolean isVariantsAndVenturesLoaded = false;
 	public static boolean isTrailierTalesLoaded = false;
@@ -151,6 +152,14 @@ public class LegaciesAndLegends implements ModInitializer {
 			ResourceManagerHelper.registerBuiltinResourcePack(
 					LaLConstants.id("no_extraction_enchant"), modContainer.get(),
 					Component.translatable("pack.legacies_and_legends.no_extraction_enchant"),
+					ResourcePackActivationType.ALWAYS_ENABLED
+			);
+		}
+		if (FabricLoader.getInstance().isModLoaded("farmersdelight") && LaLConfig.get.integrations.farmers_delight) {
+			isFarmersDelightLoaded = true;
+			ResourceManagerHelper.registerBuiltinResourcePack(
+					LaLConstants.id("farmers_delight_integration"), modContainer.get(),
+					Component.translatable("pack.legacies_and_legends.farmers_delight_integration"),
 					ResourcePackActivationType.ALWAYS_ENABLED
 			);
 		}

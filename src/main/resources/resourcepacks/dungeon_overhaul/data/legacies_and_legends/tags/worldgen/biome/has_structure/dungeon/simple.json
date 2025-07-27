@@ -30,7 +30,6 @@
         "minecraft:lush_caves",
         "minecraft:windswept_savanna",
         "#minecraft:is_hill",
-        "#legacies_and_legends:has_structure/dungeon/simple_verdant",
         {
             "id": "#c:is_temperate/overworld",
             "required": false
