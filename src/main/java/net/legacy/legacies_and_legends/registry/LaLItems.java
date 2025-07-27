@@ -469,14 +469,14 @@ public final class LaLItems {
             new Properties()
                     .durability(255)
                     .repairable(LaLItemTags.RESILIENCE_NECKLACE_MATERIALS)
-                    .rarity(Rarity.RARE)
+                    .rarity(Rarity.EPIC)
     );
     public static final AccessoryItem NECKLACE_OF_REGENERATION = register("necklace_of_regeneration",
             AccessoryItem::new,
             new Properties()
                     .durability(284)
                     .repairable(LaLItemTags.REGENERATION_NECKLACE_MATERIALS)
-                    .rarity(Rarity.EPIC)
+                    .rarity(Rarity.RARE)
     );
     public static final AccessoryItem NECKLACE_OF_BARTERING = register("necklace_of_bartering",
             AccessoryItem::new,
