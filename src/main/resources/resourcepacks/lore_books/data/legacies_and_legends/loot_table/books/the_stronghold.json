@@ -15,8 +15,8 @@
                         "title": "The Stronghold",
                         "author": "Minecraft",
                         "pages": [
-                          "{\"text\":\"You’ve found the Stronghold at last. The stone brick walls, the abandoned hallways. A great Library of vast knowledge, filled with wondrous books of unimaginable power.\n\nYou are here. \n\nA passage to another world. \"}",
-                          "{\"text\":\"Will this be your journey’s end?\"}"
+                          "You’ve found the Stronghold at last. The stone brick walls, the abandoned hallways. A great Library of vast knowledge, filled with wondrous books of unimaginable power.\n\nYou are here. \n\nA passage to another world. ",
+                          "Will this be your journey’s end?"
                         ]
                       }
                     }

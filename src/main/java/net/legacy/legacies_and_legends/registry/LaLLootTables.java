@@ -94,6 +94,8 @@ public class LaLLootTables {
 	public static final ResourceKey<LootTable> END_CITY_ACCESSORIES = register("accessories/end/end_city");
 	public static final ResourceKey<LootTable> END_RUINS_ACCESSORIES = register("accessories/end/ruins");
 
+	public static final ResourceKey<LootTable> CONSEQUENCES_BOOK = register("books/consequences");
+
 	public static final ResourceKey<LootTable> REDIRECTED_TRAIL_RUINS_ARCHAEOLOGY_RARE = register("redirects/trailiertales/trail_ruins_rare");
 
 	public static final ResourceKey<LootTable> END_REMAINS = registerEndReborn("chests/end_remains");
@@ -246,7 +248,7 @@ public class LaLLootTables {
 				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 						.add(EmptyLootItem.emptyItem().setWeight(4))
 						.add(NestedLootTable.lootTableReference(LaLLootTables.END_GENERAL_ACCESSORIES).setWeight(1))
-						.add(NestedLootTable.lootTableReference(LaLLootTables.END_RUINS_ACCESSORIES).setWeight(1));;
+						.add(NestedLootTable.lootTableReference(LaLLootTables.END_RUINS_ACCESSORIES).setWeight(1));
 				tableBuilder.withPool(pool);
 			}
 			if (BuiltInLootTables.END_CITY_TREASURE.equals(id)) {
@@ -697,6 +699,13 @@ public class LaLLootTables {
 								(lootPool) -> lootPool.add(LaLItems.WOODEN_BUCKET, 3, SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
 						)
 				);
+			}
+
+			if (LaLLootTables.END_REMAINS.equals(id) && LaLConfig.get.loot.lore_books) {
+				pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+						.add(EmptyLootItem.emptyItem().setWeight(95))
+						.add(NestedLootTable.lootTableReference(LaLLootTables.CONSEQUENCES_BOOK).setWeight(5));
+				tableBuilder.withPool(pool);
 			}
 
 			// LOOT - Weapons

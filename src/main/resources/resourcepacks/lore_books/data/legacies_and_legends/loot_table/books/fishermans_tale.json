@@ -15,8 +15,8 @@
                         "title": "Fisherman's Tale",
                         "author": "Minecraft",
                         "pages": [
-                          "{\"text\":\"The oceans are a vast landscape of endless sea. Whilst these waters may seem calm at first, there is to be a warning; an ancient, mythological creature - resembling a squid, but far more dangerous, its glowing texture acting as a captivating signal,\"}",
-                          "{\"text\":\"and a warning for the weary.\n\nBeware, lest this forboding squid come for you next.\"}"
+                          "The oceans are a vast landscape of endless sea. Whilst these waters may seem calm at first, there is to be a warning; an ancient, mythological creature - resembling a squid, but far more dangerous, its glowing texture acting as a captivating signal,",
+                          "and a warning for the weary.\n\nBeware, lest this forboding squid come for you next."
                         ]
                       }
                     }
