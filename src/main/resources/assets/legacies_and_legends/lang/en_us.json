@@ -161,6 +161,17 @@
   "filled_map.legacies_and_legends.verdant_dungeon": "Verdant Dungeon Explorer Map",
   "filled_map.legacies_and_legends.infernal_dungeon": "Infernal Dungeon Explorer Map",
 
+  "subtitles.item.boomerang.hit": "Boomerang strikes",
+  "subtitles.item.boomerang.return": "Boomerang returns",
+  "subtitles.item.boomerang.throw": "Boomerang is thrown",
+  "subtitles.item.boomerang.whoosh": "Boomerang whooshes",
+
+  "subtitles.item.tablet.use": "Tablet is active",
+  "subtitles.item.tablet.break": "Tablet is broken",
+  "subtitles.item.tablet.teleport": "Player was teleported",
+
+  "subtitles.enchantment.shatter": "Target is shattered",
+
   "pack.legacies_and_legends.asset_overrides": "Legacies and Legends Asset Overrides",
   "pack.legacies_and_legends.dungeon_overhaul": "Dungeon Overhaul",
   "pack.legacies_and_legends.swamp_hut_variants": "Swamp Hut Variants",

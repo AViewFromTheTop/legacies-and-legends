@@ -39,14 +39,14 @@
     ],
     "subtitle": "subtitles.item.boomerang.throw"
   },
-  "boomerang.woosh": {
+  "boomerang.whoosh": {
     "sounds": [
       {
-        "name": "legacies_and_legends:item/boomerang/woosh",
+        "name": "legacies_and_legends:item/boomerang/whoosh",
         "volume": 1.0
       }
     ],
-    "subtitle": "subtitles.item.boomerang.woosh"
+    "subtitle": "subtitles.item.boomerang.whoosh"
   },
   "tablet.use": {
     "sounds": [

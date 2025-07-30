@@ -24,7 +24,7 @@ public class LaLSounds {
 	public static final SoundEvent BOOMERANG_THROW = register("boomerang.throw");
 	public static final SoundEvent BOOMERANG_HIT = register("boomerang.hit");
 	public static final SoundEvent BOOMERANG_RETURN = register("boomerang.return");
-	public static final SoundEvent BOOMERANG_WOOSH = register("boomerang.woosh");
+	public static final SoundEvent BOOMERANG_WHOOSH = register("boomerang.whoosh");
 
 	public static final SoundEvent WAND_SUMMON = register("wand.summon");
 	public static final SoundEvent WAND_RECALL = register("wand.recall");

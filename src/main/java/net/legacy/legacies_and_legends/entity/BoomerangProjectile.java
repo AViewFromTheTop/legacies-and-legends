@@ -148,7 +148,7 @@ public class BoomerangProjectile extends AbstractArrow {
             this.spinTick = this.spinTick + 1;
             this.loopTick = this.loopTick + 1;
             if (this.loopTick >= 4) {
-                this.playSound(LaLSounds.BOOMERANG_WOOSH);
+                this.playSound(LaLSounds.BOOMERANG_WHOOSH);
                 this.loopTick = 0;
             }
         }
