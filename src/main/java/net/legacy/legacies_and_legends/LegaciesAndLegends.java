@@ -58,6 +58,13 @@ public class LegaciesAndLegends implements ModInitializer {
 					ResourcePackActivationType.ALWAYS_ENABLED
 			);
 		}
+		if (!LaLConfig.get.misc.save_vanilla_cooldowns) {
+			ResourceManagerHelper.registerBuiltinResourcePack(
+					LaLConstants.id("save_vanilla_cooldowns"), modContainer.get(),
+					Component.translatable("pack.legacies_and_legends.save_vanilla_cooldowns"),
+					ResourcePackActivationType.ALWAYS_ENABLED
+			);
+		}
 		if (!LaLConfig.get.loot.improved_loot) {
 			ResourceManagerHelper.registerBuiltinResourcePack(
 					LaLConstants.id("no_improved_loot"), modContainer.get(),

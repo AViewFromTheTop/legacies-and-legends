@@ -24,7 +24,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class BlockMixin {
 
     @Inject(method = "playerDestroy", at = @At(value = "TAIL"))
-    private void frozenInPowderSnow(Level level, Player player, BlockPos pos, BlockState state, BlockEntity blockEntity, ItemStack tool, CallbackInfo ci) {
+    private void excavationRing(Level level, Player player, BlockPos pos, BlockState state, BlockEntity blockEntity, ItemStack tool, CallbackInfo ci) {
         if (TrinketsApi.getTrinketComponent(player).get().isEquipped(LaLItems.RING_OF_EXCAVATION)) {
             player.addTag("damaged_accessory");
         }

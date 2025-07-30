@@ -243,6 +243,9 @@ public class LaLConfig implements ConfigData {
 		public boolean wandering_trader_trades = true;
 		@ConfigEntry.Category("config")
 		@ConfigEntry.Gui.Tooltip
+		public boolean save_vanilla_cooldowns = true;
+		@ConfigEntry.Category("config")
+		@ConfigEntry.Gui.Tooltip
 		public boolean no_creeper_discs = false;
 	}
 

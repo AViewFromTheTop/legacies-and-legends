@@ -125,6 +125,10 @@ public class BoomerangProjectile extends AbstractArrow {
             this.gravity = this.gravity / this.entityData.get(ID_FEATHERWEIGHT) * 10D;
         }
 
+        if (this.entityData.get(ID_SHADOWSTEP) > 0) {
+            this.gravity = this.gravity * 1.5D;
+        }
+
         return this.gravity;
     }
 
