@@ -46,6 +46,7 @@ public class AccessoryItem extends TrinketItem implements Trinket {
         stack.setDamageValue(stack.getDamageValue() + amount);
         if (stack.getDamageValue() >= stack.getMaxDamage()) {
             resetData(player);
+            player.level().broadcastEntityEvent(player, LivingEntity.entityEventForEquipmentBreak(slot));
             slot.inventory().removeItem(slot.index(), amount);
         }
     }
